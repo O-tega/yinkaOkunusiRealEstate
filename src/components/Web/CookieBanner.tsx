@@ -1,6 +1,6 @@
 export {};
 import ModalWithoutClose from "@/components/ModalWithoutClose";
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import mooyiLogo from "@/assets/images/mooyihead.svg";
 import CookieConsent from "react-cookie-consent";
 import Toggle from "react-toggle";
@@ -31,8 +31,7 @@ const CookieBanner = () => {
       id: 1,
       title: "Strictly Necessary Cookies",
       action: "Always active",
-      content:
-        "These cookies are required for our website to work correctly in your browser.",
+      content: "These cookies are required for our website to work correctly in your browser.",
     },
     {
       id: 2,
@@ -43,8 +42,7 @@ const CookieBanner = () => {
     {
       id: 3,
       title: "Targeting Cookies",
-      content:
-        "These cookies enable us to identify users on our websites and build a profile of users’ interests.",
+      content: "These cookies enable us to identify users on our websites and build a profile of users’ interests.",
     },
     {
       id: 4,
@@ -58,40 +56,31 @@ const CookieBanner = () => {
     <div>
       {showCookie && (
         <ModalWithoutClose>
-          <div
-            className={`w-[640px] ${
-              showPreference ? "h-[500px]" : "h-fit"
-            } no-scrollbar overflow-y-auto`}
-          >
+          <div className={`w-[640px] ${showPreference ? "h-[500px]" : "h-fit"} no-scrollbar overflow-y-auto`}>
             <div className="flex items-center space-x-5">
               <div>
                 <img src={mooyiLogo} alt="mooyi logo" />
               </div>
               <div>
-                <p className="font-[500] text-[24px] font-secondary">
-                  Our Privacy Statement & Cookie Policy
-                </p>
+                <p className="font-[500] text-[24px] font-secondary">Our Privacy Statement & Cookie Policy</p>
               </div>
             </div>
             <div className="space-y-5 mt-5">
               <p>
-                We prioritize your privacy and handle your personal information
-                with utmost care, utilizing it solely to enhance your experience
-                on this website. By continuing to use this platform, you consent
-                to the processing of your data by Mooyi, its subsidiaries, and
-                partners, in accordance with NDPR/GDPR and relevant regulations,
-                as outlined in our{" "}
-                <Link to="#" className="text-primary underline">
+                We prioritize your privacy and handle your personal information with utmost care, utilizing it solely to
+                enhance your experience on this website. By continuing to use this platform, you consent to the
+                processing of your data by Mooyi, its subsidiaries, and partners, in accordance with NDPR/GDPR and
+                relevant regulations, as outlined in our{" "}
+                <Link to="/privacy-policy" className="text-primary underline">
                   Privacy Policy
                 </Link>{" "}
                 .
               </p>
               <p>
-                Additionally, our website utilizes cookies to improve your
-                browsing experience. You can adjust your preferences using the
-                option provided below. For further details regarding the cookies
-                we use, please refer to our{" "}
-                <Link to="#" className="text-primary underline">
+                Additionally, our website utilizes cookies to improve your browsing experience. You can adjust your
+                preferences using the option provided below. For further details regarding the cookies we use, please
+                refer to our{" "}
+                <Link to="/cookie-policy" className="text-primary underline">
                   Cookie Policy
                 </Link>{" "}
                 .
@@ -127,8 +116,8 @@ const CookieBanner = () => {
                   height: "50px",
                 }}
                 cookieName="MooyiCookie"
-                onAccept={()=>setShowCookie(false)}
-                onDecline={()=>setShowCookie(false)}
+                onAccept={() => setShowCookie(false)}
+                onDecline={() => setShowCookie(false)}
               ></CookieConsent>
             </div>
             <div className="mt-2">
@@ -140,26 +129,17 @@ const CookieBanner = () => {
               </p>
               {showPreference && (
                 <div className="mt-5">
-                  <p className="text-[20px] font-secondary font-[500]">
-                    Manage preference
-                  </p>
+                  <p className="text-[20px] font-secondary font-[500]">Manage preference</p>
                   <div className="mt-3 space-y-5 border py-3 rounded-lg">
                     {preference.map((el, i) => (
-                      <div
-                        key={i}
-                        className={`px-3 pb-3 ${el.id === 4 ? "" : "border-b"}`}
-                      >
+                      <div key={i} className={`px-3 pb-3 ${el.id === 4 ? "" : "border-b"}`}>
                         <div className="flex items-center justify-between">
                           <div>
-                            <p className="font-[500] font-secondary">
-                              {el.title}
-                            </p>
+                            <p className="font-[500] font-secondary">{el.title}</p>
                           </div>
                           <div>
                             {el.id === 1 ? (
-                              <p className="text-primary font-[500]">
-                                {el.action}
-                              </p>
+                              <p className="text-primary font-[500]">{el.action}</p>
                             ) : (
                               <Toggle
                                 icons={false}
@@ -175,11 +155,7 @@ const CookieBanner = () => {
                     ))}
                   </div>
                   <div className="flex justify-end mt-2">
-                    <BlueButton
-                      text="Save my preferences"
-                      type="submit"
-                      onClick={() => setShowCookie(false)}
-                    />
+                    <BlueButton text="Save my preferences" type="submit" onClick={() => setShowCookie(false)} />
                   </div>
                 </div>
               )}

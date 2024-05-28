@@ -7,8 +7,8 @@ import PrimaryButton from "@/components/Button/PrimaryButton";
 import { useQuery } from "@tanstack/react-query";
 import { getRates } from "@/service/rates";
 import { Helmet } from "react-helmet";
-import { useNavigate } from "react-router-dom";
 import { ROUTES } from "@/constants/externalUrls";
+import { Link } from "react-router-dom";
 
 const Pricing: React.FC = () => {
   const [toggleValue, setToggleValue] = useState(false);
@@ -25,8 +25,6 @@ const Pricing: React.FC = () => {
   const conversionRate = rates?.data?.data[0].currencyRates[7].userRate;
   const individualRate = (2 * conversionRate).toFixed(0);
   const otherRate = (4 * conversionRate).toFixed(0);
-
-  const navigate = useNavigate();
 
   return (
     <div>
@@ -88,12 +86,9 @@ const Pricing: React.FC = () => {
               </p>
               <p className="text-center text-[18px]">For individuals</p>
               <div className="w-[80%]">
-                <PrimaryButton
-                  variant="transparent"
-                  text="Get started"
-                  css="bg-hoverBlue text-primary font-[700]"
-                  onClick={() => navigate(`${ROUTES.LOGIN}`)}
-                />
+                <Link to={`${ROUTES.LOGIN}`}>
+                  <PrimaryButton variant="transparent" text="Get started" css="bg-hoverBlue text-primary font-[700]" />
+                </Link>
               </div>
             </div>
           </div>
@@ -114,12 +109,9 @@ const Pricing: React.FC = () => {
               </p>
               <p className="text-center text-[18px] w-[60%]">For Influencers, agents, and small business owners</p>
               <div className="w-[80%]">
-                <PrimaryButton
-                  variant="transparent"
-                  text="Get started"
-                  css="bg-hoverBlue text-primary font-[700]"
-                  onClick={() => navigate(`${ROUTES.LOGIN}`)}
-                />
+                <Link to={`${ROUTES.LOGIN}`}>
+                  <PrimaryButton variant="transparent" text="Get started" css="bg-hoverBlue text-primary font-[700]" />
+                </Link>
               </div>
             </div>
           </div>
