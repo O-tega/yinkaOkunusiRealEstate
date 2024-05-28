@@ -5,16 +5,10 @@ interface DeepBlueButtonProps {
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
-  css?: string
+  css?: string;
 }
 
-const EmptyButton: FC<DeepBlueButtonProps> = ({
-  text,
-  onClick,
-  type = "button",
-  disabled = false,
-  css
-}) => {
+const EmptyButton: FC<DeepBlueButtonProps> = ({ text, onClick, type = "button", disabled = false, css }) => {
   return (
     <button
       className={`font-primary  transition ease-in-out  font-medium rounded-[8px] h-[45px] ${css} px-6 text-[14px] ${

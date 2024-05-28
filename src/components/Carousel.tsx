@@ -6,12 +6,7 @@ import flutterwave4 from "@/assets/images/futterwave/flutterwave4.png";
 import flutterwave5 from "@/assets/images/futterwave/flutterwave5.png";
 import { AnimatePresence, motion } from "framer-motion";
 
-const flutterImages = [
-  flutterwave1,
-  flutterwave3,
-  flutterwave4,
-  flutterwave5,
-];
+const flutterImages = [flutterwave1, flutterwave3, flutterwave4, flutterwave5];
 
 const Carousel: React.FC = () => {
   const [images, setImages] = useState([...flutterImages]);
@@ -54,11 +49,7 @@ const Carousel: React.FC = () => {
             }}
             transition={{ duration: isAnimating ? 0.5 : 0 }}
           >
-            <img
-              src={item}
-              alt="flutter images"
-              className="transition-all duration-300 w-full"
-            />
+            <img src={item} alt="flutter images" className="transition-all duration-300 w-full" />
           </motion.div>
         ))}
       </AnimatePresence>

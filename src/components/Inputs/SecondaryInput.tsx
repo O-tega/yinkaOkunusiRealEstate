@@ -1,7 +1,18 @@
 import React from "react";
 import { TSecondaryInput } from "@/types/componentTypes";
 
-const SecondaryInput:React.FC<TSecondaryInput> = ({ text, type, placeholder, onChange, onBlur, error, value, name, disabled, min }) => {
+const SecondaryInput: React.FC<TSecondaryInput> = ({
+  text,
+  type,
+  placeholder,
+  onChange,
+  onBlur,
+  error,
+  value,
+  name,
+  disabled,
+  min,
+}) => {
   return (
     <div className="text-primary flex flex-col w-[100%">
       <label htmlFor={name} className="text-[#292D32] text-[16px] font-[500] tracking-[-0.02em] ">

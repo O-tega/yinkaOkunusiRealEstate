@@ -16,7 +16,7 @@ const Search: React.FC<TSearchProps> = ({ handleSearch }) => {
       "How do I create a survey on Mooyi?",
       "What are screening questions?",
     ],
-    []
+    [],
   );
 
   const handleFilter = useCallback(
@@ -28,7 +28,7 @@ const Search: React.FC<TSearchProps> = ({ handleSearch }) => {
 
       setFilteredData(filteredData);
     },
-    [searchSuggestions]
+    [searchSuggestions],
   );
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const Search: React.FC<TSearchProps> = ({ handleSearch }) => {
   }, [handleFilter, search]);
 
   const handleClick = (text: string) => {
-    handleSearch(text)
+    handleSearch(text);
   };
 
   return (
@@ -57,17 +57,11 @@ const Search: React.FC<TSearchProps> = ({ handleSearch }) => {
       {search !== "" ? (
         <div className="bg-white rounded-b-lg w-full space-y-5 pt-5">
           {filterData?.map((items, i) => (
-            <p
-              key={i}
-              onClick={() => handleClick(items)}
-              className="cursor-pointer active:bg-slate-100"
-            >
+            <p key={i} onClick={() => handleClick(items)} className="cursor-pointer active:bg-slate-100">
               {items}
             </p>
           ))}
-          {search !== "" && filterData?.length === 0 ? (
-            <p className="text-center">No result found</p>
-          ) : null}
+          {search !== "" && filterData?.length === 0 ? <p className="text-center">No result found</p> : null}
         </div>
       ) : null}
     </div>

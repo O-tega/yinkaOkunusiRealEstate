@@ -31,9 +31,7 @@ const TermsOfUse = () => {
               <p className="font-secondary md:text-[48px] text-center text-[32px] md:leading-[4rem] pt-5">
                 Term of Use
               </p>
-              <p className=" md:text-[20px] pt-5 text-[16px] text-center">
-                Updated: 23rd, July, 2023
-              </p>
+              <p className=" md:text-[20px] pt-5 text-[16px] text-center">Updated: 23rd, July, 2023</p>
             </div>
           </div>
         </div>

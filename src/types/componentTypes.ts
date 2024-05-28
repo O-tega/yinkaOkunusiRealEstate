@@ -49,6 +49,6 @@ export type TSelectInput = {
   name: string;
   disabled?: boolean;
   options: TOption[];
-  css: string
+  css: string;
   defaultValue: string | number | undefined;
 };

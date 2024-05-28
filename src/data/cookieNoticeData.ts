@@ -17,8 +17,7 @@ export const CookieNoticeData = [
       "'Company' (referred to as either 'Mooyi', 'We', 'Us', or 'Our' in this Cookie Notice) refers to Mooyi Ltd. ",
     paragraph11:
       "'Cookies' means small files that are placed on Your computer, mobile device, or any other device by a website, containing details of your browsing history on that Website among its many uses.",
-    paragraph12:
-      "'Website' refers to Mooyi’s Website, accessible from https://www.mooyi.africa ",
+    paragraph12: "'Website' refers to Mooyi’s Website, accessible from https://www.mooyi.africa ",
     paragraph13: "'You' means the individual accessing or using the Website. ",
   },
   {
@@ -27,8 +26,7 @@ export const CookieNoticeData = [
     stListedItems: [
       {
         title: "Strictly Necessary Cookies:",
-        paragraph:
-          "These cookies are required for our website to work correctly in your browser.",
+        paragraph: "These cookies are required for our website to work correctly in your browser.",
       },
       {
         title: "Performance Cookies:",
@@ -37,8 +35,7 @@ export const CookieNoticeData = [
       },
       {
         title: "Targeting Cookies:",
-        paragraph:
-          "These cookies enable us to identify users on our websites and build a profile of users’ interests.",
+        paragraph: "These cookies enable us to identify users on our websites and build a profile of users’ interests.",
       },
       {
         title: "Functionality Cookies:",
@@ -63,13 +60,7 @@ export const CookieNoticeData = [
         "Session",
         "Third-party / Strictly Necessary",
       ],
-      [
-        "__hssrc",
-        "Hubspot",
-        "This cookie is used for website analytics.",
-        "Session",
-        "First-party / Performance",
-      ],
+      ["__hssrc", "Hubspot", "This cookie is used for website analytics.", "Session", "First-party / Performance"],
       [
         "_ga_6C32QV77SQ",
         "Google Analytics",
@@ -84,20 +75,8 @@ export const CookieNoticeData = [
         "2 years",
         "First-party / Performance",
       ],
-      [
-        "__hstc",
-        "Hubspot",
-        "This cookie is used for website analytics.",
-        "6 months",
-        "First-party / Performance",
-      ],
-      [
-        "__hssc",
-        "Hubspot",
-        "This cookie is used for website analytics.",
-        "30 minutes",
-        "First-party / Performance",
-      ],
+      ["__hstc", "Hubspot", "This cookie is used for website analytics.", "6 months", "First-party / Performance"],
+      ["__hssc", "Hubspot", "This cookie is used for website analytics.", "30 minutes", "First-party / Performance"],
       [
         "messagesUtk",
         "",

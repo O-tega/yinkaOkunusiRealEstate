@@ -1,7 +1,7 @@
 import React from "react";
 import { TSelectInput } from "@/types/componentTypes";
 
-const SelectInput:React.FC<TSelectInput> = ({ options, name, value, onChange, css, disabled, defaultValue }) => {
+const SelectInput: React.FC<TSelectInput> = ({ options, name, value, onChange, css, disabled, defaultValue }) => {
   return (
     <div className="text-primary flex flex-col w-[100%]">
       {/* <label htmlFor={name} className="text-grey sm:text-[16px] text-[12px]">{text}</label> */}

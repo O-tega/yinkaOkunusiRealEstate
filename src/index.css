@@ -1,6 +1,6 @@
 @import url("./assets/fonts/GT-Flexa/style.css");
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap')
-@import url("./assets/fonts/Recoleta/stylesheet.css");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap") @import
+  url("./assets/fonts/Recoleta/stylesheet.css");
 
 @tailwind base;
 @tailwind components;
@@ -38,8 +38,12 @@ select {
   appearance: none;
   background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png");
   background-repeat: no-repeat, repeat;
-  background-position: right 0.7em top 50%, 0 0;
-  background-size: 0.65em auto, 100%;
+  background-position:
+    right 0.7em top 50%,
+    0 0;
+  background-size:
+    0.65em auto,
+    100%;
 }
 
 input[type="range"]::-webkit-slider-runnable-track,
@@ -184,4 +188,3 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     scrollbar-width: none;
   }
 }
-

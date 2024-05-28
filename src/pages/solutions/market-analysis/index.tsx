@@ -3,7 +3,7 @@ import { ASSETS } from "@/assets/images/Assets";
 import PrimaryButton from "@/components/Button/PrimaryButton";
 import HeroSection from "../components/HeroSection";
 import CardList from "../components/CardList";
-// import Head from "next/head";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { ROUTES } from "@/constants/externalUrls";
 // const green = color:"bg-[#ECFEF5]"
@@ -58,12 +58,11 @@ const MarketAnalysis: React.FC = () => {
 
   return (
     <div>
-      {/* <Head>
+      <Helmet>
+        <meta charSet="utf-8" />
         <title>mooyi™ | Expansion Minus the Risk</title>
-        <meta name="description" content="Created by Mooyi" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-      </Head> */}
+      </Helmet>
       <HeroSection
         type="MARKET ANALYSIS"
         title="Discover where and how to win."
@@ -77,12 +76,7 @@ const MarketAnalysis: React.FC = () => {
       <div className="flex justify-center pb-16">
         <div className="md:w-[20%]">
           <Link to={`${ROUTES.LOGIN}`}>
-            <PrimaryButton
-              type="button"
-              text="Get started for free"
-              css="rounded-md w-[20%] px-5"
-              variant="filled"
-            />
+            <PrimaryButton type="button" text="Get started for free" css="rounded-md w-[20%] px-5" variant="filled" />
           </Link>
         </div>
       </div>

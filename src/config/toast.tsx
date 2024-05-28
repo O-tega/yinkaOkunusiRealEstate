@@ -3,7 +3,7 @@ import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { GiCrossMark } from "react-icons/gi";
 
 class ToastClass {
-  success(message:string) {
+  success(message: string) {
     toast.success(message, {
       icon: <IoMdCheckmarkCircleOutline size={22} />,
       // icon: "",
@@ -22,7 +22,7 @@ class ToastClass {
     });
   }
 
-  error(message:string) {
+  error(message: string) {
     toast.error(message, {
       icon: <GiCrossMark size={22} />,
       style: {

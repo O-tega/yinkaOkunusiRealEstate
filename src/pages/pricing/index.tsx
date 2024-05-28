@@ -6,7 +6,7 @@ import ToggleButton from "@/components/Button/ToogleButton";
 import PrimaryButton from "@/components/Button/PrimaryButton";
 import { useQuery } from "@tanstack/react-query";
 import { getRates } from "@/service/rates";
-// import Head from "next/head";
+import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "@/constants/externalUrls";
 
@@ -30,12 +30,11 @@ const Pricing: React.FC = () => {
 
   return (
     <div>
-      {/* <Head>
+      <Helmet>
+        <meta charSet="utf-8" />
         <title>mooyi™ | Get Started Today</title>
-        <meta name="description" content="Created by Mooyi" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-      </Head> */}
+      </Helmet>
       <div className="w-[100%] mx-auto md:h-[calc(100vh-400px)] pb-10 md:pb-0 bg-[#EFF3FF] flex md:items-center overflow-hidden pt-16 md:pt-0 md:relative">
         <div>
           <img
