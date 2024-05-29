@@ -6,9 +6,9 @@ import ToggleButton from "@/components/Button/ToogleButton";
 import PrimaryButton from "@/components/Button/PrimaryButton";
 import { useQuery } from "@tanstack/react-query";
 import { getRates } from "@/service/rates";
-// import Head from "next/head";
-import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { ROUTES } from "@/constants/externalUrls";
+import { Link } from "react-router-dom";
 
 const Pricing: React.FC = () => {
   const [toggleValue, setToggleValue] = useState(false);
@@ -26,16 +26,13 @@ const Pricing: React.FC = () => {
   const individualRate = (2 * conversionRate).toFixed(0);
   const otherRate = (4 * conversionRate).toFixed(0);
 
-  const navigate = useNavigate();
-
   return (
     <div>
-      {/* <Head>
+      <Helmet>
+        <meta charSet="utf-8" />
         <title>mooyi™ | Get Started Today</title>
-        <meta name="description" content="Created by Mooyi" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-      </Head> */}
+      </Helmet>
       <div className="w-[100%] mx-auto md:h-[calc(100vh-400px)] pb-10 md:pb-0 bg-[#EFF3FF] flex md:items-center overflow-hidden pt-16 md:pt-0 md:relative">
         <div>
           <img
@@ -89,12 +86,9 @@ const Pricing: React.FC = () => {
               </p>
               <p className="text-center text-[18px]">For individuals</p>
               <div className="w-[80%]">
-                <PrimaryButton
-                  variant="transparent"
-                  text="Get started"
-                  css="bg-hoverBlue text-primary font-[700]"
-                  onClick={() => navigate(`${ROUTES.LOGIN}`)}
-                />
+                <Link to={`${ROUTES.LOGIN}`}>
+                  <PrimaryButton variant="transparent" text="Get started" css="bg-hoverBlue text-primary font-[700]" />
+                </Link>
               </div>
             </div>
           </div>
@@ -115,12 +109,9 @@ const Pricing: React.FC = () => {
               </p>
               <p className="text-center text-[18px] w-[60%]">For Influencers, agents, and small business owners</p>
               <div className="w-[80%]">
-                <PrimaryButton
-                  variant="transparent"
-                  text="Get started"
-                  css="bg-hoverBlue text-primary font-[700]"
-                  onClick={() => navigate(`${ROUTES.LOGIN}`)}
-                />
+                <Link to={`${ROUTES.LOGIN}`}>
+                  <PrimaryButton variant="transparent" text="Get started" css="bg-hoverBlue text-primary font-[700]" />
+                </Link>
               </div>
             </div>
           </div>

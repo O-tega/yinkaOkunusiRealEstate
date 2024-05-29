@@ -3,7 +3,7 @@ import { ASSETS } from "@/assets/images/Assets";
 import PrimaryButton from "@/components/Button/PrimaryButton";
 import HeroSection from "../components/HeroSection";
 import CardList from "../components/CardList";
-// import Head from "next/head";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { ROUTES } from "@/constants/externalUrls";
 
@@ -33,12 +33,11 @@ const BrandTracking: React.FC = () => {
 
   return (
     <div>
-      {/* <Head>
+      <Helmet>
+        <meta charSet="utf-8" />
         <title>mooyi™ | Unravel Your Brand Insights.</title>
-        <meta name="description" content="Created by Mooyi" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-      </Head> */}
+      </Helmet>
       <HeroSection
         type="BRAND TRACKING"
         title="Shelve assumptions and discover what truly works."

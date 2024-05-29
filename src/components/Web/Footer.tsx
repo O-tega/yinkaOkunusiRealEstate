@@ -32,10 +32,10 @@ const Footer = () => {
   ];
 
   const socialIcons = [
-    { icon: FaFacebook, link: "#" },
-    { icon: FaSquareXTwitter, link: "#" },
-    { icon: FaInstagram, link: "#" },
-    { icon: FaLinkedin, link: "#" },
+    { icon: FaFacebook, link: "https://www.facebook.com/mooyi.africa?mibextid=LQQJ4d" },
+    { icon: FaSquareXTwitter, link: "https://x.com/mooyiafrica?s=21&t=z3mhh3-Ie8KzpOqK2ePxzA" },
+    { icon: FaInstagram, link: "https://www.instagram.com/mooyi.africa?igsh=MThmZXRuZ242NXhoOA==" },
+    { icon: FaLinkedin, link: "https://www.linkedin.com/company/mooyi-africa/" },
   ];
 
   const navigate = useNavigate();

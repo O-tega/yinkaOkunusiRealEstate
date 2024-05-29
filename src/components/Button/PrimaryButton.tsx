@@ -10,7 +10,17 @@ interface IButtonProps {
   rightIcon?: React.ReactNode;
 }
 
-const PrimaryButton = ({ type, text, variant, css, onClick, disabled, isLoading, leftIcon, rightIcon }: IButtonProps) => {
+const PrimaryButton = ({
+  type,
+  text,
+  variant,
+  css,
+  onClick,
+  disabled,
+  isLoading,
+  leftIcon,
+  rightIcon,
+}: IButtonProps) => {
   return (
     <button
       className={`flex h-[45px] w-full items-center justify-center rounded-lg text-sm font-bold border disabled:bg-primary-300 active:text-blue-200 px-6 " ${

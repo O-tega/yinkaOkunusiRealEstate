@@ -5,16 +5,10 @@ interface DeepBlueButtonProps {
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
-  css?: string
+  css?: string;
 }
 
-const SecondaryButton: FC<DeepBlueButtonProps> = ({
-  text,
-  onClick,
-  type = "button",
-  disabled = false,
-  css
-}) => {
+const SecondaryButton: FC<DeepBlueButtonProps> = ({ text, onClick, type = "button", disabled = false, css }) => {
   return (
     <button
       className={`text-purple transition-fontWeight ease-in-out font-medium rounded-[8px] h-[45px] font-primary ${css} px-6 text-[14px] ${
@@ -32,5 +26,3 @@ const SecondaryButton: FC<DeepBlueButtonProps> = ({
 };
 
 export default SecondaryButton;
-
-

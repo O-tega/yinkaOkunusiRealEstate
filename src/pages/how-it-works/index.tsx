@@ -10,7 +10,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import BlueButton from "@/components/Button/BlueButton";
 import TextCarousel from "./TextCarousel";
 import CardList from "../solutions/components/CardList";
-// import Head from "next/head";
+import { Helmet } from "react-helmet";
 
 const HowItWorks: React.FC = () => {
   const cardData = [
@@ -35,38 +35,20 @@ const HowItWorks: React.FC = () => {
     {
       title: "MooyiRewards members.",
       desc: "We have a well-represented database of over 3 million Nigerians. You can reach the consumers you need within our diverse audience.",
-      img: (
-        <img
-          src={mooyiRewardsMemebers}
-          alt="logos"
-          className="w-[80px] md:w-[150px] pt-10"
-        />
-      ),
+      img: <img src={mooyiRewardsMemebers} alt="logos" className="w-[80px] md:w-[150px] pt-10" />,
 
       color: "bg-[#ECFEF5]",
     },
     {
       title: "Detailed targeting.",
       desc: "Navigate our platform with ease. Leverage geographic, demographic, and interest targeting options to hone in on your desired audience precisely.",
-      img: (
-        <img
-          src={mooyiTarget}
-          alt="logos"
-          className="w-[80px] md:w-[100px] pt-10"
-        />
-      ),
+      img: <img src={mooyiTarget} alt="logos" className="w-[80px] md:w-[100px] pt-10" />,
       color: "bg-[#EBF1FF]",
     },
     {
       title: "Lead acquisition.",
       desc: "Go beyond survey responses with a call-to-action question and seamlessly convert engaged respondents into valuable leads for future contact.",
-      img: (
-        <img
-          src={mooyiProjection}
-          alt="logos"
-          className="w-[80px] md:w-[100px] pt-10"
-        />
-      ),
+      img: <img src={mooyiProjection} alt="logos" className="w-[80px] md:w-[100px] pt-10" />,
 
       color: "bg-[#FEFAE8]",
     },
@@ -82,7 +64,6 @@ const HowItWorks: React.FC = () => {
     return () => clearInterval(interval);
   }, [cardData.length]);
 
-
   return (
     <div>
       {/* <Head>
@@ -91,6 +72,11 @@ const HowItWorks: React.FC = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head> */}
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>mooyi™ | How it Works.</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Helmet>
       <HeroSection />
       <div className="md:px-[5rem] px-2">
         <div className="flex justify-center py-10">
@@ -114,29 +100,17 @@ const HowItWorks: React.FC = () => {
                   transition={{ duration: 0.5 }}
                 >
                   <div className="md:hidden">
-                    <img
-                      src={item.img}
-                      width={500}
-                      height={500}
-                      alt="image"
-                    />
+                    <img src={item.img} width={500} height={500} alt="image" />
                   </div>
                   <div className="flex flex-col justify-center md:w-[35%] text-center md:text-left">
-                    <p className="md:text-[28px] text-[24px] font-secondary">
-                      {item.title}
-                    </p>
+                    <p className="md:text-[28px] text-[24px] font-secondary">{item.title}</p>
                     <p className="md:text-[20px] text-[16px]">{item.desc}</p>
                   </div>
                   <div className=" md:flex justify-end hidden">
-                    <img
-                      src={item.img}
-                      width={500}
-                      height={500}
-                      alt="image"
-                    />
+                    <img src={item.img} width={500} height={500} alt="image" />
                   </div>
                 </motion.div>
-              ) : null
+              ) : null,
             )}
           </AnimatePresence>
         </div>
@@ -155,9 +129,7 @@ const HowItWorks: React.FC = () => {
             <p className="font-secondary text-[32px] text-center hidden md:block">
               Achieve Your Research Goals with Our Support.
             </p>
-            <p className="font-secondary text-[28px] text-center md:hidden">
-              Achieve Your Goals with Our Support.
-            </p>
+            <p className="font-secondary text-[28px] text-center md:hidden">Achieve Your Goals with Our Support.</p>
 
             <div className="flex justify-center px-[4rem] my-10 pb-[4rem]">
               <TextCarousel />

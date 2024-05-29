@@ -73,7 +73,7 @@ type TMenu = {
 };
 
 const MobileNav: React.FC<TMenu> = ({ showMenu, setShowMenu }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const links = [
     { name: "Home", link: "/" },
     { name: "How it works", link: "/how-it-works" },

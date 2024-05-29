@@ -2,83 +2,75 @@ export const priceArray = [
   {
     id: 1,
     name: "Email",
-    amount: 2.5
+    amount: 2.5,
   },
   {
     id: 2,
     name: "SMS",
-    amount: 5
+    amount: 5,
   },
   {
     id: 3,
     name: "Robocall (per minute)",
-    amount: 25
+    amount: 25,
   },
   {
     id: 4,
     name: "Survey (per response)",
-    amount: 1500
+    amount: 1500,
   },
-]
-
-
+];
 
 export const creditArray = [
   {
     id: 1,
     name: "10,000 credits",
-    amount: 10000
+    amount: 10000,
   },
   {
     id: 2,
     name: "25,000 credits",
-    amount: 25000
+    amount: 25000,
   },
   {
     id: 3,
     name: "50,000 credits",
-    amount: 50000
+    amount: 50000,
   },
   {
     id: 4,
     name: "100,000 credits",
-    amount: 99000
+    amount: 99000,
   },
   {
     id: 5,
     name: "200,000 credits",
-    amount: 198000
+    amount: 198000,
   },
   {
     id: 6,
     name: "500,000 credits",
-    amount: 495000
+    amount: 495000,
   },
   {
     id: 7,
     name: "1,000,000 credits",
-    amount: 998000
+    amount: 998000,
   },
-]
-
-
-
+];
 
 export const bundleArray = [
   {
     id: 1,
     name: "Unlimited email (Starter plan)",
-    amount: 20000
+    amount: 20000,
   },
   {
     id: 2,
     name: "Unlimited email (Business plan)",
-    amount: 300000
+    amount: 300000,
   },
-]
-
-
-
+];
 
 export const planName = ["Starter Plan", "Business Plan", "Pro Plan"];
 export const planValue = ["starter", "business", "pro"];

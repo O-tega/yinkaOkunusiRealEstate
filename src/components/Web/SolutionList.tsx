@@ -7,7 +7,7 @@ import mooyiMutliCustomer from "@/assets/images/mooyi/mooyiMultiCustomer.png";
 import mooyiPaintbucket from "@/assets/images/mooyi/mooyiPaintbucket.png";
 import mooyiPiechart from "@/assets/images/mooyi/mooyiPiechart.png";
 import mooyidocument from "@/assets/images/mooyi/mooyidocument.png";
-import customerEngagementIcon from "@/assets/images/oursolutions/customerEngagementIcon.png"
+import customerEngagementIcon from "@/assets/images/oursolutions/customerEngagementIcon.png";
 import { Link } from "react-router-dom";
 import { ROUTES } from "@/constants/externalUrls";
 
@@ -65,10 +65,7 @@ const solutionData = [
 
 const SolutionList: React.FC<TSolutionListProps> = ({ onClick }) => {
   return (
-    <div
-      className=" p-5 h-full overflow-hidden relative"
-      onMouseLeave={onClick}
-    >
+    <div className=" p-5 h-full overflow-hidden relative" onMouseLeave={onClick}>
       <p className="font-bold">By Use case</p>
       <div className="flex flex-col justify-between h-[80%] pt-5">
         {solutionData.map((item, i) => (
@@ -85,14 +82,8 @@ const SolutionList: React.FC<TSolutionListProps> = ({ onClick }) => {
           <Link to={`${ROUTES.LOGIN}`}>
             <p className="pr-3 cursor-pointer hover:text-blue-200">Sign up</p>
           </Link>
-          <Link
-            to="https://www.youtube.com/channel/UC-KbRjjhExwbHkOurEtdNFQ"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <p className="pl-3 cursor-pointer hover:text-blue-200">
-              Watch Demo
-            </p>
+          <Link to="https://www.youtube.com/channel/UC-KbRjjhExwbHkOurEtdNFQ" target="_blank" rel="noopener noreferrer">
+            <p className="pl-3 cursor-pointer hover:text-blue-200">Watch Demo</p>
           </Link>
         </div>
       </div>

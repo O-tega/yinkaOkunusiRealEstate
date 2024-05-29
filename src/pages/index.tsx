@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import Carousel from "@/components/Carousel";
 import PrimaryButton from "@/components/Button/PrimaryButton";
 import { Link } from "react-router-dom";
-// import CookieBanner from "../components/Web/CookieBanner";
+import { Helmet } from "react-helmet";
 
 const LandingPage = () => {
   const variant = {
@@ -21,12 +21,11 @@ const LandingPage = () => {
   // }
   return (
     <div className="">
-      {/* <Head>
+      <Helmet>
+        <meta charSet="utf-8" />
         <title>mooyi for Business | Growth made easy.</title>
-        <meta name="description" content="Created by Mooyi" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-      </Head> */}
+      </Helmet>
       <HeroSection />
 
       <div className="bg-[#F8F6FC]">
@@ -174,7 +173,6 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <div>{/* <CookieBanner/> */}</div>
     </div>
   );
 };
