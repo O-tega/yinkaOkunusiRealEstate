@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+import  { useEffect, useState } from "react";
 import useMedia from "use-media";
-import { AnimatePresence, motion } from "framer-motion";
 const AnimationChange = () => {
   const [campaignType, setCampaignType] = useState<number>(0);
   const isWide = useMedia({ maxWidth: 1000 });
