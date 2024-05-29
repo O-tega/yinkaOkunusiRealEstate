@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import useMedia from "use-media";
 const AnimationChange = () => {
   const [campaignType, setCampaignType] = useState<number>(0);
