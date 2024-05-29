@@ -75,6 +75,14 @@ const Header = () => {
         </div>
 
         <div className="hidden sm:flex space-x-5  items-center  text-[14px] font-[500]">
+        <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://blog.mooyi.africa"
+            className="py-[16px]  rounded-[30px] hover:deepBlue"
+          >
+            Blog
+          </a>
           <a
             target="_blank"
             rel="noreferrer"

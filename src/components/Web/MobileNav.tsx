@@ -187,6 +187,15 @@ const MobileNav: React.FC<TMenu> = ({ showMenu, setShowMenu }) => {
                       </Link>
                     ),
                   )}
+
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://blog.mooyi.africa"
+                    className="flex items-center space-x-5  hover:bg-hoverBlue cursor-pointer rounded-lg transition-all duration-300"
+                  >
+                    Blog
+                  </a>
                 </ul>
               </div>
               <div className="mt-5 space-y-4">
