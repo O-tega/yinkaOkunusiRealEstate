@@ -14,12 +14,12 @@ const data = [
 
 const PayAsYouGo: React.FC = () => {
   return (
-    <div className="w-[80%] flex items-center mx-auto gap-[2em] my-[4em]">
-      <div className="w-[70%] space-y-4">
-        <p className="text-4xl font-secondary w-[80%]">Do more with our pay-as-you-go starter plan</p>
+    <div className="w-[80%] flex md:flex-row flex-col items-center mx-auto gap-[2em] my-[4em]">
+      <div className="md:w-[70%] w-[100%] space-y-4">
+        <p className="md:text-4xl text-2xl font-secondary md:w-[80%] w-[100%]">Do more with our pay-as-you-go starter plan</p>
         <p className="font-secondary">Key plan features</p>
 
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid md:grid-cols-2 grid-cols-1 gap-2">
           {data.map((el) => {
             return (
               <div key={el} className="text-sm text-gray-500 w-[90%] flex items-start space-x-4">
@@ -37,7 +37,7 @@ const PayAsYouGo: React.FC = () => {
         <p className="font-secondary pt-6">Get access to more features on our Premium plans.</p>
       </div>
 
-      <div className="w-[30%] border-[1px] rounded-lg p-4 space-y-4">
+      <div className="md:w-[30%] w-[100%] border-[1px] rounded-lg p-4 space-y-4">
         <div className="bg-[#EBF1FF] h-[100px] rounded-md w-[100%] p-4 flex flex-col justify-center">
           <p className="text-lg text-primary font-semibold">Starter plan</p>
           <p className="text-sm text-gray-600">For anyone</p>
