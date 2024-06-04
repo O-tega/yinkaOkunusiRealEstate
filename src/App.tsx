@@ -3,11 +3,11 @@ import LandingPage from "./pages";
 import WebLayout from "./layouts/WebLayout";
 import Solutions from "./pages/solutions";
 import HowItWorks from "./pages/how-it-works";
-import Pricing from "./pages/pricing";
 import Faq from "./pages/faq";
 import PrivacyPolicy from "./pages/privacy-policy";
 import TermsOfUse from "./pages/terms-of-use";
 import CookieNotice from "./pages/cookie-policy";
+import Pricing from "./pages/pricing";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/solutions/*" element={<Solutions />} />
         <Route path="/how-it-works/*" element={<HowItWorks />} />
-        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/pricing/*" element={<Pricing />} />
         <Route path="/faq" element={<Faq />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-use" element={<TermsOfUse />} />
