@@ -16,7 +16,9 @@ const PayAsYouGo: React.FC = () => {
   return (
     <div className="w-[80%] flex md:flex-row flex-col items-center mx-auto gap-[2em] my-[4em]">
       <div className="md:w-[70%] w-[100%] space-y-4">
-        <p className="md:text-4xl text-2xl font-secondary md:w-[80%] w-[100%]">Do more with our pay-as-you-go starter plan</p>
+        <p className="md:text-4xl text-2xl font-secondary md:w-[80%] w-[100%]">
+          Do more with our pay-as-you-go starter plan
+        </p>
         <p className="font-secondary">Key plan features</p>
 
         <div className="grid md:grid-cols-2 grid-cols-1 gap-2">
