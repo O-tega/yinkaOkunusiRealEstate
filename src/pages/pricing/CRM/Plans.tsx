@@ -256,7 +256,7 @@ const Plans: React.FC = () => {
         </div>
         <div className="flex justify-center">
           <div className="w-full px-4 mt-10 flex items-center justify-center">
-            <Tables  />
+            <Tables />
           </div>
         </div>
       </div>
