@@ -1,4 +1,4 @@
-import React from "react";
+
 import cancel from "@/assets/images/pricing/cancel.png";
 import fullCheck from "@/assets/images/pricing/fullCheck.png";
 
