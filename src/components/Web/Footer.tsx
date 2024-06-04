@@ -3,8 +3,9 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 import Logo from "@/assets/images/MooyiFBLogo.svg";
 import WhiteButton from "../Button/WhiteButton";
 import CTAs from "@/assets/images/mooyi/CTAs.png";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { ROUTES } from "@/constants/externalUrls";
 
 const Footer = () => {
   const companyLinks = [
@@ -38,48 +39,43 @@ const Footer = () => {
     { icon: FaLinkedin, link: "https://www.linkedin.com/company/mooyi-africa/" },
   ];
 
-  const navigate = useNavigate();
   const location = useLocation();
   const currentPath = location.pathname;
 
-  const handleEmailClick = () => {
-    window.location.href = "mailto:support@enterscale.com";
-  };
+  console.log(currentPath);
+
+  const paths = ["/pricing"];
 
   return (
     <div className=" md:p-[4rem] p-2 bg-[#F1F1FC] z-10 md:mx-auto w-full font-light sm:text-right text-center">
-      <div className="rounded-1xl w-full flex justify-center mt-4 md:mt-0">
-        <div className="text-white text-center md:w-full px-2 rounded-2xl py-6 overflow-hidden relative md:h-[252px] h-[180px] w-full">
-          <div className="absolute left-0 top-[-1rem] w-[100%]">
-            <img src={CTAs} alt="footer background" className="w-full h-[250px] md:h-[300px]" />
-          </div>
-          <div className=" absolute top-0 w-full pt-9 left-0 md:pt-12">
-            {currentPath === "/pricing" ? (
-              <p className="font-secondary md:text-[40px] text-[24px]">Not sure on how to start?</p>
-            ) : (
-              <p className="md:text-[24px] text-[15px] ">Stop guessing. Start knowing.</p>
-            )}
-            {currentPath === "/pricing" ? (
-              <p className="md:text-[24px] text-[15px]">
-                Reach out to us today for a tailored plan designed specifically for your business needs
-              </p>
-            ) : (
-              <p className="font-secondary md:text-[40px] text-[24px]">Get started with Mooyi today</p>
-            )}
-            <div className="flex justify-center pt-3">
-              <WhiteButton
-                text={currentPath === "/pricing" ? "Contact us" : "Get started"}
-                css="text-black"
-                onClick={
-                  currentPath === "/pricing"
-                    ? handleEmailClick
-                    : () => navigate(`${process.env.NEXT_PUBLIC_FRONTEND_BASE_URL}`)
-                }
-              />
+      {paths.includes(currentPath) ? null : (
+        <div className="rounded-1xl w-full flex justify-center mt-4 md:mt-0">
+          <div className="text-white text-center md:w-full px-2 rounded-2xl py-6 overflow-hidden relative md:h-[252px] h-[180px] w-full">
+            <div className="absolute left-0 top-[-1rem] w-[100%]">
+              <img src={CTAs} alt="footer background" className="w-full h-[250px] md:h-[300px]" />
+            </div>
+            <div className=" absolute top-0 w-full pt-9 left-0 md:pt-12">
+              {currentPath === "/pricing" ? (
+                <p className="font-secondary md:text-[40px] text-[24px]">Not sure on how to start?</p>
+              ) : (
+                <p className="md:text-[24px] text-[15px] ">Stop guessing. Start knowing.</p>
+              )}
+              {currentPath === "/pricing" ? (
+                <p className="md:text-[24px] text-[15px]">
+                  Reach out to us today for a tailored plan designed specifically for your business needs
+                </p>
+              ) : (
+                <p className="font-secondary md:text-[40px] text-[24px]">Get started with Mooyi today</p>
+              )}
+              <div className="flex justify-center pt-3">
+                <Link to={currentPath === "/pricing" ? "mailto:support@enterscale.com" : `${ROUTES.LOGIN}`}>
+                  <WhiteButton text={currentPath === "/pricing" ? "Contact us" : "Get started"} css="text-black" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
       <div className="flex  items-start md:justify-between justify-center space-x-5 md:space-x-0 pt-10">
         <div className="flex-col space-y-3 hidden md:block">
           <img src={Logo} alt="Logo" className="w-[185px]" />

@@ -28,6 +28,7 @@ export default {
           300: "#95ADFF",
           500: "#4852FF",
           200: "#BDCEFF",
+          100: "#DAE5FF"
         },
         "hero-left": "rgba(139, 92, 213, 1)",
         "hero-right": "rgba(66, 7, 156, 1)",

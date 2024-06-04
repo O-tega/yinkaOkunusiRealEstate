@@ -5,12 +5,13 @@ export type TModal = {
 };
 
 export type TPrimaryInput = {
-  text: string;
+  text?: string;
   type: string;
+  css?:string
   placeholder: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur: React.FocusEventHandler<HTMLInputElement>;
-  error: string | undefined | false;
+  error?: string | undefined | false | string[];
   value: string | number | undefined;
   name: string;
 };
@@ -52,3 +53,22 @@ export type TSelectInput = {
   css: string;
   defaultValue: string | number | undefined;
 };
+
+export interface Option {
+  value: string | number;
+  label: string | number;
+}
+
+import { MultiValue, ActionMeta } from "react-select";
+export interface MultiSelectInputProps {
+  options: Option[];
+  isMulti?: boolean;
+  name?: string;
+  value?: MultiValue<Option>;
+  onChange?: (newValue: MultiValue<Option>, actionMeta: ActionMeta<Option>) => void;
+  css?: string;
+  disabled?: boolean;
+  defaultValue?: MultiValue<Option>;
+  onBlur?: React.FocusEventHandler<HTMLSelectElement>;
+  error?: string | undefined | false;
+}
