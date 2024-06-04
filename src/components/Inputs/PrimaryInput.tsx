@@ -24,7 +24,7 @@ const PrimaryInput: React.FC<TPrimaryInput> = ({
         onBlur={onBlur}
         value={value}
         name={name}
-        className={`${css} rounded-[8px] border-[1px] border-[#DFE5EC] text-black h-[50px] pl-2 outline-none my-2 bg-[#FAFAFA] ${
+        className={`${css} rounded-[8px] border-[1px] border-[#DFE5EC] text-black h-[40px] pl-2 outline-none my-2 bg-[#FAFAFA] ${
           error ? "border-red-500" : ""
         }`}
       />
