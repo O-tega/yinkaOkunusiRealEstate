@@ -79,7 +79,7 @@ const tableData4: RawTableRow[] = [
 ];
 
 const Tables = ({ toggleValue }: TResearchTable) => {
-//   const indexToRemove = toggleValue === 0 ? "starterPlan" : toggleValue === 1 ? "businessPlan" : "proPlan";
+  //   const indexToRemove = toggleValue === 0 ? "starterPlan" : toggleValue === 1 ? "businessPlan" : "proPlan";
 
   const columnsToKeep = [
     "planDetails",

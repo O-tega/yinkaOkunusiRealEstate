@@ -7,7 +7,7 @@ export type TModal = {
 export type TPrimaryInput = {
   text?: string;
   type: string;
-  css?:string
+  css?: string;
   placeholder: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur: React.FocusEventHandler<HTMLInputElement>;

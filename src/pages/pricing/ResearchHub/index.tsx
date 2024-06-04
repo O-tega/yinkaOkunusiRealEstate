@@ -15,9 +15,9 @@ const ResearchHub: React.FC = () => {
   const displayTabs = () => {
     switch (values) {
       case 0:
-        return <PremiumPlan/>;
+        return <PremiumPlan />;
       case 1:
-        return <PayAsYouGo/>;
+        return <PayAsYouGo />;
       default:
     }
   };
