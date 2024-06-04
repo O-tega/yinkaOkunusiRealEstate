@@ -1,10 +1,9 @@
-import React from "react";
-import cancel from "@/assets/images/pricing/cancel.png";
+// import cancel from "@/assets/images/pricing/cancel.png";
 import fullCheck from "@/assets/images/pricing/fullCheck.png";
 
-type TResearchTable = {
-  toggleValue: number;
-};
+// type TResearchTable = {
+//   toggleValue: number;
+// };
 
 type RawTableRow = {
   planDetails: string;
@@ -13,12 +12,12 @@ type RawTableRow = {
   proPlan: string;
 };
 
-type TableRow = {
-  planDetails: string;
-  businessPlan: string | JSX.Element;
-  starterPlan: string | JSX.Element;
-  proPlan: string | JSX.Element;
-};
+// type TableRow = {
+//   planDetails: string;
+//   businessPlan: string | JSX.Element;
+//   starterPlan: string | JSX.Element;
+//   proPlan: string | JSX.Element;
+// };
 
 const tableData1: RawTableRow[] = [
   {
@@ -78,13 +77,13 @@ const tableData4: RawTableRow[] = [
   },
 ];
 
-const Tables = ({ toggleValue }: TResearchTable) => {
-//   const indexToRemove = toggleValue === 0 ? "starterPlan" : toggleValue === 1 ? "businessPlan" : "proPlan";
+const Tables = () => {
+  //   const indexToRemove = toggleValue === 0 ? "starterPlan" : toggleValue === 1 ? "businessPlan" : "proPlan";
 
-  const columnsToKeep = [
-    "planDetails",
-    toggleValue === 0 ? "starterPlan" : toggleValue === 1 ? "businessPlan" : "proPlan",
-  ];
+  // const columnsToKeep = [
+  //   "planDetails",
+  //   toggleValue === 0 ? "starterPlan" : toggleValue === 1 ? "businessPlan" : "proPlan",
+  // ];
 
   const columns = [
     { field: "planDetails", header: "Plan Details" },
@@ -93,250 +92,152 @@ const Tables = ({ toggleValue }: TResearchTable) => {
     { field: "proPlan", header: "Pro Plan" },
   ];
 
-  const transformData = (data: RawTableRow[]): TableRow[] => {
-    return data.map((item) => ({
-      planDetails: item.planDetails,
-      starterPlan:
-        item.starterPlan === "" ? (
-          <div className="w-[24px] h-[24px] flex justify-center">
-            <img src={cancel} alt="" />
-          </div>
-        ) : item.starterPlan === "same" ? (
-          <div className="w-[24px] h-[24px] flex justify-center text-center">
-            <img src={fullCheck} alt="" />
-          </div>
-        ) : (
-          item.starterPlan
-        ),
-      businessPlan:
-        item.businessPlan === "" ? (
-          <div className="w-[24px] h-[24px] flex justify-center">
-            <img src={cancel} alt="" />
-          </div>
-        ) : item.businessPlan === "same" ? (
-          <div className="w-[24px] h-[24px] flex justify-center text-center">
-            <img src={fullCheck} alt="" />
-          </div>
-        ) : (
-          item.businessPlan
-        ),
-      proPlan:
-        item.proPlan === "" ? (
-          <div className="w-[24px] h-[24px] flex justify-center">
-            <img src={cancel} alt="" />
-          </div>
-        ) : item.proPlan === "same" ? (
-          <div className="w-[24px] h-[24px] flex justify-center">
-            <img src={fullCheck} alt="" />
-          </div>
-        ) : (
-          item.proPlan
-        ),
-    }));
-  };
+  // const transformData = (data: RawTableRow[]): TableRow[] => {
+  //   return data.map((item) => ({
+  //     planDetails: item.planDetails,
+  //     starterPlan:
+  //       item.starterPlan === "" ? (
+  //         <div className="w-[24px] h-[24px] flex justify-center">
+  //           <img src={cancel} alt="" />
+  //         </div>
+  //       ) : item.starterPlan === "same" ? (
+  //         <div className="w-[24px] h-[24px] flex justify-center text-center">
+  //           <img src={fullCheck} alt="" />
+  //         </div>
+  //       ) : (
+  //         item.starterPlan
+  //       ),
+  //     businessPlan:
+  //       item.businessPlan === "" ? (
+  //         <div className="w-[24px] h-[24px] flex justify-center">
+  //           <img src={cancel} alt="" />
+  //         </div>
+  //       ) : item.businessPlan === "same" ? (
+  //         <div className="w-[24px] h-[24px] flex justify-center text-center">
+  //           <img src={fullCheck} alt="" />
+  //         </div>
+  //       ) : (
+  //         item.businessPlan
+  //       ),
+  //     proPlan:
+  //       item.proPlan === "" ? (
+  //         <div className="w-[24px] h-[24px] flex justify-center mx-auto">
+  //           <img src={cancel} alt="" />
+  //         </div>
+  //       ) : item.proPlan === "same" ? (
+  //         <div className="w-[24px] h-[24px] flex justify-center">
+  //           <img src={fullCheck} alt="" />
+  //         </div>
+  //       ) : (
+  //         item.proPlan
+  //       ),
+  //   }));
+  // };
 
-  const table1 = transformData(tableData1);
-  const table2 = transformData(tableData2);
-  const table3 = transformData(tableData3);
-  const table4 = transformData(tableData4);
+  // const table1 = transformData(tableData1);
+  // const table2 = transformData(tableData2);
+  // const table3 = transformData(tableData3);
+  // const table4 = transformData(tableData4);
 
   return (
-    <div>
-      <div className="md:hidden">
-        <table className="w-[100%] mb-4 text-[14px]">
-          <thead className="h-[50px] text-[14px]">
-            <tr className="h-[50px] overflow-hidden">
-              {columns
-                .filter((column) => columnsToKeep.includes(column.field))
-                .map((head, i) => (
-                  <th key={i} className="px-2 text-left">
-                    {head.header}
-                  </th>
-                ))}
-            </tr>
-          </thead>
-        </table>
-        <div>
-          <p className="font-[600] text-center">Customer Management Hub</p>
-        </div>
-        <table className="w-[100%] mb-4 text-[14px]">
-          <tbody>
-            {table1.map((row, i) => {
-              return (
-                <tr className="h-[50px] text-[14px] text-[#404040] font-[400] cursor-pointer" key={i}>
-                  {columns
-                    .filter((column) => columnsToKeep.includes(column.field))
-                    .map((col, j) => {
-                      return (
-                        <td key={j} className={`px-4 relative`}>
-                          {row[col.field as keyof TableRow] || "-"}
-                        </td>
-                      );
-                    })}
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-        <div>
-          <p className="font-[600] text-center">Multichannel messaging</p>
-        </div>
-        <table className="w-[100%] mb-4 text-[14px]">
-          <tbody>
-            {table2.map((row, i) => {
-              return (
-                <tr className="h-[50px] text-[14px] text-[#404040] font-[400] cursor-pointer" key={i}>
-                  {columns
-                    .filter((column) => columnsToKeep.includes(column.field))
-                    .map((col, j) => {
-                      return (
-                        <td key={j} className={`px-4 relative`}>
-                          {row[col.field as keyof TableRow] || "-"}
-                        </td>
-                      );
-                    })}
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-        <div>
-          <p className="font-[600] text-center">Customer insight</p>
-        </div>
-        <table className="w-[100%] mb-4 text-[14px]">
-          <tbody>
-            {table3.map((row, i) => {
-              return (
-                <tr className="h-[50px] text-[14px] text-[#404040] font-[400] cursor-pointer" key={i}>
-                  {columns
-                    .filter((column) => columnsToKeep.includes(column.field))
-                    .map((col, j) => {
-                      return (
-                        <td key={j} className={`px-4 relative`}>
-                          {row[col.field as keyof TableRow] || "-"}
-                        </td>
-                      );
-                    })}
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-        <div>
-          <p className="font-[600] text-center">User access</p>
-        </div>
-        <table className="w-[100%] mb-4 text-[14px]">
-          <tbody>
-            {table4.map((row, i) => {
-              return (
-                <tr className="h-[50px] text-[14px] text-[#404040] font-[400] cursor-pointer" key={i}>
-                  {columns
-                    .filter((column) => columnsToKeep.includes(column.field))
-                    .map((col, j) => {
-                      return (
-                        <td key={j} className={`px-4 relative text-[14px]`}>
-                          {row[col.field as keyof TableRow] || "-"}
-                        </td>
-                      );
-                    })}
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+    <div className="w-[80%] my-[3em]">
+      <div className="flex items-center bg-neutral-100 p-2 ">
+        {columns.map((el) => {
+          return <p className={el.field === "planDetails" ? "w-[30%]" : "w-[22%]"}>{el.header}</p>;
+        })}
       </div>
-      <div className="hidden md:block">
-        <table className="w-[100%] mb-4">
-          <thead className="h-[50px] text-s">
-            <tr className="h-[50px] overflow-hidden">
-              {columns.map((head, i) => (
-                <th key={i} className="px-2 text-left">
-                  {head.header}
-                </th>
-              ))}
-            </tr>
-          </thead>
-        </table>
-        <div>
-          <p className="font-[600] text-center">Customer Management Hub</p>
-        </div>
-        <table className="w-[100%] mb-4">
-          <tbody>
-            {table1.map((row, i) => {
-              return (
-                <tr className="h-[50px] text-ss text-[#404040] font-[400] cursor-pointer" key={i}>
-                  {columns.map((col, j) => {
-                    return (
-                      <td key={j} className={`px-4 relative`}>
-                        {row[col.field as keyof TableRow] || "-"}
-                      </td>
-                    );
-                  })}
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-        <div>
-          <p className="font-[600] text-center">Multichannel messaging</p>
-        </div>
-        <table className="w-[100%] mb-4">
-          <tbody>
-            {table2.map((row, i) => {
-              return (
-                <tr className="h-[50px] text-ss text-[#404040] font-[400] cursor-pointer" key={i}>
-                  {columns.map((col, j) => {
-                    return (
-                      <td key={j} className={`px-4 relative`}>
-                        {row[col.field as keyof TableRow] || "-"}
-                      </td>
-                    );
-                  })}
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-        <div>
-          <p className="font-[600] text-center">Customer insight</p>
-        </div>
-        <table className="w-[100%] mb-4">
-          <tbody>
-            {table3.map((row, i) => {
-              return (
-                <tr className="h-[50px] text-ss text-[#404040] font-[400] cursor-pointer" key={i}>
-                  {columns.map((col, j) => {
-                    return (
-                      <td key={j} className={`px-4 relative`}>
-                        {row[col.field as keyof TableRow] || "-"}
-                      </td>
-                    );
-                  })}
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-        <div>
-          <p className="font-[600] text-center">User access</p>
-        </div>
-        <table className="w-[100%] mb-4">
-          <tbody>
-            {table4.map((row, i) => {
-              return (
-                <tr className="h-[50px] text-ss text-[#404040] font-[400] cursor-pointer" key={i}>
-                  {columns.map((col, j) => {
-                    return (
-                      <td key={j} className={`px-4 relative`}>
-                        {row[col.field as keyof TableRow] || "-"}
-                      </td>
-                    );
-                  })}
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+
+      <div>
+        <p className="font-[600] text-center my-6">Customer Management Hub</p>
+      </div>
+
+      <div className="text-sm">
+        {tableData1.map((el) => {
+          return (
+            <div className="flex items-center p-3 bg-neutral-100 my-2 ">
+              <p className="w-[30%]">{el.planDetails}</p>
+              <p className="w-[22%] ">
+                {el.starterPlan === "same" ? (
+                  <div className="w-[24px] h-[24px] flex justify-center text-center ml-[15%]">
+                    <img src={fullCheck} alt="" />
+                  </div>
+                ) : (
+                  el.starterPlan
+                )}
+              </p>
+              <p className="w-[22%]">
+                {el.businessPlan === "same" ? (
+                  <div className="w-[24px] h-[24px] flex justify-center text-center ml-[15%]">
+                    <img src={fullCheck} alt="" />
+                  </div>
+                ) : (
+                  el.businessPlan
+                )}
+              </p>
+
+              <p className="w-[22%]">
+                {el.proPlan === "same" ? (
+                  <div className="w-[24px] h-[24px] flex items-center justify-center ml-[15%]">
+                    <img src={fullCheck} alt="" />
+                  </div>
+                ) : (
+                  el.proPlan
+                )}
+              </p>
+            </div>
+          );
+        })}
+      </div>
+
+      <div>
+        <p className="font-[600] text-center my-6">Multichannel messaging</p>
+      </div>
+
+      <div className="">
+        {tableData2.map((el) => {
+          return (
+            <div className="flex items-center justify-between text-sm p-3 bg-neutral-100 my-2">
+              <p className="w-[30%]">{el.planDetails}</p>
+              <p className="w-[22%]">{el.starterPlan}</p>
+              <p className="w-[22%]">{el.businessPlan}</p>
+              <p className="w-[22%]">{el.proPlan}</p>
+            </div>
+          );
+        })}
+      </div>
+
+      <div>
+        <p className="font-[600] text-center my-6">Customer insight</p>
+      </div>
+
+      <div className="space-y-4 bg-neutral-100 p-3 text-sm ">
+        {tableData3.map((el) => {
+          return (
+            <div className="flex items-center justify-between ">
+              <p className="w-[30%]">{el.planDetails}</p>
+              <p className="w-[22%]">{el.starterPlan}</p>
+              <p className="w-[22%]">{el.businessPlan}</p>
+              <p className="w-[22%]">{el.proPlan}</p>
+            </div>
+          );
+        })}
+      </div>
+
+      <div>
+        <p className="font-[600] text-center my-6">User access</p>
+      </div>
+
+      <div className="space-y-4 bg-neutral-100 p-3 text-sm ">
+        {tableData4.map((el) => {
+          return (
+            <div className="flex items-center justify-between">
+              <p className="w-[25%]">{el.planDetails}</p>
+              <p className="w-[25%]">{el.starterPlan}</p>
+              <p className="w-[25%]">{el.businessPlan}</p>
+              <p className="w-[25%]">{el.proPlan}</p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

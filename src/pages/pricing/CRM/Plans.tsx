@@ -255,8 +255,8 @@ const Plans: React.FC = () => {
           </p>
         </div>
         <div className="flex justify-center">
-          <div className="md:w-full px-4 mt-10">
-            <Tables toggleValue={values} />
+          <div className="w-full px-4 mt-10 flex items-center justify-center">
+            <Tables  />
           </div>
         </div>
       </div>
