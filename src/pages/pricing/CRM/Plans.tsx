@@ -2,25 +2,26 @@ import React, { useState } from "react";
 import ToggleButton from "@/components/Button/ToogleButton";
 import { useQuery } from "@tanstack/react-query";
 import { getRates } from "@/service/rates";
-import Group from "@/assets/images/pricing/Group.png";
+import uncoverInsight from "@/assets/images/mooyi/uncoverInsight.png";
 import giftPricing from "@/assets/images/pricing/giftPricing.png";
 import checker from "@/assets/images/pricing/check.png";
 import customGroups from "@/assets/images/pricing/customGroups.png";
 import Card from "../Card";
 import Tables from "./Tables";
+import BlueButton from "@/components/Button/BlueButton";
 
 const cardData = [
   {
-    title: "CRM Hub",
-    subtitle: "Drive success with our comprehensive CRM and messaging features.",
-    img: Group,
-    link: "/pricing/customer-research-model",
+    title: "Research Hub",
+    subtitle: "Streamline your research with our all-in-one platform.",
+    img: uncoverInsight,
+    link: "/pricing/research-hub",
   },
   {
     title: "Custom Plan",
     subtitle: "Create a customised plan that fits your business needs.",
     img: giftPricing,
-    link: "#",
+    link: "/pricing/custom",
   },
 ];
 
@@ -58,6 +59,9 @@ const PlanCard = ({ title, subtitle, tag, info, amount, featureTitle, features, 
             {toggle ? `₦${((amount * conversionRate) as number).toLocaleString()}` : `$${amount.toLocaleString()}`}
           </p>
           <p className="font-[600] text-gray-500 ">Per month</p>
+        </div>
+        <div className="mt-5">
+          <BlueButton text="Buy now" type="button" css="w-full" />
         </div>
         <div className="my-5">
           <hr />

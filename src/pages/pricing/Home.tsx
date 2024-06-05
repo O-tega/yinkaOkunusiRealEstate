@@ -32,7 +32,7 @@ const Home: React.FC = () => {
       title: "Custom Plan",
       subtitle: "Create a customised plan that fits your business needs.",
       img: giftPricing,
-      link: "#",
+      link: "/pricing/custom",
     },
   ];
 
