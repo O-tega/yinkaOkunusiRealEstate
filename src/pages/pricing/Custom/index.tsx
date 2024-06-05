@@ -151,7 +151,7 @@ const Custom: React.FC = () => {
   const totalAmount = researchAmount + crmAmount;
   return (
     <div>
-      <div className="w-[100%] mx-auto md:h-[calc(100vh-400px)] pb-10 md:pb-0 bg-[#EFF3FF] overflow-hidden pt-16 md:pt-0 relative">
+      <div className="w-[100%] mx-auto md:h-[260px] pb-10 md:pb-0 bg-[#EFF3FF] overflow-hidden pt-10 md:pt-0 relative">
         <div>
           <img
             src={faqBackground}
@@ -169,18 +169,18 @@ const Custom: React.FC = () => {
         <div className="w-full flex justify-center md:px-[5rem] px-4 z-10 tracking-tight">
           <div className="flex items-center flex-col md:mt-[5rem]">
             <div>
-              <p className="font-secondary md:text-[40px] text-center text-[24px] md:leading-[3rem] tracking-tight pt-5">
+              <p className="font-secondary md:text-[40px] text-center text-[24px] md:leading-[3rem] tracking-tight pt-3">
                 Custom Plan
               </p>
-              <p className=" md:text-[20px] pt-5 text-[16px] text-center">
+              <p className=" md:text-[20px] pt-2 text-[16px] text-center">
                 Create a customised plan tailored to your business needs.
               </p>
             </div>
-            <div className="md:flex items-center space-x-7 mt-7"></div>
+            <div className="md:flex items-center space-x-7 mt-5"></div>
           </div>
         </div>
         <div>
-          <div className="pt-5 flex w-full justify-center items-center space-x-3">
+          <div className=" flex w-full justify-center items-center space-x-3">
             <p className={`${!toggleValue && "font-bold"}`}>USD</p>
             <ToggleButton toggleValue={toggleValue} onChange={handleToggleChange} />
             <p className={`${toggleValue && "font-bold"}`}>NGN</p>

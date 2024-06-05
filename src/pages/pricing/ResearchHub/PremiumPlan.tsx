@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import ToggleButton from "@/components/Button/ToogleButton";
-import { useQuery } from "@tanstack/react-query";
-import { getRates } from "@/service/rates";
 import Group from "@/assets/images/pricing/Group.png";
 import giftPricing from "@/assets/images/pricing/giftPricing.png";
 import { HiOutlinePlus, HiOutlineMinus } from "react-icons/hi";
@@ -30,7 +27,7 @@ type Tplan = {
   title: string;
   subtitle: string;
   tag?: string;
-  responses: string;
+  responses: number;
   info: string;
   amount: number;
   featureTitle: string;
@@ -51,6 +48,7 @@ const PlanCard = ({
   conversionRate,
   toggle,
 }: Tplan) => {
+  const [newresponses, setNewResponses] = useState<number>(responses);
   return (
     <div className="border rounded-2xl w-[411px] p-3">
       <div className="bg-blue-100 p-5 rounded-t-xl h-[7rem]">
@@ -69,11 +67,19 @@ const PlanCard = ({
         <div className="mt-3">
           <p className="text-[12px]">responses</p>
           <div className="flex items-center mt-1">
-            <div className="border rounded-l-md h-[30px] border-r-0  p-2 flex items-center justify-center cursor-pointer">
+            <div
+              className={`border rounded-l-md h-[30px] border-r-0  p-2 flex items-center justify-center cursor-pointer  ${
+                newresponses < 300 ? "text-gray-400 cursor-not-allowed" : "cursor-pointer"
+              }`}
+              onClick={() => setNewResponses(newresponses > 200 ? newresponses - 100 : newresponses)}
+            >
               <HiOutlineMinus />
             </div>
-            <div className="border p-2 flex items-center justify-center h-[30px] text-[12px]">{responses}</div>
-            <div className="border rounded-r-md border-l-0 h-[30px]  p-2 flex items-center justify-center cursor-pointer">
+            <div className="border p-2 flex items-center justify-center h-[30px] text-[12px]">{newresponses}</div>
+            <div
+              className="border rounded-r-md border-l-0 h-[30px]  p-2 flex items-center justify-center cursor-pointer"
+              onClick={() => setNewResponses(newresponses + 100)}
+            >
               <HiOutlinePlus />
             </div>
           </div>
@@ -111,22 +117,15 @@ const PlanCard = ({
   );
 };
 
-const PremiumPlan: React.FC = () => {
-  const [toggleValue, setToggleValue] = useState(false);
+type TPremiumPlan = {
+  conversionRate: number;
+  toggleValue: boolean;
+};
+
+const PremiumPlan: React.FC<TPremiumPlan> = ({ conversionRate, toggleValue }) => {
   const [values, setValues] = useState(0);
   // const [businessResp, setBusinessRes] = useState<number>(500);
   // const [proResp, setProRes] = useState<number>(5000);
-
-  const rates = useQuery({
-    queryKey: ["rates"],
-    queryFn: getRates,
-  });
-
-  const handleToggleChange = () => {
-    setToggleValue(!toggleValue);
-  };
-
-  const conversionRate = rates?.data?.data[0].currencyRates[7].userRate;
 
   const tabs = [
     { name: "Business plan", value: 0 },
@@ -138,7 +137,7 @@ const PremiumPlan: React.FC = () => {
       title: "Business Plan",
       subtitle: "Ideal for scale-ups and e-commerce",
       tag: "Popular",
-      responses: "200",
+      responses: 200,
       info: "Send up to 200 online surveys every month",
       amount: 500,
       featureTitle: "Key plan features",
@@ -153,7 +152,7 @@ const PremiumPlan: React.FC = () => {
       title: "Pro Plan",
       subtitle: "Ideal for consumer brands, retailers, agencies, and enterprises",
       tag: "",
-      responses: "1000",
+      responses: 1000,
       info: "Send up to 1,000 online surveys every month",
       amount: 5000,
       featureTitle: "Everything in the Business plan plus, ",
@@ -167,18 +166,7 @@ const PremiumPlan: React.FC = () => {
 
   return (
     <div>
-      <div className="bg-white md:p-[5rem] px-5 py-[5rem]">
-        <div className="flex justify-center">
-          <p className="text-[16px] md:text-[20px] text-center md:w-[60%] px-3">
-            Gather valuable insights and reach your target audience with ease. Our premium features gives you access to
-            our pool of experienced respondents.
-          </p>
-        </div>
-        <div className="pt-5 flex w-full justify-center items-center space-x-3">
-          <p className={`${!toggleValue && "font-bold"}`}>USD</p>
-          <ToggleButton toggleValue={toggleValue} onChange={handleToggleChange} />
-          <p className={`${toggleValue && "font-bold"}`}>NGN</p>
-        </div>
+      <div className="bg-white md:px-[5rem] md:py-[1rem] px-5 py-[2rem]">
         <div className="flex items-center border-b justify-center space-x-4 mt-5 md:hidden">
           {tabs.map((el, i) => (
             <div
