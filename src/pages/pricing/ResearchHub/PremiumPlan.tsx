@@ -51,7 +51,6 @@ const PlanCard = ({
   conversionRate,
   toggle,
 }: Tplan) => {
-
   return (
     <div className="border rounded-2xl w-[411px] p-3">
       <div className="bg-blue-100 p-5 rounded-t-xl h-[7rem]">
@@ -115,9 +114,8 @@ const PlanCard = ({
 const PremiumPlan: React.FC = () => {
   const [toggleValue, setToggleValue] = useState(false);
   const [values, setValues] = useState(0);
-    // const [businessResp, setBusinessRes] = useState<number>(500);
-    // const [proResp, setProRes] = useState<number>(5000);
-
+  // const [businessResp, setBusinessRes] = useState<number>(500);
+  // const [proResp, setProRes] = useState<number>(5000);
 
   const rates = useQuery({
     queryKey: ["rates"],
