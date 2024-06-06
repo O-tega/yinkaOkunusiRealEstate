@@ -13,7 +13,7 @@ import { ROUTES } from "@/constants/externalUrls";
 const cardData = [
   {
     title: "Engagement Hub",
-    subtitle: "Drive success with our comprehensive CRM and messaging features.",
+    subtitle: "Drive your business success with our comprehensive customer engagement.",
     img: Group,
     link: "/pricing/engagement-hub",
   },
@@ -52,7 +52,7 @@ const PlanCard = ({
 }: Tplan) => {
   const [newresponses, setNewResponses] = useState<number>(responses);
   return (
-    <div className="border rounded-2xl w-[411px] h-[45rem] p-3">
+    <div className="border rounded-2xl w-[411px] h-[45rem] p-3 shadow-md">
       <div className="bg-blue-100 p-5 rounded-t-xl h-[7rem]">
         <div className="flex justify-between">
           <p className="text-[20px] font-[600] text-primary">{title}</p>
@@ -67,7 +67,7 @@ const PlanCard = ({
       <div className="mt-5 px-5">
         <p className="md:text-[15px] text-[14px]">{info}</p>
         <div className="mt-3">
-          <p className="text-[12px]">responses</p>
+          <p className="text-[12px]">Responses</p>
           <div className="flex items-center mt-1">
             <div
               className={`border rounded-l-md h-[30px] border-r-0  p-2 flex items-center justify-center cursor-pointer  ${
@@ -87,7 +87,9 @@ const PlanCard = ({
           </div>
         </div>
         {title === "Pro Plan" ? (
-          <div className="h-[70px]"></div>
+          <div>
+            <p className="text-[38px] md:text-[40px] font-[600]">Custom</p>
+          </div>
         ) : (
           <div className="flex items-center space-x-3 mt-3">
             <p className="text-[38px] md:text-[40px] font-[600]">
@@ -174,7 +176,7 @@ const PremiumPlan: React.FC<TPremiumPlan> = ({ conversionRate, toggleValue }) =>
 
   return (
     <div>
-      <div className="bg-white md:px-[5rem] md:py-[1rem] px-5 py-[2rem]">
+      <div className="bg-white md:px-[5rem] md:py-[5rem] px-5 py-[3rem]">
         <div className="flex items-center border-b justify-center space-x-4 mt-5 md:hidden">
           {tabs.map((el, i) => (
             <div
@@ -188,7 +190,7 @@ const PremiumPlan: React.FC<TPremiumPlan> = ({ conversionRate, toggleValue }) =>
             </div>
           ))}
         </div>
-        <div className="justify-center space-x-10 items-start mt-10 hidden md:flex">
+        <div className="justify-center space-x-10 items-start hidden md:flex">
           {subPlans.map((el, i) => (
             <PlanCard
               title={el.title}
@@ -247,7 +249,7 @@ const PremiumPlan: React.FC<TPremiumPlan> = ({ conversionRate, toggleValue }) =>
           <Quotation />
         </div>
       </div>
-      <div className="mt-[5rem] bg-white">
+      <div className="my-[5rem] bg-white">
         <p className="font-secondary md:text-[40px] text-[24px] text-center">Explore all our features</p>
         <div className="flex justify-center">
           <p className="text-[16px] md:text-[20px] text-center md:w-[35%] px-3">
@@ -255,15 +257,17 @@ const PremiumPlan: React.FC<TPremiumPlan> = ({ conversionRate, toggleValue }) =>
           </p>
         </div>
         <div className="flex justify-center">
-          <div className="md:w-[70%] px-4 md:pc-0 mt-10">
+          <div className="md:w-[80%] px-4 md:pc-0 mt-10">
             <ResearchTable toggleValue={values} />
           </div>
         </div>
       </div>
-      <div className="md:flex justify-center hidden ">
-        <div className="bg-[#F8FAFF] w-[80%] flex items-center justify-between p-5 py-[5rem]">
+      <div className="md:flex justify-center hidden py-[8rem] ">
+        <div className="bg-[#F8FAFF] w-[90%] flex items-center justify-between md:px-[5rem] rounded-2xl p-5 py-[5rem]">
           <div>
-            <p className="font-secondary text-[36px] w-[80%]">Scale your business with our affordable pricing.</p>
+            <p className="font-secondary md:text-[36px] text-[24px]">
+              Scale your business with our affordable pricing.
+            </p>
             <p className="text-[18px] w-[80%]">Explore more options that suit your business needs.</p>
           </div>
           <div className="md:flex items-center space-x-7 mt-7">

@@ -6,6 +6,8 @@ import { useQuery } from "@tanstack/react-query";
 import { getRates } from "@/service/rates";
 import ToggleButton from "@/components/Button/ToogleButton";
 import MobileDropNav from "../MobileDropNav";
+import { Link } from "react-router-dom";
+import { IoChevronBackOutline } from "react-icons/io5";
 
 const CRM: React.FC = () => {
   const [toggleValue, setToggleValue] = useState(false);
@@ -44,15 +46,25 @@ const CRM: React.FC = () => {
             className="w-full object-cover h-[400px] absolute top-0 z-0 md:hidden"
           />
         </div>
-        <div className="w-full flex justify-center md:px-[5rem] px-4 z-10 tracking-tight">
+        <div className="w-full flex justify-center md:px-[5rem] px-4 z-10 tracking-tight relative">
+          <div className="absolute top-[5rem] left-[5rem]">
+            <Link to="/pricing">
+              <div className="flex items-center space-x-3 text-primary underline">
+                <span>
+                  <IoChevronBackOutline />
+                </span>{" "}
+                <p>Back to plans</p>{" "}
+              </div>
+            </Link>
+          </div>
           <div className="flex items-center flex-col md:mt-[5rem]">
             <div>
               <p className="font-secondary md:text-[40px] text-center text-[24px] md:leading-[3rem] tracking-tight hidden md:block">
                 Engagement Hub
               </p>
               <div className="relative md:hidden">
-                  <MobileDropNav />
-                </div>
+                <MobileDropNav />
+              </div>
               <div className="flex justify-center">
                 <p className="text-[16px] md:text-[20px] text-center md:w-[80%] px-3">
                   Drive your business success with our comprehensive customer engagement.

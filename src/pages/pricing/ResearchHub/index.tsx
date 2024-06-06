@@ -7,6 +7,8 @@ import { useQuery } from "@tanstack/react-query";
 import { getRates } from "@/service/rates";
 import ToggleButton from "@/components/Button/ToogleButton";
 import MobileDropNav from "../MobileDropNav";
+import { Link } from "react-router-dom";
+import { IoChevronBackOutline } from "react-icons/io5";
 
 const tabs = [
   { name: "Premium plans", value: 0 },
@@ -54,7 +56,17 @@ const ResearchHub: React.FC = () => {
             className="w-full object-cover h-[400px] absolute top-0 z-0 md:hidden"
           />
         </div>
-        <div className="w-full flex justify-center md:px-[5rem] px-4 z-10 tracking-tight">
+        <div className="w-full flex justify-center md:px-[5rem] px-4 z-10 tracking-tight relative">
+        <div className="absolute top-[5rem] left-[5rem]">
+            <Link to="/pricing">
+              <div className="flex items-center space-x-3 text-primary underline">
+                <span>
+                  <IoChevronBackOutline />
+                </span>{" "}
+                <p>Back to plans</p>{" "}
+              </div>
+            </Link>
+          </div>
           <div className="flex items-center flex-col md:mt-[3rem]">
             <div>
               <p className="font-secondary md:text-[40px] text-center text-[24px] md:leading-[3rem] tracking-tight pt-5 md:block hidden">
