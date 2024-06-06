@@ -10,6 +10,11 @@ import { getCity, getState } from "@/service/stateCities";
 import SelectMultiple from "@/components/Inputs/MultiSelect";
 import { Option } from "@/types/componentTypes";
 import BlueButton from "@/components/Button/BlueButton";
+import EmptyState from "@/components/EmptyState";
+import emptyState from "@/assets/images/pricing/emptyEstimate.png";
+import Modal from "@/components/Modal";
+import { Link } from "react-router-dom";
+import { ROUTES } from "@/constants/externalUrls";
 
 interface TProps {
   name: string;
@@ -37,6 +42,7 @@ const Quotation: React.FC = () => {
   const [newCityArray, setNewCityArray] = useState([]);
   const [price, setPrice] = useState<number | null>(null);
   const [selectedGenders, setSelectedGenders] = useState<string[]>([]);
+  const [openModal, setOpenModal] = useState(false);
   const handleSelect = (id: number | null) => {
     selectSurveyType(id === surveyType ? null : id);
   };
@@ -70,13 +76,9 @@ const Quotation: React.FC = () => {
     label: el.name,
     value: el.name,
   }));
-
-  console.log(cityData);
-
-  console.log(values.state);
   const stateValue = values?.state?.map((el) => el.value);
   const cityValue = values?.lga?.map((el) => el.value);
-  console.log(stateValue[0]?.toString());
+  const categoryValue = values?.categoryOfInterest?.map((el) => el.value);
 
   useEffect(() => {
     if (stateArray !== undefined && stateValue.length === 1) {
@@ -225,7 +227,7 @@ const Quotation: React.FC = () => {
                 ))}
               </div>
             </div>
-            <div className="flex items-center space-x-5 w-[70%] mt-5">
+            <div className="md:flex items-center md:space-x-5 space-y-5 md:space-y-0 md:w-[70%] w-full mt-5">
               <div className="w-full">
                 <p className="font-[500] text-[16px] mb-2">State</p>
                 <SelectMultiple
@@ -251,15 +253,34 @@ const Quotation: React.FC = () => {
               <SelectMultiple
                 name="categoryOfInterest"
                 value={values.categoryOfInterest}
-                css="w-[70%]"
+                css="md:w-[70%] w-full"
                 onChange={(selectedOptions) => setFieldValue("categoryOfInterest", selectedOptions)}
                 options={categoryArray}
               />
+            </div>
+            <div>
+              <p
+                className="text-primary underline text-[12px] cursor-pointer mt-5"
+                onClick={() => setOpenModal(!openModal)}
+              >
+                Preview selection
+              </p>
             </div>
           </form>
         </div>
         <div className="hidden md:block w-[40%]">
           <p className="font-[500] text-[16px]">Preview</p>
+          <div>
+            {button ? (
+              <div className="h-[500px]">
+                <EmptyState
+                  title="Nothing to show yet."
+                  subtitle="Your custom selection will show up here."
+                  img={emptyState}
+                />
+              </div>
+            ) : null}
+          </div>
           <div className="mt-5">
             {values.leastAge !== "" && values.mostAge !== "" ? (
               <div>
@@ -310,6 +331,19 @@ const Quotation: React.FC = () => {
               </div>
             ) : null}
           </div>
+          <div className="mt-3">
+            {categoryValue.length !== 0 ? (
+              <div>
+                <p>Category of interest(s)</p>
+                <ul className="space-y-2">
+                  {categoryValue.map((el, i) => (
+                    <li key={i}>{el}</li>
+                  ))}
+                </ul>
+                <hr className="w-full mt-2" />
+              </div>
+            ) : null}
+          </div>
         </div>
       </div>
       <div className="bg-white absolute w-[99%] border-t mt-5 right-1">
@@ -319,10 +353,95 @@ const Quotation: React.FC = () => {
             <p className="font-[700] text-[32px] text-primary">{price !== null ? `$${price}` : "$0.00"}</p>
           </div>
           <div className="w-full flex justify-center ">
-            <BlueButton text="Buy now" type="button" css="w-full" onClick={handleClick} disabled={button} />
+            <Link to={button ? "#" : `${ROUTES.LOGIN}/register`} className="w-full">
+              <BlueButton text="Buy now" type="button" css="w-full" onClick={handleClick} disabled={button} />
+            </Link>
           </div>
         </div>
       </div>
+      {openModal && (
+        <div className="md:hidden">
+          <Modal title="" onClose={() => setOpenModal(false)}>
+            <div className="w-[350px]">
+              <p className="font-[500] text-[16px]">Preview</p>
+              <div>
+                {button ? (
+                  <div className="h-[500px]">
+                    <EmptyState
+                      title="Nothing to show yet."
+                      subtitle="Your custom selection will show up here."
+                      img={emptyState}
+                    />
+                  </div>
+                ) : null}
+              </div>
+              <div className="mt-5">
+                {values.leastAge !== "" && values.mostAge !== "" ? (
+                  <div>
+                    <p>Age</p>
+                    <p>
+                      {values.leastAge} to {values.mostAge}
+                    </p>
+                    <hr className="w-full mt-2" />
+                  </div>
+                ) : null}
+              </div>
+              <div className="mt-3">
+                {selectedGenders.length !== 0 ? (
+                  <div>
+                    <p>Genders</p>
+                    <ul className="space-y-2">
+                      {selectedGenders.map((el, i) => (
+                        <li key={i}>{el}</li>
+                      ))}
+                    </ul>
+                    <hr className="w-full mt-2" />
+                  </div>
+                ) : null}
+              </div>
+              <div className="mt-3">
+                {stateValue.length !== 0 ? (
+                  <div>
+                    <p>State</p>
+                    <ul className="space-y-2">
+                      {stateValue.map((el, i) => (
+                        <li key={i}>{el}</li>
+                      ))}
+                    </ul>
+                    <hr className="w-full mt-2" />
+                  </div>
+                ) : null}
+              </div>
+              <div className="mt-3">
+                {stateValue.length === 1 ? (
+                  <div>
+                    <p>Local Government Area(s)</p>
+                    <ul className="space-y-2">
+                      {cityValue.map((el, i) => (
+                        <li key={i}>{el}</li>
+                      ))}
+                    </ul>
+                    <hr className="w-full mt-2" />
+                  </div>
+                ) : null}
+              </div>
+              <div className="mt-3">
+                {categoryValue.length !== 0 ? (
+                  <div>
+                    <p>Category of interest(s)</p>
+                    <ul className="space-y-2">
+                      {categoryValue.map((el, i) => (
+                        <li key={i}>{el}</li>
+                      ))}
+                    </ul>
+                    <hr className="w-full mt-2" />
+                  </div>
+                ) : null}
+              </div>
+            </div>
+          </Modal>
+        </div>
+      )}
     </div>
   );
 };

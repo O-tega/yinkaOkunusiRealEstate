@@ -1,26 +1,27 @@
-import React, { useState } from "react";
-import ToggleButton from "@/components/Button/ToogleButton";
-import { useQuery } from "@tanstack/react-query";
-import { getRates } from "@/service/rates";
-import Group from "@/assets/images/pricing/Group.png";
+import React from "react";
+import uncoverInsight from "@/assets/images/mooyi/uncoverInsight.png";
 import giftPricing from "@/assets/images/pricing/giftPricing.png";
+import customerHeadphone from "@/assets/images/pricing/customerHeadphone.png";
 import checker from "@/assets/images/pricing/check.png";
 import customGroups from "@/assets/images/pricing/customGroups.png";
 import Card from "../Card";
 import Tables from "./Tables";
+import BlueButton from "@/components/Button/BlueButton";
+import { Link } from "react-router-dom";
+import { ROUTES } from "@/constants/externalUrls";
 
 const cardData = [
   {
-    title: "CRM Hub",
-    subtitle: "Drive success with our comprehensive CRM and messaging features.",
-    img: Group,
-    link: "/pricing/customer-research-model",
+    title: "Research Hub",
+    subtitle: "Streamline your research with our all-in-one platform.",
+    img: uncoverInsight,
+    link: "/pricing/research-hub",
   },
   {
     title: "Custom Plan",
     subtitle: "Create a customised plan that fits your business needs.",
     img: giftPricing,
-    link: "#",
+    link: "/pricing/custom",
   },
 ];
 
@@ -53,11 +54,20 @@ const PlanCard = ({ title, subtitle, tag, info, amount, featureTitle, features, 
       </div>
       <div className="mt-5 px-5">
         <p className="md:text-[15px] text-[14px]">{info}</p>
-        <div className="flex items-center space-x-3 mt-3">
-          <p className="text-[38px] md:text-[40px] font-[600]">
-            {toggle ? `₦${((amount * conversionRate) as number).toLocaleString()}` : `$${amount.toLocaleString()}`}
-          </p>
-          <p className="font-[600] text-gray-500 ">Per month</p>
+        {title === "Pro Plan" ? (
+          <div className="h-[70px]"></div>
+        ) : (
+          <div className="flex items-center space-x-3 mt-3">
+            <p className="text-[38px] md:text-[40px] font-[600]">
+              {toggle ? `₦${((amount * conversionRate) as number).toLocaleString()}` : `$${amount.toLocaleString()}`}
+            </p>
+            <p className="font-[600] text-gray-500 ">Per month</p>
+          </div>
+        )}
+        <div className="mt-5">
+          <Link to={title === "Pro Plan" ? "mailto:support@enterscale.com" : `${ROUTES.LOGIN}/register`}>
+            <BlueButton text={title === "Pro Plan" ? "Contact us" : "Buy now"} type="button" css="w-full" />
+          </Link>
         </div>
         <div className="my-5">
           <hr />
@@ -80,27 +90,13 @@ const PlanCard = ({ title, subtitle, tag, info, amount, featureTitle, features, 
   );
 };
 
-const Plans: React.FC = () => {
-  const [toggleValue, setToggleValue] = useState(false);
-  const [values, setValues] = useState(0);
+type TPlans = {
+  conversionRate: number;
+  values: number;
+  toggleValue: boolean;
+};
 
-  const rates = useQuery({
-    queryKey: ["rates"],
-    queryFn: getRates,
-  });
-
-  const handleToggleChange = () => {
-    setToggleValue(!toggleValue);
-  };
-
-  const conversionRate = rates?.data?.data[0].currencyRates[7].userRate;
-
-  const tabs = [
-    { name: "Starter plan", value: 0 },
-    { name: "Business plan", value: 1 },
-    { name: "Pro plan", value: 2 },
-  ];
-
+const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
   const subPlans = [
     {
       title: "Starter Plan",
@@ -162,31 +158,7 @@ const Plans: React.FC = () => {
 
   return (
     <div>
-      <div className="bg-white md:p-[5rem] px-5 py-[5rem]">
-        <div className="flex justify-center">
-          <p className="text-[16px] md:text-[20px] text-center md:w-[60%] px-3">
-            Store and handle contacts up to your plan's limit, categorise customers with tags, and create segments with
-            customer attributes.
-          </p>
-        </div>
-        <div className="pt-5 flex w-full justify-center items-center space-x-3">
-          <p className={`${!toggleValue && "font-bold"}`}>USD</p>
-          <ToggleButton toggleValue={toggleValue} onChange={handleToggleChange} />
-          <p className={`${toggleValue && "font-bold"}`}>NGN</p>
-        </div>
-        <div className="flex items-center border-b justify-center space-x-4 mt-5 md:hidden">
-          {tabs.map((el, i) => (
-            <div
-              key={i}
-              className={`border-b ${
-                values === el.value ? "border-primary border-b-[2px] font-[500]" : "text-gray-500"
-              }`}
-              onClick={() => setValues(el.value)}
-            >
-              <p>{el.name}</p>
-            </div>
-          ))}
-        </div>
+      <div className="bg-white md:px-[5rem] md:py-[2rem] px-5 py-[5rem]">
         <div className="justify-center space-x-10 items-start h-fit mt-10 hidden md:flex">
           {subPlans.map((el, i) => (
             <PlanCard
@@ -247,6 +219,27 @@ const Plans: React.FC = () => {
           )}
         </div>
       </div>
+      <div className="bg-[#F0F5FF] flex items-center justify-center px-[5rem] py-[4rem] md:py-[7rem]">
+        <div className="md:flex items-center">
+          <div className="md:w-[50%]">
+            <p className="font-secondary md:text-[40px] text-[24px] md:w-[80%] text-center md:text-left leading-tight">
+              Efficiently manage contacts and customer data.
+            </p>
+            <p className="md:text-[20px] text-[14px] mt-3 md:mt-5 md:w-[80%] text-center md:text-left">
+              Store and handle contacts up to your plan's limit, categorise customers with tags, and create segments
+              with customer attributes.
+            </p>
+            <div className="mt-5 md:block flex justify-center">
+              <Link to={ROUTES.LOGIN}>
+                <BlueButton text="Start now" />
+              </Link>
+            </div>
+          </div>
+          <div className="md:w-[508px] w-[333px] mt-7 md:mt-0">
+            <img src={customGroups} alt="" />
+          </div>
+        </div>
+      </div>
       <div className="mt-[5rem] bg-white">
         <p className="font-secondary md:text-[40px] text-[24px] text-center">Explore all our features</p>
         <div className="flex justify-center">
@@ -256,27 +249,35 @@ const Plans: React.FC = () => {
         </div>
         <div className="flex justify-center">
           <div className="w-full px-4 mt-10 flex items-center justify-center">
-            <Tables />
+            <Tables toggleValue={values} />
           </div>
         </div>
       </div>
       <div className="bg-[#F0F5FF] flex items-center justify-center px-[5rem] py-[7rem]">
-        <div className="md:flex items-center">
-          <div>
+        <div className="md:flex items-center justify-between w-[80%]">
+          <div className="md:w-[354px] w-[222px] mt-7 md:mt-0 hidden md:block">
+            <img src={customerHeadphone} alt="" />
+          </div>
+          <div className="md:w-[50%]">
             <p className="font-secondary md:text-[36px] text-[24px] md:w-[80%] text-center md:text-left">
-              Scale your business with our affordable pricing.
+              Engage customers across multiple channels.
             </p>
             <p className="md:text-[18px] text-[14px] mt-3 md:mt-0 md:w-[80%] text-center md:text-left">
-              Store and handle contacts up to your plan's limit, categorise customers with tags, and create segments
-              with customer attributes.
+              Reach customers directly through SMS, send personalised email campaigns, and conduct voice campaigns with
+              allocated minutes.
             </p>
+            <div className="mt-5 md:block flex justify-center">
+              <Link to={ROUTES.LOGIN}>
+                <BlueButton text="Start now" />
+              </Link>
+            </div>
           </div>
-          <div className="md:w-[508px] w-[333px] mt-7 md:mt-0">
-            <img src={customGroups} alt="" />
+          <div className="md:w-[354px] w-[222px] mt-7 md:mt-0 md:hidden">
+            <img src={customerHeadphone} alt="" />
           </div>
         </div>
       </div>
-      <div className="md:flex justify-center hidden ">
+      <div className="md:flex justify-center hidden py-16 ">
         <div className="bg-[#F8FAFF] w-[80%] flex items-center justify-between p-5 py-[5rem]">
           <div>
             <p className="font-secondary md:text-[36px] text-[24px] w-[80%]">
