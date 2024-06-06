@@ -13,6 +13,8 @@ import BlueButton from "@/components/Button/BlueButton";
 import EmptyState from "@/components/EmptyState";
 import emptyState from "@/assets/images/pricing/emptyEstimate.png";
 import Modal from "@/components/Modal";
+import { Link } from "react-router-dom";
+import { ROUTES } from "@/constants/externalUrls";
 
 interface TProps {
   name: string;
@@ -351,7 +353,9 @@ const Quotation: React.FC = () => {
             <p className="font-[700] text-[32px] text-primary">{price !== null ? `$${price}` : "$0.00"}</p>
           </div>
           <div className="w-full flex justify-center ">
-            <BlueButton text="Buy now" type="button" css="w-full" onClick={handleClick} disabled={button} />
+            <Link to={button ? "#" : `${ROUTES.LOGIN}/register`} className="w-full">
+              <BlueButton text="Buy now" type="button" css="w-full" onClick={handleClick} disabled={button} />
+            </Link>
           </div>
         </div>
       </div>

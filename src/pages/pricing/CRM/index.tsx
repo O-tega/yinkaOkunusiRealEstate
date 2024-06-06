@@ -5,6 +5,7 @@ import Plans from "./Plans";
 import { useQuery } from "@tanstack/react-query";
 import { getRates } from "@/service/rates";
 import ToggleButton from "@/components/Button/ToogleButton";
+import MobileDropNav from "../MobileDropNav";
 
 const CRM: React.FC = () => {
   const [toggleValue, setToggleValue] = useState(false);
@@ -46,13 +47,15 @@ const CRM: React.FC = () => {
         <div className="w-full flex justify-center md:px-[5rem] px-4 z-10 tracking-tight">
           <div className="flex items-center flex-col md:mt-[5rem]">
             <div>
-              <p className="font-secondary md:text-[40px] text-center text-[24px] md:leading-[3rem] tracking-tight">
-                CRM Hub
+              <p className="font-secondary md:text-[40px] text-center text-[24px] md:leading-[3rem] tracking-tight hidden md:block">
+                Engagement Hub
               </p>
+              <div className="relative md:hidden">
+                  <MobileDropNav />
+                </div>
               <div className="flex justify-center">
-                <p className="text-[16px] md:text-[20px] text-center md:w-[60%] px-3">
-                  Store and handle contacts up to your plan's limit, categorise customers with tags, and create segments
-                  with customer attributes.
+                <p className="text-[16px] md:text-[20px] text-center md:w-[80%] px-3">
+                  Drive your business success with our comprehensive customer engagement.
                 </p>
               </div>
               <div className="pt-5 flex w-full justify-center items-center space-x-3">

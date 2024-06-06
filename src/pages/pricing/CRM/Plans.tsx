@@ -7,6 +7,8 @@ import customGroups from "@/assets/images/pricing/customGroups.png";
 import Card from "../Card";
 import Tables from "./Tables";
 import BlueButton from "@/components/Button/BlueButton";
+import { Link } from "react-router-dom";
+import { ROUTES } from "@/constants/externalUrls";
 
 const cardData = [
   {
@@ -52,14 +54,20 @@ const PlanCard = ({ title, subtitle, tag, info, amount, featureTitle, features, 
       </div>
       <div className="mt-5 px-5">
         <p className="md:text-[15px] text-[14px]">{info}</p>
-        <div className="flex items-center space-x-3 mt-3">
-          <p className="text-[38px] md:text-[40px] font-[600]">
-            {toggle ? `₦${((amount * conversionRate) as number).toLocaleString()}` : `$${amount.toLocaleString()}`}
-          </p>
-          <p className="font-[600] text-gray-500 ">Per month</p>
-        </div>
+        {title === "Pro Plan" ? (
+          <div className="h-[70px]"></div>
+        ) : (
+          <div className="flex items-center space-x-3 mt-3">
+            <p className="text-[38px] md:text-[40px] font-[600]">
+              {toggle ? `₦${((amount * conversionRate) as number).toLocaleString()}` : `$${amount.toLocaleString()}`}
+            </p>
+            <p className="font-[600] text-gray-500 ">Per month</p>
+          </div>
+        )}
         <div className="mt-5">
-          <BlueButton text="Buy now" type="button" css="w-full" />
+          <Link to={title === "Pro Plan" ? "mailto:support@enterscale.com" : `${ROUTES.LOGIN}/register`}>
+            <BlueButton text={title === "Pro Plan" ? "Contact us" : "Buy now"} type="button" css="w-full" />
+          </Link>
         </div>
         <div className="my-5">
           <hr />
@@ -214,15 +222,17 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
       <div className="bg-[#F0F5FF] flex items-center justify-center px-[5rem] py-[4rem] md:py-[7rem]">
         <div className="md:flex items-center">
           <div className="md:w-[50%]">
-            <p className="font-secondary md:text-[40px] text-[24px] md:w-[80%] text-center md:text-left">
+            <p className="font-secondary md:text-[40px] text-[24px] md:w-[80%] text-center md:text-left leading-tight">
               Efficiently manage contacts and customer data.
             </p>
-            <p className="md:text-[20px] text-[14px] mt-3 md:mt-0 md:w-[80%] text-center md:text-left">
+            <p className="md:text-[20px] text-[14px] mt-3 md:mt-5 md:w-[80%] text-center md:text-left">
               Store and handle contacts up to your plan's limit, categorise customers with tags, and create segments
               with customer attributes.
             </p>
             <div className="mt-5 md:block flex justify-center">
-              <BlueButton text="Start now" />
+              <Link to={ROUTES.LOGIN}>
+                <BlueButton text="Start now" />
+              </Link>
             </div>
           </div>
           <div className="md:w-[508px] w-[333px] mt-7 md:mt-0">
@@ -244,7 +254,7 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
         </div>
       </div>
       <div className="bg-[#F0F5FF] flex items-center justify-center px-[5rem] py-[7rem]">
-        <div className="md:flex items-center justify-between">
+        <div className="md:flex items-center justify-between w-[80%]">
           <div className="md:w-[354px] w-[222px] mt-7 md:mt-0 hidden md:block">
             <img src={customerHeadphone} alt="" />
           </div>
@@ -257,7 +267,9 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
               allocated minutes.
             </p>
             <div className="mt-5 md:block flex justify-center">
-              <BlueButton text="Start now" />
+              <Link to={ROUTES.LOGIN}>
+                <BlueButton text="Start now" />
+              </Link>
             </div>
           </div>
           <div className="md:w-[354px] w-[222px] mt-7 md:mt-0 md:hidden">
@@ -265,7 +277,7 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
           </div>
         </div>
       </div>
-      <div className="md:flex justify-center hidden ">
+      <div className="md:flex justify-center hidden py-16 ">
         <div className="bg-[#F8FAFF] w-[80%] flex items-center justify-between p-5 py-[5rem]">
           <div>
             <p className="font-secondary md:text-[36px] text-[24px] w-[80%]">

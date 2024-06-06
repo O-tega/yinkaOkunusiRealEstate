@@ -59,10 +59,8 @@ const tableData2: RawTableRow[] = [
     businessPlan: "1,000",
     proPlan: "10,000",
   },
-];
-const tableData3: RawTableRow[] = [
   {
-    planDetails: "Customer profile, NPS, CSAT",
+    planDetails: "Customer surveys",
     starterPlan: "1,000 invites",
     businessPlan: "10,000 invites",
     proPlan: "100,000 invites",
@@ -200,46 +198,12 @@ const Tables: React.FC<TResearchTable> = ({ toggleValue }) => {
       </div>
 
       <div>
-        <p className="font-[600] text-center my-6">Multichannel messaging</p>
+        <p className="font-[600] text-center my-6">Customer engagement</p>
       </div>
       <div className="">
         {tableData2.map((el) => {
           return (
             <div className="flex items-center text-sm p-3 bg-neutral-100 my-2">
-              <p className={`w-[50%] md:w-[30%]`}>{el.planDetails}</p>
-              <p
-                className={`w-[50%] md:w-[22%] md:block flex justify-center ${
-                  toggleValue !== 0 ? "hidden md:block" : "block"
-                } `}
-              >
-                {el.starterPlan}
-              </p>
-              <p
-                className={`w-[50%] md:w-[22%] md:block flex justify-center ${
-                  toggleValue !== 1 ? "hidden md:block" : "block"
-                } `}
-              >
-                {el.businessPlan}
-              </p>
-              <p
-                className={`w-[50%] md:w-[22%] md:block flex justify-center ${
-                  toggleValue !== 2 ? "hidden md:block" : "block"
-                } `}
-              >
-                {el.proPlan}
-              </p>
-            </div>
-          );
-        })}
-      </div>
-
-      <div>
-        <p className="font-[600] text-center my-6">Customer insight</p>
-      </div>
-      <div className="space-y-4 bg-neutral-100 p-3 text-sm ">
-        {tableData3.map((el) => {
-          return (
-            <div className="flex items-center  ">
               <p className={`w-[50%] md:w-[30%]`}>{el.planDetails}</p>
               <p
                 className={`w-[50%] md:w-[22%] md:block flex justify-center ${

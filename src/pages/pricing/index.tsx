@@ -9,7 +9,7 @@ function Pricing() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/research-hub" element={<ResearchHub />} />
-      <Route path="/customer-research-model" element={<CRM />} />
+      <Route path="/engagement-hub" element={<CRM />} />
       <Route path="/custom" element={<Custom />} />
     </Routes>
   );

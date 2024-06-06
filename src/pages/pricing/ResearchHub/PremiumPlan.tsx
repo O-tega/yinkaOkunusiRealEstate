@@ -7,19 +7,21 @@ import checker from "@/assets/images/pricing/check.png";
 import Quotation from "./Quotation";
 import ResearchTable from "./ResearchTable";
 import Card from "../Card";
+import { Link } from "react-router-dom";
+import { ROUTES } from "@/constants/externalUrls";
 
 const cardData = [
   {
-    title: "CRM Hub",
+    title: "Engagement Hub",
     subtitle: "Drive success with our comprehensive CRM and messaging features.",
     img: Group,
-    link: "/pricing/customer-research-model",
+    link: "/pricing/engagement-hub",
   },
   {
     title: "Custom Plan",
     subtitle: "Create a customised plan that fits your business needs.",
     img: giftPricing,
-    link: "#",
+    link: "/pricing/custom",
   },
 ];
 
@@ -50,7 +52,7 @@ const PlanCard = ({
 }: Tplan) => {
   const [newresponses, setNewResponses] = useState<number>(responses);
   return (
-    <div className="border rounded-2xl w-[411px] p-3">
+    <div className="border rounded-2xl w-[411px] h-[45rem] p-3">
       <div className="bg-blue-100 p-5 rounded-t-xl h-[7rem]">
         <div className="flex justify-between">
           <p className="text-[20px] font-[600] text-primary">{title}</p>
@@ -84,14 +86,20 @@ const PlanCard = ({
             </div>
           </div>
         </div>
-        <div className="flex items-center space-x-3 mt-3">
-          <p className="text-[38px] md:text-[40px] font-[600]">
-            {toggle ? `₦${((amount * conversionRate) as number).toLocaleString()}` : `$${amount.toLocaleString()}`}
-          </p>
-          <p className="font-[600] text-gray-500 ">Per month</p>
-        </div>
+        {title === "Pro Plan" ? (
+          <div className="h-[70px]"></div>
+        ) : (
+          <div className="flex items-center space-x-3 mt-3">
+            <p className="text-[38px] md:text-[40px] font-[600]">
+              {toggle ? `₦${((amount * conversionRate) as number).toLocaleString()}` : `$${amount.toLocaleString()}`}
+            </p>
+            <p className="font-[600] text-gray-500 ">Per month</p>
+          </div>
+        )}
         <div className="mt-5">
-          <BlueButton text="Buy now" type="button" css="w-full" />
+          <Link to={title === "Pro Plan" ? "mailto:support@enterscale.com" : `${ROUTES.LOGIN}/register`}>
+            <BlueButton text={title === "Pro Plan" ? "Contact us" : "Buy now"} type="button" css="w-full" />
+          </Link>
           <p className="mt-2 text-gray-500 md:text-[14px] text-[13px]">{`Additional responses would be charged at ${
             toggle ? `₦${((2 * conversionRate) as number).toLocaleString()}` : "$2"
           } per response for online surveys.`}</p>

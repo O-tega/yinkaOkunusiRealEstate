@@ -12,6 +12,9 @@ import uncoverInsight from "@/assets/images/mooyi/uncoverInsight.png";
 import Card from "../Card";
 import EmptyState from "@/components/EmptyState";
 import emptyState from "@/assets/images/pricing/emptyEstimate.png";
+import MobileDropNav from "../MobileDropNav";
+import { Link } from "react-router-dom";
+import { ROUTES } from "@/constants/externalUrls";
 
 const cardData = [
   {
@@ -21,10 +24,10 @@ const cardData = [
     link: "/pricing/research-hub",
   },
   {
-    title: "CRM Hub",
+    title: "Engagement Hub",
     subtitle: "Drive success with our comprehensive CRM and messaging features.",
     img: Group,
-    link: "/pricing/customer-research-model",
+    link: "/pricing/engagement-hub",
   },
 ];
 
@@ -169,9 +172,12 @@ const Custom: React.FC = () => {
         <div className="w-full flex justify-center md:px-[5rem] px-4 z-10 tracking-tight">
           <div className="flex items-center flex-col md:mt-[5rem]">
             <div>
-              <p className="font-secondary md:text-[40px] text-center text-[24px] md:leading-[3rem] tracking-tight pt-3">
+              <p className="font-secondary md:text-[40px] text-center text-[24px] md:leading-[3rem] tracking-tight pt-3 hidden md:block">
                 Custom Plan
               </p>
+              <div className="relative md:hidden">
+                <MobileDropNav />
+              </div>
               <p className=" md:text-[20px] pt-2 text-[16px] text-center">
                 Create a customised plan tailored to your business needs.
               </p>
@@ -204,10 +210,14 @@ const Custom: React.FC = () => {
                     <div className="flex items-start justify-between">
                       <div>
                         <p className="font-[600] text-[16px]">{el.plan}</p>
-                        <p className="font-[600]">
-                          {amtConversion(el.cost)}
-                          <span className="text-gray-500">/month</span>
-                        </p>
+                        {el.plan === "Pro Plan" ? (
+                          <div className="h-[20px]"></div>
+                        ) : (
+                          <p className="font-[600]">
+                            {amtConversion(el.cost)}
+                            <span className="text-gray-500">/month</span>
+                          </p>
+                        )}
                       </div>
                       <div
                         className={`rounded-full p-1 flex items-center justify-center border w-[20px] h-[20px] ${
@@ -235,7 +245,7 @@ const Custom: React.FC = () => {
               </div>
             </div>
             <div className="border rounded-2xl md:h-[200px] w-full p-5 mt-5">
-              <p className="font-[600]">CRM hub</p>
+              <p className="font-[600]">Engagement Hub</p>
               <div className="md:space-x-5 space-y-5 md:space-y-0 mt-5 md:flex items-center">
                 {crmData.map((el, i) => (
                   <div
@@ -247,10 +257,14 @@ const Custom: React.FC = () => {
                   >
                     <div>
                       <p className="font-[600] text-[16px]">{el.plan}</p>
-                      <p className="font-[600]">
-                        {amtConversion(el.cost)}
-                        <span className="text-gray-500">/month</span>
-                      </p>
+                      {el.plan === "Pro Plan" ? (
+                        <div className="h-[23px]"></div>
+                      ) : (
+                        <p className="font-[600]">
+                          {amtConversion(el.cost)}
+                          <span className="text-gray-500">/month</span>
+                        </p>
+                      )}
                     </div>
                     <div
                       className={`rounded-full p-1 flex items-center justify-center border w-[20px] h-[20px] ${
@@ -286,10 +300,14 @@ const Custom: React.FC = () => {
                     <div>
                       <div className="space-y-2">
                         <p className="font-[600] text-[16px]">{researchSelect !== null && researchSelect.plan}</p>
-                        <p className="font-[600]">
-                          {researchSelect !== null && amtConversion(researchSelect.cost)}
-                          <span className="text-gray-500">/month</span>
-                        </p>
+                        {researchSelect?.plan === "Pro Plan" ? (
+                          <div className=""></div>
+                        ) : (
+                          <p className="font-[600]">
+                            {researchSelect !== null && amtConversion(researchSelect.cost)}
+                            <span className="text-gray-500">/month</span>
+                          </p>
+                        )}
                       </div>
                       <hr className="my-2" />
                       <p className="text-gray-500">Includes</p>
@@ -311,7 +329,7 @@ const Custom: React.FC = () => {
             {selectCrm !== null ? (
               <div className="mt-10">
                 <div className="flex items-center justify-between">
-                  <p className="font-[600] text-primary">CRM hub</p>
+                  <p className="font-[600] text-primary">Engagement Hub</p>
                   <p className="text-gray-600 hover:text-primary cursor-pointer" onClick={() => setSelectCrm(null)}>
                     <IoClose size={20} />
                   </p>
@@ -321,10 +339,14 @@ const Custom: React.FC = () => {
                     <div>
                       <div className="space-y-2">
                         <p className="font-[600] text-[16px]">{crmSelect !== null && crmSelect.title}</p>
-                        <p className="font-[600]">
-                          {crmSelect !== null && amtConversion(crmSelect.amount)}
-                          <span className="text-gray-500">/month</span>
-                        </p>
+                        {crmSelect?.title === "Pro Plan" ? (
+                          <div></div>
+                        ) : (
+                          <p className="font-[600]">
+                            {crmSelect !== null && amtConversion(crmSelect.amount)}
+                            <span className="text-gray-500">/month</span>
+                          </p>
+                        )}
                       </div>
                       <hr className="my-2" />
                       <p className="text-gray-500">Includes</p>
@@ -352,18 +374,36 @@ const Custom: React.FC = () => {
                 />
               )}
               <div className="w-full mt-16">
-                <p className="font-[600] text-[36px] text-primary ">
-                  {amtConversion(selectCrm === null && selectResearch === null ? 0.0 : totalAmount)}
-                  <span className="text-gray-500 text-[20px] font-[500]">/month</span>
-                </p>
-                <p className="text-gray-500 text-[20px] font-[500]">Billed monthly</p>
+                {researchSelect?.plan === "Pro Plan" || crmSelect?.title === "Pro Plan" ? (
+                  <div></div>
+                ) : (
+                  <div>
+                    <p className="font-[600] text-[36px] text-primary ">
+                      {amtConversion(selectCrm === null && selectResearch === null ? 0.0 : totalAmount)}
+                      <span className="text-gray-500 text-[20px] font-[500]">/month</span>
+                    </p>
+                    <p className="text-gray-500 text-[20px] font-[500]">Billed monthly</p>
+                  </div>
+                )}
                 <div className="mt-3">
-                  <BlueButton
-                    type="button"
-                    text="Buy me"
-                    css="w-full"
-                    disabled={selectCrm === null && selectResearch === null}
-                  />
+                  <Link
+                    to={
+                      researchSelect?.plan === "Pro Plan" || crmSelect?.title === "Pro Plan"
+                        ? "mailto:support@enterscale.com"
+                        : `${ROUTES.LOGIN}/register`
+                    }
+                  >
+                    <BlueButton
+                      type="button"
+                      text={
+                        researchSelect?.plan === "Pro Plan" || crmSelect?.title === "Pro Plan"
+                          ? "Contact us"
+                          : "Buy now"
+                      }
+                      css="w-full"
+                      disabled={selectCrm === null && selectResearch === null}
+                    />
+                  </Link>
                 </div>
               </div>
             </div>
@@ -395,7 +435,7 @@ const Custom: React.FC = () => {
           <Modal title="" onClose={() => setOpenModal(false)}>
             <div
               className={`border rounded-2xl h-[calc(100vh-250px)] overflow-y-auto md:w-[30%] w-[350px] p-5 mt-5 ${
-                selectCrm === null && selectResearch === null ? "h-[500px]" : "h-full"
+                selectCrm === null && selectResearch === null ? "h-[500px]" : "h-[calc(100vh-250px)]"
               }`}
             >
               <p className="font-[600]">Estimate</p>
@@ -440,7 +480,7 @@ const Custom: React.FC = () => {
               {selectCrm !== null ? (
                 <div className="mt-10">
                   <div className="flex items-center justify-between">
-                    <p className="font-[600] text-primary">CRM hub</p>
+                    <p className="font-[600] text-primary">Engagement Hub</p>
                     <p className="text-gray-600 hover:text-primary cursor-pointer" onClick={() => setSelectCrm(null)}>
                       <IoClose size={20} />
                     </p>
@@ -481,18 +521,36 @@ const Custom: React.FC = () => {
                   />
                 )}
                 <div className="w-full mt-16">
-                  <p className="font-[600] text-[36px] text-primary ">
-                    {amtConversion(selectCrm === null && selectResearch === null ? 0.0 : totalAmount)}
-                    <span className="text-gray-500 text-[20px] font-[500]">/month</span>
-                  </p>
-                  <p className="text-gray-500 text-[20px] font-[500]">Billed monthly</p>
+                  {researchSelect?.plan === "Pro Plan" || crmSelect?.title === "Pro Plan" ? (
+                    <div></div>
+                  ) : (
+                    <div>
+                      <p className="font-[600] text-[36px] text-primary ">
+                        {amtConversion(selectCrm === null && selectResearch === null ? 0.0 : totalAmount)}
+                        <span className="text-gray-500 text-[20px] font-[500]">/month</span>
+                      </p>
+                      <p className="text-gray-500 text-[20px] font-[500]">Billed monthly</p>
+                    </div>
+                  )}
                   <div className="mt-3">
-                    <BlueButton
-                      type="button"
-                      text="Buy me"
-                      css="w-full"
-                      disabled={selectCrm === null && selectResearch === null}
-                    />
+                    <Link
+                      to={
+                        researchSelect?.plan === "Pro Plan" || crmSelect?.title === "Pro Plan"
+                          ? "mailto:support@enterscale.com"
+                          : `${ROUTES.LOGIN}/register`
+                      }
+                    >
+                      <BlueButton
+                        type="button"
+                        text={
+                          researchSelect?.plan === "Pro Plan" || crmSelect?.title === "Pro Plan"
+                            ? "Contact us"
+                            : "Buy now"
+                        }
+                        css="w-full"
+                        disabled={selectCrm === null && selectResearch === null}
+                      />
+                    </Link>
                   </div>
                 </div>
               </div>

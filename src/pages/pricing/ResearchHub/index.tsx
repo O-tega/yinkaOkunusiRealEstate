@@ -6,6 +6,7 @@ import PayAsYouGo from "./PayAsYouGo";
 import { useQuery } from "@tanstack/react-query";
 import { getRates } from "@/service/rates";
 import ToggleButton from "@/components/Button/ToogleButton";
+import MobileDropNav from "../MobileDropNav";
 
 const tabs = [
   { name: "Premium plans", value: 0 },
@@ -32,7 +33,7 @@ const ResearchHub: React.FC = () => {
       case 0:
         return <PremiumPlan conversionRate={conversionRate} toggleValue={toggleValue} />;
       case 1:
-        return <PayAsYouGo />;
+        return <PayAsYouGo conversionRate={conversionRate} toggleValue={toggleValue} />;
       default:
     }
   };
@@ -56,13 +57,16 @@ const ResearchHub: React.FC = () => {
         <div className="w-full flex justify-center md:px-[5rem] px-4 z-10 tracking-tight">
           <div className="flex items-center flex-col md:mt-[3rem]">
             <div>
-              <p className="font-secondary md:text-[40px] text-center text-[24px] md:leading-[3rem] tracking-tight pt-5">
+              <p className="font-secondary md:text-[40px] text-center text-[24px] md:leading-[3rem] tracking-tight pt-5 md:block hidden">
                 Research Hub
               </p>
-              <p className=" md:text-[20px] pt-5 text-[16px] text-center">
+              <div className="relative md:hidden">
+                <MobileDropNav />
+              </div>
+              <p className=" md:text-[20px] pt-2 text-[16px] text-center">
                 Gather valuable insights and reach your target audience with ease.
               </p>
-              <div className="pt-2 flex w-full justify-center items-center space-x-3">
+              <div className="pt-4 flex w-full justify-center items-center space-x-3">
                 <p className={`${!toggleValue && "font-bold"}`}>USD</p>
                 <ToggleButton toggleValue={toggleValue} onChange={handleToggleChange} />
                 <p className={`${toggleValue && "font-bold"}`}>NGN</p>

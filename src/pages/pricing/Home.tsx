@@ -1,18 +1,22 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import faqBackground from "@/assets/images/mooyi/faqbackground.png";
 import faqBgMobile from "@/assets/images/mooyi/faqBgMobile.png";
 import Group from "@/assets/images/pricing/Group.png";
 import giftPricing from "@/assets/images/pricing/giftPricing.png";
-import contactDoc from "@/assets/images/pricing/contactDoc.png";
-import CTAs from "@/assets/images/mooyi/CTAs.png";
+import quickAction from "@/assets/images/pricing/quickAction.png";
+// import contactDoc from "@/assets/images/pricing/contactDoc.png";
+// import CTAs from "@/assets/images/mooyi/CTAs.png";
 import uncoverInsight from "@/assets/images/mooyi/uncoverInsight.png";
 import { Helmet } from "react-helmet";
 // import { ROUTES } from "@/constants/externalUrls";
-import { Link } from "react-router-dom";
-import WhiteButton from "@/components/Button/WhiteButton";
+// import { Link } from "react-router-dom";
+// import WhiteButton from "@/components/Button/WhiteButton";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import Card from "./Card";
+import Modal from "@/components/Modal";
+import { Link } from "react-router-dom";
+import BlueButton from "@/components/Button/BlueButton";
 
 const Home: React.FC = () => {
   const cardData = [
@@ -23,10 +27,10 @@ const Home: React.FC = () => {
       link: "/pricing/research-hub",
     },
     {
-      title: "CRM Hub",
+      title: "Engagement Hub",
       subtitle: "Drive success with our comprehensive CRM and messaging features.",
       img: Group,
-      link: "/pricing/customer-research-model",
+      link: "/pricing/engagement-hub",
     },
     {
       title: "Custom Plan",
@@ -151,9 +155,16 @@ const Home: React.FC = () => {
   ];
 
   const [index, setIndex] = useState<number>(0);
+  const [openModal, setOpenModal] = useState(false);
   const handleSetIndex = (idx: number) => {
     setIndex(idx);
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      setOpenModal(true);
+    }, 2000);
+  }, []);
 
   const handleToggle = (id: number) => {
     setIndex(index === id ? 0 : id);
@@ -197,8 +208,8 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="bg-white md:p-[5rem] px-5 py-[5rem] ">
-        <div className=" w-full flex justify-center mt-4 md:mt-0">
+      <div className="bg-white md:px-[5rem] md:py-[2rem] px-5  ">
+        {/* <div className=" w-full flex justify-center mt-4 md:mt-0">
           <div className="text-white md:w-full px-2 rounded-3xl overflow-hidden relative  md:h-[350px] h-[200px] w-full">
             <div className="absolute left-0 top-[-1rem] md:top-[1rem] w-[100%]">
               <img src={CTAs} alt="footer background" className="w-full h-[300px] md:h-[350px]" />
@@ -228,8 +239,11 @@ const Home: React.FC = () => {
               </div>
             </div>
           </div>
+        </div> */}
+        <div className="font-secondary pt-[1rem] md:text-[40px] text-[24px] text-center">
+          <p>Frequently asked questions</p>
         </div>
-        <div className="md:flex items-start md:space-x-5 nd:p-[4rem] px-5 py-[7rem]">
+        <div className="md:flex items-start md:space-x-5 px-5 md:mt-16 my-5">
           <div className="border rounded-2xl p-8 space-y-5 w-[40%] hidden md:block">
             {faqData.map((item, i) => (
               <p
@@ -256,7 +270,7 @@ const Home: React.FC = () => {
                   onClick={() => handleToggle(id)}
                 >
                   <div className={`flex justify-between items-center ${index === id && "text-primary"}`}>
-                    <p className="text-[20px] font-[500]">{title}</p>
+                    <p className="md:text-[20px] text-[16px] font-[500]">{title}</p>
                     {index === id ? (
                       <p>
                         <IoIosArrowUp />
@@ -272,7 +286,7 @@ const Home: React.FC = () => {
                       {content.map((item, j) => (
                         <div key={j} className="space-y-1">
                           <p className="font-medium text-[18px]">{item.subtitle}</p>
-                          <p className="text-[15px]">{item.subContent}</p>
+                          <p className="md:text-[15px] text-[12px]">{item.subContent}</p>
                         </div>
                       ))}
                     </div>
@@ -283,6 +297,31 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
+      {openModal && (
+        <Modal title="" onClose={() => setOpenModal(false)}>
+          <div className="md:w-[1024px] w-full  flex justify-center">
+            <div className="flex flex-col md:flex-row items-center justify-between md:py-[2rem] md:px-[5rem]">
+              <div className="md:w-[55%]">
+                <p className="font-secondary md:text-[36px] text-[24px]  text-center md:text-left leading-tight">
+                  Create a survey in minutes, get results in hours.
+                </p>
+                <p className="md:text-[18px] text-[14px] mt-3 md:mt-5  text-center md:text-left">
+                  Get started with our intuitive survey builder, professionally crafted survey templates and audience
+                  panel for your convenience.
+                </p>
+                <div className="mt-5 md:block flex justify-center">
+                  <Link to="/pricing/research-hub">
+                    <BlueButton text="Start now" />
+                  </Link>
+                </div>
+              </div>
+              <div className="md:w-[354px] w-[222px] mt-7 md:mt-0 ">
+                <img src={quickAction} alt="" />
+              </div>
+            </div>
+          </div>
+        </Modal>
+      )}
     </div>
   );
 };

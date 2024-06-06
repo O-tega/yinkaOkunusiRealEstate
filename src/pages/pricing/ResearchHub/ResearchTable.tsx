@@ -11,12 +11,6 @@ type RawTableRow = {
   proPlan: string;
 };
 
-type TableRow = {
-  planDetails: string;
-  businessPlan: string | JSX.Element;
-  proPlan: string | JSX.Element;
-};
-
 const tableData: RawTableRow[] = [
   { planDetails: "Online survey responses", businessPlan: "200 Responses", proPlan: "1,000 Responses" },
   { planDetails: "Field interviews (voice/video responses)", businessPlan: "", proPlan: "1,000 Responses" },
@@ -30,110 +24,90 @@ const tableData: RawTableRow[] = [
 ];
 
 const ResearchTable = ({ toggleValue }: TResearchTable) => {
-  const indexToRemove = toggleValue === 1 ? "businessPlan" : "proPlan";
-
   const columns = [
     { field: "planDetails", header: "Plan Details" },
     { field: "businessPlan", header: "Business Plan" },
     { field: "proPlan", header: "Pro Plan" },
   ];
+  const column1 = [
+    { field: "planDetails", header: "Plan Details" },
+    { field: "businessPlan", header: "Business Plan" },
+    { field: "proPlan", header: "Pro Plan" },
+  ];
+
+  const removeIndex = (array: { field: string; header: string }[], index: number) => {
+    array.splice(index, 1);
+    return array;
+  };
+
+  const mobileColumns = toggleValue === 0 ? removeIndex(columns, 2) : removeIndex(columns, 1);
 
   console.log(toggleValue);
 
-  const transformData = (data: RawTableRow[]): TableRow[] => {
-    return data.map((item) => ({
-      planDetails: item.planDetails,
-      businessPlan:
-        item.businessPlan === "" ? (
-          <div className="w-[24px] h-[24px] flex justify-center">
-            <img src={cancel} alt="" />
-          </div>
-        ) : item.businessPlan === "same" ? (
-          <div className="w-[24px] h-[24px] flex justify-center text-center">
-            <img src={fullCheck} alt="" />
-          </div>
-        ) : (
-          item.businessPlan
-        ),
-      proPlan:
-        item.proPlan === "" ? (
-          <div className="w-[24px] h-[24px] flex justify-center">
-            <img src={cancel} alt="" />
-          </div>
-        ) : item.proPlan === "same" ? (
-          <div className="w-[24px] h-[24px] flex justify-center">
-            <img src={fullCheck} alt="" />
-          </div>
-        ) : (
-          item.proPlan
-        ),
-    }));
-  };
-
-  const table = transformData(tableData);
-
   return (
     <div>
-      <div className="md:hidden">
-        <table className="w-[100%] mb-4">
-          <thead className="h-[50px] text-[14px]">
-            <tr className="h-[50px] overflow-hidden">
-              {columns
-                .filter((column) => column.field !== indexToRemove)
-                .map((head, i) => (
-                  <th key={i} className="px-2 text-left">
-                    {head.header}
-                  </th>
-                ))}
-            </tr>
-          </thead>
-          <tbody>
-            {table.map((row, i) => {
-              return (
-                <tr className="h-[50px] text-[14px] text-[#404040] font-[400] cursor-pointer" key={i}>
-                  {columns
-                    .filter((column) => column.field !== indexToRemove)
-                    .map((col, j) => {
-                      return (
-                        <td key={j} className={`px-4 relative`}>
-                          {row[col.field as keyof TableRow] || "-"}
-                        </td>
-                      );
-                    })}
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+      <div className="md:flex items-center bg-neutral-100 p-2 hidden">
+        {column1.map((el) => {
+          return (
+            <p
+              className={
+                el.field === "planDetails"
+                  ? "w-[50%] font-[600]"
+                  : "w-[50%] text-primary flex justify-center font-[600]"
+              }
+            >
+              {el.header}
+            </p>
+          );
+        })}
       </div>
-      <div className="hidden md:block">
-        <table className="w-[100%] mb-4">
-          <thead className="h-[50px] text-s">
-            <tr className="h-[50px] overflow-hidden">
-              {columns.map((head, i) => (
-                <th key={i} className="px-2 text-left">
-                  {head.header}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {table.map((row, i) => {
-              return (
-                <tr className="h-[50px] text-ss text-[#404040] font-[400] cursor-pointer" key={i}>
-                  {columns.map((col, j) => {
-                    return (
-                      <td key={j} className={`px-4 relative`}>
-                        {row[col.field as keyof TableRow] || "-"}
-                      </td>
-                    );
-                  })}
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+      <div className="flex items-center bg-neutral-100 p-2 md:hidden">
+        {mobileColumns.map((el) => {
+          return (
+            <p
+              className={
+                el.field === "planDetails"
+                  ? "w-[50%] font-[600]"
+                  : "w-[50%] text-primary flex justify-center font-[600]"
+              }
+            >
+              {el.header}
+            </p>
+          );
+        })}
       </div>
+      {tableData.map((el) => {
+        return (
+          <div className="flex items-center p-3 bg-neutral-100 my-2 ">
+            <p className={`w-[50%] md:w-[50%]`}>{el.planDetails}</p>
+            <p className={`w-[50%] md:w-[50%] flex justify-center ${toggleValue !== 0 ? "hidden md:block" : "block"} `}>
+              {el.businessPlan === "same" ? (
+                <div className="w-[24px] h-[24px] md:block flex justify-center text-center">
+                  <img src={fullCheck} alt="" />
+                </div>
+              ) : el.businessPlan === "" ? (
+                <div className="w-[24px] h-[24px] md:block flex justify-center text-center">
+                  <img src={cancel} alt="" />
+                </div>
+              ) : (
+                el.businessPlan
+              )}
+            </p>
+
+            <p
+              className={`w-[50%] md:w-[50%] md:flex justify-center ${toggleValue !== 1 ? "hidden md:block" : "flex"} `}
+            >
+              {el.proPlan === "same" ? (
+                <div className="w-[24px] h-[24px] flex items-center justify-center">
+                  <img src={fullCheck} alt="" />
+                </div>
+              ) : (
+                el.proPlan
+              )}
+            </p>
+          </div>
+        );
+      })}
     </div>
   );
 };
