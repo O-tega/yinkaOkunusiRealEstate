@@ -51,8 +51,8 @@ const CRM: React.FC = () => {
                 Engagement Hub
               </p>
               <div className="relative md:hidden">
-                  <MobileDropNav />
-                </div>
+                <MobileDropNav />
+              </div>
               <div className="flex justify-center">
                 <p className="text-[16px] md:text-[20px] text-center md:w-[80%] px-3">
                   Drive your business success with our comprehensive customer engagement.
