@@ -16,7 +16,7 @@ const Card: React.FC<TCard> = ({ img, title, subtitle, link }) => {
         </div>
         <div className="text-center pt-5">
           <p className="font-[500] text-[30px]">{title}</p>
-          <p className="text-gray-400">{subtitle}</p>
+          <p className="text-gray-400 text-[16px]">{subtitle}</p>
         </div>
       </div>
     </Link>

@@ -1,17 +1,11 @@
-"use client";
 import React, { useEffect, useState } from "react";
 import faqBackground from "@/assets/images/mooyi/faqbackground.png";
 import faqBgMobile from "@/assets/images/mooyi/faqBgMobile.png";
 import Group from "@/assets/images/pricing/Group.png";
 import giftPricing from "@/assets/images/pricing/giftPricing.png";
 import quickAction from "@/assets/images/pricing/quickAction.png";
-// import contactDoc from "@/assets/images/pricing/contactDoc.png";
-// import CTAs from "@/assets/images/mooyi/CTAs.png";
 import uncoverInsight from "@/assets/images/mooyi/uncoverInsight.png";
 import { Helmet } from "react-helmet";
-// import { ROUTES } from "@/constants/externalUrls";
-// import { Link } from "react-router-dom";
-// import WhiteButton from "@/components/Button/WhiteButton";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import Card from "./Card";
 import Modal from "@/components/Modal";
@@ -28,7 +22,7 @@ const Home: React.FC = () => {
     },
     {
       title: "Engagement Hub",
-      subtitle: "Drive success with our comprehensive CRM and messaging features.",
+      subtitle: "Drive your business success with our comprehensive customer engagement.",
       img: Group,
       link: "/pricing/engagement-hub",
     },
@@ -154,7 +148,7 @@ const Home: React.FC = () => {
     },
   ];
 
-  const [index, setIndex] = useState<number>(0);
+  const [index, setIndex] = useState<number>(1);
   const [openModal, setOpenModal] = useState(false);
   const handleSetIndex = (idx: number) => {
     setIndex(idx);
@@ -196,11 +190,11 @@ const Home: React.FC = () => {
           <div className="flex items-center flex-col md:mt-[5rem]">
             <div className="md:w-[60%] ">
               <p className="text-primary text-center">PRICING</p>
-              <p className="font-secondary md:text-[40px] text-center text-[24px] md:leading-[3rem] tracking-tight pt-5">
+              <p className="font-secondary md:text-[40px] text-center text-[24px] md:leading-[3rem] tracking-tight pt-5 md:pt-[3rem]">
                 Get fast and actionable insights from your target market or actual customers.
               </p>
             </div>
-            <div className="md:flex items-center space-x-7 mt-7">
+            <div className="md:flex items-center space-x-7 md:mt-[5rem] mt-7">
               {cardData?.map((el, i) => (
                 <Card title={el.title} subtitle={el.subtitle} img={el.img} link={el.link} key={i} />
               ))}
@@ -209,42 +203,11 @@ const Home: React.FC = () => {
         </div>
       </div>
       <div className="bg-white md:px-[5rem] md:py-[2rem] px-5  ">
-        {/* <div className=" w-full flex justify-center mt-4 md:mt-0">
-          <div className="text-white md:w-full px-2 rounded-3xl overflow-hidden relative  md:h-[350px] h-[200px] w-full">
-            <div className="absolute left-0 top-[-1rem] md:top-[1rem] w-[100%]">
-              <img src={CTAs} alt="footer background" className="w-full h-[300px] md:h-[350px]" />
-            </div>
-            <div>
-              <div className="absolute md:top-0 top-[-2rem] w-full pt-9 left-0 md:pt-12">
-                <div className="flex justify-center w-full p-2 md:px-0">
-                  <div className="md:flex items-center justify-between md:w-[65%] text-center md:text-left">
-                    <div>
-                      <p className="font-secondary md:text-[40px] text-[24px] md:pr-[10rem]">
-                        Need a solution that fits your business needs?
-                      </p>
-                      <p className="md:text-[20px] text-[14px] mx-10 md:mx-0">
-                        Let’s create a personalised plan tailored just for you.
-                      </p>
-                      <div className="pt-3 flex justify-center md:block">
-                        <Link to={"mailto:support@enterscale.com"}>
-                          <WhiteButton text={"Contact us"} css="text-black" />
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="hidden md:flex">
-                      <img src={contactDoc} alt="" className="w-[128px] h-[242px]" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
         <div className="font-secondary pt-[1rem] md:text-[40px] text-[24px] text-center">
           <p>Frequently asked questions</p>
         </div>
         <div className="md:flex items-start md:space-x-5 px-5 md:mt-16 my-5">
-          <div className="border rounded-2xl p-8 space-y-5 w-[40%] hidden md:block">
+          <div className="border rounded-2xl p-8 space-y-5 bg-[#FAFAFA] w-[40%] hidden md:block">
             {faqData.map((item, i) => (
               <p
                 key={i}

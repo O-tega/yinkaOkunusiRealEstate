@@ -15,6 +15,7 @@ import emptyState from "@/assets/images/pricing/emptyEstimate.png";
 import Modal from "@/components/Modal";
 import { Link } from "react-router-dom";
 import { ROUTES } from "@/constants/externalUrls";
+import { RiDeleteBin5Fill } from "react-icons/ri";
 
 interface TProps {
   name: string;
@@ -63,8 +64,6 @@ const Quotation: React.FC = () => {
     enableReinitialize: true,
   });
 
-  const button = !values.gender || !values.categoryOfInterest || !values.leastAge || !values.mostAge || !values.state;
-
   const { data: stateData } = useQuery({ queryKey: ["getState"], queryFn: getState });
 
   const { data: cityData } = useQuery({
@@ -79,6 +78,26 @@ const Quotation: React.FC = () => {
   const stateValue = values?.state?.map((el) => el.value);
   const cityValue = values?.lga?.map((el) => el.value);
   const categoryValue = values?.categoryOfInterest?.map((el) => el.value);
+
+  const emptyCheck =
+    !values.gender ||
+    categoryValue.length === 0 ||
+    !values.leastAge ||
+    !values.mostAge ||
+    stateValue.length === 0 ||
+    cityValue.length === 0;
+
+  const emptyStateCheck =
+    (values.leastAge !== "" && values.mostAge !== "") ||
+    selectedGenders.length !== 0 ||
+    stateValue.length !== 0 ||
+    cityValue.length !== 0 ||
+    categoryValue.length !== 0;
+
+  const handleClear = () => {
+    setFieldValue("leastAge", "");
+    setFieldValue("mostAge", "");
+  };
 
   useEffect(() => {
     if (stateArray !== undefined && stateValue.length === 1) {
@@ -209,6 +228,11 @@ const Quotation: React.FC = () => {
                   placeholder="100"
                   value={values.mostAge}
                 />
+                {values.leastAge !== "" && values.mostAge !== "" ? (
+                  <div className="bg-gray-300 rounded-full p-2 text-white" onClick={handleClear}>
+                    <RiDeleteBin5Fill size={15} />
+                  </div>
+                ) : null}
               </div>
             </div>
             <div className="mt-5">
@@ -260,7 +284,7 @@ const Quotation: React.FC = () => {
             </div>
             <div>
               <p
-                className="text-primary underline text-[12px] cursor-pointer mt-5"
+                className="text-primary underline text-[12px] cursor-pointer mt-5 md:hidden"
                 onClick={() => setOpenModal(!openModal)}
               >
                 Preview selection
@@ -268,10 +292,10 @@ const Quotation: React.FC = () => {
             </div>
           </form>
         </div>
-        <div className="hidden md:block w-[40%]">
+        <div className="hidden md:block w-[40%] h-[650px] p-5 bg-[#FAFAFA]">
           <p className="font-[500] text-[16px]">Preview</p>
           <div>
-            {button ? (
+            {!emptyStateCheck ? (
               <div className="h-[500px]">
                 <EmptyState
                   title="Nothing to show yet."
@@ -319,7 +343,7 @@ const Quotation: React.FC = () => {
             ) : null}
           </div>
           <div className="mt-3">
-            {stateValue.length === 1 ? (
+            {cityValue.length !== 0 ? (
               <div>
                 <p>Local Government Area(s)</p>
                 <ul className="space-y-2">
@@ -353,8 +377,8 @@ const Quotation: React.FC = () => {
             <p className="font-[700] text-[32px] text-primary">{price !== null ? `$${price}` : "$0.00"}</p>
           </div>
           <div className="w-full flex justify-center ">
-            <Link to={button ? "#" : `${ROUTES.LOGIN}/register`} className="w-full">
-              <BlueButton text="Buy now" type="button" css="w-full" onClick={handleClick} disabled={button} />
+            <Link to={emptyCheck ? "#" : `${ROUTES.LOGIN}/register`} className="w-full">
+              <BlueButton text="Buy now" type="button" css="w-full" onClick={handleClick} disabled={emptyCheck} />
             </Link>
           </div>
         </div>
@@ -365,7 +389,7 @@ const Quotation: React.FC = () => {
             <div className="w-[350px]">
               <p className="font-[500] text-[16px]">Preview</p>
               <div>
-                {button ? (
+                {!emptyStateCheck ? (
                   <div className="h-[500px]">
                     <EmptyState
                       title="Nothing to show yet."

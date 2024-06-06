@@ -15,6 +15,7 @@ import emptyState from "@/assets/images/pricing/emptyEstimate.png";
 import MobileDropNav from "../MobileDropNav";
 import { Link } from "react-router-dom";
 import { ROUTES } from "@/constants/externalUrls";
+import { IoChevronBackOutline } from "react-icons/io5";
 
 const cardData = [
   {
@@ -169,7 +170,17 @@ const Custom: React.FC = () => {
             className="w-full object-cover h-[400px] absolute top-0 z-0 md:hidden"
           />
         </div>
-        <div className="w-full flex justify-center md:px-[5rem] px-4 z-10 tracking-tight">
+        <div className="w-full flex justify-center md:px-[5rem] px-4 z-10 tracking-tight relative">
+          <div className="absolute top-[5rem] left-[5rem]">
+            <Link to="/pricing">
+              <div className="flex items-center space-x-3 text-primary underline">
+                <span>
+                  <IoChevronBackOutline />
+                </span>{" "}
+                <p>Back to plans</p>{" "}
+              </div>
+            </Link>
+          </div>
           <div className="flex items-center flex-col md:mt-[5rem]">
             <div>
               <p className="font-secondary md:text-[40px] text-center text-[24px] md:leading-[3rem] tracking-tight pt-3 hidden md:block">
@@ -211,7 +222,7 @@ const Custom: React.FC = () => {
                       <div>
                         <p className="font-[600] text-[16px]">{el.plan}</p>
                         {el.plan === "Pro Plan" ? (
-                          <div className="h-[20px]"></div>
+                          <p className="font-[600] text-gray-500"> Contact us</p>
                         ) : (
                           <p className="font-[600]">
                             {amtConversion(el.cost)}
@@ -258,7 +269,7 @@ const Custom: React.FC = () => {
                     <div>
                       <p className="font-[600] text-[16px]">{el.plan}</p>
                       {el.plan === "Pro Plan" ? (
-                        <div className="h-[23px]"></div>
+                        <p className="font-[600] text-gray-500"> Contact us</p>
                       ) : (
                         <p className="font-[600]">
                           {amtConversion(el.cost)}
@@ -301,7 +312,7 @@ const Custom: React.FC = () => {
                       <div className="space-y-2">
                         <p className="font-[600] text-[16px]">{researchSelect !== null && researchSelect.plan}</p>
                         {researchSelect?.plan === "Pro Plan" ? (
-                          <div className=""></div>
+                          <p className="font-[600]"> Contact us</p>
                         ) : (
                           <p className="font-[600]">
                             {researchSelect !== null && amtConversion(researchSelect.cost)}
@@ -340,7 +351,7 @@ const Custom: React.FC = () => {
                       <div className="space-y-2">
                         <p className="font-[600] text-[16px]">{crmSelect !== null && crmSelect.title}</p>
                         {crmSelect?.title === "Pro Plan" ? (
-                          <div></div>
+                          <p className="font-[600]"> Contact us</p>
                         ) : (
                           <p className="font-[600]">
                             {crmSelect !== null && amtConversion(crmSelect.amount)}
@@ -373,7 +384,7 @@ const Custom: React.FC = () => {
                   img={emptyState}
                 />
               )}
-              <div className="w-full mt-16">
+              <div className="w-full mt-5">
                 {researchSelect?.plan === "Pro Plan" || crmSelect?.title === "Pro Plan" ? (
                   <div></div>
                 ) : (
@@ -410,10 +421,10 @@ const Custom: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="md:flex justify-center hidden ">
-        <div className="bg-[#F8FAFF] w-[80%] flex items-center justify-between p-5 py-[5rem]">
+      <div className="md:flex justify-center hidden py-[8rem] ">
+        <div className="bg-[#F8FAFF] w-[90%] flex items-center justify-between md:px-[5rem] rounded-2xl p-5 py-[5rem]">
           <div>
-            <p className="font-secondary md:text-[36px] text-[24px] w-[80%]">
+            <p className="font-secondary md:text-[36px] text-[24px]">
               Scale your business with our affordable pricing.
             </p>
             <p className="text-[18px] w-[80%]">Explore more options that suit your business needs.</p>

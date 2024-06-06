@@ -44,7 +44,7 @@ const Footer = () => {
 
   // console.log(currentPath);
 
-  // const paths = ["/pricing"];
+  const paths = ["/pricing", "/pricing/research-hub", "/pricing/custom", "/pricing/engagement-hub"];
 
   return (
     <div className=" md:p-[4rem] p-2 bg-[#F1F1FC] z-10 md:mx-auto w-full font-light sm:text-right text-center">
@@ -54,14 +54,14 @@ const Footer = () => {
             <img src={CTAs} alt="footer background" className="w-full h-[250px] md:h-[350px]" />
           </div>
           <div className=" absolute top-0 w-full pt-9 left-0 md:pt-12">
-            {currentPath === "/pricing" ? (
+            {paths.includes(currentPath) ? (
               <p className="font-secondary md:text-[40px] text-[24px]">
                 Need a solution that fits your business needs?
               </p>
             ) : (
               <p className="md:text-[24px] text-[15px] ">Stop guessing. Start knowing.</p>
             )}
-            {currentPath === "/pricing" ? (
+            {paths.includes(currentPath) ? (
               <p className="md:text-[24px] text-[15px]">Let’s create a personalised plan tailored just for you.</p>
             ) : (
               <p className="font-secondary md:text-[40px] text-[24px]">Get started with Mooyi today</p>

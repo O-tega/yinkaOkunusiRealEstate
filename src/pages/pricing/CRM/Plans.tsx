@@ -55,7 +55,9 @@ const PlanCard = ({ title, subtitle, tag, info, amount, featureTitle, features, 
       <div className="mt-5 px-5">
         <p className="md:text-[15px] text-[14px]">{info}</p>
         {title === "Pro Plan" ? (
-          <div className="h-[70px]"></div>
+          <div>
+            <p className="text-[38px] md:text-[40px] font-[600]"> Custom </p>
+          </div>
         ) : (
           <div className="flex items-center space-x-3 mt-3">
             <p className="text-[38px] md:text-[40px] font-[600]">
@@ -219,9 +221,9 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
           )}
         </div>
       </div>
-      <div className="bg-[#F0F5FF] flex items-center justify-center px-[5rem] py-[4rem] md:py-[7rem]">
-        <div className="md:flex items-center">
-          <div className="md:w-[50%]">
+      <div className="bg-[#F0F5FF] flex items-center md:justify-between justify-center px-[5rem] py-[4rem] md:py-[7rem]">
+        <div className="md:flex items-center md:px-[5rem]">
+          <div className="">
             <p className="font-secondary md:text-[40px] text-[24px] md:w-[80%] text-center md:text-left leading-tight">
               Efficiently manage contacts and customer data.
             </p>
@@ -235,7 +237,7 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
               </Link>
             </div>
           </div>
-          <div className="md:w-[508px] w-[333px] mt-7 md:mt-0">
+          <div className="md:w-[708px] w-[333px] mt-7 md:mt-0">
             <img src={customGroups} alt="" />
           </div>
         </div>
@@ -248,21 +250,21 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
           </p>
         </div>
         <div className="flex justify-center">
-          <div className="w-full px-4 mt-10 flex items-center justify-center">
+          <div className="w-full px-4 mt-2 flex items-center justify-center">
             <Tables toggleValue={values} />
           </div>
         </div>
       </div>
-      <div className="bg-[#F0F5FF] flex items-center justify-center px-[5rem] py-[7rem]">
-        <div className="md:flex items-center justify-between w-[80%]">
+      <div className=" flex items-center justify-center md:px-[5rem] px-[2rem] py-[7rem]">
+        <div className="flex items-center md:justify-between flex-col md:flex-row justify-center md:w-[80%]">
           <div className="md:w-[354px] w-[222px] mt-7 md:mt-0 hidden md:block">
             <img src={customerHeadphone} alt="" />
           </div>
           <div className="md:w-[50%]">
-            <p className="font-secondary md:text-[36px] text-[24px] md:w-[80%] text-center md:text-left">
+            <p className="font-secondary md:text-[36px] text-[24px] text-center md:text-left leading-tight">
               Engage customers across multiple channels.
             </p>
-            <p className="md:text-[18px] text-[14px] mt-3 md:mt-0 md:w-[80%] text-center md:text-left">
+            <p className="md:text-[18px] text-[14px] mt-3 md:mt-5 md:w-[80%] text-center md:text-left">
               Reach customers directly through SMS, send personalised email campaigns, and conduct voice campaigns with
               allocated minutes.
             </p>
@@ -277,10 +279,10 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
           </div>
         </div>
       </div>
-      <div className="md:flex justify-center hidden py-16 ">
-        <div className="bg-[#F8FAFF] w-[80%] flex items-center justify-between p-5 py-[5rem]">
+      <div className="md:flex justify-center hidden py-[8rem] ">
+        <div className="bg-[#F8FAFF] w-[90%] flex items-center justify-between md:px-[5rem] rounded-2xl p-5 py-[5rem]">
           <div>
-            <p className="font-secondary md:text-[36px] text-[24px] w-[80%]">
+            <p className="font-secondary md:text-[36px] text-[24px]">
               Scale your business with our affordable pricing.
             </p>
             <p className="text-[18px] w-[80%]">Explore more options that suit your business needs.</p>

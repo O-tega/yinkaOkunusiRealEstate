@@ -76,9 +76,9 @@ const ResearchTable = ({ toggleValue }: TResearchTable) => {
           );
         })}
       </div>
-      {tableData.map((el) => {
+      {tableData.map((el, i) => {
         return (
-          <div className="flex items-center p-3 bg-neutral-100 my-2 ">
+          <div key={i} className={`flex items-center p-3 ${i % 2 !== 0 ? "bg-neutral-100" : ""}  my-2`}>
             <p className={`w-[50%] md:w-[50%]`}>{el.planDetails}</p>
             <p className={`w-[50%] md:w-[50%] flex justify-center ${toggleValue !== 0 ? "hidden md:block" : "block"} `}>
               {el.businessPlan === "same" ? (
