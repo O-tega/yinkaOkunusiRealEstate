@@ -8,7 +8,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getRates } from "@/service/rates";
 import Modal from "@/components/Modal";
 import Group from "@/assets/images/pricing/Group.png";
-import uncoverInsight from "@/assets/images/mooyi/uncoverInsight.png";
+import uncoverInsight from "@/assets/images/pricing/researchHub.png";
 import Card from "../Card";
 import EmptyState from "@/components/EmptyState";
 import emptyState from "@/assets/images/pricing/emptyEstimate.png";
@@ -290,8 +290,8 @@ const Custom: React.FC = () => {
             </div>
           </div>
           <div
-            className={`border rounded-2xl h-[500px] w-[30%] p-5 hidden md:inline ${
-              selectCrm === null && selectResearch === null ? "h-[500px]" : "h-full"
+            className={`border rounded-2xl h-[46rem] w-[30%] p-5 hidden md:inline ${
+              selectCrm === null && selectResearch === null ? "h-[500px] overflow-y-auto" : "h-full overflow-y-auto"
             }`}
           >
             <p className="font-[600]">Estimate</p>
@@ -424,7 +424,7 @@ const Custom: React.FC = () => {
       <div className="md:flex justify-center hidden py-[8rem] ">
         <div className="bg-[#F8FAFF] w-[90%] flex items-center justify-between md:px-[5rem] rounded-2xl p-5 py-[5rem]">
           <div>
-            <p className="font-secondary md:text-[36px] text-[24px]">
+            <p className="font-secondary md:text-[36px] text-[24px] leading-tight">
               Scale your business with our affordable pricing.
             </p>
             <p className="text-[18px] w-[80%]">Explore more options that suit your business needs.</p>

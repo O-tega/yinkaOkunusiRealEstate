@@ -377,8 +377,8 @@ const Quotation: React.FC = () => {
             <p className="font-[700] text-[32px] text-primary">{price !== null ? `$${price}` : "$0.00"}</p>
           </div>
           <div className="w-full flex justify-center ">
-            <Link to={emptyCheck ? "#" : `${ROUTES.LOGIN}/register`} className="w-full">
-              <BlueButton text="Buy now" type="button" css="w-full" onClick={handleClick} disabled={emptyCheck} />
+            <Link to={emptyCheck ? "#" : `${ROUTES.LOGIN}/register`} className="w-full flex justify-end">
+              <BlueButton text="Buy now" type="button" css="w-[80%]" onClick={handleClick} disabled={emptyCheck} />
             </Link>
           </div>
         </div>

@@ -150,7 +150,7 @@ const Tables: React.FC<TResearchTable> = ({ toggleValue }) => {
       <div className="text-sm">
         {tableData1.map((el, i) => {
           return (
-            <div key={i} className={`flex items-center p-3 ${i % 2 !== 0 ? "bg-neutral-100" : ""} my-2 `}>
+            <div key={i} className={`flex items-center p-3 ${i % 2 === 0 ? "bg-neutral-100" : ""} my-2 `}>
               <p className={`w-[50%] md:w-[30%]`}>{el.planDetails}</p>
               <p
                 className={`w-[50%] md:w-[22%] text-center flex justify-center ${
@@ -246,21 +246,21 @@ const Tables: React.FC<TResearchTable> = ({ toggleValue }) => {
               <p className={`w-[50%] md:w-[30%]`}>{el.planDetails}</p>
               <p
                 className={`w-[50%] md:w-[22%] md:block flex text-center justify-center ${
-                  toggleValue !== 0 ? "hidden md:block" : "block"
+                  toggleValue !== 0 ? "hidden md:flex" : "block"
                 } `}
               >
                 {el.starterPlan}
               </p>
               <p
                 className={`w-[50%] md:w-[22%] md:block flex text-center justify-center ${
-                  toggleValue !== 1 ? "hidden md:block" : "block"
+                  toggleValue !== 1 ? "hidden md:flex" : "block"
                 } `}
               >
                 <p className="w-[80%]">{el.businessPlan}</p>
               </p>
               <p
                 className={`w-[50%] md:w-[22%] md:block flex text-center justify-center ${
-                  toggleValue !== 2 ? "hidden md:block" : "block"
+                  toggleValue !== 2 ? "hidden md:flex" : "block"
                 } `}
               >
                 <p className="w-[80%]">{el.proPlan}</p>

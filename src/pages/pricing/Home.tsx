@@ -4,13 +4,13 @@ import faqBgMobile from "@/assets/images/mooyi/faqBgMobile.png";
 import Group from "@/assets/images/pricing/Group.png";
 import giftPricing from "@/assets/images/pricing/giftPricing.png";
 import quickAction from "@/assets/images/pricing/quickAction.png";
-import uncoverInsight from "@/assets/images/mooyi/uncoverInsight.png";
+import uncoverInsight from "@/assets/images/pricing/researchHub.png";
 import { Helmet } from "react-helmet";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import Card from "./Card";
 import Modal from "@/components/Modal";
-import { Link } from "react-router-dom";
 import BlueButton from "@/components/Button/BlueButton";
+import { HashLink } from 'react-router-hash-link';
 
 const Home: React.FC = () => {
   const cardData = [
@@ -44,20 +44,6 @@ const Home: React.FC = () => {
           subContent:
             "Different subscription plans are available on mooyi™, like the Starter, Business, and Pro plans, each offering different access levels and bundles. Explore additional flexibility with our add-on bundles to expand your audience reach.",
         },
-        // {
-        //   subtitle: "Who can use Mooyi?",
-        //   subContent:
-        //     "Different subscription plans are available on mooyi™, like the Starter, Business, and Pro plans, each offering different access levels and bundles. Explore additional flexibility with our add-on bundles to expand your audience reach.",
-        // },
-        // {
-        //   subtitle: "How much does each response cost?",
-        //   subContent:
-        //     "Simply sign up for a free account, choose a subscription plan that fits your needs, and you're ready to start gathering insights.",
-        // },
-        // {
-        //   subtitle: "Is there a demo available?",
-        //   subContent: "You can request a demo to see how Mooyi works and how it can benefit your business.",
-        // },
       ],
     },
     {
@@ -65,23 +51,9 @@ const Home: React.FC = () => {
       title: "How much does each response cost?",
       content: [
         {
-          subtitle: "Is there a cost to using Mooyi?",
-          subContent:
-            "Different subscription plans are available on Mooyi, like the Pay as you Go, Starter, Business, and Pro plans, each offering different access levels and bundles. Explore additional flexibility with our add-on bundles to expand your audience reach.",
-        },
-        {
-          subtitle: "How much does each response cost?",
+          subtitle: "",
           subContent:
             "Our subscription plans include a cost per response starting at $2. You are credited with bonus responses on subscribing to a plan. However, you can buy survey bundles if needed.",
-        },
-        {
-          subtitle: "Can I purchase additional responses if needed?",
-          subContent: "Absolutely! You can top up your survey bundles at any time.",
-        },
-        {
-          subtitle: "Do unused responses roll over to the next period?",
-          subContent:
-            "No, unused responses do not carry over to the following subscription period. Nevertheless, there is a 7-day grace period during which you can still utilise these responses before the next payment.",
         },
       ],
     },
@@ -90,38 +62,9 @@ const Home: React.FC = () => {
       title: "Can I purchase additional responses if needed?",
       content: [
         {
-          subtitle: "How do I create a survey on Mooyi?",
+          subtitle: "",
           subContent:
-            "Creating a survey is straightforward. Use our intuitive survey builder, select from pre-existing templates, or design your questions from scratch.",
-        },
-        {
-          subtitle: "What are screening questions?",
-          subContent:
-            "Screening questions allow you to filter participants based on specific criteria, ensuring you only gather insights from the most relevant audience.",
-        },
-        {
-          subtitle: "Can I choose whether to survey the Mooyi audience or my contacts?",
-          subContent:
-            "Yes. Depending on your research needs and objectives, you can survey our diverse audience or your contacts. It's all about allowing you to tailor your surveys for impact.",
-        },
-        {
-          subtitle: "What counts as a response?",
-          subContent:
-            "A response is counted when all the required survey questions are completed and submitted by one individual.",
-        },
-        {
-          subtitle: "Can I purchase additional responses if needed?",
-          subContent: "Absolutely! You can top up your survey bundles at any time.",
-        },
-        {
-          subtitle: "What kind of support does Mooyi offer?",
-          subContent:
-            "All paid subscription plans come with dedicated support from our in-house research, strategy, and analytics consultant team.",
-        },
-        {
-          subtitle: "Can I get expert advice on survey design?",
-          subContent:
-            "Absolutely! Our team is here to assist you with survey design, question types, and audience targeting to ensure meaningful data collection.",
+            "Absolutely! You can top up your survey bundles at any time.",
         },
       ],
     },
@@ -130,22 +73,13 @@ const Home: React.FC = () => {
       title: "Do unused responses roll over to the next period?",
       content: [
         {
-          subtitle: "How do I add contacts on Mooyi?",
+          subtitle: "",
           subContent:
-            "You can add contacts by uploading a CSV file, entering their details manually, or integrating an API. The aim is to build a database of likely survey participants or feedback providers.",
-        },
-        {
-          subtitle: "How many contacts can I add on Mooyi?",
-          subContent:
-            "The number varies based on your subscription plan. Choose the plan that aligns with your needs to manage your contacts effectively.",
-        },
-        {
-          subtitle: "What are contact tags?",
-          subContent:
-            "Contact tags allow for easy organisation and targeting of specific segments within your contacts.",
+            "No, unused responses do not carry over to the following subscription period. Nevertheless, there is a 7-day grace period during which you can still utilise these responses before the next payment.",
         },
       ],
     },
+
   ];
 
   const [index, setIndex] = useState<number>(1);
@@ -273,9 +207,9 @@ const Home: React.FC = () => {
                   panel for your convenience.
                 </p>
                 <div className="mt-5 md:block flex justify-center">
-                  <Link to="/pricing/research-hub">
+                  <HashLink smooth to="/pricing/research-hub/#quotation">
                     <BlueButton text="Start now" />
-                  </Link>
+                  </HashLink>
                 </div>
               </div>
               <div className="md:w-[354px] w-[222px] mt-7 md:mt-0 ">
