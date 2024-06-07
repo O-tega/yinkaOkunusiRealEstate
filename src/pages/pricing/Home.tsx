@@ -10,7 +10,7 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import Card from "./Card";
 import Modal from "@/components/Modal";
 import BlueButton from "@/components/Button/BlueButton";
-import { HashLink } from 'react-router-hash-link';
+import { HashLink } from "react-router-hash-link";
 
 const Home: React.FC = () => {
   const cardData = [
@@ -63,8 +63,7 @@ const Home: React.FC = () => {
       content: [
         {
           subtitle: "",
-          subContent:
-            "Absolutely! You can top up your survey bundles at any time.",
+          subContent: "Absolutely! You can top up your survey bundles at any time.",
         },
       ],
     },
@@ -79,7 +78,6 @@ const Home: React.FC = () => {
         },
       ],
     },
-
   ];
 
   const [index, setIndex] = useState<number>(1);

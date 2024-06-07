@@ -31,7 +31,7 @@ const CRM: React.FC = () => {
   ];
   return (
     <div>
-      <div className="w-[100%] mx-auto md:h-[260px] pb-10 md:pb-0 bg-[#EFF3FF] overflow-hidden pt-16 md:pt-0 relative">
+      <div className="w-[100%] mx-auto md:h-[260px] pb-3 md:pb-0 bg-[#EFF3FF] overflow-hidden pt-16 md:pt-0 relative">
         <div>
           <img
             src={faqBackground}
@@ -47,7 +47,7 @@ const CRM: React.FC = () => {
           />
         </div>
         <div className="w-full flex justify-center md:px-[5rem] px-4 z-10 tracking-tight relative">
-          <div className="absolute top-[5rem] left-[5rem]">
+          <div className="absolute top-[5rem] left-[5rem] hidden md:block">
             <Link to="/pricing">
               <div className="flex items-center space-x-3 text-primary underline">
                 <span>

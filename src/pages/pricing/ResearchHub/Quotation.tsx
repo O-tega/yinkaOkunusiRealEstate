@@ -378,7 +378,7 @@ const Quotation: React.FC = () => {
           </div>
           <div className="w-full flex justify-center ">
             <Link to={emptyCheck ? "#" : `${ROUTES.LOGIN}/register`} className="w-full flex justify-end">
-              <BlueButton text="Buy now" type="button" css="w-[80%]" onClick={handleClick} disabled={emptyCheck} />
+              <BlueButton text="Buy now" type="button" css="md:w-[80%] w-full" onClick={handleClick} disabled={emptyCheck} />
             </Link>
           </div>
         </div>
