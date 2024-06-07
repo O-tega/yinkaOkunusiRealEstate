@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { HiOutlineMinus, HiOutlinePlus } from "react-icons/hi";
-import { IoInformationCircle } from "react-icons/io5";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import PrimaryInput from "@/components/Inputs/PrimaryInput";
@@ -16,6 +15,7 @@ import Modal from "@/components/Modal";
 import { Link } from "react-router-dom";
 import { ROUTES } from "@/constants/externalUrls";
 import { RiDeleteBin5Fill } from "react-icons/ri";
+import Tooltip from "@/components/Tooltip";
 
 interface TProps {
   name: string;
@@ -89,6 +89,8 @@ const Quotation: React.FC = () => {
 
   const emptyStateCheck =
     (values.leastAge !== "" && values.mostAge !== "") ||
+    surveyType !== null ||
+    responses > 200 ||
     selectedGenders.length !== 0 ||
     stateValue.length !== 0 ||
     cityValue.length !== 0 ||
@@ -141,11 +143,22 @@ const Quotation: React.FC = () => {
   };
 
   const categoryArray = [
-    { label: "Sports", value: "Sports" },
-    { label: "Entertainment", value: "Entertainment" },
-    { label: "Reading Habits", value: "Reading Habits" },
-    { label: "Travel", value: "Travel" },
-    { label: "Cooking and Culinary Interests", value: "Cooking and Culinary Interests" },
+    { label: "Business", value: "business" },
+    { label: "Accomodation", value: "accomodation" },
+    { label: "Banking", value: "banking" },
+    { label: "School", value: "school" },
+    { label: "Supermarket", value: "supermarket" },
+    { label: "Spa", value: "spa" },
+    { label: "Restaurant", value: "restaurant" },
+    { label: "Finance", value: "finance" },
+    { label: "Driving", value: "driving" },
+    { label: "Hotel", value: "hotel" },
+    { label: "Transport", value: "transport" },
+    { label: "Freelancer", value: "freelancer" },
+    { label: "Logistics", value: "logistics" },
+    { label: "Gas", value: "gas" },
+    { label: "Electricity", value: "electricity" },
+    { label: "Networking", value: "networking" },
   ];
   return (
     <div className="bg-white md:w-[1058px] rounded-xl border drop-shadow-2xl p-5 md:pb-[7rem] pb-[12rem] relative">
@@ -176,9 +189,7 @@ const Quotation: React.FC = () => {
           <div className="mt-5">
             <div className="flex items-center space-x-1">
               <p className="font-[500] text-[16px]">How many response do you need?</p>
-              <p className="cursor-pointer">
-                <IoInformationCircle />
-              </p>
+              <Tooltip text="The number of responses needed for this survey"/>
             </div>
             <div className="flex items-center mt-1">
               <div
@@ -201,9 +212,6 @@ const Quotation: React.FC = () => {
           <div className="mt-5">
             <div className="flex items-center space-x-1">
               <p className="font-[500] text-[16px]">Set your audience demographic(s)</p>
-              <p className="cursor-pointer">
-                <IoInformationCircle />
-              </p>
             </div>
           </div>
           <form action="" onSubmit={handleSubmit}>
@@ -306,6 +314,24 @@ const Quotation: React.FC = () => {
             ) : null}
           </div>
           <div className="mt-5">
+            {surveyType !== null ? (
+              <div>
+                <p>Survey Type</p>
+                <p>
+                {["Online survey", "Field interview"]?.[surveyType]}
+                </p>
+                <hr className="w-full mt-2" />
+              </div>
+            ) : null}
+            {responses < 200 ? null : (
+              <div>
+                <p>Responses</p>
+                <p>
+                {responses}
+                </p>
+                <hr className="w-full mt-2" />
+              </div>
+            ) }
             {values.leastAge !== "" && values.mostAge !== "" ? (
               <div>
                 <p>Age</p>
@@ -378,7 +404,13 @@ const Quotation: React.FC = () => {
           </div>
           <div className="w-full flex justify-center ">
             <Link to={emptyCheck ? "#" : `${ROUTES.LOGIN}/register`} className="w-full flex justify-end">
-              <BlueButton text="Buy now" type="button" css="md:w-[80%] w-full" onClick={handleClick} disabled={emptyCheck} />
+              <BlueButton
+                text="Buy now"
+                type="button"
+                css="md:w-[80%] w-full"
+                onClick={handleClick}
+                disabled={emptyCheck}
+              />
             </Link>
           </div>
         </div>
@@ -400,6 +432,24 @@ const Quotation: React.FC = () => {
                 ) : null}
               </div>
               <div className="mt-5">
+              {surveyType !== null ? (
+              <div>
+                <p>Survey Type</p>
+                <p>
+                {["Online survey", "Field interview"]?.[surveyType]}
+                </p>
+                <hr className="w-full mt-2" />
+              </div>
+            ) : null}
+            {responses < 200 ? null : (
+              <div>
+                <p>Responses</p>
+                <p>
+                {responses}
+                </p>
+                <hr className="w-full mt-2" />
+              </div>
+            ) }
                 {values.leastAge !== "" && values.mostAge !== "" ? (
                   <div>
                     <p>Age</p>
