@@ -9,7 +9,7 @@ import Tables from "./Tables";
 import BlueButton from "@/components/Button/BlueButton";
 import { Link } from "react-router-dom";
 import { ROUTES } from "@/constants/externalUrls";
-import { HashLink } from 'react-router-hash-link';
+import { HashLink } from "react-router-hash-link";
 
 const cardData = [
   {
@@ -89,10 +89,10 @@ const PlanCard = ({ title, subtitle, tag, info, amount, featureTitle, features, 
             : null}
         </div>
         <HashLink smooth to="/pricing/engagement-hub/#explore">
-              <div className="flex items-center space-x-3 text-primary underline text-[12px] mt-5">
-                <p>explore all features</p>{" "}
-              </div>
-            </HashLink>
+          <div className="flex items-center space-x-3 text-primary underline text-[12px] mt-5">
+            <p>explore all features</p>{" "}
+          </div>
+        </HashLink>
       </div>
     </div>
   );
@@ -166,7 +166,7 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
 
   return (
     <div>
-      <div className="bg-white md:px-[5rem] md:py-[2rem] px-5 py-[5rem]" id="plans">
+      <div className="bg-white md:px-[5rem] md:py-[2rem] px-5 py-[1rem]" id="plans">
         <div className="justify-center space-x-10 items-start h-fit mt-10 hidden md:flex">
           {subPlans.map((el, i) => (
             <PlanCard
@@ -249,7 +249,9 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
         </div>
       </div>
       <div className="mt-[5rem] bg-white">
-        <p className="font-secondary md:text-[40px] text-[24px] text-center" id="explore">Explore all our features</p>
+        <p className="font-secondary md:text-[40px] text-[24px] text-center" id="explore">
+          Explore all our features
+        </p>
         <div className="flex justify-center">
           <p className="text-[16px] md:text-[20px] text-center md:w-[35%] px-3">
             Discover the benefits of each pricing tier and choose the one that best fit your business.
