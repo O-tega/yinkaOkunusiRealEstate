@@ -1,5 +1,5 @@
 import React from "react";
-import uncoverInsight from "@/assets/images/mooyi/uncoverInsight.png";
+import uncoverInsight from "@/assets/images/pricing/researchHub.png";
 import giftPricing from "@/assets/images/pricing/giftPricing.png";
 import customerHeadphone from "@/assets/images/pricing/customerHeadphone.png";
 import checker from "@/assets/images/pricing/check.png";
@@ -9,6 +9,7 @@ import Tables from "./Tables";
 import BlueButton from "@/components/Button/BlueButton";
 import { Link } from "react-router-dom";
 import { ROUTES } from "@/constants/externalUrls";
+import { HashLink } from 'react-router-hash-link';
 
 const cardData = [
   {
@@ -40,7 +41,7 @@ type Tplan = {
 
 const PlanCard = ({ title, subtitle, tag, info, amount, featureTitle, features, conversionRate, toggle }: Tplan) => {
   return (
-    <div className="border rounded-2xl w-[411px] h-[50rem] p-3">
+    <div className="border rounded-2xl w-[411px] h-[55rem] p-3">
       <div className="bg-blue-100 p-5 rounded-t-xl h-[7rem]">
         <div className="flex justify-between">
           <p className="text-[20px] font-[600] text-primary">{title}</p>
@@ -87,6 +88,11 @@ const PlanCard = ({ title, subtitle, tag, info, amount, featureTitle, features, 
               ))
             : null}
         </div>
+        <HashLink smooth to="/pricing/engagement-hub/#explore">
+              <div className="flex items-center space-x-3 text-primary underline text-[12px] mt-5">
+                <p>explore all features</p>{" "}
+              </div>
+            </HashLink>
       </div>
     </div>
   );
@@ -160,7 +166,7 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
 
   return (
     <div>
-      <div className="bg-white md:px-[5rem] md:py-[2rem] px-5 py-[5rem]">
+      <div className="bg-white md:px-[5rem] md:py-[2rem] px-5 py-[5rem]" id="plans">
         <div className="justify-center space-x-10 items-start h-fit mt-10 hidden md:flex">
           {subPlans.map((el, i) => (
             <PlanCard
@@ -243,7 +249,7 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
         </div>
       </div>
       <div className="mt-[5rem] bg-white">
-        <p className="font-secondary md:text-[40px] text-[24px] text-center">Explore all our features</p>
+        <p className="font-secondary md:text-[40px] text-[24px] text-center" id="explore">Explore all our features</p>
         <div className="flex justify-center">
           <p className="text-[16px] md:text-[20px] text-center md:w-[35%] px-3">
             Discover the benefits of each pricing tier and choose the one that best fit your business.
@@ -269,9 +275,9 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
               allocated minutes.
             </p>
             <div className="mt-5 md:block flex justify-center">
-              <Link to={ROUTES.LOGIN}>
+              <HashLink smooth to="/pricing/engagement-hub/#plans">
                 <BlueButton text="Start now" />
-              </Link>
+              </HashLink>
             </div>
           </div>
           <div className="md:w-[354px] w-[222px] mt-7 md:mt-0 md:hidden">
@@ -282,7 +288,7 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
       <div className="md:flex justify-center hidden py-[8rem] ">
         <div className="bg-[#F8FAFF] w-[90%] flex items-center justify-between md:px-[5rem] rounded-2xl p-5 py-[5rem]">
           <div>
-            <p className="font-secondary md:text-[36px] text-[24px]">
+            <p className="font-secondary md:text-[36px] text-[24px] leading-tight">
               Scale your business with our affordable pricing.
             </p>
             <p className="text-[18px] w-[80%]">Explore more options that suit your business needs.</p>

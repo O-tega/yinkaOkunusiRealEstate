@@ -49,7 +49,7 @@ const PayAsYouGo: React.FC<TPremiumPlan> = ({ conversionRate, toggleValue }) => 
 
           <p className="text-sm text-gray-500">Get up to 100 free emails every month </p>
 
-          <p className="text-2xl font-semibold py-6">Free</p>
+          <p className="text-[37px] md:text-[40px] font-semibold py-3">Free</p>
 
           <PrimaryButton text="Try for free" type="button" variant={"filled"} />
 
@@ -98,7 +98,7 @@ const PayAsYouGo: React.FC<TPremiumPlan> = ({ conversionRate, toggleValue }) => 
 
           <p className="text-sm text-gray-500">Get up to 100 free emails every month </p>
 
-          <p className="text-2xl font-semibold py-6">Free</p>
+          <p className="text-[37px] md:text-[40px] font-semibold py-3">Free</p>
 
           <PrimaryButton text="Try for free" type="button" variant={"filled"} />
 
@@ -118,7 +118,7 @@ const PayAsYouGo: React.FC<TPremiumPlan> = ({ conversionRate, toggleValue }) => 
       <div className="md:flex justify-center hidden py-[8rem] ">
         <div className="bg-[#F8FAFF] w-[90%] flex items-center justify-between md:px-[5rem] rounded-2xl p-5 py-[5rem]">
           <div>
-            <p className="font-secondary md:text-[36px] text-[24px]">
+            <p className="font-secondary md:text-[36px] text-[24px] leading-tight">
               Scale your business with our affordable pricing.
             </p>
             <p className="text-[18px] w-[80%]">Explore more options that suit your business needs.</p>
