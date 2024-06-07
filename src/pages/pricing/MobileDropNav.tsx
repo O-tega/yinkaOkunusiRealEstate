@@ -16,7 +16,6 @@ const MobileDropNav = () => {
   const path = currentPath.replace("/pricing/", "");
 
   const toggleDropdown = (id: number) => {
-    console.log("Clicked");
     setDropdown(dropDown === id ? null : id);
   };
 
@@ -37,23 +36,23 @@ const MobileDropNav = () => {
           ref={refer}
         >
           <p
-            className="text-[#737373] hover:bg-gray-200 text-s space-x-2 border-b-[1px] p-3 "
+            className="text-[#737373] hover:bg-gray-200 text-[14px] space-x-2 border-b-[1px] p-3 "
             onClick={() => navigate("/pricing/research-hub")}
           >
-            Research Hub
+            Research hub
           </p>
 
           <p
-            className="text-[#737373] hover:bg-gray-200 text-s space-x-2 border-b-[1px] p-3 "
+            className="text-[#737373] hover:bg-gray-200 text-[14px] space-x-2 border-b-[1px] p-3 "
             onClick={() => navigate("/pricing/engagement-hub")}
           >
             Customer engagement
           </p>
           <p
-            className="text-[#737373] hover:bg-gray-200 text-s cursor-pointer space-x-2 border-b-[1px] p-3 "
+            className="text-[#737373] hover:bg-gray-200 text-[14px] cursor-pointer space-x-2 border-b-[1px] p-3 "
             onClick={() => navigate("/pricing/custom")}
           >
-            Custom
+            Custom plan
           </p>
         </div>
       ) : null}
