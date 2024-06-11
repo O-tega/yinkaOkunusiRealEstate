@@ -157,7 +157,6 @@ import WhiteButton from "./Button/WhiteButton";
 // export default HeroSection;
 
 const HeroSection: React.FC = () => {
-
   return (
     <div className="w-[100%] mx-auto h-[calc(100vh-70px)]">
       <div className="w-full mx-auto h-full overflow-hidden bg-primary hidden md:block">

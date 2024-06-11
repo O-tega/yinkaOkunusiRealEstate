@@ -66,12 +66,6 @@ const HowItWorks: React.FC = () => {
 
   return (
     <div>
-      {/* <Head>
-        <title>mooyi™ | How it Works.</title>
-        <meta name="description" content="Created by Mooyi" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head> */}
       <Helmet>
         <meta charSet="utf-8" />
         <title>mooyi™ | How it Works.</title>

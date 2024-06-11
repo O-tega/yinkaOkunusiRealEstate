@@ -1,7 +1,5 @@
 import HeroSection from "@/components/HeroSection";
 import { useRef } from "react";
-// import OurSolution from "@/components/Web/OurSolution";
-// import LearnMore from "@/components/learnMore";
 import { ASSETS } from "@/assets/images/Assets";
 import lrLine from "@/assets/images/mooyi/lrLine.png";
 import rlLine from "@/assets/images/mooyi/rlLine.png";
@@ -34,15 +32,13 @@ import onboardCard from "@/assets/images/landing/onboardCard.png";
 import surveyCreated from "@/assets/images/landing/surveyCreated.png";
 import CarouselCard from "@/components/Web/CarouselCArd";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
+import { ROUTES } from "@/constants/externalUrls";
 
 const LandingPage = () => {
   const variant = {
     visible: { scale: 1 },
     hidden: { scale: 0 },
   };
-  // if (isLoading) {
-  //   return <PreLoader text="Loading" />;
-  // }
 
   const logos = [
     {
@@ -191,119 +187,6 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      {/* <div>
-        <OurSolution />
-      </div> */}
-      {/* <div>
-        <LearnMore />
-      </div> */}
-      {/* <div className="bg-[#F9F9FE] py-[3rem]">
-        <div className="mt-2 md:px-[4rem] px-2 flex flex-col items-center text-[20px]">
-          <p className="text-primary font-secondary md:text-[36px] text-[28px] md:pb-[5rem] pb-[5rem] text-center">
-            How it works
-          </p>
-          <div className="md:flex items-center md:space-x-[10rem] px-2">
-            <div className="w-[400px] hidden md:block">
-              <p className="text-wrap">
-                Our predictive sample engine, simple survey screens and comprehensive rewards system help boost
-                participation.
-              </p>
-            </div>
-            <motion.div variants={variant} initial="hidden" whileInView="visible">
-              <div className="flex justify-center md:flex-col">
-                <img src={ASSETS.GIFS.engagementRates} alt="Gif image" className="md:w-[415px] w-[380px]" />
-              </div>
-            </motion.div>
-            <div className="md:w-[400px] px-2 pt-3 md:px-0 text-center md:text-left text-[14px] md:hidden">
-              <p className="text-wrap">
-                Our predictive sample engine, simple survey screens and comprehensive rewards system help boost
-                participation.
-              </p>
-            </div>
-          </div>
-          <div className="my-5 px-2 md:px-0">
-            <img src={rlLine} width={500} height={500} alt="Gif image" className="md:w-[415px] w-[207px]" />
-          </div>
-        </div>
-        <div className="md:px-[4rem] px-2 flex flex-col items-center text-[20px]">
-          <div className="md:flex items-center md:space-x-[10rem]">
-            <motion.div variants={variant} initial="hidden" whileInView="visible">
-              <div className="flex justify-center md:flex-none">
-                <img src={ASSETS.GIFS.setScreeningQuestions} alt="Gif image" className="md:w-[415px] w-[380px]" />
-              </div>
-            </motion.div>
-            <div className="md:w-[400px] px-2 pt-3 md:pt-0 text-center text-[16px] md:px-0 md:text-left md:text-[20px]">
-              <p className="text-wrap ">
-                Set screening questions for participants so you only get responses from the exact audience you need.
-              </p>
-            </div>
-          </div>
-          <div className="my-5 px-2 md:px-0">
-            <img src={lrLine} width={500} height={500} alt="Gif image" className="md:w-[415px] w-[207px]" />
-          </div>
-        </div>
-        <div className="md:px-[4rem] px-2 md:flex flex-col items-center text-[20px]">
-          <div className="md:flex items-center md:space-x-[10rem]">
-            <div className="md:w-[480px] hidden md:block">
-              <p className="text-wrap">
-                Target distinct segments such as business professionals, hoteliers, online merchants, grocery shoppers,
-                and mobile money customers.
-              </p>
-            </div>
-            <motion.div variants={variant} initial="hidden" whileInView="visible">
-              <div>
-                <img src={ASSETS.GIFS.TargetAudience} alt="Gif image" className="w-[415px]" />
-              </div>
-            </motion.div>
-            <div className="md:w-[480px] pt-3 text-[14px] text-center px-2 md:hidden">
-              <p className="text-wrap">
-                Target distinct segments such as business professionals, hoteliers, online merchants, grocery shoppers,
-                and mobile money customers.
-              </p>
-            </div>
-          </div>
-          <div className="my-5 px-2 md:px-0 flex justify-center">
-            <img src={rlLine} width={500} height={500} alt="Gif image" className="md:w-[415px] w-[207px]" />
-          </div>
-        </div>
-        <div className="md:px-[4rem] px-2 flex flex-col items-center text-[20px]">
-          <div className="md:flex items-center md:space-x-[10rem]">
-            <motion.div variants={variant} initial="hidden" whileInView="visible">
-              <div className="flex justify-center md:flex-none">
-                <img src={ASSETS.GIFS.EnBranchingLogicQuestions} alt="Gif image" className="md:w-[415px] w-[380px]" />
-              </div>
-            </motion.div>
-            <div className="md:w-[480px] px-2 pt-3 md:pt-0 text-center text-[16px] md:px-0 md:text-left md:text-[20px]">
-              <p className="text-wrap">
-                Enjoy additional features such as branching logic questions, retargeting survey respondents, and
-                one-click results filtering by demographic criteria.
-              </p>
-            </div>
-          </div>
-          <div className="my-5 px-2 md:px-0">
-            <img src={lrLine} width={500} height={500} alt="Gif image" className="md:w-[415px] w-[207px]" />
-          </div>
-        </div>
-        <div className="md:px-[4rem] px-2 flex flex-col items-center text-[20px]">
-          <div className="md:flex items-center md:space-x-[10rem]">
-            <div className="w-[400px] hidden md:block">
-              <p className="text-wrap">
-                Participants typically complete a survey in less than 10 minutes without speeding through.
-              </p>
-            </div>
-            <motion.div variants={variant} initial="hidden" whileInView="visible">
-              <div>
-                <img src={ASSETS.GIFS.lastgif} alt="Gif image" className="w-[415px]" />
-              </div>
-            </motion.div>
-            <div className="w-[400px] text-[14px] text-center px-2 md:hidden">
-              <p className="text-wrap">
-                Participants typically complete a survey in less than 10 minutes without speeding through.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div> */}
       <div className="bg-[#F9F9FE] py-[3rem]">
         <div className="mt-2 md:px-[4rem] px-2 flex flex-col items-center text-[20px]">
           <p className="text-primary font-secondary md:text-[36px] text-[28px] md:pb-[5rem] pb-[5rem] text-center">
@@ -449,7 +332,9 @@ const LandingPage = () => {
       </div>
       <div className="md:px-[7rem] py-[5rem] md:py-[5rem]">
         <div className="md:flex items-center justify-between">
-          <p className="md:text-[40px] text-[24px] font-secondary pb-10 text-center md:text-left">What Are You Trying to Get Done?</p>
+          <p className="md:text-[40px] text-[24px] font-secondary pb-10 text-center md:text-left">
+            What Are You Trying to Get Done?
+          </p>
           <div className="flex items-center space-x-5 justify-center md:justify-end ">
             <div
               className={`rounded-full flex items-center justify-center p-1 border-primary border text-primary cursor-pointer`}
@@ -469,6 +354,37 @@ const LandingPage = () => {
           <Carousel responsive={responsive} arrows={false} ref={carouselRef}>
             {carolInfo?.map((item, i) => <CarouselCard key={i} title={item.title} text={item.text} img={item.img} />)}
           </Carousel>
+        </div>
+        <div className="flex justify-center mt-16">
+          <div className="md:w-[15%] w-[50%]">
+            <Link to={`${ROUTES.LOGIN}/register`}>
+              <PrimaryButton type="button" text="Get started now" css="rounded-md" variant="filled" />
+            </Link>
+          </div>
+        </div>
+      </div>
+      <div className="w-full bg-[#141254] md:h-[408px] h-[273px] relative">
+        <div className="md:flex justify-between h-full">
+          <div className="md:w-[50%] flex items-center md:pt-5 pt-[3rem] pl-3">
+            <h1 className="md:w-[90%]  md:pl-[7rem] w-[70%] md:text-left text-white md:text-[40px] text-[20px]">
+              Outpace your competitors with real-time access to market insights.
+            </h1>
+          </div>
+          <div className="hidden md:block">
+            <img
+              src={ASSETS.LandingPage.surveyGraph}
+              alt=""
+              className="md:w-[457px] w-[403px] bottom-0 right-[15rem] absolute"
+            />
+            <img
+              src={ASSETS.LandingPage.surveyPiechart}
+              alt=""
+              className="md:w-[244px] w-[403px] top-0 right-[10rem] absolute"
+            />
+          </div>
+          <div className="md:hidden">
+            <img src={ASSETS.LandingPage.surveyGraphCombined} alt="" className="w-[278px] bottom-0 right-0 absolute" />
+          </div>
         </div>
       </div>
       <div className="mt-20  md:space-y-3 px-2 md:px-0">
