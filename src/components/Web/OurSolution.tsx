@@ -6,79 +6,50 @@ import { motion } from "framer-motion";
 const data = [
   {
     id: 1,
-    cardtext: "Uber-fast responses",
-    title: "Get 100% response rates on your surveys.",
-    desc: "Outpace your competitors with quick access to consumer data in real time.",
+    // cardtext: "Uber-fast responses",
+    // title: "Get 100% response rates on your surveys.",
+    desc: "Add your existing customer contacts, group them into segments based on user attributes or actions and send compelling messages at the right time to keep them returning.",
     icon: <img src={ASSETS.GIFS.UberFastResponses} alt="logos" className="w-full md:w-[387px]" />,
   },
   {
     id: 2,
-    cardtext: "Customer acquisition",
-    title: "Invite survey participants to opt in or sign up.",
-    desc: "Launch surveys that not only provide insights but also help generate leads.",
+    // cardtext: "Customer acquisition",
+    // title: "Invite survey participants to opt in or sign up.",
+    desc: "Monitor campaign analytics in real-time and track lead conversion rate and customer engagement metrics, such as frequency of communication and recent interactions.",
     icon: <img src={ASSETS.GIFS.CustomerAcquisition} alt="logos" className="w-full md:w-[387px]" />,
   },
   {
     id: 3,
-    cardtext: "Mobile engagement",
-    title: "Manage and reach your customers' all-in-one platform.",
-    desc: "Send beautiful emails and SMS to nurture leads and drive conversions.",
+    // cardtext: "Mobile engagement",
+    // title: "Manage and reach your customers' all-in-one platform.",
+    desc: "Get support for free. Participants typically complete a survey in less than 10 minutes without speeding through.",
     icon: <img src={ASSETS.GIFS.MobileEngagement} alt="logos" className="w-full md:w-[387px]" />,
   },
-  {
-    id: 4,
-    cardtext: "Embedded rewards",
-    title: "Offer easily redeemable rewards for feedback.",
-    desc: "Spend less time on the admin part of surveys and more digesting responses.",
-    icon: <img src={ASSETS.GIFS.EmbeddedRewards} alt="logos" className="w-full md:w-[387px]" />,
-  },
-  {
-    id: 5,
-    cardtext: "Intuitive analytics",
-    title: "Explore your data with simple and intuitive tools.",
-    desc: "Continuously improve your services and operations with actionable data.",
-    icon: <img src={ASSETS.GIFS.IntuitiveAnalytics} alt="logos" className="w-full md:w-[387px]" />,
-  },
-  {
-    id: 6,
-    cardtext: "Easy collaboration",
-    mobileText: "",
-    title: "Involve your team or seek help from our team",
-    desc: "Get support during the research process - crafting questions or analysing results.",
-    icon: <img src={ASSETS.GIFS.EasyCollaboration} alt="logos" className="w-full md:w-[387px]" />,
-  },
+  // {
+  //   id: 4,
+  //   cardtext: "Embedded rewards",
+  //   title: "Offer easily redeemable rewards for feedback.",
+  //   desc: "Get support for free. Participants typically complete a survey in less than 10 minutes without speeding through.",
+  //   icon: <img src={ASSETS.GIFS.EmbeddedRewards} alt="logos" className="w-full md:w-[387px]" />,
+  // },
+  // {
+  //   id: 5,
+  //   cardtext: "Intuitive analytics",
+  //   title: "Explore your data with simple and intuitive tools.",
+  //   desc: "Continuously improve your services and operations with actionable data.",
+  //   icon: <img src={ASSETS.GIFS.IntuitiveAnalytics} alt="logos" className="w-full md:w-[387px]" />,
+  // },
+  // {
+  //   id: 6,
+  //   cardtext: "Easy collaboration",
+  //   mobileText: "",
+  //   title: "Involve your team or seek help from our team",
+  //   desc: "Get support during the research process - crafting questions or analysing results.",
+  //   icon: <img src={ASSETS.GIFS.EasyCollaboration} alt="logos" className="w-full md:w-[387px]" />,
+  // },
 ];
 
 const OurSolution: React.FC = () => {
-  // const [onHover, setHover] = useState(0);
-  // const containerRef = useRef<HTMLDivElement>(null);
-  // const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  // const handleHover = (index: number) => {
-  //   setHover(index);
-  //   scrollToCard(index);
-  // };
-
-  // const scrollToCard = (index: number) => {
-  //   const container = containerRef.current;
-  //   const card = cardRefs.current[index];
-  //   if (!container || !card) return;
-
-  //   const cardWidth = card.offsetWidth;
-  //   const scrollLeft = container.scrollLeft;
-  //   const containerWidth = container.clientWidth;
-  //   const cardLeft = card.offsetLeft;
-
-  //   if (
-  //     cardLeft < scrollLeft ||
-  //     cardLeft + cardWidth > scrollLeft + containerWidth
-  //   ) {
-  //     container.scrollTo({
-  //       left: cardLeft,
-  //       behavior: "smooth",
-  //     });
-  //   }
-  // };
 
   const variant = {
     visible: { scale: 1 },
@@ -104,8 +75,8 @@ const OurSolution: React.FC = () => {
                 </div>
                 <div className="flex">
                   <div>
-                    <p className="w-full font-secondary text-primary text-[36px]">{item.cardtext}</p>
-                    <p className="text-[18px]">{item.title}</p>
+                    {/* <p className="w-full font-secondary text-primary text-[36px]">{item.cardtext}</p> */}
+                    {/* <p className="text-[18px]">{item.title}</p> */}
                     <p className="text-[18px] w-[75%]">{item.desc}</p>
                   </div>
                 </div>
@@ -116,8 +87,8 @@ const OurSolution: React.FC = () => {
               <div className=" grid grid-cols-2 gap-x-[5rem] items-center py-[4rem]">
                 <div className="flex justify-end ">
                   <div className="w-[76%]">
-                    <p className="w-full font-secondary text-primary text-[36px]">{item.cardtext}</p>
-                    <p className="text-[18px]">{item.title}</p>
+                    {/* <p className="w-full font-secondary text-primary text-[36px]">{item.cardtext}</p> */}
+                    {/* <p className="text-[18px]">{item.title}</p> */}
                     <p className="text-[18px]">{item.desc}</p>
                   </div>
                 </div>
@@ -141,7 +112,7 @@ const OurSolution: React.FC = () => {
               <motion.div variants={variant} initial="hidden" whileInView="visible" className="">
                 {item.icon}
               </motion.div>
-              <p className="font-secondary text-[24px] text-center pt-3 w-full text-primary">{item.cardtext}</p>
+              {/* <p className="font-secondary text-[24px] text-center pt-3 w-full text-primary">{item.cardtext}</p> */}
               <p className="text-[14px] text-center">{item.desc}</p>
             </div>
           </div>

@@ -11,6 +11,7 @@ import LearnMore from "@/components/learnMore";
 import FeaturesCard from "@/components/Web/FeaturesCard";
 import { Link } from "react-router-dom";
 import WhiteButton from "@/components/Button/WhiteButton";
+import OurSolution from "@/components/Web/OurSolution";
 
 const HowItWorks: React.FC = () => {
   // const cardData = [
@@ -120,6 +121,9 @@ const HowItWorks: React.FC = () => {
               <WhiteButton text={"Learn more about MooyiRewards"} css="text-black" />
             </Link>
           </div>
+        </div>
+        <div>
+          <OurSolution />
         </div>
         <div className="mt-10 md:px-[5rem] px-2">
           <div className="mt-10">

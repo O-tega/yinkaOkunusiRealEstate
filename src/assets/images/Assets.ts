@@ -145,4 +145,7 @@ export const ASSETS = {
     surveyGraph: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/surveyGraph.png",
     surveyPiechart: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/surveyPiechart.png",
   },
+  howItWorks: {
+    support: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/support.png",
+  },
 };

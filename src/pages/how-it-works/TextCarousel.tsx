@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import onCall from "@/assets/images/mooyi/onCall.png";
+// import onCall from "@/assets/images/mooyi/onCall.png";
 import { BsDashLg } from "react-icons/bs";
 import { motion } from "framer-motion";
+import { ASSETS } from "@/assets/images/Assets";
 
 const carouselData = [
   {
@@ -50,7 +51,7 @@ const TextCarousel = () => {
   return (
     <div className="md:flex items-center justify-between w-full md:space-x-16 bg-[#F8FAFF] rounded-xl overflow-hidden">
       <div>
-        <img src={onCall} alt="on call image" className="w-full" />
+        <img src={ASSETS.howItWorks.support} alt="on call image" className="w-full" />
       </div>
       <div>
         {carouselData.map((item, i) => (
