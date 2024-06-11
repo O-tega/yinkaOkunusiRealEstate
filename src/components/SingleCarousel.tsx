@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const flutterImages = [flutterwave1, flutterwave3, flutterwave4, flutterwave5];
 
-const Carousel: React.FC = () => {
+const SingleCarousel: React.FC = () => {
   const [images, setImages] = useState([...flutterImages]);
   const [isAnimating, setIsAnimating] = useState(false);
   // const variant = {
@@ -57,4 +57,4 @@ const Carousel: React.FC = () => {
   );
 };
 
-export default Carousel;
+export default SingleCarousel;

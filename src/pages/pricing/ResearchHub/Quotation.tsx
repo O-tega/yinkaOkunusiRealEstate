@@ -189,7 +189,7 @@ const Quotation: React.FC = () => {
           <div className="mt-5">
             <div className="flex items-center space-x-1">
               <p className="font-[500] text-[16px]">How many response do you need?</p>
-              <Tooltip text="The number of responses needed for this survey"/>
+              <Tooltip text="The number of responses needed for this survey" />
             </div>
             <div className="flex items-center mt-1">
               <div
@@ -317,21 +317,17 @@ const Quotation: React.FC = () => {
             {surveyType !== null ? (
               <div>
                 <p>Survey Type</p>
-                <p>
-                {["Online survey", "Field interview"]?.[surveyType]}
-                </p>
+                <p>{["Online survey", "Field interview"]?.[surveyType]}</p>
                 <hr className="w-full mt-2" />
               </div>
             ) : null}
             {responses < 200 ? null : (
               <div>
                 <p>Responses</p>
-                <p>
-                {responses}
-                </p>
+                <p>{responses}</p>
                 <hr className="w-full mt-2" />
               </div>
-            ) }
+            )}
             {values.leastAge !== "" && values.mostAge !== "" ? (
               <div>
                 <p>Age</p>
@@ -432,24 +428,20 @@ const Quotation: React.FC = () => {
                 ) : null}
               </div>
               <div className="mt-5">
-              {surveyType !== null ? (
-              <div>
-                <p>Survey Type</p>
-                <p>
-                {["Online survey", "Field interview"]?.[surveyType]}
-                </p>
-                <hr className="w-full mt-2" />
-              </div>
-            ) : null}
-            {responses < 200 ? null : (
-              <div>
-                <p>Responses</p>
-                <p>
-                {responses}
-                </p>
-                <hr className="w-full mt-2" />
-              </div>
-            ) }
+                {surveyType !== null ? (
+                  <div>
+                    <p>Survey Type</p>
+                    <p>{["Online survey", "Field interview"]?.[surveyType]}</p>
+                    <hr className="w-full mt-2" />
+                  </div>
+                ) : null}
+                {responses < 200 ? null : (
+                  <div>
+                    <p>Responses</p>
+                    <p>{responses}</p>
+                    <hr className="w-full mt-2" />
+                  </div>
+                )}
                 {values.leastAge !== "" && values.mostAge !== "" ? (
                   <div>
                     <p>Age</p>

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { IoMdInformationCircle } from "react-icons/io";
 
-type TText={
-  text:string
-}
-const Tooltip:React.FC<TText> = ({text}) => {
+type TText = {
+  text: string;
+};
+const Tooltip: React.FC<TText> = ({ text }) => {
   const [show, setShow] = useState(false);
 
   return (
