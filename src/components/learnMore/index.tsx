@@ -23,8 +23,8 @@ const data = [
 
 const LearnMore: React.FC = () => {
   return (
-    <div className="md:px-[4rem] md:py-[2rem]">
-      <div className="w-full md:flex items-center md:p-10 p-3 md:space-x-10 space-y-5 md:space-y-0 mt-10 justify-center ">
+    <div className="md:px-[4rem]">
+      <div className="w-full md:flex items-center p-3 md:space-x-10 space-y-5 md:space-y-0 justify-center ">
         {data.map((item, i) => (
           <div
             key={i}

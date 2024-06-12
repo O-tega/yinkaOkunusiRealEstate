@@ -157,20 +157,23 @@ import WhiteButton from "./Button/WhiteButton";
 // export default HeroSection;
 
 const HeroSection: React.FC = () => {
-
   return (
-    <div className="w-[100%] mx-auto h-[calc(100vh-70px)]">
-      <div className="w-full mx-auto h-full overflow-hidden bg-primary hidden md:block">
+    <div className="w-[100%] mx-auto md:h-[calc(100vh-70px)] h-[600px]">
+      <div className="w-full mx-auto h-full overflow-hidden bg-primary md:block">
         <div className="mt-[5rem]">
-          <h1 className=" text-[80px] mx-auto leading-[1.2em] text-white text-center">Say goodbye to guesswork.</h1>
-          <p className="font-primary text-[24px] text-white text-center">And hello to agile consumer insights.</p>
+          <h1 className=" md:text-[80px] text-[40px] mx-auto leading-[1.2em] text-white text-center">
+            Say goodbye to guesswork.
+          </h1>
+          <p className="font-primary md:text-[24px] mt-5 md:mt-0 text-[14px] text-white text-center">
+            And hello to agile consumer insights.
+          </p>
           <div className="flex justify-center mt-5">
             <WhiteButton text={"Get started now"} css="text-black" />
           </div>
         </div>
-        <div className="flex justify-center mt-[3rem]">
-          <div className="w-[80%] min-h-[50%] border-[#959DF3] bg-white border-[0.8rem] rounded-[2rem] flex justify-center items-center overflow-hidden">
-            <img src={ASSETS.LandingPage.businessWoman} alt="" className="object-cover" />
+        <div className="flex justify-center mt-10 md:mt-[3rem]">
+          <div className="w-[80%] md:min-h-[calc(100vh-300px)] h-[400px] border-[#959DF3] bg-white border-[0.8rem] rounded-[2rem] flex justify-start items-start overflow-hidden">
+            <img src={ASSETS.LandingPage.businessWoman} alt="" className="object-cover object-top h-full w-full" />
           </div>
         </div>
       </div>
