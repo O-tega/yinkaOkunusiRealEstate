@@ -68,7 +68,7 @@ const PlanCard = ({ title, subtitle, tag, info, amount, featureTitle, features, 
           </div>
         )}
         <div className="mt-5">
-          <Link to={title === "Pro Plan" ? "mailto:support@enterscale.com" : `${ROUTES.LOGIN}/register`}>
+          <Link to={title === "Pro Plan" ? "mailto:support@enterscale.com" : `#`}>
             <BlueButton text={title === "Pro Plan" ? "Contact us" : "Buy now"} type="button" css="w-full" />
           </Link>
         </div>

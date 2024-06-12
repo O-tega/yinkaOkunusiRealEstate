@@ -50,7 +50,6 @@ const data = [
 ];
 
 const OurSolution: React.FC = () => {
-
   const variant = {
     visible: { scale: 1 },
     hidden: { scale: 0 },
