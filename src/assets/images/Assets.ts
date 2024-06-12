@@ -31,6 +31,12 @@ export const ASSETS = {
     TargetAudience: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/TargetAudience.gif",
     UberFastResponses:
       "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/Uber-fastResponses.gif",
+    addExistinggCustomer:
+      "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/Add%20existing%20customers.gif",
+    getSupportForFree:
+      "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/Get%20support%20for%20free.gif",
+    realTimeAnalytics:
+      "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/Real-time%20analytics.gif",
   },
   OURSOLUTION: {
     customerEngagementIcon: "",
