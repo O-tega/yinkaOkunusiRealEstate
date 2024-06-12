@@ -97,8 +97,8 @@ const LandingPage = () => {
   const carolInfo = [
     {
       img: surveyCreated,
-      title: "Launch field research from your desk.",
-      text: "Get footage and highlights from people in the streets, malls, markets, and other public spaces.",
+      title: "Create any type of survey in minutes.",
+      text: "Find the right audience for any research campaign in days, not weeks — from our panel.",
     },
     {
       img: graphCard,

@@ -137,7 +137,7 @@ export const ASSETS = {
     },
   },
   LandingPage: {
-    businessWoman: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/businesWoman.png",
+    businessWoman: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/man.png",
     surevyPreview: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/surveyPreview.png",
     appHome: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/appHome.png",
     surveyGraphCombined:
