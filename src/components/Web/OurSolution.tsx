@@ -74,7 +74,7 @@ const OurSolution: React.FC = () => {
   return (
     <div className="bg-[#FAFAFF] md:px-[4rem] px-2 md:py-[6rem] py-5">
       <div>
-        <p className="text-primary text-center text-2xl font-secondary">Get quality feedback from your customers</p>
+        <p className="text-center md:text-[40px] text-[28px] font-secondary">Get quality feedback from your customers</p>
       </div>
       <div className="px-[4rem] hidden md:block">
         {data.map((item, i) =>
