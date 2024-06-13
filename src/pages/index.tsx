@@ -201,7 +201,11 @@ const LandingPage = () => {
             </div>
             <motion.div variants={variant} initial="hidden" whileInView="visible">
               <div className="flex justify-center md:flex-col">
-                <img src={ASSETS.GIFS.lessParticipationWorry} alt="Gif image" className="md:w-[415px] w-[380px] border-[1rem] border-[#EBF1FF]" />
+                <img
+                  src={ASSETS.GIFS.lessParticipationWorry}
+                  alt="Gif image"
+                  className="md:w-[415px] w-[380px] border-[1rem] border-[#EBF1FF]"
+                />
               </div>
             </motion.div>
             <div className="md:w-[400px] px-2 pt-3 md:px-0 text-center md:text-left text-[14px] md:hidden">
@@ -219,7 +223,11 @@ const LandingPage = () => {
           <div className="md:flex items-center md:space-x-[10rem]">
             <motion.div variants={variant} initial="hidden" whileInView="visible">
               <div className="flex justify-center md:flex-none">
-                <img src={ASSETS.GIFS.SetScreeningQuestionsforParticipants} alt="Gif image" className="md:w-[415px] w-[380px]  border-[1rem] border-[#EBF1FF]" />
+                <img
+                  src={ASSETS.GIFS.SetScreeningQuestionsforParticipants}
+                  alt="Gif image"
+                  className="md:w-[415px] w-[380px]  border-[1rem] border-[#EBF1FF]"
+                />
               </div>
             </motion.div>
             <div className="md:w-[400px] px-2 pt-3 md:pt-0 text-center text-[16px] md:px-0 md:text-left md:text-[20px]">
@@ -242,7 +250,11 @@ const LandingPage = () => {
             </div>
             <motion.div variants={variant} initial="hidden" whileInView="visible">
               <div>
-                <img src={ASSETS.GIFS.targetDistinctSegment} alt="Gif image" className="w-[415px]  border-[1rem] border-[#EBF1FF]" />
+                <img
+                  src={ASSETS.GIFS.targetDistinctSegment}
+                  alt="Gif image"
+                  className="w-[415px]  border-[1rem] border-[#EBF1FF]"
+                />
               </div>
             </motion.div>
             <div className="md:w-[480px] pt-3 text-[14px] text-center px-2 md:hidden">
@@ -260,7 +272,11 @@ const LandingPage = () => {
           <div className="md:flex items-center md:space-x-[10rem]">
             <motion.div variants={variant} initial="hidden" whileInView="visible">
               <div className="flex justify-center md:flex-none">
-                <img src={ASSETS.GIFS.EnjoyAdditionalFeature} alt="Gif image" className="md:w-[415px] w-[380px]  border-[1rem] border-[#EBF1FF]" />
+                <img
+                  src={ASSETS.GIFS.EnjoyAdditionalFeature}
+                  alt="Gif image"
+                  className="md:w-[415px] w-[380px]  border-[1rem] border-[#EBF1FF]"
+                />
               </div>
             </motion.div>
             <div className="md:w-[480px] px-2 pt-3 md:pt-0 text-center text-[16px] md:px-0 md:text-left md:text-[20px]">
@@ -284,7 +300,11 @@ const LandingPage = () => {
             </div>
             <motion.div variants={variant} initial="hidden" whileInView="visible">
               <div>
-                <img src={ASSETS.GIFS.followUpIntrestedParticipant} alt="Gif image" className="w-[415px]  border-[1rem] border-[#EBF1FF]" />
+                <img
+                  src={ASSETS.GIFS.followUpIntrestedParticipant}
+                  alt="Gif image"
+                  className="w-[415px]  border-[1rem] border-[#EBF1FF]"
+                />
               </div>
             </motion.div>
             <div className="w-[400px] text-[14px] text-center px-2 md:hidden">

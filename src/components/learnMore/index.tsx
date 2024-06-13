@@ -12,14 +12,14 @@ const data = [
     desc: "Gather insights from your target audience quickly with location, demographic, and interest filters.",
     chart1: barchart,
     chart2: surveychart,
-    link:"ourPanel"
+    link: "ourPanel",
   },
   {
     title: "Your Audience",
     desc: "Collect customer and employee feedback to enhance their experience with your brand.",
     chart1: audienceage,
     chart2: audiencetype,
-    link:"audience"
+    link: "audience",
   },
 ];
 
