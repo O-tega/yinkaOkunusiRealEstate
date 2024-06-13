@@ -4,7 +4,7 @@ import surveychart from "@/assets/images/mooyi/mooyiSurveychart.png";
 import audiencetype from "@/assets/images/mooyi/mooyiAudienceType.png";
 import audienceage from "@/assets/images/mooyi/mooyiAgeAudience.png";
 import WhiteButton from "../Button/WhiteButton";
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const data = [
   {
@@ -12,12 +12,14 @@ const data = [
     desc: "Gather insights from your target audience quickly with location, demographic, and interest filters.",
     chart1: barchart,
     chart2: surveychart,
+    link: "ourPanel",
   },
   {
     title: "Your Audience",
     desc: "Collect customer and employee feedback to enhance their experience with your brand.",
     chart1: audienceage,
     chart2: audiencetype,
+    link: "audience",
   },
 ];
 
@@ -43,9 +45,9 @@ const LearnMore: React.FC = () => {
               />
             </div>
             <div className="pt-5">
-              <Link to="/how-it-works">
+              <HashLink smooth to={`/how-it-works/#${item.link}`}>
                 <WhiteButton text="Learn more" />
-              </Link>
+              </HashLink>
             </div>
           </div>
         ))}

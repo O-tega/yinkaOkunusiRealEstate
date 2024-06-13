@@ -71,25 +71,25 @@ const LandingPage = () => {
     {
       title: "Feedback from real humans.",
       text: "Get insights from our panel or your customers, partners, and employees. Our respondents have various reasons for participating.",
-      link: "#",
+      link: "/how-it-works",
       img: customerIcon,
     },
     {
       title: "Incentives for participation.",
       text: "Gift participants rewards such as airtime, data, cash, or gift vouchers and spend less time on follow-up and more time taking action.",
-      link: "#",
+      link: "/how-it-works",
       img: boxIcon,
     },
     {
       title: "Data you can count on.",
       text: "There are no fake answers. We’ve built multiple levels of quality control into Mooyi, blending human and AI checks for consistently reliable results.",
-      link: "#",
+      link: "/how-it-works",
       img: statisticsIcon,
     },
     {
       title: "Research expertise on tap.",
       text: "Upskill yourself in our Learning Hub or hire our in-house team of research and insights experts for more complex projects.",
-      link: "#",
+      link: "/how-it-works",
       img: graphIcon,
     },
   ];
@@ -201,7 +201,11 @@ const LandingPage = () => {
             </div>
             <motion.div variants={variant} initial="hidden" whileInView="visible">
               <div className="flex justify-center md:flex-col">
-                <img src={ASSETS.GIFS.engagementRates} alt="Gif image" className="md:w-[415px] w-[380px]" />
+                <img
+                  src={ASSETS.GIFS.lessParticipationWorry}
+                  alt="Gif image"
+                  className="md:w-[415px] w-[380px] border-[1rem] border-[#EBF1FF]"
+                />
               </div>
             </motion.div>
             <div className="md:w-[400px] px-2 pt-3 md:px-0 text-center md:text-left text-[14px] md:hidden">
@@ -219,7 +223,11 @@ const LandingPage = () => {
           <div className="md:flex items-center md:space-x-[10rem]">
             <motion.div variants={variant} initial="hidden" whileInView="visible">
               <div className="flex justify-center md:flex-none">
-                <img src={ASSETS.GIFS.setScreeningQuestions} alt="Gif image" className="md:w-[415px] w-[380px]" />
+                <img
+                  src={ASSETS.GIFS.SetScreeningQuestionsforParticipants}
+                  alt="Gif image"
+                  className="md:w-[415px] w-[380px]  border-[1rem] border-[#EBF1FF]"
+                />
               </div>
             </motion.div>
             <div className="md:w-[400px] px-2 pt-3 md:pt-0 text-center text-[16px] md:px-0 md:text-left md:text-[20px]">
@@ -242,7 +250,11 @@ const LandingPage = () => {
             </div>
             <motion.div variants={variant} initial="hidden" whileInView="visible">
               <div>
-                <img src={ASSETS.GIFS.TargetAudience} alt="Gif image" className="w-[415px]" />
+                <img
+                  src={ASSETS.GIFS.targetDistinctSegment}
+                  alt="Gif image"
+                  className="w-[415px]  border-[1rem] border-[#EBF1FF]"
+                />
               </div>
             </motion.div>
             <div className="md:w-[480px] pt-3 text-[14px] text-center px-2 md:hidden">
@@ -260,7 +272,11 @@ const LandingPage = () => {
           <div className="md:flex items-center md:space-x-[10rem]">
             <motion.div variants={variant} initial="hidden" whileInView="visible">
               <div className="flex justify-center md:flex-none">
-                <img src={ASSETS.GIFS.EnBranchingLogicQuestions} alt="Gif image" className="md:w-[415px] w-[380px]" />
+                <img
+                  src={ASSETS.GIFS.EnjoyAdditionalFeature}
+                  alt="Gif image"
+                  className="md:w-[415px] w-[380px]  border-[1rem] border-[#EBF1FF]"
+                />
               </div>
             </motion.div>
             <div className="md:w-[480px] px-2 pt-3 md:pt-0 text-center text-[16px] md:px-0 md:text-left md:text-[20px]">
@@ -284,7 +300,11 @@ const LandingPage = () => {
             </div>
             <motion.div variants={variant} initial="hidden" whileInView="visible">
               <div>
-                <img src={ASSETS.GIFS.lastgif} alt="Gif image" className="w-[415px]" />
+                <img
+                  src={ASSETS.GIFS.followUpIntrestedParticipant}
+                  alt="Gif image"
+                  className="w-[415px]  border-[1rem] border-[#EBF1FF]"
+                />
               </div>
             </motion.div>
             <div className="w-[400px] text-[14px] text-center px-2 md:hidden">
@@ -391,7 +411,7 @@ const LandingPage = () => {
         <p className=" text-center md:text-[40px] text-[28px] font-secondary md:px-[25rem] leading-10">
           Engage guests with live event games and feedback surveys.
         </p>
-        <p className="md:text-[20px] md:px-[25rem] text-center text-[14px]">
+        <p className="md:text-[20px] md:px-[20rem] text-center text-[14px]">
           Flutterwave used the platform to register merchants and shoppers at their trade fair, incentivising them to
           participate and share their feedback about their event experience.
         </p>
