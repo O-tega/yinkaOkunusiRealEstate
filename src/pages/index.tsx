@@ -175,7 +175,7 @@ const LandingPage = () => {
       </Helmet>
       <HeroSection />
 
-      <div className="bg-[#F8F6FC]">
+      <div className="bg-white">
         <div className="text-center py-[5em] flex justify-center">
           <div>
             <p className="md:text-[20px]">We're trusted by some of the fastest growing startups in Africa.</p>
@@ -189,7 +189,7 @@ const LandingPage = () => {
       </div>
       <div className="bg-[#F9F9FE] py-[3rem]">
         <div className="mt-2 md:px-[4rem] px-2 flex flex-col items-center text-[20px]">
-          <p className="text-primary font-secondary md:text-[36px] text-[28px] md:pb-[5rem] pb-[5rem] text-center">
+          <p className="font-secondary md:text-[40px] text-[28px] md:pb-[5rem] pb-[5rem] text-center">
             How it works
           </p>
           <div className="md:flex items-center md:space-x-[10rem] px-2">
