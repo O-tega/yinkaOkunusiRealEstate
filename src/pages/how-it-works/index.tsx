@@ -77,11 +77,13 @@ const HowItWorks: React.FC = () => {
         <div className="mt-10 md:px-[5rem] px-2">
           <div className="mt-10">
             <p className="font-secondary text-[32px] text-center hidden md:block">
-              Achieve Your Research Goals with Our Support.
+              Achieve your research goals with our support.
             </p>
-            <p className="font-secondary text-[28px] text-center md:hidden">Achieve Your Goals with Our Support.</p>
+            <div className="md:hidden flex justify-center">
+              <p className="font-secondary text-[24px] w-[75%] text-center ">Achieve your goals with our support.</p>
+            </div>
 
-            <div className="flex justify-center px-[4rem] my-10 pb-[4rem]">
+            <div className="flex justify-center md:px-[4rem] md:my-10 my-5 pb-[4rem]">
               <TextCarousel />
             </div>
           </div>

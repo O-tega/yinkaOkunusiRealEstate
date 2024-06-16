@@ -1,3 +1,4 @@
+import CookieBanner from "@/components/Web/CookieBanner";
 import Footer from "@/components/Web/Footer";
 import Header from "@/components/Web/Header";
 import { Outlet } from "react-router-dom";
@@ -6,6 +7,7 @@ import { Outlet } from "react-router-dom";
 const WebLayout = () => {
   return (
     <div className="font-primary">
+      <CookieBanner />
       <div className="pb-[70px]">
         <Header />
       </div>
