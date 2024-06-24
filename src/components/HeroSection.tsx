@@ -1,10 +1,6 @@
 import React from "react";
 import { ASSETS } from "@/assets/images/Assets";
-// import PrimaryButton from "./Button/PrimaryButton";
-// import { motion } from "framer-motion";
-// import { Link } from "react-router-dom";
 import WhiteButton from "./Button/WhiteButton";
-import { Link } from "react-router-dom";
 import { ROUTES } from "@/constants/externalUrls";
 
 // const HeroSection: React.FC = () => {
@@ -169,11 +165,10 @@ const HeroSection: React.FC = () => {
           <p className="font-primary md:text-[24px] mt-5 md:mt-0 text-[14px] text-white text-center">
             And hello to agile consumer insights.
           </p>
-          <Link to={`${ROUTES.LOGIN}/register`} target="_blank" rel="noopener noreferrer">
-            <div className="flex justify-center mt-5">
-              <WhiteButton text={"Get started now"} css="text-black" />
-            </div>
-          </Link>
+
+          <a href={ROUTES.LOGIN} className="flex justify-center mt-5" target="_blank">
+            <WhiteButton text={"Get started now"} css="text-black" buttonId="home_get_started_now_1" />
+          </a>
         </div>
         <div className="flex justify-center mt-10 md:mt-[3rem]">
           <div className="w-[80%] md:min-h-[calc(100vh-300px)] h-[400px] border-[#959DF3] bg-white border-[0.8rem] rounded-[2rem] flex justify-start items-start overflow-hidden">

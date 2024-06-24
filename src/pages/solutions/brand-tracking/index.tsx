@@ -45,6 +45,8 @@ const BrandTracking: React.FC = () => {
             recognition, mindshare, and positioning vis-à-vis competitors."
         img={ASSETS.MOOYI.SOLUTIONS.brandTrackingImage}
         desktopImg={ASSETS.MOOYI.SOLUTIONS.BrandTrackingDSK}
+        watchTutorialId="bt_watch_tutorial_1"
+        getInTouchId="bt_get_in_touch_2"
       />
       <div>
         <CardList cardList={cardData} />
@@ -52,7 +54,13 @@ const BrandTracking: React.FC = () => {
       <div className="flex justify-center pb-16">
         <div className="md:w-[20%]">
           <Link to={`${ROUTES.LOGIN}`}>
-            <PrimaryButton type="button" text="Get started for free" css="rounded-md w-[20%] px-5" variant="filled" />
+            <PrimaryButton
+              type="button"
+              text="Get started for free"
+              css="rounded-md w-[20%] px-5"
+              variant="filled"
+              buttonId="bt_get_started_for_free_3"
+            />
           </Link>
         </div>
       </div>

@@ -315,7 +315,13 @@ const LandingPage = () => {
         <div className="flex justify-center mt-16">
           <div className="md:w-[15%] w-[50%]">
             <Link to="mailto:support@enterscale.com">
-              <PrimaryButton type="button" text="Request Demo" css="rounded-md" variant="filled" />
+              <PrimaryButton
+                type="button"
+                text="Request Demo"
+                css="rounded-md"
+                variant="filled"
+                buttonId="home_request_demo_2"
+              />
             </Link>
           </div>
         </div>
@@ -374,8 +380,14 @@ const LandingPage = () => {
         </div>
         <div className="flex justify-center mt-16">
           <div className="md:w-[15%] w-[50%]">
-            <Link to={`${ROUTES.LOGIN}/register`} target="_blank" rel="noopener noreferrer">
-              <PrimaryButton type="button" text="Get started now" css="rounded-md" variant="filled" />
+            <Link to={`${ROUTES.LOGIN}/register`}>
+              <PrimaryButton
+                type="button"
+                text="Get started now"
+                css="rounded-md"
+                variant="filled"
+                buttonId="home_get_started_now_3"
+              />
             </Link>
           </div>
         </div>
@@ -418,7 +430,13 @@ const LandingPage = () => {
         <div className="flex justify-center pb-16">
           <div className="md:w-[15%]">
             <Link to="mailto:support@enterscale.com">
-              <PrimaryButton type="button" text="Request Demo" css="rounded-md" variant="filled" />
+              <PrimaryButton
+                type="button"
+                text="Request Demo"
+                css="rounded-md"
+                variant="filled"
+                buttonId="home_request_demo_4"
+              />
             </Link>
           </div>
         </div>
@@ -426,6 +444,5 @@ const LandingPage = () => {
     </div>
   );
 };
-` `;
 
 export default LandingPage;
