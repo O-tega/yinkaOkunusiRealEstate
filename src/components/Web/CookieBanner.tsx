@@ -156,7 +156,12 @@ const CookieBanner = () => {
                     ))}
                   </div>
                   <div className="flex justify-end mt-2">
-                    <BlueButton text="Save my preferences" type="submit" onClick={() => handlePreference(active)} buttonId="cb_save_my_preferences" />
+                    <BlueButton
+                      text="Save my preferences"
+                      type="submit"
+                      onClick={() => handlePreference(active)}
+                      buttonId="cb_save_my_preferences"
+                    />
                   </div>
                 </div>
               </ModalWithoutClose>

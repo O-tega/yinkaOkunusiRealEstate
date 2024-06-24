@@ -6,10 +6,10 @@ interface DeepBlueButtonProps {
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
   css?: string;
-  buttonId: string
+  buttonId: string;
 }
 
-const GreyButton: FC<DeepBlueButtonProps> = ({ text, onClick, type = "button",buttonId, disabled = false, css }) => {
+const GreyButton: FC<DeepBlueButtonProps> = ({ text, onClick, type = "button", buttonId, disabled = false, css }) => {
   return (
     <button
       className={`text-white transition-fontWeight ease-in-out font-medium rounded-[8px] h-[45px] font-primary transition-all duration-300 ${css} px-6 text-[14px] ${
