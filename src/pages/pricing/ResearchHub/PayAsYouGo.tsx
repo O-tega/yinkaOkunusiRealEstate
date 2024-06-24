@@ -51,7 +51,7 @@ const PayAsYouGo: React.FC<TPremiumPlan> = ({ conversionRate, toggleValue }) => 
 
           <p className="text-[37px] md:text-[40px] font-semibold py-3">Free</p>
 
-          <PrimaryButton text="Try for free" type="button" variant={"filled"} />
+          <PrimaryButton text="Try for free" type="button" variant={"filled"} buttonId="rh_try_for_free_4" />
 
           <p className="text-xs text-gray-600">
             {`Note that we charge ${
@@ -100,7 +100,7 @@ const PayAsYouGo: React.FC<TPremiumPlan> = ({ conversionRate, toggleValue }) => 
 
           <p className="text-[37px] md:text-[40px] font-semibold py-3">Free</p>
 
-          <PrimaryButton text="Try for free" type="button" variant={"filled"} />
+          <PrimaryButton text="Try for free" type="button" variant={"filled"} buttonId="rh_try_for_free_4" />
 
           <p className="text-xs text-gray-600">
             {`Note that we charge ${
