@@ -15,7 +15,7 @@ const CookieBanner = () => {
   const [active, setActive] = useState<CookieType[]>([]);
   const [cookies, setCookie] = useCookies(["mooyi", "strict", "performance", "targeting", "functionality"]);
 
-  console.log(active);
+  // console.log(active);
 
   const universalCookie = cookies.mooyi;
   const functionalityCookie = cookies.functionality;

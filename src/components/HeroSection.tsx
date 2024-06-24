@@ -4,6 +4,8 @@ import { ASSETS } from "@/assets/images/Assets";
 // import { motion } from "framer-motion";
 // import { Link } from "react-router-dom";
 import WhiteButton from "./Button/WhiteButton";
+import { Link } from "react-router-dom";
+import { ROUTES } from "@/constants/externalUrls";
 
 // const HeroSection: React.FC = () => {
 //   const variant = {
@@ -167,6 +169,7 @@ const HeroSection: React.FC = () => {
           <p className="font-primary md:text-[24px] mt-5 md:mt-0 text-[14px] text-white text-center">
             And hello to agile consumer insights.
           </p>
+
           <div className="flex justify-center mt-5">
             <WhiteButton text={"Get started now"} css="text-black" buttonId="home_get_started_now_1" />
           </div>

@@ -380,6 +380,7 @@ const LandingPage = () => {
         </div>
         <div className="flex justify-center mt-16">
           <div className="md:w-[15%] w-[50%]">
+
             <Link to={`${ROUTES.LOGIN}/register`}>
               <PrimaryButton
                 type="button"
@@ -388,6 +389,7 @@ const LandingPage = () => {
                 variant="filled"
                 buttonId="home_get_started_now_3"
               />
+
             </Link>
           </div>
         </div>
