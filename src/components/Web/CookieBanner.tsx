@@ -108,7 +108,11 @@ const CookieBanner = () => {
                         />
                       </div>
                       <div>
-                        <GreyButton text="Reject all cookies" css="w-full bg-blue-600" onClick={() => setShowCookie(true)} />
+                        <GreyButton
+                          text="Reject all cookies"
+                          css="w-full bg-blue-600"
+                          onClick={() => setShowCookie(true)}
+                        />
                       </div>
                     </div>
                   </div>
