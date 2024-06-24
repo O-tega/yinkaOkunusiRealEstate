@@ -1,0 +1,32 @@
+name: Run lint checks, unit and e2e tests
+
+on:
+  push:
+
+jobs:
+  run_test:
+    runs-on: ubuntu-latest
+    env:
+      NODE_ENV: ci
+      PORT: 3000
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: "yarn"
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Format checks
+        run: npx prettier --check .
+
+      - name: Lint checks
+        run: npx eslint git .
+
+      # - name: Unit tests
+      #   run: npm run test
