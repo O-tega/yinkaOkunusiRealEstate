@@ -43,27 +43,27 @@ const LandingPage = () => {
   const logos = [
     {
       name: "flutter wave",
-      logo: <img src={flutterwaveWhite} alt="logos" className="w-[150px] md:w-[250px]" />,
+      logo: <img src={flutterwaveWhite} alt="logos" className="w-[120px] md:w-[250px]" />,
     },
     {
       name: "M-power",
       logo: (
         <div>
-          <img src={Mpower} alt="logos" className="w-[150px] md:w-[180px]" />
+          <img src={Mpower} alt="logos" className="w-[80px] md:w-[180px]" />
         </div>
       ),
     },
     {
       name: "Enterscale",
-      logo: <img src={enterscaleWhite} alt="logos" className="w-[100px] md:w-[180px]" />,
+      logo: <img src={enterscaleWhite} alt="logos" className="w-[80px] md:w-[180px]" />,
     },
     {
       name: "wicrypt",
-      logo: <img src={wicrypt} alt="logos" className="w-[80px] md:w-[130px]" />,
+      logo: <img src={wicrypt} alt="logos" className="w-[60px] md:w-[130px]" />,
     },
     {
       name: "kiboWhite",
-      logo: <img src={kiboWhite} alt="logos" className="w-[80px] md:w-[130px]" />,
+      logo: <img src={kiboWhite} alt="logos" className="w-[60px] md:w-[130px]" />,
     },
   ];
 
@@ -71,25 +71,25 @@ const LandingPage = () => {
     {
       title: "Feedback from real humans.",
       text: "Get insights from our panel or your customers, partners, and employees. Our respondents have various reasons for participating.",
-      link: "#",
+      link: "/how-it-works",
       img: customerIcon,
     },
     {
       title: "Incentives for participation.",
       text: "Gift participants rewards such as airtime, data, cash, or gift vouchers and spend less time on follow-up and more time taking action.",
-      link: "#",
+      link: "/how-it-works",
       img: boxIcon,
     },
     {
       title: "Data you can count on.",
       text: "There are no fake answers. We’ve built multiple levels of quality control into Mooyi, blending human and AI checks for consistently reliable results.",
-      link: "#",
+      link: "/how-it-works",
       img: statisticsIcon,
     },
     {
       title: "Research expertise on tap.",
       text: "Upskill yourself in our Learning Hub or hire our in-house team of research and insights experts for more complex projects.",
-      link: "#",
+      link: "/how-it-works",
       img: graphIcon,
     },
   ];
@@ -122,12 +122,12 @@ const LandingPage = () => {
     },
     {
       img: feedbackCard,
-      title: "Curate User Experiences and Feedback",
+      title: "Curate user experiences and feedback",
       text: "Build trust and grow credibility with customer ratings and reviews you can repurpose.",
     },
     {
       img: clanederCard,
-      title: "Reinvent Your Events",
+      title: "Reinvent your events",
       text: "Transform your events with technology. Get answers to repeat memorable experiences for all.",
     },
   ];
@@ -147,7 +147,7 @@ const LandingPage = () => {
       items: 2,
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
+      breakpoint: { max: 450, min: 0 },
       items: 1,
     },
   };
@@ -174,12 +174,11 @@ const LandingPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Helmet>
       <HeroSection />
-
-      <div className="bg-[#F8F6FC]">
+      <div className="bg-white">
         <div className="text-center py-[5em] flex justify-center">
           <div>
             <p className="md:text-[20px]">We're trusted by some of the fastest growing startups in Africa.</p>
-            <div className="flex items-center space-x-7 mt-3">
+            <div className="flex items-center justify-center flex-wrap space-x-7 space-y-2 mt-3 px-1">
               {logos.map((item, i) => (
                 <div key={i}> {item.logo}</div>
               ))}
@@ -189,9 +188,7 @@ const LandingPage = () => {
       </div>
       <div className="bg-[#F9F9FE] py-[3rem]">
         <div className="mt-2 md:px-[4rem] px-2 flex flex-col items-center text-[20px]">
-          <p className="text-primary font-secondary md:text-[36px] text-[28px] md:pb-[5rem] pb-[5rem] text-center">
-            How it works
-          </p>
+          <p className="font-secondary md:text-[40px] text-[28px] md:pb-[5rem] pb-[5rem] text-center">How it works</p>
           <div className="md:flex items-center md:space-x-[10rem] px-2">
             <div className="w-[400px] hidden md:block">
               <p className="text-wrap">
@@ -201,7 +198,11 @@ const LandingPage = () => {
             </div>
             <motion.div variants={variant} initial="hidden" whileInView="visible">
               <div className="flex justify-center md:flex-col">
-                <img src={ASSETS.GIFS.engagementRates} alt="Gif image" className="md:w-[415px] w-[380px]" />
+                <img
+                  src={ASSETS.GIFS.lessParticipationWorry}
+                  alt="Gif image"
+                  className="md:w-[415px] w-[380px] border-[1rem] border-[#EBF1FF]"
+                />
               </div>
             </motion.div>
             <div className="md:w-[400px] px-2 pt-3 md:px-0 text-center md:text-left text-[14px] md:hidden">
@@ -219,7 +220,11 @@ const LandingPage = () => {
           <div className="md:flex items-center md:space-x-[10rem]">
             <motion.div variants={variant} initial="hidden" whileInView="visible">
               <div className="flex justify-center md:flex-none">
-                <img src={ASSETS.GIFS.setScreeningQuestions} alt="Gif image" className="md:w-[415px] w-[380px]" />
+                <img
+                  src={ASSETS.GIFS.SetScreeningQuestionsforParticipants}
+                  alt="Gif image"
+                  className="md:w-[415px] w-[380px]  border-[1rem] border-[#EBF1FF]"
+                />
               </div>
             </motion.div>
             <div className="md:w-[400px] px-2 pt-3 md:pt-0 text-center text-[16px] md:px-0 md:text-left md:text-[20px]">
@@ -242,7 +247,11 @@ const LandingPage = () => {
             </div>
             <motion.div variants={variant} initial="hidden" whileInView="visible">
               <div>
-                <img src={ASSETS.GIFS.TargetAudience} alt="Gif image" className="w-[415px]" />
+                <img
+                  src={ASSETS.GIFS.targetDistinctSegment}
+                  alt="Gif image"
+                  className="w-[415px]  border-[1rem] border-[#EBF1FF]"
+                />
               </div>
             </motion.div>
             <div className="md:w-[480px] pt-3 text-[14px] text-center px-2 md:hidden">
@@ -260,7 +269,11 @@ const LandingPage = () => {
           <div className="md:flex items-center md:space-x-[10rem]">
             <motion.div variants={variant} initial="hidden" whileInView="visible">
               <div className="flex justify-center md:flex-none">
-                <img src={ASSETS.GIFS.EnBranchingLogicQuestions} alt="Gif image" className="md:w-[415px] w-[380px]" />
+                <img
+                  src={ASSETS.GIFS.EnjoyAdditionalFeature}
+                  alt="Gif image"
+                  className="md:w-[415px] w-[380px]  border-[1rem] border-[#EBF1FF]"
+                />
               </div>
             </motion.div>
             <div className="md:w-[480px] px-2 pt-3 md:pt-0 text-center text-[16px] md:px-0 md:text-left md:text-[20px]">
@@ -284,7 +297,11 @@ const LandingPage = () => {
             </div>
             <motion.div variants={variant} initial="hidden" whileInView="visible">
               <div>
-                <img src={ASSETS.GIFS.lastgif} alt="Gif image" className="w-[415px]" />
+                <img
+                  src={ASSETS.GIFS.followUpIntrestedParticipant}
+                  alt="Gif image"
+                  className="w-[415px]  border-[1rem] border-[#EBF1FF]"
+                />
               </div>
             </motion.div>
             <div className="w-[400px] text-[14px] text-center px-2 md:hidden">
@@ -324,9 +341,9 @@ const LandingPage = () => {
             ))}
           </div>
           <div className="flex justify-end mt-[3rem] md:mt-0">
-            <div className="md:w-[580px] w-[412px] pl-5 md:pl-0">
+            {/* <div className="md:w-[580px] w-[412px] pl-5 md:pl-0">
               <img src={ASSETS.LandingPage.appHome} alt="" />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -350,7 +367,7 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-        <div className="mt-2 ml-[2rem] md:ml-0">
+        <div className="mt-2 ml-[1rem] md:ml-0">
           <Carousel responsive={responsive} arrows={false} ref={carouselRef}>
             {carolInfo?.map((item, i) => <CarouselCard key={i} title={item.title} text={item.text} img={item.img} />)}
           </Carousel>
@@ -391,7 +408,7 @@ const LandingPage = () => {
         <p className=" text-center md:text-[40px] text-[28px] font-secondary md:px-[25rem] leading-10">
           Engage guests with live event games and feedback surveys.
         </p>
-        <p className="md:text-[20px] md:px-[25rem] text-center text-[14px]">
+        <p className="md:text-[20px] md:px-[20rem] text-center text-[14px]">
           Flutterwave used the platform to register merchants and shoppers at their trade fair, incentivising them to
           participate and share their feedback about their event experience.
         </p>

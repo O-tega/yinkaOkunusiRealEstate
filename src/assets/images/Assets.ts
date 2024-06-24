@@ -11,7 +11,7 @@ export const ASSETS = {
       "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/EnBranchingLogicQuestions.gif",
     engagementRates: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/engagementRates.gif",
     EnjoyAdditionalFeature:
-      "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/EnjoyAdditionalFeature.gif",
+      "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/Enjoy%20additional%20features%20.gif",
     HeaderGIF: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/HeaderGIF.gif",
     howItWorks: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/howItWorks.gif",
     IntuitiveAnalytics:
@@ -26,17 +26,23 @@ export const ASSETS = {
     setScreeningQuestions:
       "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/setScreeningQuestions.gif",
     SetScreeningQuestionsforParticipants:
-      "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/SetScreeningQuestionsforParticipants.gif",
+      "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/Set%20screening%20questions%20for%20participants.gif",
     surveyDesign: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/surveyDesign.gif",
     TargetAudience: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/TargetAudience.gif",
     UberFastResponses:
       "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/Uber-fastResponses.gif",
-    addExistinggCustomer:
-      "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/Add%20existing%20customers.gif",
-    getSupportForFree:
-      "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/Get%20support%20for%20free.gif",
-    realTimeAnalytics:
+    realTImeAnalysis:
       "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/Real-time%20analytics.gif",
+    freeSupport:
+      "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/Get%20support%20for%20free.gif",
+    addExistingCustomers:
+      "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/Get%20support%20for%20free.gif",
+    targetDistinctSegment:
+      "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/Target%20distinct%20segments.gif",
+    followUpIntrestedParticipant:
+      "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/Follow%20up%20with%20interested%20survey%20participants.%20.gif",
+    lessParticipationWorry:
+      "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/Don%E2%80%99t%20worry%20about%20low%20participation..gif",
   },
   OURSOLUTION: {
     customerEngagementIcon: "",

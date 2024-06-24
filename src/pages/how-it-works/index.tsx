@@ -1,9 +1,9 @@
 import React from "react";
 import HeroSection from "./HeroSection";
-import celebrationCard from "@/assets/images/how-it-works/celebrationCard.png";
-import loneTarget from "@/assets/images/how-it-works/loneTarget.png";
-import multipleCustomer from "@/assets/images/how-it-works/multipleCustomer.png";
-import upwardGraph from "@/assets/images/how-it-works/upwardGraph.png";
+import celebrationCard from "@/assets/images/how-it-works/celebration.png";
+import loneTarget from "@/assets/images/how-it-works/Target.png";
+import multipleCustomer from "@/assets/images/how-it-works/Group.png";
+import upwardGraph from "@/assets/images/how-it-works/graph.png";
 import TextCarousel from "./TextCarousel";
 // import CardList from "../solutions/components/CardList";
 import { Helmet } from "react-helmet";
@@ -14,75 +14,24 @@ import WhiteButton from "@/components/Button/WhiteButton";
 import OurSolution from "@/components/Web/OurSolution";
 
 const HowItWorks: React.FC = () => {
-  // const cardData = [
-  //   {
-  //     title: "Build your survey.",
-  //     desc: "Get started with our intuitive survey builder, professionally crafted survey templates and audience panel for your convenience.",
-  //     img: buildSurvey,
-  //   },
-  //   {
-  //     title: "Uncover insights fast.",
-  //     desc: "Get started with our intuitive survey builder, professionally crafted survey templates and audience panel for your convenience.",
-  //     img: uncoverInsight,
-  //   },
-  //   {
-  //     title: "Gather feedback.",
-  //     desc: "Get started with our intuitive survey builder, professionally crafted survey templates and audience panel for your convenience.",
-  //     img: gatherFeedback,
-  //   },
-  // ];
-
-  // const responseData = [
-  //   {
-  //     title: "MooyiRewards members.",
-  //     desc: "We have a well-represented database of over 3 million Nigerians. You can reach the consumers you need within our diverse audience.",
-  //     img: <img src={mooyiRewardsMemebers} alt="logos" className="w-[80px] md:w-[150px] pt-10" />,
-
-  //     color: "bg-[#ECFEF5]",
-  //   },
-  //   {
-  //     title: "Detailed targeting.",
-  //     desc: "Navigate our platform with ease. Leverage geographic, demographic, and interest targeting options to hone in on your desired audience precisely.",
-  //     img: <img src={mooyiTarget} alt="logos" className="w-[80px] md:w-[100px] pt-10" />,
-  //     color: "bg-[#EBF1FF]",
-  //   },
-  //   {
-  //     title: "Lead acquisition.",
-  //     desc: "Go beyond survey responses with a call-to-action question and seamlessly convert engaged respondents into valuable leads for future contact.",
-  //     img: <img src={mooyiProjection} alt="logos" className="w-[80px] md:w-[100px] pt-10" />,
-
-  //     color: "bg-[#FEFAE8]",
-  //   },
-  // ];
-
-  // const [activeIndex, setActiveIndex] = useState(0);
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setActiveIndex((prevIndex) => (prevIndex + 1) % cardData.length);
-  //   }, 3000);
-
-  //   return () => clearInterval(interval);
-  // }, [cardData.length]);
-
   const info = [
     {
-      img: multipleCustomer,
+      img: <img src={multipleCustomer} alt="" className="object-cover w-[80%]" />,
       text: "We have a well-represented database of over 3 million Nigerians. You can reach the consumers you need within our diverse audience.",
       title: "MooyiRewards members",
     },
     {
-      img: loneTarget,
+      img: <img src={loneTarget} alt="" className="object-cover w-[60%]" />,
       text: "Navigate our platform with ease. Leverage geographic, demographic, and interest targeting options to hone in on your desired audience.",
       title: "Detailed targeting.",
     },
     {
-      img: upwardGraph,
+      img: <img src={upwardGraph} alt="" className="object-cover w-[60%]" />,
       text: "Go beyond survey responses with a call-to-action question and seamlessly convert engaged respondents into valuable leads for future contact.",
       title: "Lead acquisition.",
     },
     {
-      img: celebrationCard,
+      img: <img src={celebrationCard} alt="" className="object-cover w-[80%]" />,
       title: "Customer engagement.",
       text: "Create multichannel campaigns to drive engagement, loyalty, and actions - clicks, opt-ins, page views, purchases, feedback, reviews, or shares.",
     },
@@ -105,34 +54,36 @@ const HowItWorks: React.FC = () => {
             <LearnMore />
           </div>
         </div>
-        <div className="bg-[#141254] mt-[5rem] py-[5rem]">
+        <div className="bg-[#141254] mt-[5rem] py-[5rem] " id="ourPanel">
           <p className="font-secondary md:text-[36px] text-[24px] text-center text-white">
             Understand your customers, competitors and market better.
           </p>
           <div className="flex justify-center mt-[3rem]">
             <div className="md:grid grid-cols-2 gap-12 space-y-5 md:space-y-0">
               {info.map((el, i) => (
-                <FeaturesCard key={i} title={el.title} text={el.text} img={el.img} />
+                <FeaturesCard key={i} title={el.title} text={el.text} img={el.img} id={i} />
               ))}
             </div>
           </div>
           <div className="flex justify-center pt-3 mt-[5rem]">
-            <Link to={"mailto:support@enterscale.com"}>
+            <Link to={"https://www.mooyirewards.com"} target={"_blank"}>
               <WhiteButton text={"Learn more about MooyiRewards"} css="text-black" />
             </Link>
           </div>
         </div>
-        <div>
+        <div id="audience">
           <OurSolution />
         </div>
         <div className="mt-10 md:px-[5rem] px-2">
           <div className="mt-10">
             <p className="font-secondary text-[32px] text-center hidden md:block">
-              Achieve Your Research Goals with Our Support.
+              Achieve your research goals with our support.
             </p>
-            <p className="font-secondary text-[28px] text-center md:hidden">Achieve Your Goals with Our Support.</p>
+            <div className="md:hidden flex justify-center">
+              <p className="font-secondary text-[24px] w-[75%] text-center ">Achieve your goals with our support.</p>
+            </div>
 
-            <div className="flex justify-center px-[4rem] my-10 pb-[4rem]">
+            <div className="flex justify-center md:px-[4rem] md:my-10 my-5 pb-[4rem]">
               <TextCarousel />
             </div>
           </div>
