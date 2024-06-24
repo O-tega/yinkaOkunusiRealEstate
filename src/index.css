@@ -16,6 +16,7 @@ h5 {
 *:not(input, textarea) {
   -webkit-touch-callout: none; /* iOS Safari */
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 .container {
