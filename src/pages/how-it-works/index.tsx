@@ -67,7 +67,7 @@ const HowItWorks: React.FC = () => {
           </div>
           <div className="flex justify-center pt-3 mt-[5rem]">
             <Link to={"https://www.mooyirewards.com"} target={"_blank"}>
-              <WhiteButton text={"Learn more about MooyiRewards"} css="text-black" />
+              <WhiteButton text={"Learn more about MooyiRewards"} css="text-black" buttonId="hiw_learn_mfc_2" />
             </Link>
           </div>
         </div>

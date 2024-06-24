@@ -68,6 +68,8 @@ const CustomerFeedback: React.FC = () => {
             surveys, and more in hours to see how you stack up in your industry."
         img={ASSETS.MOOYI.SOLUTIONS.CustomerFeedbackDSK}
         desktopImg={ASSETS.MOOYI.SOLUTIONS.customerFeedbackImage}
+        watchTutorialId="cf_watch_tutorial_1"
+        getInTouchId="cf_get_in_touch_2"
       />
       <div>
         <CardList cardList={cardData} />
@@ -75,7 +77,7 @@ const CustomerFeedback: React.FC = () => {
       <div className="flex justify-center pb-16">
         <div className="md:w-[20%]">
           <Link to={`${ROUTES.LOGIN}`}>
-            <PrimaryButton type="button" text="Get started for free" css="rounded-md w-[20%] px-5" variant="filled" />
+            <PrimaryButton type="button" text="Get started for free" css="rounded-md w-[20%] px-5" variant="filled" buttonId="cf_get_started_for_free_3" />
           </Link>
         </div>
       </div>

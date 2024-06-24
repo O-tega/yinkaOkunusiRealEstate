@@ -8,6 +8,7 @@ interface IButtonProps {
   isLoading?: boolean;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
+  buttonId: string;
 }
 
 const PrimaryButton = ({
@@ -20,9 +21,11 @@ const PrimaryButton = ({
   isLoading,
   leftIcon,
   rightIcon,
+  buttonId,
 }: IButtonProps) => {
   return (
     <button
+      id={buttonId}
       className={`flex h-[45px] w-full items-center justify-center rounded-lg text-sm font-bold border disabled:bg-primary-300 active:text-blue-200 px-6 " ${
         variant === "filled" && "border-none bg-primary text-white hover:bg-blue-600"
       } ${variant === "transparent" && " border-none text-black"} ${

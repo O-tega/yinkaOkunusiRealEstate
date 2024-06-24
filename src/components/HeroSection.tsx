@@ -168,7 +168,7 @@ const HeroSection: React.FC = () => {
             And hello to agile consumer insights.
           </p>
           <div className="flex justify-center mt-5">
-            <WhiteButton text={"Get started now"} css="text-black" />
+            <WhiteButton text={"Get started now"} css="text-black" buttonId="home_get_started_now_1" />
           </div>
         </div>
         <div className="flex justify-center mt-10 md:mt-[3rem]">
