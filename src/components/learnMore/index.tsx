@@ -46,7 +46,7 @@ const LearnMore: React.FC = () => {
             </div>
             <div className="pt-5">
               <HashLink smooth to={`/how-it-works/#${item.link}`}>
-                <WhiteButton text="Learn more" />
+                <WhiteButton text="Learn more"  buttonId="hiw_learn_mfc_2" />
               </HashLink>
             </div>
           </div>
