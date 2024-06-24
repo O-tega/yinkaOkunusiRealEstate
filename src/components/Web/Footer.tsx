@@ -68,7 +68,11 @@ const Footer = () => {
             )}
             <div className="flex justify-center pt-3">
               <Link to={currentPath === "/pricing" ? "mailto:support@enterscale.com" : `${ROUTES.LOGIN}`}>
-                <WhiteButton text={currentPath === "/pricing" ? "Contact us" : "Get started"} css="text-black" buttonId="footer_get_started" />
+                <WhiteButton
+                  text={currentPath === "/pricing" ? "Contact us" : "Get started"}
+                  css="text-black"
+                  buttonId="footer_get_started"
+                />
               </Link>
             </div>
           </div>

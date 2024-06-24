@@ -152,7 +152,13 @@ const OurSolution: React.FC = () => {
 
       <div className="w-[200px] mx-auto">
         <a href={ROUTES.LOGIN}>
-          <PrimaryButton type="button" text="Get started now" css="px-5 rounded-md" variant="filled" buttonId="hiw_get_started_now_3" />
+          <PrimaryButton
+            type="button"
+            text="Get started now"
+            css="px-5 rounded-md"
+            variant="filled"
+            buttonId="hiw_get_started_now_3"
+          />
         </a>
       </div>
 

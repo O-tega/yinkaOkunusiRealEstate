@@ -12,7 +12,15 @@ type HeroSectionProps = {
   getInTouchId: string;
 };
 
-const HeroSection: React.FC<HeroSectionProps> = ({ type, title, desc, img, desktopImg, watchTutorialId, getInTouchId }) => {
+const HeroSection: React.FC<HeroSectionProps> = ({
+  type,
+  title,
+  desc,
+  img,
+  desktopImg,
+  watchTutorialId,
+  getInTouchId,
+}) => {
   return (
     <div className="w-[100%] mx-auto md:h-[calc(100vh-70px)] pb-10 md:pb-0 bg-[#EFF3FF] flex md:items-center overflow-hidden pt-16 md:pt-0 md:relative">
       <div>
@@ -49,7 +57,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ type, title, desc, img, deskt
             </div>
             <div>
               <Link to="mailto:you@yourdomain.com" target="_blank" rel="noopener noreferrer">
-                <PrimaryButton type="button" text="Get in touch" css="px-5 rounded-sm" variant="filled" buttonId={getInTouchId} />
+                <PrimaryButton
+                  type="button"
+                  text="Get in touch"
+                  css="px-5 rounded-sm"
+                  variant="filled"
+                  buttonId={getInTouchId}
+                />
               </Link>
             </div>
           </div>

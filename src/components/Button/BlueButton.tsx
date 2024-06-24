@@ -6,7 +6,7 @@ interface DeepBlueButtonProps {
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
   css?: string;
-  buttonId: string
+  buttonId: string;
 }
 
 const BlueButton: FC<DeepBlueButtonProps> = ({ text, onClick, type = "button", buttonId, disabled = false, css }) => {

@@ -75,7 +75,13 @@ const NewProduct: React.FC = () => {
       <div className="flex justify-center pb-16">
         <div className="md:w-[20%]">
           <Link to={`${ROUTES.LOGIN}`}>
-            <PrimaryButton type="button" text="Get started for free" css="rounded-md w-[20%] px-5" variant="filled" buttonId="npd_get_started_for_free_3" />
+            <PrimaryButton
+              type="button"
+              text="Get started for free"
+              css="rounded-md w-[20%] px-5"
+              variant="filled"
+              buttonId="npd_get_started_for_free_3"
+            />
           </Link>
         </div>
       </div>
