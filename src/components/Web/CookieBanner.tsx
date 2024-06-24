@@ -86,20 +86,20 @@ const CookieBanner = () => {
             <BottomModal>
               <div className={`w-full md:h-[40px] h-[250px] no-scrollbar overflow-y-auto}`}>
                 <div className="flex items-center space-x-5">
-                  <div className="md:flex items-center justify-between w-full ">
+                  <div className="md:flex items-center justify-between w-full px-12">
                     <div className="md:w-[50%]">
                       <p className="text-[14px] text-center md:text-left">
                         By clicking “Accept all cookies”, you agree to the storing of cookies on your device to enhance
                         site navigation, analyse site usage, and assist in our marketing efforts.{" "}
                       </p>
                     </div>
-                    <p
-                      className="text-primary underline md:text-right text-center mt-5 md:mt-0 cursor-pointer"
-                      onClick={() => setPreference(!showPreference)}
-                    >
-                      Cookie Preference.{" "}
-                    </p>
-                    <div className="md:flex items-center justify-center md:space-x-2 mt-5 md:mt-0 space-y-3 md:space-y-0">
+                    <div className="md:flex items-center justify-center md:space-x-8 mt-5 md:mt-0 space-y-3 md:space-y-0">
+                      <p
+                        className="text-primary underline md:text-right text-center mt-5 md:mt-0 cursor-pointer"
+                        onClick={() => setPreference(!showPreference)}
+                      >
+                        Cookie Preference.{" "}
+                      </p>
                       <div>
                         <BlueButton
                           text="Accept all cookies"
@@ -108,7 +108,7 @@ const CookieBanner = () => {
                         />
                       </div>
                       <div>
-                        <GreyButton text="Reject all cookies" css="w-full" onClick={() => setShowCookie(true)} />
+                        <GreyButton text="Reject all cookies" css="w-full bg-blue-600" onClick={() => setShowCookie(true)} />
                       </div>
                     </div>
                   </div>

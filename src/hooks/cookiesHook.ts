@@ -8,7 +8,6 @@ export const setCookie = (cookieName, mooyiCookie) => {
   });
 };
 
-
-export const getCookie=(cookieName)=>{
-    return Cookie.get(cookieName)
-}
+export const getCookie = (cookieName) => {
+  return Cookie.get(cookieName);
+};
