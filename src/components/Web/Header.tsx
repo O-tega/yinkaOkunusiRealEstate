@@ -92,11 +92,11 @@ const Header = () => {
             Tutorials
           </a>
 
-          <Link to={`${ROUTES.LOGIN}`} className="py-[16px] rounded-[30px] text-primary" id="dk_header_login">
+          <Link to={`${ROUTES.LOGIN}`} className="py-[16px] rounded-[30px] text-primary" id="header_login">
             Login
           </Link>
           <a href={ROUTES.LOGIN} className="cursor-pointer">
-            <BlueButton text="Sign up" css="w-[186px]" buttonId="dk_header_signup" />
+            <BlueButton text="Sign up" css="w-[186px]" buttonId="header_signup" />
           </a>
         </div>
       </div>

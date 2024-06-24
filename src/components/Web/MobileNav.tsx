@@ -203,14 +203,14 @@ const MobileNav: React.FC<TMenu> = ({ showMenu, setShowMenu }) => {
                   text="Sign up"
                   variant="filled"
                   onClick={() => navigate(`${process.env.NEXT_PUBLIC_SIGNUP_URL}`)}
-                  buttonId="mb_header_signup"
+                  buttonId="header_signup"
                 />
                 <PrimaryButton
                   text="Log in"
                   variant="transparent"
                   css="bg-white text-primary drop-shadow"
                   onClick={() => navigate(`${process.env.NEXT_PUBLIC_FRONTEND_BASE_URL}`)}
-                  buttonId="mb_header_login"
+                  buttonId="header_login"
                 />
               </div>
             </motion.div>
