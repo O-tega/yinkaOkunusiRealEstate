@@ -1,51 +1,77 @@
 export {};
-import ModalWithoutClose from "@/components/ModalWithoutClose";
 import { useEffect, useState } from "react";
-import mooyiLogo from "@/assets/images/mooyihead.svg";
-import CookieConsent from "react-cookie-consent";
 import Toggle from "react-toggle";
-import cookie from "react-cookies";
 import BlueButton from "@/components/Button/BlueButton";
-import { Link } from "react-router-dom";
+import { useCookies } from "react-cookie";
+import BottomModal from "./BottomModal";
+import ModalWithoutClose from "../ModalWithoutClose";
+import GreyButton from "../Button/GreyButton";
+
+type CookieType = "mooyi" | "strict" | "performance" | "targeting" | "functionality";
 
 const CookieBanner = () => {
   const [showCookie, setShowCookie] = useState(false);
   const [showPreference, setPreference] = useState(false);
-  const [active, setActive] = useState<null | number>(null);
+  const [active, setActive] = useState<CookieType[]>([]);
+  const [cookies, setCookie] = useCookies(["mooyi", "strict", "performance", "targeting", "functionality"]);
 
-  console.log(cookie.loadAll().MooyiCookie);
+  console.log(active);
+
+  const universalCookie = cookies.mooyi;
+  const functionalityCookie = cookies.functionality;
+  const targettingCookie = cookies.targeting;
+  const performanceCookie = cookies.performance;
+  const strictCookie = cookies.strict;
 
   useEffect(() => {
-    const cookies = cookie.loadAll().MooyiCookie;
-    if (cookies !== undefined) {
-      setShowCookie(false);
-    } else setShowCookie(true);
-  }, []);
+    if (
+      universalCookie !== undefined ||
+      functionalityCookie !== undefined ||
+      targettingCookie !== undefined ||
+      performanceCookie !== undefined ||
+      strictCookie !== undefined
+    ) {
+      setShowCookie(true);
+    }
+  }, [functionalityCookie, performanceCookie, targettingCookie, universalCookie, strictCookie]);
 
-  const handleChange = (id: number) => {
-    setActive(active !== id ? id : null);
+  const handleChange = (id: CookieType) => {
+    setActive((prevList) => {
+      if (prevList.includes(id)) {
+        return prevList.filter((i) => i !== id);
+      } else {
+        return [...prevList, id];
+      }
+    });
+  };
+
+  const handlePreference = (id: CookieType[]) => {
+    setCookie("strict", "strict");
+    if (id.length !== 0) {
+      id.map((el) => setCookie(el, el));
+    }
   };
 
   const preference = [
     {
-      id: 1,
+      id: "strict",
       title: "Strictly Necessary Cookies",
       action: "Always active",
       content: "These cookies are required for our website to work correctly in your browser.",
     },
     {
-      id: 2,
+      id: "performance",
       title: "Performance Cookies",
       content:
         "These cookies enable us to collect data in google analytics about how people use our website. This data helps us to improve our website for users.",
     },
     {
-      id: 3,
+      id: "targetting",
       title: "Targeting Cookies",
       content: "These cookies enable us to identify users on our websites and build a profile of users’ interests.",
     },
     {
-      id: 4,
+      id: "functionality",
       title: "Functionality Cookies",
       content:
         "These cookies enable us to remember the users’ site preferences and choices made on our website including username, region, and language. This allows our website to provide personalised features.",
@@ -54,114 +80,83 @@ const CookieBanner = () => {
 
   return (
     <div>
-      {showCookie && (
-        <ModalWithoutClose>
-          <div className={`w-[640px] ${showPreference ? "h-[500px]" : "h-fit"} no-scrollbar overflow-y-auto`}>
-            <div className="flex items-center space-x-5">
-              <div>
-                <img src={mooyiLogo} alt="mooyi logo" />
+      {showCookie ? null : (
+        <div>
+          {!showPreference && (
+            <BottomModal>
+              <div className={`w-full md:h-[40px] h-[250px] no-scrollbar overflow-y-auto}`}>
+                <div className="flex items-center space-x-5">
+                  <div className="md:flex items-center justify-between w-full px-12">
+                    <div className="md:w-[50%]">
+                      <p className="text-[14px] text-center md:text-left">
+                        By clicking “Accept all cookies”, you agree to the storing of cookies on your device to enhance
+                        site navigation, analyse site usage, and assist in our marketing efforts.{" "}
+                      </p>
+                    </div>
+                    <div className="md:flex items-center justify-center md:space-x-8 mt-5 md:mt-0 space-y-3 md:space-y-0">
+                      <p
+                        className="text-primary underline md:text-right text-center mt-5 md:mt-0 cursor-pointer"
+                        onClick={() => setPreference(!showPreference)}
+                      >
+                        Cookie Preference.{" "}
+                      </p>
+                      <div>
+                        <BlueButton
+                          text="Accept all cookies"
+                          css="w-full"
+                          onClick={() => setCookie("mooyi", "MooyiCookie")}
+                        />
+                      </div>
+                      <div>
+                        <GreyButton text="Reject all cookies" css="w-full bg-blue-600" onClick={() => setShowCookie(true)} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div>
-                <p className="font-[500] text-[24px] font-secondary">Our Privacy Statement & Cookie Policy</p>
-              </div>
-            </div>
-            <div className="space-y-5 mt-5">
-              <p>
-                We prioritize your privacy and handle your personal information with utmost care, utilizing it solely to
-                enhance your experience on this website. By continuing to use this platform, you consent to the
-                processing of your data by Mooyi, its subsidiaries, and partners, in accordance with NDPR/GDPR and
-                relevant regulations, as outlined in our{" "}
-                <Link to="/privacy-policy" className="text-primary underline">
-                  Privacy Policy
-                </Link>{" "}
-                .
-              </p>
-              <p>
-                Additionally, our website utilizes cookies to improve your browsing experience. You can adjust your
-                preferences using the option provided below. For further details regarding the cookies we use, please
-                refer to our{" "}
-                <Link to="/cookie-policy" className="text-primary underline">
-                  Cookie Policy
-                </Link>{" "}
-                .
-              </p>
-            </div>
-            <div className="">
-              <CookieConsent
-                location="none"
-                buttonText="Accept all cookies"
-                enableDeclineButton
-                declineButtonText="Reject all cookies"
-                style={{
-                  width: "600px",
-                  backgroundColor: "white",
-                  position: "relative",
-                  paddingLeft: "0px",
-                  alignContent: "left",
-                  justifyContent: "left",
-                  display: "flex",
-                }}
-                buttonStyle={{
-                  backgroundColor: "#1D19AF",
-                  color: "white",
-                  borderRadius: "4px",
-                  width: "200px",
-                  height: "50px",
-                }}
-                declineButtonStyle={{
-                  backgroundColor: "#EBF1FF",
-                  color: "#1D19AF ",
-                  borderRadius: "4px",
-                  width: "200px",
-                  height: "50px",
-                }}
-                cookieName="MooyiCookie"
-                onAccept={() => setShowCookie(false)}
-                onDecline={() => setShowCookie(false)}
-              ></CookieConsent>
-            </div>
-            <div className="mt-2">
-              <p
-                className="text-primary underline text-right cursor-pointer"
-                onClick={() => setPreference(!showPreference)}
-              >
-                Cookie preference
-              </p>
-              {showPreference && (
-                <div className="mt-5">
-                  <p className="text-[20px] font-secondary font-[500]">Manage preference</p>
-                  <div className="mt-3 space-y-5 border py-3 rounded-lg">
+            </BottomModal>
+          )}
+          <div className="">
+            {showPreference && (
+              <ModalWithoutClose>
+                <div className="mt-5 md:w-[600px] w-full">
+                  <p className="text-[14px]">
+                    By clicking “Accept all cookies”, you agree to the storing of cookies on your device to enhance site
+                    navigation, analyse site usage, and assist in our marketing efforts.
+                  </p>
+                  <p className="text-[20px] font-secondary font-[500] mt-3">Manage preference</p>
+                  <div className="mt-3 space-y-5 border py-3">
                     {preference.map((el, i) => (
-                      <div key={i} className={`px-3 pb-3 ${el.id === 4 ? "" : "border-b"}`}>
+                      <div key={i} className={`px-3 pb-3 ${el.id === "functionality" ? "" : "border-b"}`}>
                         <div className="flex items-center justify-between">
                           <div>
-                            <p className="font-[500] font-secondary">{el.title}</p>
+                            <p className="font-[500] font-secondary text-[14px]">{el.title}</p>
                           </div>
                           <div>
-                            {el.id === 1 ? (
-                              <p className="text-primary font-[500]">{el.action}</p>
+                            {el.id === "strict" ? (
+                              <p className="text-primary font-[500] font-secondary text-[14px]">{el.action}</p>
                             ) : (
                               <Toggle
                                 icons={false}
                                 // checked={active}
-                                onChange={() => handleChange(el.id)}
+                                onChange={() => handleChange(el.id as CookieType)}
                                 className="toggle"
                               />
                             )}
                           </div>
                         </div>
-                        <p className="w-[90%]">{el.content}</p>
+                        <p className="w-[90%] text-[14px]">{el.content}</p>
                       </div>
                     ))}
                   </div>
                   <div className="flex justify-end mt-2">
-                    <BlueButton text="Save my preferences" type="submit" onClick={() => setShowCookie(false)} />
+                    <BlueButton text="Save my preferences" type="submit" onClick={() => handlePreference(active)} />
                   </div>
                 </div>
-              )}
-            </div>
+              </ModalWithoutClose>
+            )}
           </div>
-        </ModalWithoutClose>
+        </div>
       )}
     </div>
   );

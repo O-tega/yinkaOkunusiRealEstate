@@ -43,27 +43,27 @@ const LandingPage = () => {
   const logos = [
     {
       name: "flutter wave",
-      logo: <img src={flutterwaveWhite} alt="logos" className="w-[150px] md:w-[250px]" />,
+      logo: <img src={flutterwaveWhite} alt="logos" className="w-[120px] md:w-[250px]" />,
     },
     {
       name: "M-power",
       logo: (
         <div>
-          <img src={Mpower} alt="logos" className="w-[150px] md:w-[180px]" />
+          <img src={Mpower} alt="logos" className="w-[80px] md:w-[180px]" />
         </div>
       ),
     },
     {
       name: "Enterscale",
-      logo: <img src={enterscaleWhite} alt="logos" className="w-[100px] md:w-[180px]" />,
+      logo: <img src={enterscaleWhite} alt="logos" className="w-[80px] md:w-[180px]" />,
     },
     {
       name: "wicrypt",
-      logo: <img src={wicrypt} alt="logos" className="w-[80px] md:w-[130px]" />,
+      logo: <img src={wicrypt} alt="logos" className="w-[60px] md:w-[130px]" />,
     },
     {
       name: "kiboWhite",
-      logo: <img src={kiboWhite} alt="logos" className="w-[80px] md:w-[130px]" />,
+      logo: <img src={kiboWhite} alt="logos" className="w-[60px] md:w-[130px]" />,
     },
   ];
 
@@ -122,12 +122,12 @@ const LandingPage = () => {
     },
     {
       img: feedbackCard,
-      title: "Curate User Experiences and Feedback",
+      title: "Curate user experiences and feedback",
       text: "Build trust and grow credibility with customer ratings and reviews you can repurpose.",
     },
     {
       img: clanederCard,
-      title: "Reinvent Your Events",
+      title: "Reinvent your events",
       text: "Transform your events with technology. Get answers to repeat memorable experiences for all.",
     },
   ];
@@ -147,7 +147,7 @@ const LandingPage = () => {
       items: 2,
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
+      breakpoint: { max: 450, min: 0 },
       items: 1,
     },
   };
@@ -174,12 +174,11 @@ const LandingPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Helmet>
       <HeroSection />
-
       <div className="bg-white">
         <div className="text-center py-[5em] flex justify-center">
           <div>
             <p className="md:text-[20px]">We're trusted by some of the fastest growing startups in Africa.</p>
-            <div className="flex items-center space-x-7 mt-3">
+            <div className="flex items-center justify-center flex-wrap space-x-7 space-y-2 mt-3 px-1">
               {logos.map((item, i) => (
                 <div key={i}> {item.logo}</div>
               ))}
@@ -189,9 +188,7 @@ const LandingPage = () => {
       </div>
       <div className="bg-[#F9F9FE] py-[3rem]">
         <div className="mt-2 md:px-[4rem] px-2 flex flex-col items-center text-[20px]">
-          <p className="font-secondary md:text-[40px] text-[28px] md:pb-[5rem] pb-[5rem] text-center">
-            How it works
-          </p>
+          <p className="font-secondary md:text-[40px] text-[28px] md:pb-[5rem] pb-[5rem] text-center">How it works</p>
           <div className="md:flex items-center md:space-x-[10rem] px-2">
             <div className="w-[400px] hidden md:block">
               <p className="text-wrap">
@@ -344,9 +341,9 @@ const LandingPage = () => {
             ))}
           </div>
           <div className="flex justify-end mt-[3rem] md:mt-0">
-            <div className="md:w-[580px] w-[412px] pl-5 md:pl-0">
+            {/* <div className="md:w-[580px] w-[412px] pl-5 md:pl-0">
               <img src={ASSETS.LandingPage.appHome} alt="" />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -370,7 +367,7 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-        <div className="mt-2 ml-[2rem] md:ml-0">
+        <div className="mt-2 ml-[1rem] md:ml-0">
           <Carousel responsive={responsive} arrows={false} ref={carouselRef}>
             {carolInfo?.map((item, i) => <CarouselCard key={i} title={item.title} text={item.text} img={item.img} />)}
           </Carousel>
