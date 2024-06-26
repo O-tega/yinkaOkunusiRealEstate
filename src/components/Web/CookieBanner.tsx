@@ -98,7 +98,7 @@ const CookieBanner = () => {
                         className="text-primary underline md:text-right text-center mt-5 md:mt-0 cursor-pointer"
                         onClick={() => setPreference(!showPreference)}
                       >
-                        Cookie Preference.{" "}
+                        Cookie Preferences.{" "}
                       </p>
                       <div>
                         <BlueButton
@@ -124,11 +124,7 @@ const CookieBanner = () => {
             {showPreference && (
               <ModalWithoutClose>
                 <div className="mt-5 md:w-[600px] w-full">
-                  <p className="text-[14px]">
-                    By clicking “Accept all cookies”, you agree to the storing of cookies on your device to enhance site
-                    navigation, analyse site usage, and assist in our marketing efforts.
-                  </p>
-                  <p className="text-[20px] font-secondary font-[500] mt-3">Manage preference</p>
+                  <p className="text-[20px] font-secondary font-[500]">Manage preference</p>
                   <div className="mt-3 space-y-5 border py-3">
                     {preference.map((el, i) => (
                       <div key={i} className={`px-3 pb-3 ${el.id === "functionality" ? "" : "border-b"}`}>

@@ -46,7 +46,7 @@ const MobileDropNav = () => {
             className="text-[#737373] hover:bg-gray-200 text-[14px] space-x-2 border-b-[1px] p-3 "
             onClick={() => navigate("/pricing/engagement-hub")}
           >
-            Customer engagement
+            Engagement Hub
           </p>
           <p
             className="text-[#737373] hover:bg-gray-200 text-[14px] cursor-pointer space-x-2 border-b-[1px] p-3 "

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const Api = axios.create({
-  baseURL: "https://dev-api-staging.mooyi.africa/v2/api",
+  baseURL: "https://dev-api-staging.usemooyi.com/v2/api",
   headers: {
     Accept: "application/json",
   },

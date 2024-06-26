@@ -175,9 +175,14 @@ const LandingPage = () => {
       </Helmet>
       <HeroSection />
       <div className="bg-white">
-        <div className="text-center py-[5em] flex justify-center">
+        <div className="text-center py-[3em] flex justify-center">
           <div>
-            <p className="md:text-[20px]">We're trusted by some of the fastest growing startups in Africa.</p>
+            <div className="flex justify-center">
+              <p className="md:text-[20px] md:w-[60%]">
+                The best teams use Mooyi to gain deep insights into their market, enhance their value proposition and
+                accelerate their growth.
+              </p>
+            </div>
             <div className="flex items-center justify-center flex-wrap space-x-7 space-y-2 mt-3 px-1">
               {logos.map((item, i) => (
                 <div key={i}> {item.logo}</div>
@@ -192,8 +197,8 @@ const LandingPage = () => {
           <div className="md:flex items-center md:space-x-[10rem] px-2">
             <div className="w-[400px] hidden md:block">
               <p className="text-wrap">
-                Don’t worry about low participation. Our 3m database, simple user experience, and comprehensive rewards
-                system can help boost participation.
+                Don’t worry about low participation. Our extensive database, simple user experience, and comprehensive
+                rewards system can help boost participation.
               </p>
             </div>
             <motion.div variants={variant} initial="hidden" whileInView="visible">
@@ -207,8 +212,8 @@ const LandingPage = () => {
             </motion.div>
             <div className="md:w-[400px] px-2 pt-3 md:px-0 text-center md:text-left text-[14px] md:hidden">
               <p className="text-wrap">
-                Don’t worry about low participation. Our 3m database, simple user experience, and comprehensive rewards
-                system can help boost participation.
+                Don’t worry about low participation. Our extensive database, simple user experience, and comprehensive
+                rewards system can help boost participation.
               </p>
             </div>
           </div>
@@ -327,7 +332,7 @@ const LandingPage = () => {
           </div>
           <div className="md:w-[50%] flex items-center pt-5">
             <h1 className="md:w-[82%] w-full text-center md:text-left text-white md:text-[32px] text-[20px]">
-              Mooyi uses a network of 3m Africans to gather authentic insights, feedback, and reviews that help attract
+              Mooyi uses a network of 3m people to gather authentic insights, feedback, and reviews that help attract
               new customers and improve your offerings.
             </h1>
           </div>
