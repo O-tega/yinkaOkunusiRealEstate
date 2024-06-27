@@ -62,7 +62,7 @@ export default {
         icon3: "url('/heroIcon3.png')",
       },
       fontFamily: {
-        primary: ["Inter", "sans-serif"],
+        primary: ["DegularVariable", "sans-serif"],
         secondary: ["GT-Flexa", "sans-serif"],
       },
       listStyleType: {
