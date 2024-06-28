@@ -66,6 +66,8 @@ const CreativeTesting: React.FC = () => {
         desc="Evaluate your creative ads and pinpoint the concepts that resonate best with your goals before executing."
         img={ASSETS.MOOYI.SOLUTIONS.creativeTestingImage}
         desktopImg={ASSETS.MOOYI.SOLUTIONS.CreativeTestingDSK}
+        watchTutorialId="ct_watch_tutorial_1"
+        getInTouchId="ct_get_in_touch_2"
       />
       <div>
         <CardList cardList={cardData} />
@@ -73,7 +75,13 @@ const CreativeTesting: React.FC = () => {
       <div className="flex justify-center pb-16">
         <div className="md:w-[20%]">
           <Link to={`${ROUTES.LOGIN}`}>
-            <PrimaryButton type="button" text="Get started for free" css="rounded-md w-[20%] px-5" variant="filled" />
+            <PrimaryButton
+              type="button"
+              text="Get started for free"
+              css="rounded-md w-[20%] px-5"
+              variant="filled"
+              buttonId="ct_get_started_for_free_3"
+            />
           </Link>
         </div>
       </div>

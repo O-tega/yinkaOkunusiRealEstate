@@ -66,6 +66,8 @@ const NewProduct: React.FC = () => {
         desc="Bring your ideas to life by enriching them with feedback from prospective customers, creating a cycle of improvement that seamlessly integrates their needs into your product."
         img={ASSETS.MOOYI.SOLUTIONS.newProductDevelopmentImage}
         desktopImg={ASSETS.MOOYI.SOLUTIONS.NewProductDevelopmentDSK}
+        watchTutorialId="npd_watch_tutorial_1"
+        getInTouchId="npd_get_in_touch_2"
       />
       <div>
         <CardList cardList={cardData} />
@@ -73,7 +75,13 @@ const NewProduct: React.FC = () => {
       <div className="flex justify-center pb-16">
         <div className="md:w-[20%]">
           <Link to={`${ROUTES.LOGIN}`}>
-            <PrimaryButton type="button" text="Get started for free" css="rounded-md w-[20%] px-5" variant="filled" />
+            <PrimaryButton
+              type="button"
+              text="Get started for free"
+              css="rounded-md w-[20%] px-5"
+              variant="filled"
+              buttonId="npd_get_started_for_free_3"
+            />
           </Link>
         </div>
       </div>

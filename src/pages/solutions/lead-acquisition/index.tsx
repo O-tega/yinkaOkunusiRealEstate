@@ -65,6 +65,8 @@ const LeadAcquisition: React.FC = () => {
         desc="Expand your customer base with our lead acquisition feature that connects you with audiences who express interest in your offerings."
         img={ASSETS.MOOYI.SOLUTIONS.leadAcquisitionImage}
         desktopImg={ASSETS.MOOYI.SOLUTIONS.LeadAcquisitionDSK}
+        watchTutorialId="la_watch_tutorial_1"
+        getInTouchId="la_get_in_touch_2"
       />
       <div>
         <CardList cardList={cardData} />
@@ -72,7 +74,13 @@ const LeadAcquisition: React.FC = () => {
       <div className="flex justify-center pb-16">
         <div className="md:w-[20%]">
           <Link to={`${ROUTES.LOGIN}`}>
-            <PrimaryButton type="button" text="Get started for free" css="rounded-md w-[20%] px-5" variant="filled" />
+            <PrimaryButton
+              type="button"
+              text="Get started for free"
+              css="rounded-md w-[20%] px-5"
+              variant="filled"
+              buttonId="la_get_started_for_free_3"
+            />
           </Link>
         </div>
       </div>

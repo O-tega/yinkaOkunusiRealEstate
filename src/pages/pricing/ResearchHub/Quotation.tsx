@@ -274,7 +274,7 @@ const Quotation: React.FC<TLoad> = ({ setLoading }) => {
             <div className={`mt-5 md:block ${price !== null && "hidden"}`}>
               <div className="md:flex items-center justify-between mt-2 md:space-x-5 space-y-3 md:space-y-0 w-full">
                 <div className="w-full">
-                  <GreyButton text="reset" css="w-full" onClick={clearForm} />
+                  <GreyButton text="reset" css="w-full" onClick={clearForm} buttonId="reset" />
                 </div>
 
                 <div className="w-full flex justify-center ">
@@ -282,6 +282,7 @@ const Quotation: React.FC<TLoad> = ({ setLoading }) => {
                     text="Get a quote"
                     type="submit"
                     css="w-full"
+                    buttonId="submit_quote"
                     // onClick={handleClick}
                     disabled={emptyCheck}
                   />
@@ -294,7 +295,7 @@ const Quotation: React.FC<TLoad> = ({ setLoading }) => {
                 <p className="font-[700] text-[32px] text-primary ">{price !== null ? `$${price}` : "$0.00"}</p>
               </div>
               <div className="flex justify-center">
-                {price !== null && <BlueButton text="Buy now" css="w-[200px]" />}
+                {price !== null && <BlueButton text="Buy now" css="w-[200px]" buttonId="buy_now" />}
               </div>
             </div>
             <div>
@@ -397,7 +398,7 @@ const Quotation: React.FC<TLoad> = ({ setLoading }) => {
                 <p className="font-[700] text-[32px] text-primary ">{price !== null ? `$${price}` : "$0.00"}</p>
               </div>
               <div className="flex justify-center">
-                {price !== null && <BlueButton text="Buy now" css="w-[200px]" />}
+                {price !== null && <BlueButton buttonId="buy_now" text="Buy now" css="w-[200px]" />}
               </div>
             </div>
           </div>

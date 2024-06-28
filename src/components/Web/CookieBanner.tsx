@@ -105,6 +105,7 @@ const CookieBanner = () => {
                           text="Accept all cookies"
                           css="w-full"
                           onClick={() => setCookie("mooyi", "MooyiCookie")}
+                          buttonId="cb_accept_all"
                         />
                       </div>
                       <div>
@@ -151,7 +152,12 @@ const CookieBanner = () => {
                     ))}
                   </div>
                   <div className="flex justify-end mt-2">
-                    <BlueButton text="Save my preferences" type="submit" onClick={() => handlePreference(active)} />
+                    <BlueButton
+                      text="Save my preferences"
+                      type="submit"
+                      onClick={() => handlePreference(active)}
+                      buttonId="cb_save_my_preferences"
+                    />
                   </div>
                 </div>
               </ModalWithoutClose>

@@ -19,7 +19,13 @@ const HeroSection: React.FC = () => {
           <div className="flex justify-center md:block">
             <div className="md:w-[30%] w-[50%] mt-5">
               <Link to="mailto:you@yourdomain.com" target="_blank" rel="noopener noreferrer">
-                <PrimaryButton type="button" text="Book a demo" css="px-5 rounded-md" variant="filled" />
+                <PrimaryButton
+                  type="button"
+                  text="Book a demo"
+                  css="px-5 rounded-md"
+                  variant="filled"
+                  buttonId="hiw-book_a_demo_1"
+                />
               </Link>
             </div>
           </div>

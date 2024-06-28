@@ -206,7 +206,7 @@ const Home: React.FC = () => {
                 </p>
                 <div className="mt-5 md:block flex justify-center">
                   <HashLink smooth to="/pricing/research-hub/#quotation">
-                    <BlueButton text="Start now" />
+                    <BlueButton text="Start now" buttonId="modal_start_now" />
                   </HashLink>
                 </div>
               </div>

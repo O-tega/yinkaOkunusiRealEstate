@@ -91,16 +91,12 @@ const Header = () => {
           >
             Tutorials
           </a>
-          <Link
-            to={`${ROUTES.LOGIN}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="py-[16px] rounded-[30px] text-primary"
-          >
+
+          <Link to={`${ROUTES.LOGIN}`} className="py-[16px] rounded-[30px] text-primary" id="header_login">
             Login
           </Link>
-          <a href={`${ROUTES.LOGIN}/register`} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
-            <BlueButton text="Sign up" css="w-[186px]" />
+          <a href={ROUTES.LOGIN} className="cursor-pointer">
+            <BlueButton text="Sign up" css="w-[186px]" buttonId="header_signup" />
           </a>
         </div>
       </div>

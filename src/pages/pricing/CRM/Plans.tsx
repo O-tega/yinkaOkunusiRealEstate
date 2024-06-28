@@ -69,7 +69,14 @@ const PlanCard = ({ title, subtitle, tag, info, amount, featureTitle, features, 
         )}
         <div className="mt-5">
           <Link to={title === "Pro Plan" ? "mailto:support@enterscale.com" : `#`}>
-            <BlueButton text={title === "Pro Plan" ? "Contact us" : "Buy now"} type="button" css="w-full" />
+            <BlueButton
+              text={title === "Pro Plan" ? "Contact us" : "Buy now"}
+              type="button"
+              css="w-full"
+              buttonId={
+                title === "Pro Plan" ? "eh_contact_us_3" : title === "Business Plan" ? "eh_buy_now_2" : "eh_buy_now_1"
+              }
+            />
           </Link>
         </div>
         <div className="my-5">
@@ -239,7 +246,7 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
             </p>
             <div className="mt-5 md:block flex justify-center">
               <Link to={ROUTES.LOGIN}>
-                <BlueButton text="Start now" />
+                <BlueButton text="Start now" buttonId="eh_start_now_4" />
               </Link>
             </div>
           </div>
@@ -278,7 +285,7 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
             </p>
             <div className="mt-5 md:block flex justify-center">
               <HashLink smooth to="/pricing/engagement-hub/#plans">
-                <BlueButton text="Start now" />
+                <BlueButton text="Start now" buttonId="eh_start_now_5" />
               </HashLink>
             </div>
           </div>

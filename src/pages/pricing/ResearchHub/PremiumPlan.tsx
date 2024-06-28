@@ -103,7 +103,12 @@ const PlanCard = ({
         )}
         <div className="mt-5">
           <Link to={title === "Pro Plan" ? "mailto:support@enterscale.com" : `${ROUTES.LOGIN}/register`}>
-            <BlueButton text={title === "Pro Plan" ? "Contact us" : "Buy now"} type="button" css="w-full" />
+            <BlueButton
+              text={title === "Pro Plan" ? "Contact us" : "Buy now"}
+              type="button"
+              css="w-full"
+              buttonId={title === "Pro Plan" ? "rh_contact_us_2" : "rh_buy_now_1"}
+            />
           </Link>
           <p className="mt-2 text-gray-500 md:text-[14px] text-[13px] font-medium">{`Additional responses would be charged at ${
             toggle ? `₦${((2 * conversionRate) as number).toLocaleString()}` : "$2"

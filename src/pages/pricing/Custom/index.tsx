@@ -413,6 +413,7 @@ const Custom: React.FC = () => {
                       }
                       css="w-full"
                       disabled={selectCrm === null && selectResearch === null}
+                      buttonId="cmp_buy_now_1"
                     />
                   </Link>
                 </div>
@@ -560,6 +561,7 @@ const Custom: React.FC = () => {
                         }
                         css="w-full"
                         disabled={selectCrm === null && selectResearch === null}
+                        buttonId="cmp_buy_now_1"
                       />
                     </Link>
                   </div>
