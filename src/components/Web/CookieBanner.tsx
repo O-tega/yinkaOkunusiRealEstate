@@ -108,11 +108,7 @@ const CookieBanner = () => {
                         />
                       </div>
                       <div>
-                        <LightBlueButton
-                          text="Reject all cookies"
-                          css="w-full"
-                          onClick={() => setShowCookie(true)}
-                        />
+                        <LightBlueButton text="Reject all cookies" css="w-full" onClick={() => setShowCookie(true)} />
                       </div>
                     </div>
                   </div>
