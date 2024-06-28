@@ -23,7 +23,7 @@ const CardList: React.FC<TDataListProps> = ({ cardList }) => {
             <p className={`md:text-[28px] text-[24px] font-secondary transition-all duration-300 tracking-tight `}>
               {item.title}
             </p>
-            <p className={`md:text-[18px] text-[16px] transition-all duration-300`}>{item.desc}</p>
+            <p className={`md:text-[18px] text-[16px] transition-all duration-300 font-medium`}>{item.desc}</p>
             <div className="flex justify-end items-end w-full">{item.img}</div>
           </div>
         ))}

@@ -21,7 +21,7 @@ const FeaturesCard: React.FC<TFeatures> = ({ title, text, img, id }) => {
     >
       <div className={`px-5 transition-all duration-100 ${hover === id ? "scale-105" : ""}`}>
         <p className="text-[24px] font-secondary">{title}</p>
-        <p className="md:text-[18px] text-[16px]">{text}</p>
+        <p className="md:text-[18px] text-[16px] font-medium">{text}</p>
       </div>
       <div className="flex justify-center md:block">
         <div

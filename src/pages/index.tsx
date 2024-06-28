@@ -178,7 +178,7 @@ const LandingPage = () => {
         <div className="text-center py-[3em] flex justify-center">
           <div>
             <div className="flex justify-center">
-              <p className="md:text-[20px] md:w-[60%]">
+              <p className="md:text-[20px] md:w-[60%] font-medium">
                 The best teams use Mooyi to gain deep insights into their market, enhance their value proposition and
                 accelerate their growth.
               </p>
@@ -196,7 +196,7 @@ const LandingPage = () => {
           <p className="font-secondary md:text-[40px] text-[28px] md:pb-[5rem] pb-[5rem] text-center">How it works</p>
           <div className="md:flex items-center md:space-x-[10rem] px-2">
             <div className="w-[400px] hidden md:block">
-              <p className="text-wrap">
+              <p className="text-wrap font-medium">
                 Don’t worry about low participation. Our extensive database, simple user experience, and comprehensive
                 rewards system can help boost participation.
               </p>
@@ -210,7 +210,7 @@ const LandingPage = () => {
                 />
               </div>
             </motion.div>
-            <div className="md:w-[400px] px-2 pt-3 md:px-0 text-center md:text-left text-[14px] md:hidden">
+            <div className="md:w-[400px] px-2 pt-3 md:px-0 text-center md:text-left text-[14px] font-medium md:hidden">
               <p className="text-wrap">
                 Don’t worry about low participation. Our extensive database, simple user experience, and comprehensive
                 rewards system can help boost participation.
@@ -221,7 +221,7 @@ const LandingPage = () => {
             <img src={rlLine} width={500} height={500} alt="Gif image" className="md:w-[415px] w-[207px]" />
           </div>
         </div>
-        <div className="md:px-[4rem] px-2 flex flex-col items-center text-[20px]">
+        <div className="md:px-[4rem] px-2 flex flex-col items-center text-[20px] font-medium">
           <div className="md:flex items-center md:space-x-[10rem]">
             <motion.div variants={variant} initial="hidden" whileInView="visible">
               <div className="flex justify-center md:flex-none">
@@ -242,7 +242,7 @@ const LandingPage = () => {
             <img src={lrLine} width={500} height={500} alt="Gif image" className="md:w-[415px] w-[207px]" />
           </div>
         </div>
-        <div className="md:px-[4rem] px-2 md:flex flex-col items-center text-[20px]">
+        <div className="md:px-[4rem] px-2 md:flex flex-col items-center text-[20px] font-medium">
           <div className="md:flex items-center md:space-x-[10rem]">
             <div className="md:w-[480px] hidden md:block">
               <p className="text-wrap">
@@ -270,7 +270,7 @@ const LandingPage = () => {
             <img src={rlLine} width={500} height={500} alt="Gif image" className="md:w-[415px] w-[207px]" />
           </div>
         </div>
-        <div className="md:px-[4rem] px-2 flex flex-col items-center text-[20px]">
+        <div className="md:px-[4rem] px-2 flex flex-col items-center text-[20px] font-medium">
           <div className="md:flex items-center md:space-x-[10rem]">
             <motion.div variants={variant} initial="hidden" whileInView="visible">
               <div className="flex justify-center md:flex-none">
@@ -281,7 +281,7 @@ const LandingPage = () => {
                 />
               </div>
             </motion.div>
-            <div className="md:w-[480px] px-2 pt-3 md:pt-0 text-center text-[16px] md:px-0 md:text-left md:text-[20px]">
+            <div className="md:w-[480px] px-2 pt-3 md:pt-0 text-center text-[16px] md:px-0 md:text-left md:text-[20px] font-medium">
               <p className="text-wrap">
                 Enjoy additional features like branching logic questions, retargeting survey respondents, and one-click
                 results filtering.
@@ -292,7 +292,7 @@ const LandingPage = () => {
             <img src={lrLine} width={500} height={500} alt="Gif image" className="md:w-[415px] w-[207px]" />
           </div>
         </div>
-        <div className="md:px-[4rem] px-2 flex flex-col items-center text-[20px]">
+        <div className="md:px-[4rem] px-2 flex flex-col items-center text-[20px] font-medium">
           <div className="md:flex items-center md:space-x-[10rem]">
             <div className="w-[400px] hidden md:block">
               <p className="text-wrap">
@@ -331,7 +331,7 @@ const LandingPage = () => {
             <img src={ASSETS.LandingPage.surevyPreview} alt="" className="md:w-[653px] w-[403px] bottom-0 absolute" />
           </div>
           <div className="md:w-[50%] flex items-center pt-5">
-            <h1 className="md:w-[82%] w-full text-center md:text-left text-white md:text-[32px] text-[20px]">
+            <h1 className="md:w-[82%] w-full text-center md:text-left text-white md:text-[32px] text-[20px] font-medium">
               Mooyi uses a network of 3m people to gather authentic insights, feedback, and reviews that help attract
               new customers and improve your offerings.
             </h1>
@@ -346,9 +346,9 @@ const LandingPage = () => {
             ))}
           </div>
           <div className="flex justify-end mt-[3rem] md:mt-0">
-            {/* <div className="md:w-[580px] w-[412px] pl-5 md:pl-0">
+            <div className="md:w-[580px] w-[412px] pl-5 md:pl-0">
               <img src={ASSETS.LandingPage.appHome} alt="" />
-            </div> */}
+            </div>
           </div>
         </div>
       </div>
@@ -413,7 +413,7 @@ const LandingPage = () => {
         <p className=" text-center md:text-[40px] text-[28px] font-secondary md:px-[25rem] leading-10">
           Engage guests with live event games and feedback surveys.
         </p>
-        <p className="md:text-[20px] md:px-[20rem] text-center text-[14px]">
+        <p className="md:text-[20px] md:px-[20rem] text-center text-[14px] font-medium">
           Flutterwave used the platform to register merchants and shoppers at their trade fair, incentivising them to
           participate and share their feedback about their event experience.
         </p>

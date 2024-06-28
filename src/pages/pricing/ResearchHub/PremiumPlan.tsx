@@ -10,6 +10,8 @@ import Card from "../Card";
 import { Link } from "react-router-dom";
 import { ROUTES } from "@/constants/externalUrls";
 import { HashLink } from "react-router-hash-link";
+import gif from "@/assets/images/loading.gif";
+import ModalWithoutClose from "../ModalWithoutClose";
 
 const cardData = [
   {
@@ -63,10 +65,10 @@ const PlanCard = ({
             </div>
           ) : null}
         </div>
-        <p className="text-grey-600 md:text-[14px] text-[13px]">{subtitle}</p>
+        <p className="text-grey-600 md:text-[14px] text-[13px] font-medium">{subtitle}</p>
       </div>
       <div className="mt-5 px-5">
-        <p className="md:text-[15px] text-[14px]">{info}</p>
+        <p className="md:text-[15px] text-[14px] font-medium">{info}</p>
         <div className="mt-3">
           <p className="text-[12px]">Responses</p>
           <div className="flex items-center mt-1">
@@ -103,7 +105,7 @@ const PlanCard = ({
           <Link to={title === "Pro Plan" ? "mailto:support@enterscale.com" : `${ROUTES.LOGIN}/register`}>
             <BlueButton text={title === "Pro Plan" ? "Contact us" : "Buy now"} type="button" css="w-full" />
           </Link>
-          <p className="mt-2 text-gray-500 md:text-[14px] text-[13px]">{`Additional responses would be charged at ${
+          <p className="mt-2 text-gray-500 md:text-[14px] text-[13px] font-medium">{`Additional responses would be charged at ${
             toggle ? `₦${((2 * conversionRate) as number).toLocaleString()}` : "$2"
           } per response for online surveys.`}</p>
         </div>
@@ -118,7 +120,7 @@ const PlanCard = ({
                   <div className="mt-1 w-[20px] h-[20px]">
                     <img src={checker} alt="" />
                   </div>
-                  <p className="text-[13px] w-[90%]">{el}</p>
+                  <p className="text-[13px] w-[90%] font-medium">{el}</p>
                 </div>
               ))
             : null}
@@ -140,6 +142,7 @@ type TPremiumPlan = {
 
 const PremiumPlan: React.FC<TPremiumPlan> = ({ conversionRate, toggleValue }) => {
   const [values, setValues] = useState(0);
+  const [loading, setLoading] = useState(false);
   // const [businessResp, setBusinessRes] = useState<number>(500);
   // const [proResp, setProRes] = useState<number>(5000);
 
@@ -245,14 +248,14 @@ const PremiumPlan: React.FC<TPremiumPlan> = ({ conversionRate, toggleValue }) =>
       </div>
       <div className="bg-[#F0F5FF] p-5 pb-[7rem] flex flex-col items-center justify-center ">
         <div className="mt-10">
-          <p className="font-secondary text-[40px] text-center">Get even more insights. </p>
-          <p className="text-[20px] text-center">
+          <p className="font-secondary text-[40px] text-center">Request a Quote</p>
+          <p className="text-[20px] text-center font-medium">
             {" "}
-            Get a custom quote for your research using our pool of qualified audience.
+            Fill out the form below to get a customised quote for your research project.
           </p>
         </div>
         <div className="mt-10" id="quotation">
-          <Quotation />
+          <Quotation setLoading={setLoading} />
         </div>
       </div>
       <div className="my-[5rem] bg-white">
@@ -276,7 +279,7 @@ const PremiumPlan: React.FC<TPremiumPlan> = ({ conversionRate, toggleValue }) =>
             <p className="font-secondary md:text-[36px] text-[24px] leading-tight">
               Scale your business with our affordable pricing.
             </p>
-            <p className="text-[18px] w-[80%]">Explore more options that suit your business needs.</p>
+            <p className="text-[18px] w-[80%] font-medium">Explore more options that suit your business needs.</p>
           </div>
           <div className="md:flex items-center space-x-7 mt-7">
             {cardData?.map((el, i) => (
@@ -285,6 +288,18 @@ const PremiumPlan: React.FC<TPremiumPlan> = ({ conversionRate, toggleValue }) =>
           </div>
         </div>
       </div>
+      {loading ? (
+        <ModalWithoutClose>
+          <div className="md:w-[543px] w-full h-[258px] flex items-center">
+            <div className="flex flex-col items-center w-full text-center">
+              <div className="h-[50px] flex items-center overflow-hidden">
+                <img src={gif} alt="Loading..." className="h-[100px]" />
+              </div>
+              <p>Generating your quote, please wait...</p>
+            </div>
+          </div>
+        </ModalWithoutClose>
+      ) : null}
     </div>
   );
 };

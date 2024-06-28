@@ -51,10 +51,10 @@ const PlanCard = ({ title, subtitle, tag, info, amount, featureTitle, features, 
             </div>
           ) : null}
         </div>
-        <p className="text-grey-600 md:text-[14px] text-[13px]">{subtitle}</p>
+        <p className="text-grey-600 md:text-[14px] text-[13px] font-medium">{subtitle}</p>
       </div>
       <div className="mt-5 px-5">
-        <p className="md:text-[15px] text-[14px]">{info}</p>
+        <p className="md:text-[15px] text-[14px] font-medium">{info}</p>
         {title === "Pro Plan" ? (
           <div>
             <p className="text-[38px] md:text-[40px] font-[600]"> Custom </p>
@@ -83,7 +83,7 @@ const PlanCard = ({ title, subtitle, tag, info, amount, featureTitle, features, 
                   <div className="mt-1 w-[20px] h-[20px]">
                     <img src={checker} alt="" />
                   </div>
-                  <p className="text-[13px] w-[90%]">{el}</p>
+                  <p className="text-[13px] w-[90%] font-medium">{el}</p>
                 </div>
               ))
             : null}
@@ -293,7 +293,7 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
             <p className="font-secondary md:text-[36px] text-[24px] leading-tight">
               Scale your business with our affordable pricing.
             </p>
-            <p className="text-[18px] w-[80%]">Explore more options that suit your business needs.</p>
+            <p className="text-[18px] w-[80%] font-medium">Explore more options that suit your business needs.</p>
           </div>
           <div className="md:flex items-center space-x-7 mt-7">
             {cardData?.map((el, i) => (

@@ -11,7 +11,7 @@ interface DeepBlueButtonProps {
 const GreyButton: FC<DeepBlueButtonProps> = ({ text, onClick, type = "button", disabled = false, css }) => {
   return (
     <button
-      className={`text-white transition-fontWeight ease-in-out font-medium rounded-[4px] h-[45px] font-primary transition-all duration-300 ${css} px-6 text-[14px] ${
+      className={`text-blue-800 transition-fontWeight ease-in-out font-semibold rounded-[4px] h-[45px] font-primary  transition-all duration-300 ${css} px-6 text-[14px] ${
         disabled
           ? "bg-[#EBF1FF]  cursor-not-allowed"
           : "bg-[#EBF1FF] shadow-sm hover:bg-blue-800 hover:shadow-sm hover:text-white active:text-blue-800"
