@@ -20,7 +20,9 @@ const CardList: React.FC<TDataListProps> = ({ cardList }) => {
             key={i}
             className={`${item.color} md:h-[400px] h-full p-5 space-y-2 w-full opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-[1.03]`}
           >
-            <p className={`md:text-[28px] text-[24px] font-secondary transition-all duration-300 tracking-tight leading-tight `}>
+            <p
+              className={`md:text-[28px] text-[24px] font-secondary transition-all duration-300 tracking-tight leading-tight `}
+            >
               {item.title}
             </p>
             <p className={`md:text-[18px] text-[16px] transition-all duration-300 font-medium`}>{item.desc}</p>
