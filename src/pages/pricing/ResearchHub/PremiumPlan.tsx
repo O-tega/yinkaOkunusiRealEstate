@@ -12,6 +12,8 @@ import { ROUTES } from "@/constants/externalUrls";
 import { HashLink } from "react-router-hash-link";
 import gif from "@/assets/images/loading.gif";
 import ModalWithoutClose from "../ModalWithoutClose";
+import SignupModal from "./SignupModal";
+import { TQuotation } from "@/types/formTypes";
 
 const cardData = [
   {
@@ -148,6 +150,8 @@ type TPremiumPlan = {
 const PremiumPlan: React.FC<TPremiumPlan> = ({ conversionRate, toggleValue }) => {
   const [values, setValues] = useState(0);
   const [loading, setLoading] = useState(false);
+  const [openSignup, setOpenSignup] = useState(false);
+  const [quoteData, setQuoteData] = useState<TQuotation>();
   // const [businessResp, setBusinessRes] = useState<number>(500);
   // const [proResp, setProRes] = useState<number>(5000);
 
@@ -155,6 +159,8 @@ const PremiumPlan: React.FC<TPremiumPlan> = ({ conversionRate, toggleValue }) =>
     { name: "Business plan", value: 0 },
     { name: "Pro plan", value: 1 },
   ];
+
+  console.log(quoteData);
 
   const subPlans = [
     {
@@ -260,7 +266,7 @@ const PremiumPlan: React.FC<TPremiumPlan> = ({ conversionRate, toggleValue }) =>
           </p>
         </div>
         <div className="mt-10" id="quotation">
-          <Quotation setLoading={setLoading} />
+          <Quotation setLoading={setLoading} setOpenSignup={setOpenSignup} setQuoteData={setQuoteData} />
         </div>
       </div>
       <div className="my-[5rem] bg-white">
@@ -305,6 +311,7 @@ const PremiumPlan: React.FC<TPremiumPlan> = ({ conversionRate, toggleValue }) =>
           </div>
         </ModalWithoutClose>
       ) : null}
+      {openSignup ? <SignupModal onClose={() => setOpenSignup(!openSignup)} data={quoteData} /> : null}
     </div>
   );
 };

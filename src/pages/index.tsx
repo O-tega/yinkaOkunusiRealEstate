@@ -345,7 +345,7 @@ const LandingPage = () => {
         </div>
       </div>
       <div className="py-[6rem] bg-[#F9F9FE]">
-        <div className="md:flex items-start justify-between">
+        <div className="md:flex items-start space-x-3 justify-between ml-7">
           <div className="md:grid grid-cols-2 gap-4 gap-y-[3rem] md:ml-[3rem] px-5 md:px-0 space-y-[3rem] md:space-y-0">
             {infoCard.map((el, i) => (
               <InfoCard key={i} title={el.title} text={el.text} link={el.link} img={el.img} />

@@ -20,6 +20,7 @@ export default {
         "admin-green": "rgba(15, 23, 42, 0.8)",
         purple: "#5F0BDD",
         grey: "rgba(0, 0, 0, 0.5);",
+        modalGrey: "rgba(0, 0, 0, 0.5);",
         green: "#00DA7A",
         black: "#262626",
         hoverBlue: "#EBF1FF",

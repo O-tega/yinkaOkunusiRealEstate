@@ -22,24 +22,20 @@ interface TProps {
 
 type TLoad = {
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  setOpenSignup: React.Dispatch<React.SetStateAction<boolean>>;
+  setQuoteData: React.Dispatch<React.SetStateAction<TQuotation | undefined>>;
 };
-const initialValues: TQuotation = {
-  audienceType: "",
-  researchType: "",
-  country: "",
-  state: [] as Option[],
-  lga: [] as Option[],
-};
-
-const researchData = [
-  { label: "Consumer", value: "consumer" },
-  { label: "Business", value: "business" },
-  { label: "Mobile agent", value: "mobile agent" },
-];
 
 const audienceType = [
-  { label: "Field interview", value: "field interview" },
-  { label: "Online surveys", value: "online surveys" },
+  { label: "Consumer", value: "consumer" },
+  { label: "Business", value: "business" },
+  { label: "Mobile agent", value: "mobileAgent" },
+  { label: "Consumer and business", value: "consumer and business" },
+];
+
+const researchData = [
+  { label: "Field interview", value: "field" },
+  { label: "Online surveys", value: "online" },
 ];
 
 const countryData = [
@@ -56,19 +52,29 @@ const validationSchema = Yup.object().shape({
   // lga: Yup.string().required("Please fill in this field"),
 });
 
-const Quotation: React.FC<TLoad> = ({ setLoading }) => {
+const Quotation: React.FC<TLoad> = ({ setLoading, setOpenSignup, setQuoteData }) => {
   const [newCityArray, setNewCityArray] = useState([]);
   const [openModal, setOpenModal] = useState(false);
   const [responses, setResponses] = useState<number>(200);
   const [price, setPrice] = useState<null | number>(null);
 
+  const initialValues: TQuotation = {
+    audienceType: "",
+    researchType: "",
+    country: "",
+    price: price,
+    responses: responses,
+    state: [] as Option[],
+    lga: [] as Option[],
+  };
+
   const onSubmit = async (data: TQuotation) => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-      setPrice(responses);
+      setPrice(totalPrice);
+      setQuoteData({ ...data, price: totalPrice });
     }, 5000);
-    console.log(data);
   };
 
   const { handleChange, values, handleSubmit, setFieldValue } = useFormik({
@@ -78,6 +84,10 @@ const Quotation: React.FC<TLoad> = ({ setLoading }) => {
     validateOnBlur: true,
     enableReinitialize: true,
   });
+
+  const researchPrice = values.researchType === "consumer" ? 2 : values.researchType === "business" ? 4 : 3;
+
+  const totalPrice = responses * researchPrice;
 
   const clearForm = () => {
     Object.keys(values).forEach((key) => {
@@ -283,7 +293,6 @@ const Quotation: React.FC<TLoad> = ({ setLoading }) => {
                     type="submit"
                     css="w-full"
                     buttonId="submit_quote"
-                    // onClick={handleClick}
                     disabled={emptyCheck}
                   />
                 </div>
@@ -295,7 +304,9 @@ const Quotation: React.FC<TLoad> = ({ setLoading }) => {
                 <p className="font-[700] text-[32px] text-primary ">{price !== null ? `$${price}` : "$0.00"}</p>
               </div>
               <div className="flex justify-center">
-                {price !== null && <BlueButton text="Buy now" css="w-[200px]" buttonId="buy_now" />}
+                {price !== null && (
+                  <BlueButton text="Buy now" css="w-[200px]" buttonId="buy_now" onClick={() => setOpenSignup(true)} />
+                )}
               </div>
             </div>
             <div>
@@ -398,7 +409,9 @@ const Quotation: React.FC<TLoad> = ({ setLoading }) => {
                 <p className="font-[700] text-[32px] text-primary ">{price !== null ? `$${price}` : "$0.00"}</p>
               </div>
               <div className="flex justify-center">
-                {price !== null && <BlueButton buttonId="buy_now" text="Buy now" css="w-[200px]" />}
+                {price !== null && (
+                  <BlueButton buttonId="buy_now" text="Buy now" css="w-[200px]" onClick={() => setOpenSignup(true)} />
+                )}
               </div>
             </div>
           </div>
