@@ -57,7 +57,7 @@ const PlanCard = ({
 }: Tplan) => {
   const [newresponses, setNewResponses] = useState<number>(responses);
   return (
-    <div className="border rounded-2xl w-[411px] h-[45rem] p-3 shadow-md">
+    <div className="border rounded-2xl w-[411px] h-[48rem] p-3 shadow-md">
       <div className="bg-blue-100 p-5 rounded-t-xl h-[7rem]">
         <div className="flex justify-between">
           <p className="text-[20px] font-[600] text-primary">{title}</p>
@@ -67,12 +67,12 @@ const PlanCard = ({
             </div>
           ) : null}
         </div>
-        <p className="text-grey-600 md:text-[14px] text-[13px] font-medium">{subtitle}</p>
+        <p className="text-grey-600 md:text-[15px] text-[13px] font-medium">{subtitle}</p>
       </div>
       <div className="mt-5 px-5">
-        <p className="md:text-[15px] text-[14px] font-medium">{info}</p>
+        <p className="md:text-[16px] text-[14px] font-medium">{info}</p>
         <div className="mt-3">
-          <p className="text-[12px]">Responses</p>
+          <p className="text-[13px]">Responses</p>
           <div className="flex items-center mt-1">
             <div
               className={`border rounded-l-md h-[30px] border-r-0  p-2 flex items-center justify-center cursor-pointer  ${
@@ -127,7 +127,7 @@ const PlanCard = ({
                   <div className="mt-1 w-[20px] h-[20px]">
                     <img src={checker} alt="" />
                   </div>
-                  <p className="text-[13px] w-[90%] font-medium">{el}</p>
+                  <p className="text-[15px] w-[90%] font-medium">{el}</p>
                 </div>
               ))
             : null}

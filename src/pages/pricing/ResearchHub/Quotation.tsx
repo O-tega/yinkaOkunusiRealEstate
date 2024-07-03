@@ -27,6 +27,7 @@ type TLoad = {
 };
 
 const audienceType = [
+  { label: "Select...", value: "" },
   { label: "Consumer", value: "consumer" },
   { label: "Business", value: "business" },
   { label: "Mobile agent", value: "mobileAgent" },
@@ -34,11 +35,13 @@ const audienceType = [
 ];
 
 const researchData = [
+  { label: "Select...", value: "" },
   { label: "Field interview", value: "field" },
   { label: "Online surveys", value: "online" },
 ];
 
 const countryData = [
+  { label: "Select...", value: "" },
   { label: "Ghana", value: "Ghana" },
   { label: "Kenya", value: "Kenya" },
   { label: "Nigeria", value: "Nigeria" },
@@ -284,7 +287,7 @@ const Quotation: React.FC<TLoad> = ({ setLoading, setOpenSignup, setQuoteData })
             <div className={`mt-5 md:block ${price !== null && "hidden"}`}>
               <div className="md:flex items-center justify-between mt-2 md:space-x-5 space-y-3 md:space-y-0 w-full">
                 <div className="w-full">
-                  <GreyButton text="reset" css="w-full" onClick={clearForm} buttonId="reset" />
+                  <GreyButton text="Reset" css="w-full" onClick={clearForm} buttonId="reset" />
                 </div>
 
                 <div className="w-full flex justify-center ">

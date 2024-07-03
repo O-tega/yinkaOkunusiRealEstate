@@ -78,6 +78,7 @@ const MobileNav: React.FC<TMenu> = ({ showMenu, setShowMenu }) => {
     { name: "Home", link: "/" },
     { name: "How it works", link: "/how-it-works" },
     { name: "Solutions", link: "#" },
+    { name: "MooyiRewards", link: "https://www.mooyirewards.com/" },
     { name: "Pricing", link: "/pricing" },
     { name: "FAQs", link: "/faq" },
     { name: "Tutorials", link: "#" },
@@ -182,7 +183,12 @@ const MobileNav: React.FC<TMenu> = ({ showMenu, setShowMenu }) => {
                         ) : null}
                       </div>
                     ) : (
-                      <Link key={i} to={link.link}>
+                      <Link
+                        key={i}
+                        to={link.link}
+                        target={link.name !== "MooyiRewards" ? "" : "_blank"}
+                        rel="noreferrer"
+                      >
                         <div className="rounded-md mt-3 hover:bg-hoverBlue">{link.name}</div>
                       </Link>
                     ),
