@@ -16,6 +16,7 @@ const Header = () => {
     { name: "Home", link: "/" },
     { name: "How it works", link: "/how-it-works" },
     { name: "Solutions", link: "#" },
+    { name: "MooyiRewards", link: "https://www.mooyirewards.com/" },
     { name: "Pricing", link: "/pricing" },
     { name: "FAQs", link: "/faq" },
   ];
@@ -54,7 +55,9 @@ const Header = () => {
                         </div>
                       </div>
                     ) : (
-                      <Link to={items.link}>{items.name}</Link>
+                      <Link target={items.name !== "MooyiRewards" ? "" : "_blank"} rel="noreferrer" to={items.link}>
+                        {items.name}
+                      </Link>
                     )}
                   </div>
                 </li>
@@ -78,7 +81,7 @@ const Header = () => {
           <a
             target="_blank"
             rel="noreferrer"
-            href="https://blog.mooyi.africa"
+            href="https://blog.usemooyi.com"
             className="py-[16px]  rounded-[30px] hover:deepBlue"
           >
             Blog
