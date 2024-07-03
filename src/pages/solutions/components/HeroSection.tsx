@@ -38,7 +38,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           <h1 className="font-secondary md:text-[62px] text-center md:text-left  text-[32px] md:leading-[4rem] pt-5">
             {title}
           </h1>
-          <p className=" md:text-[20px] md:pr-[7rem] pt-5 text-[16px] text-center md:text-left">{desc}</p>
+          <p className=" md:text-[20px] md:pr-[7rem] pt-5 text-[16px] font-medium text-center md:text-left">{desc}</p>
           <div className="flex items-center space-x-5 pt-10 justify-center md:justify-start">
             <div>
               <Link

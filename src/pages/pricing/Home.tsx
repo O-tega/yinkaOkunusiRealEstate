@@ -200,7 +200,7 @@ const Home: React.FC = () => {
                 <p className="font-secondary md:text-[36px] text-[24px]  text-center md:text-left leading-tight">
                   Create a survey in minutes, get results in hours.
                 </p>
-                <p className="md:text-[18px] text-[14px] mt-3 md:mt-5  text-center md:text-left">
+                <p className="md:text-[18px] text-[14px] mt-3 md:mt-5  text-center md:text-left ">
                   Get started with our intuitive survey builder, professionally crafted survey templates and audience
                   panel for your convenience.
                 </p>

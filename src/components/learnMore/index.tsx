@@ -33,7 +33,7 @@ const LearnMore: React.FC = () => {
             className="bg-white rounded-xl p-8 md:w-[600px] md:h-[488px] space-y-5 hover:cursor-pointer border border-black hover:border-primary hover:border hover:shadow-lg transition-all duration-300 delay-75 relative"
           >
             <p className="font-secondary md:text-[24px] text-[18px] w-full">{item.title}</p>
-            <p className="md:text-[18px] text-[14px]">{item.desc}</p>
+            <p className="md:text-[18px] text-[14px] font-medium">{item.desc}</p>
             <div className="">
               <img src={item.chart1} className="md:w-[200px] w-[150px] md:h-[210px] h-[180px] " alt="icon" />
             </div>

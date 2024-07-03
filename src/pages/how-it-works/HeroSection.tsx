@@ -12,7 +12,7 @@ const HeroSection: React.FC = () => {
           <h1 className="font-secondary text-[32px] md:text-[62px] md:leading-[4rem] leading-7 pt-5 tracking-tight">
             Say hello to faster, easier, and smarter growth.
           </h1>
-          <p className=" text-[20px] pt-5">
+          <p className=" text-[20px] pt-5 font-medium">
             Learn how Mooyi™ can help you gather insights from quantitative and qualitative research and automate
             mobile campaigns to help grow your business.
           </p>

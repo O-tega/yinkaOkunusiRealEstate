@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { HiOutlineMinus, HiOutlinePlus } from "react-icons/hi";
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import PrimaryInput from "@/components/Inputs/PrimaryInput";
+// import PrimaryInput from "@/components/Inputs/PrimaryInput";
 import { TQuotation } from "@/types/formTypes";
 import { useQuery } from "@tanstack/react-query";
 import { getCity, getState } from "@/service/stateCities";
@@ -12,51 +11,73 @@ import BlueButton from "@/components/Button/BlueButton";
 import EmptyState from "@/components/EmptyState";
 import emptyState from "@/assets/images/pricing/emptyEstimate.png";
 import Modal from "@/components/Modal";
-import { Link } from "react-router-dom";
-import { ROUTES } from "@/constants/externalUrls";
-import { RiDeleteBin5Fill } from "react-icons/ri";
 import Tooltip from "@/components/Tooltip";
+import SecondarySelectInput from "@/components/Inputs/SecondarySelectInput";
+import GreyButton from "@/components/Button/GreyButton";
+import { HiOutlineMinus, HiOutlinePlus } from "react-icons/hi";
 
 interface TProps {
   name: string;
 }
-const initialValues: TQuotation = {
-  leastAge: "",
-  mostAge: "",
-  gender: [],
-  state: [] as Option[],
-  lga: [] as Option[],
-  categoryOfInterest: [] as Option[],
+
+type TLoad = {
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  setOpenSignup: React.Dispatch<React.SetStateAction<boolean>>;
+  setQuoteData: React.Dispatch<React.SetStateAction<TQuotation | undefined>>;
 };
 
+const audienceType = [
+  { label: "Consumer", value: "consumer" },
+  { label: "Business", value: "business" },
+  { label: "Mobile agent", value: "mobileAgent" },
+  { label: "Consumer and business", value: "consumer and business" },
+];
+
+const researchData = [
+  { label: "Field interview", value: "field" },
+  { label: "Online surveys", value: "online" },
+];
+
+const countryData = [
+  { label: "Ghana", value: "Ghana" },
+  { label: "Kenya", value: "Kenya" },
+  { label: "Nigeria", value: "Nigeria" },
+];
+
 const validationSchema = Yup.object().shape({
-  gender: Yup.string().required("Please fill in this field"),
-  leastAge: Yup.string().required("Please fill in this field"),
-  mostAge: Yup.string().required("Please fill in this field"),
-  state: Yup.string().required("Please fill in this field"),
-  lga: Yup.string().required("Please fill in this field"),
+  audienceType: Yup.string().required("Please fill in this field"),
+  researchType: Yup.string().required("Please fill in this field"),
+  country: Yup.string().required("Please fill in this field"),
+  // state: Yup.string().required("Please fill in this field"),
+  // lga: Yup.string().required("Please fill in this field"),
 });
 
-const Quotation: React.FC = () => {
-  const [surveyType, selectSurveyType] = useState<number | null>(0);
-  const [responses, setResponses] = useState<number>(200);
+const Quotation: React.FC<TLoad> = ({ setLoading, setOpenSignup, setQuoteData }) => {
   const [newCityArray, setNewCityArray] = useState([]);
-  const [price, setPrice] = useState<number | null>(null);
-  const [selectedGenders, setSelectedGenders] = useState<string[]>([]);
   const [openModal, setOpenModal] = useState(false);
-  const handleSelect = (id: number | null) => {
-    selectSurveyType(id === surveyType ? null : id);
-  };
+  const [responses, setResponses] = useState<number>(200);
+  const [price, setPrice] = useState<null | number>(null);
 
-  useEffect(() => {
-    setPrice(responses);
-  }, [responses]);
+  const initialValues: TQuotation = {
+    audienceType: "",
+    researchType: "",
+    country: "",
+    price: price,
+    responses: responses,
+    state: [] as Option[],
+    lga: [] as Option[],
+  };
 
   const onSubmit = async (data: TQuotation) => {
-    console.log(data);
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setPrice(totalPrice);
+      setQuoteData({ ...data, price: totalPrice });
+    }, 5000);
   };
 
-  const { handleChange, values, handleBlur, handleSubmit, setFieldValue } = useFormik({
+  const { handleChange, values, handleSubmit, setFieldValue } = useFormik({
     initialValues,
     validationSchema,
     onSubmit,
@@ -64,12 +85,40 @@ const Quotation: React.FC = () => {
     enableReinitialize: true,
   });
 
-  const { data: stateData } = useQuery({ queryKey: ["getState"], queryFn: getState });
+  const researchPrice = values.researchType === "consumer" ? 2 : values.researchType === "business" ? 4 : 3;
 
-  const { data: cityData } = useQuery({
-    queryKey: ["getCity"],
-    queryFn: () => getCity("Nigeria"),
+  const totalPrice = responses * researchPrice;
+
+  const clearForm = () => {
+    Object.keys(values).forEach((key) => {
+      if (Array.isArray(values[key])) {
+        setFieldValue(key, []);
+      } else {
+        setFieldValue(key, "");
+      }
+    });
+  };
+
+  useEffect(() => {
+    values?.state?.length > 1 && setFieldValue("lga", []);
+  }, [setFieldValue, values?.state?.length]);
+
+  const { data: stateData, refetch: refetchStates } = useQuery({
+    queryKey: ["getState"],
+    queryFn: () => getState(values.country),
   });
+
+  const { data: cityData, refetch: refetchCities } = useQuery({
+    queryKey: ["getCity"],
+    queryFn: () => getCity(values.country),
+  });
+
+  useEffect(() => {
+    if (values.country) {
+      refetchStates();
+      refetchCities();
+    }
+  }, [refetchCities, refetchStates, values.country]);
 
   const stateArray = stateData?.data?.states?.map((el: TProps) => ({
     label: el.name,
@@ -77,189 +126,141 @@ const Quotation: React.FC = () => {
   }));
   const stateValue = values?.state?.map((el) => el.value);
   const cityValue = values?.lga?.map((el) => el.value);
-  const categoryValue = values?.categoryOfInterest?.map((el) => el.value);
 
+  // const emptyCheck = stateValue.length === 0 || cityValue.length === 0;
   const emptyCheck =
-    !values.gender ||
-    categoryValue.length === 0 ||
-    !values.leastAge ||
-    !values.mostAge ||
-    stateValue.length === 0 ||
+    !values.audienceType ||
+    !values.country ||
+    !values.researchType ||
+    stateValue?.length === 0 ||
     cityValue.length === 0;
 
+  // const emptyStateCheck = stateValue.length !== 0 || cityValue.length !== 0;
   const emptyStateCheck =
-    (values.leastAge !== "" && values.mostAge !== "") ||
-    surveyType !== null ||
-    responses > 200 ||
-    selectedGenders.length !== 0 ||
-    stateValue.length !== 0 ||
-    cityValue.length !== 0 ||
-    categoryValue.length !== 0;
-
-  const handleClear = () => {
-    setFieldValue("leastAge", "");
-    setFieldValue("mostAge", "");
-  };
+    values.audienceType || values.country || values.researchType || stateValue.length !== 0 || cityValue.length !== 0;
 
   useEffect(() => {
-    if (stateArray !== undefined && stateValue.length === 1) {
+    if (stateArray !== undefined) {
       const pickKey = (key: string) => {
-        for (const state in cityData) {
-          const newKey = key?.replace(" State", "");
-          const newState = state?.replace(" State", "");
+        if (values.country === "Kenya") {
+          for (const state in cityData) {
+            const newKey = key?.replace(" County", "");
+            const newState = state?.replace(" County", "");
 
-          if (newKey === newState) {
-            setNewCityArray(cityData[newKey]);
+            if (newKey === newState) {
+              setNewCityArray(cityData[newKey]);
+            }
+          }
+        } else if (values.country === "Ghana") {
+          for (const state in cityData) {
+            const newKey = key?.replace(" Region", "");
+            const newState = state?.replace(" Region", "");
+
+            if (newKey === newState) {
+              setNewCityArray(cityData[newKey]);
+            }
+          }
+        } else if (values.country === "Nigeria") {
+          for (const state in cityData) {
+            const newKey = key?.replace(" State", "");
+            const newState = state?.replace(" State", "");
+
+            if (newKey === newState) {
+              setNewCityArray(cityData[newKey]);
+            }
           }
         }
       };
 
       pickKey(stateValue[0]?.toString());
     }
-  }, [cityData, stateArray, stateValue, values.state]);
+  }, [cityData, stateArray, stateValue, values.country]);
 
   const cityArray = newCityArray?.map((el: string) => ({
     label: el,
     value: el,
   }));
 
-  const handleClick = () => {
-    console.log("submit");
-  };
+  // const handleClick = () => {
+  //   console.log("submit");
+  // };
 
-  const handleGender = (gender: string) => {
-    if (gender === "Prefer not to say") {
-      setSelectedGenders([gender]);
-    } else {
-      setSelectedGenders((prevSelectedGenders) => {
-        if (prevSelectedGenders.includes(gender)) {
-          return prevSelectedGenders.filter((g) => g !== gender);
-        } else {
-          const newSelectedGenders = prevSelectedGenders.filter((g) => g !== "Prefer not to say");
-          return [...newSelectedGenders, gender];
-        }
-      });
-    }
-  };
-
-  const categoryArray = [
-    { label: "Business", value: "business" },
-    { label: "Accomodation", value: "accomodation" },
-    { label: "Banking", value: "banking" },
-    { label: "School", value: "school" },
-    { label: "Supermarket", value: "supermarket" },
-    { label: "Spa", value: "spa" },
-    { label: "Restaurant", value: "restaurant" },
-    { label: "Finance", value: "finance" },
-    { label: "Driving", value: "driving" },
-    { label: "Hotel", value: "hotel" },
-    { label: "Transport", value: "transport" },
-    { label: "Freelancer", value: "freelancer" },
-    { label: "Logistics", value: "logistics" },
-    { label: "Gas", value: "gas" },
-    { label: "Electricity", value: "electricity" },
-    { label: "Networking", value: "networking" },
-  ];
   return (
-    <div className="bg-white md:w-[1058px] rounded-xl border drop-shadow-2xl p-5 md:pb-[7rem] pb-[12rem] relative">
-      <div className="md:flex items-start relative">
-        <div className="md:w-[60%]">
-          <div>
-            <p className="font-[500] text-[24px] text-center md:text-left">Get a custom quote</p>
-            <p className="text-[14px] text-center md:text-left">
-              Set number of responses and your preferred audience preference to get a quote.
-            </p>
-          </div>
-          <div className="mt-5">
-            <p className="font-[500] text-[16px]">What type of survey do you want to run?</p>
-            <div className="flex items-center space-x-3 mt-2">
-              {["Online survey", "Field interview"].map((el, i) => (
+    <div className="bg-white md:w-[1058px] h-[40rem] overflow-y-auto md:overflow-visible md:h-full rounded-xl border drop-shadow-2xl relative">
+      <div>
+        <form action="" onSubmit={handleSubmit} className="md:flex items-start relative">
+          <div className="md:w-[60%] p-10 space-y-5">
+            <div>
+              <div className="flex items-center space-x-2">
+                <p className="font-[500] text-[16px] text-center md:text-left">Type of research</p>
+                <Tooltip text="The number of responses needed for this survey" />
+              </div>
+              <div className="mt-2">
+                <SecondarySelectInput
+                  options={researchData}
+                  name="researchType"
+                  value={values.researchType}
+                  onChange={handleChange}
+                  text="Select research type"
+                />
+              </div>
+            </div>{" "}
+            <div>
+              <div className="flex items-center space-x-1">
+                <p className="font-[500] text-[16px]">How many response do you need?</p>
+                <Tooltip text="The number of responses needed for this survey" />
+              </div>
+              <p className="text-[14px]">Specify number of responses</p>
+              <div className="flex items-center mt-1">
                 <div
-                  key={i}
-                  className={`border px-5 py-2 rounded-md text-[14px] cursor-pointer ${
-                    surveyType === i ? "border-primary" : ""
+                  className={`border rounded-l-md h-[30px] border-r-0  p-2 flex items-center justify-center ${
+                    responses < 300 ? "text-gray-400 cursor-not-allowed" : "cursor-pointer"
                   }`}
-                  onClick={() => handleSelect(i)}
+                  onClick={() => setResponses(responses > 200 ? responses - 100 : responses)}
                 >
-                  {el}
+                  <HiOutlineMinus />
                 </div>
-              ))}
-            </div>
-          </div>
-          <div className="mt-5">
-            <div className="flex items-center space-x-1">
-              <p className="font-[500] text-[16px]">How many response do you need?</p>
-              <Tooltip text="The number of responses needed for this survey" />
-            </div>
-            <div className="flex items-center mt-1">
-              <div
-                className={`border rounded-l-md h-[30px] border-r-0  p-2 flex items-center justify-center ${
-                  responses < 300 ? "text-gray-400 cursor-not-allowed" : "cursor-pointer"
-                }`}
-                onClick={() => setResponses(responses > 200 ? responses - 100 : responses)}
-              >
-                <HiOutlineMinus />
-              </div>
-              <div className="border p-2 flex items-center justify-center h-[30px] text-[12px]">{responses}</div>
-              <div
-                className="border rounded-r-md border-l-0 h-[30px]  p-2 flex items-center justify-center cursor-pointer"
-                onClick={() => setResponses(responses + 100)}
-              >
-                <HiOutlinePlus />
+                <div className="border p-2 flex items-center justify-center h-[30px] text-[12px]">{responses}</div>
+                <div
+                  className="border rounded-r-md border-l-0 h-[30px]  p-2 flex items-center justify-center cursor-pointer"
+                  onClick={() => setResponses(responses + 100)}
+                >
+                  <HiOutlinePlus />
+                </div>
               </div>
             </div>
-          </div>
-          <div className="mt-5">
-            <div className="flex items-center space-x-1">
-              <p className="font-[500] text-[16px]">Set your audience demographic(s)</p>
-            </div>
-          </div>
-          <form action="" onSubmit={handleSubmit}>
-            <div className="mt-2">
-              <p>Age range</p>
-              <div className="flex items-center space-x-4">
-                <PrimaryInput
-                  type="number"
-                  css="w-[100px]"
+            <div>
+              <div className="flex items-center space-x-2">
+                <p className="font-[500] text-[16px] text-center md:text-left">Type of audience</p>
+                <Tooltip text="The number of responses needed for this survey" />
+              </div>
+              <div className="mt-2">
+                <SecondarySelectInput
+                  options={audienceType}
+                  name="audienceType"
+                  value={values.audienceType}
                   onChange={handleChange}
-                  onBlur={handleBlur}
-                  name="leastAge"
-                  placeholder="18"
-                  value={values.leastAge}
+                  text="Select audience type"
                 />
-                <PrimaryInput
-                  type="number"
+              </div>
+            </div>
+            <div>
+              <div className="flex items-center space-x-2">
+                <p className="font-[500] text-[24px] md:text-left">Geolocation Specifications</p>
+                <Tooltip text="The number of responses needed for this survey" />
+              </div>
+              <p className="text-[14px]">Specify geolocation details (e.g., country, state, LGA)</p>
+              <div className="mt-2">
+                <SecondarySelectInput
+                  options={countryData}
+                  name="country"
+                  value={values.country}
                   onChange={handleChange}
-                  onBlur={handleBlur}
-                  css="w-[100px]"
-                  name="mostAge"
-                  placeholder="100"
-                  value={values.mostAge}
+                  text="Country"
                 />
-                {values.leastAge !== "" && values.mostAge !== "" ? (
-                  <div className="bg-gray-300 rounded-full p-2 text-white" onClick={handleClear}>
-                    <RiDeleteBin5Fill size={15} />
-                  </div>
-                ) : null}
               </div>
             </div>
-            <div className="mt-5">
-              <p className="font-[500] text-[16px]">What type of survey do you want to run?</p>
-              <div className="flex items-center space-x-3 mt-2">
-                {["Male", "Female", "Prefer not to say"].map((el, i) => (
-                  <div
-                    key={i}
-                    className={`border px-5 py-2 rounded-md md:text-[14px] text-[12px] cursor-pointer ${
-                      selectedGenders.includes(el) ? "border-primary" : ""
-                    }`}
-                    onClick={() => handleGender(el)}
-                  >
-                    {el}
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="md:flex items-center md:space-x-5 space-y-5 md:space-y-0 md:w-[70%] w-full mt-5">
+            <div className="md:flex items-center md:space-x-5 space-y-5 md:space-y-0 w-full mt-5">
               <div className="w-full">
                 <p className="font-[500] text-[16px] mb-2">State</p>
                 <SelectMultiple
@@ -280,15 +281,33 @@ const Quotation: React.FC = () => {
                 />
               </div>
             </div>
-            <div className="mt-5">
-              <p className="font-[500] text-[16px] mb-2">Category of interest</p>
-              <SelectMultiple
-                name="categoryOfInterest"
-                value={values.categoryOfInterest}
-                css="md:w-[70%] w-full"
-                onChange={(selectedOptions) => setFieldValue("categoryOfInterest", selectedOptions)}
-                options={categoryArray}
-              />
+            <div className={`mt-5 md:block ${price !== null && "hidden"}`}>
+              <div className="md:flex items-center justify-between mt-2 md:space-x-5 space-y-3 md:space-y-0 w-full">
+                <div className="w-full">
+                  <GreyButton text="reset" css="w-full" onClick={clearForm} buttonId="reset" />
+                </div>
+
+                <div className="w-full flex justify-center ">
+                  <BlueButton
+                    text="Get a quote"
+                    type="submit"
+                    css="w-full"
+                    buttonId="submit_quote"
+                    disabled={emptyCheck}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className={`p-3 border md:hidden bg-white ${price !== null ? "block" : "hidden"}`}>
+              <div className="flex flex-col md:block items-center w-full text-center">
+                <p>Estimated price</p>
+                <p className="font-[700] text-[32px] text-primary ">{price !== null ? `$${price}` : "$0.00"}</p>
+              </div>
+              <div className="flex justify-center">
+                {price !== null && (
+                  <BlueButton text="Buy now" css="w-[200px]" buttonId="buy_now" onClick={() => setOpenSignup(true)} />
+                )}
+              </div>
             </div>
             <div>
               <p
@@ -298,125 +317,112 @@ const Quotation: React.FC = () => {
                 Preview selection
               </p>
             </div>
-          </form>
-        </div>
-        <div className="hidden md:block w-[40%] h-[650px] p-5 bg-[#FAFAFA]">
-          <p className="font-[500] text-[16px]">Preview</p>
-          <div>
-            {!emptyStateCheck ? (
-              <div className="h-[500px]">
-                <EmptyState
-                  title="Nothing to show yet."
-                  subtitle="Your custom selection will show up here."
-                  img={emptyState}
-                />
-              </div>
-            ) : null}
           </div>
-          <div className="mt-5">
-            {surveyType !== null ? (
-              <div>
-                <p>Survey Type</p>
-                <p>{["Online survey", "Field interview"]?.[surveyType]}</p>
-                <hr className="w-full mt-2" />
+          <div className="hidden md:block w-[40%] p-5 bg-[#FAFAFA]">
+            <p className="font-[500] text-[16px] p-5 border bg-white">Estimate</p>
+            <div className="bg-white border-x min-h-[60%] flex flex-col">
+              {!emptyStateCheck ? (
+                <div className="items-center justify-center flex h-[500px]">
+                  <EmptyState
+                    title="Nothing to show yet."
+                    subtitle="Your custom selection will show up here."
+                    img={emptyState}
+                  />
+                </div>
+              ) : (
+                <div className="p-5 space-y-5 h-[500px] overflow-y-auto">
+                  <div>
+                    <div>
+                      {values.researchType !== "" && (
+                        <>
+                          <p className="text-[13px] font-[500]">Research</p>
+                          <div className="w-fit bg-[#FAFAFA] p-3 text-[14px] mt-2 rounded-md">
+                            {values.researchType}
+                          </div>
+                          <hr className="w-full mt-2" />
+                        </>
+                      )}
+                    </div>
+                    <div>
+                      {emptyStateCheck && (
+                        <>
+                          <p className="text-[13px] font-[500]">Responses</p>
+                          <div className="w-fit bg-[#FAFAFA] p-3 text-[14px] mt-2 rounded-md">{responses}</div>
+                          <hr className="w-full mt-2" />
+                        </>
+                      )}
+                    </div>
+                    {values.audienceType !== "" && (
+                      <>
+                        <p className="text-[13px] font-[500]">Audience</p>
+                        <div className="w-fit bg-[#FAFAFA] p-3 text-[14px] mt-2 rounded-md">{values.audienceType}</div>
+                        <hr className="w-full mt-2" />
+                      </>
+                    )}
+                  </div>
+                  <div>
+                    {values.country !== "" && (
+                      <>
+                        <p className="text-[13px] font-[500]">Country</p>
+                        <div className="w-fit bg-[#FAFAFA] p-3 text-[14px] mt-2 rounded-md">{values.country}</div>
+                        <hr className="w-full mt-2" />
+                      </>
+                    )}
+                  </div>
+                  <div>
+                    {stateValue.length !== 0 && (
+                      <div>
+                        <p>State</p>
+                        <ul className="space-y-2">
+                          {stateValue.map((el, i) => (
+                            <li key={i} className="w-fit bg-[#FAFAFA] p-3 text-[14px] mt-2 rounded-md">
+                              {el}
+                            </li>
+                          ))}
+                        </ul>
+                        <hr className="w-full mt-2" />
+                      </div>
+                    )}
+                  </div>
+                  <div>
+                    {cityValue.length !== 0 && (
+                      <div>
+                        <p>Local Government Area(s)</p>
+                        <ul className="space-y-2">
+                          {cityValue.map((el, i) => (
+                            <li key={i} className="w-fit bg-[#FAFAFA] p-3 text-[14px] mt-2 rounded-md">
+                              {el}
+                            </li>
+                          ))}
+                        </ul>
+                        <hr className="w-full mt-2" />
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <div className="p-3 border bg-white">
+              <div className="flex flex-col md:block items-center w-full text-center">
+                <p>Estimated price</p>
+                <p className="font-[700] text-[32px] text-primary ">{price !== null ? `$${price}` : "$0.00"}</p>
               </div>
-            ) : null}
-            {responses < 200 ? null : (
-              <div>
-                <p>Responses</p>
-                <p>{responses}</p>
-                <hr className="w-full mt-2" />
+              <div className="flex justify-center">
+                {price !== null && (
+                  <BlueButton buttonId="buy_now" text="Buy now" css="w-[200px]" onClick={() => setOpenSignup(true)} />
+                )}
               </div>
-            )}
-            {values.leastAge !== "" && values.mostAge !== "" ? (
-              <div>
-                <p>Age</p>
-                <p>
-                  {values.leastAge} to {values.mostAge}
-                </p>
-                <hr className="w-full mt-2" />
-              </div>
-            ) : null}
+            </div>
           </div>
-          <div className="mt-3">
-            {selectedGenders.length !== 0 ? (
-              <div>
-                <p>Genders</p>
-                <ul className="space-y-2">
-                  {selectedGenders.map((el, i) => (
-                    <li key={i}>{el}</li>
-                  ))}
-                </ul>
-                <hr className="w-full mt-2" />
-              </div>
-            ) : null}
-          </div>
-          <div className="mt-3">
-            {stateValue.length !== 0 ? (
-              <div>
-                <p>State</p>
-                <ul className="space-y-2">
-                  {stateValue.map((el, i) => (
-                    <li key={i}>{el}</li>
-                  ))}
-                </ul>
-                <hr className="w-full mt-2" />
-              </div>
-            ) : null}
-          </div>
-          <div className="mt-3">
-            {cityValue.length !== 0 ? (
-              <div>
-                <p>Local Government Area(s)</p>
-                <ul className="space-y-2">
-                  {cityValue.map((el, i) => (
-                    <li key={i}>{el}</li>
-                  ))}
-                </ul>
-                <hr className="w-full mt-2" />
-              </div>
-            ) : null}
-          </div>
-          <div className="mt-3">
-            {categoryValue.length !== 0 ? (
-              <div>
-                <p>Category of interest(s)</p>
-                <ul className="space-y-2">
-                  {categoryValue.map((el, i) => (
-                    <li key={i}>{el}</li>
-                  ))}
-                </ul>
-                <hr className="w-full mt-2" />
-              </div>
-            ) : null}
-          </div>
-        </div>
+        </form>
       </div>
-      <div className="bg-white absolute w-[99%] border-t mt-5 right-1">
-        <div className="md:flex items-center justify-between mt-2 px-5 w-full">
-          <div className="flex flex-col md:block items-center w-full">
-            <p>Estimated price</p>
-            <p className="font-[700] text-[32px] text-primary">{price !== null ? `$${price}` : "$0.00"}</p>
-          </div>
-          <div className="w-full flex justify-center ">
-            <Link to={emptyCheck ? "#" : `${ROUTES.LOGIN}/register`} className="w-full flex justify-end">
-              <BlueButton
-                text="Buy now"
-                type="button"
-                css="md:w-[80%] w-full"
-                onClick={handleClick}
-                disabled={emptyCheck}
-                buttonId="rh_contact_us_3"
-              />
-            </Link>
-          </div>
-        </div>
-      </div>
+
       {openModal && (
         <div className="md:hidden">
           <Modal title="" onClose={() => setOpenModal(false)}>
-            <div className="w-[350px]">
-              <p className="font-[500] text-[16px]">Preview</p>
+            <div className="w-[300px] overflow-y-auto">
+              <p className="font-[500] text-[16px]">Estimate</p>
               <div>
                 {!emptyStateCheck ? (
                   <div className="h-[500px]">
@@ -428,82 +434,69 @@ const Quotation: React.FC = () => {
                   </div>
                 ) : null}
               </div>
-              <div className="mt-5">
-                {surveyType !== null ? (
-                  <div>
-                    <p>Survey Type</p>
-                    <p>{["Online survey", "Field interview"]?.[surveyType]}</p>
+              <div>
+                {values.researchType !== "" && (
+                  <>
+                    <p className="text-[13px] font-[500]">Research</p>
+                    <div className="w-fit bg-[#FAFAFA] p-3 text-[14px] mt-2 rounded-md">{values.researchType}</div>
                     <hr className="w-full mt-2" />
-                  </div>
-                ) : null}
-                {responses < 200 ? null : (
-                  <div>
-                    <p>Responses</p>
-                    <p>{responses}</p>
-                    <hr className="w-full mt-2" />
-                  </div>
+                  </>
                 )}
-                {values.leastAge !== "" && values.mostAge !== "" ? (
-                  <div>
-                    <p>Age</p>
-                    <p>
-                      {values.leastAge} to {values.mostAge}
-                    </p>
-                    <hr className="w-full mt-2" />
-                  </div>
-                ) : null}
               </div>
-              <div className="mt-3">
-                {selectedGenders.length !== 0 ? (
-                  <div>
-                    <p>Genders</p>
-                    <ul className="space-y-2">
-                      {selectedGenders.map((el, i) => (
-                        <li key={i}>{el}</li>
-                      ))}
-                    </ul>
+              <div>
+                {emptyStateCheck && (
+                  <>
+                    <p className="text-[13px] font-[500]">Responses</p>
+                    <div className="w-fit bg-[#FAFAFA] p-3 text-[14px] mt-2 rounded-md">{responses}</div>
                     <hr className="w-full mt-2" />
-                  </div>
-                ) : null}
+                  </>
+                )}
               </div>
-              <div className="mt-3">
-                {stateValue.length !== 0 ? (
+              {values.audienceType !== "" && (
+                <>
+                  <p className="text-[13px] font-[500]">Audience</p>
+                  <div className="w-fit bg-[#FAFAFA] p-3 text-[14px] mt-2 rounded-md">{values.audienceType}</div>
+                  <hr className="w-full mt-2" />
+                </>
+              )}
+              <div>
+                {values.country !== "" && (
+                  <>
+                    <p className="text-[13px] font-[500]">Country</p>
+                    <div className="w-fit bg-[#FAFAFA] p-3 text-[14px] mt-2 rounded-md">{values.country}</div>
+                    <hr className="w-full mt-2" />
+                  </>
+                )}
+              </div>
+              <div>
+                {stateValue.length !== 0 && (
                   <div>
                     <p>State</p>
                     <ul className="space-y-2">
                       {stateValue.map((el, i) => (
-                        <li key={i}>{el}</li>
+                        <li key={i} className="w-fit bg-[#FAFAFA] p-3 text-[14px] mt-2 rounded-md">
+                          {el}
+                        </li>
                       ))}
                     </ul>
                     <hr className="w-full mt-2" />
                   </div>
-                ) : null}
+                )}
               </div>
-              <div className="mt-3">
-                {stateValue.length === 1 ? (
+              <div>
+                {cityValue.length !== 0 && (
                   <div>
                     <p>Local Government Area(s)</p>
                     <ul className="space-y-2">
                       {cityValue.map((el, i) => (
-                        <li key={i}>{el}</li>
+                        <li key={i} className="w-fit bg-[#FAFAFA] p-3 text-[14px] mt-2 rounded-md">
+                          {el}
+                        </li>
                       ))}
                     </ul>
                     <hr className="w-full mt-2" />
                   </div>
-                ) : null}
-              </div>
-              <div className="mt-3">
-                {categoryValue.length !== 0 ? (
-                  <div>
-                    <p>Category of interest(s)</p>
-                    <ul className="space-y-2">
-                      {categoryValue.map((el, i) => (
-                        <li key={i}>{el}</li>
-                      ))}
-                    </ul>
-                    <hr className="w-full mt-2" />
-                  </div>
-                ) : null}
+                )}
               </div>
             </div>
           </Modal>

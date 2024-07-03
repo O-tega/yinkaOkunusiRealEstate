@@ -99,7 +99,7 @@ const OurSolution: React.FC = () => {
                   <div>
                     {/* <p className="w-full font-secondary text-primary text-[36px]">{item.cardtext}</p> */}
                     {/* <p className="text-[18px]">{item.title}</p> */}
-                    <p className="text-[18px] w-[75%]">{item.desc}</p>
+                    <p className="text-[18px] w-[75%] font-medium">{item.desc}</p>
                   </div>
                 </div>
               </div>
@@ -111,7 +111,7 @@ const OurSolution: React.FC = () => {
                   <div className="w-[76%]">
                     {/* <p className="w-full font-secondary text-primary text-[36px]">{item.cardtext}</p> */}
                     {/* <p className="text-[18px]">{item.title}</p> */}
-                    <p className="text-[18px]">{item.desc}</p>
+                    <p className="text-[18px] font-medium">{item.desc}</p>
                   </div>
                 </div>
 

@@ -64,7 +64,7 @@ const Header = () => {
           <div
             className={`${
               dropDown ? "opacity-1 visible translate-y-0" : "opacity-0 invisible -translate-y-6"
-            } transition-all duration-300 ease-in-out absolute z-40 top-14 left-[33rem] w-full max-w-[400px] h-[550px] bg-white border border-strokeColor rounded-b-2xl shadow-card overflow-hidden`}
+            } transition-all duration-300 ease-in-out absolute z-40 top-[4.4rem] left-[31rem] w-full max-w-[400px] h-[550px] bg-white border border-strokeColor rounded-b-2xl shadow-card overflow-hidden`}
           >
             <SolutionList onClick={() => toggleDropdown()} />
           </div>
@@ -95,7 +95,7 @@ const Header = () => {
           <Link to={`${ROUTES.LOGIN}`} className="py-[16px] rounded-[30px] text-primary" id="header_login">
             Login
           </Link>
-          <a href={ROUTES.LOGIN} className="cursor-pointer">
+          <a href={`${ROUTES.LOGIN}/register`} className="cursor-pointer">
             <BlueButton text="Sign up" css="w-[186px]" buttonId="header_signup" />
           </a>
         </div>

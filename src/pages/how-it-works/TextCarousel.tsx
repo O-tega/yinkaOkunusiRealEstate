@@ -56,7 +56,7 @@ const TextCarousel = () => {
       <div>
         {carouselData.map((item, i) => (
           <div key={i} className="transition-all duration-300 ease-in">
-            <div>
+            <div className="pr-10">
               {activeIndex === i ? (
                 <motion.div
                   variants={variant}
@@ -65,7 +65,7 @@ const TextCarousel = () => {
                   className="md:w-[500px] text-center md:text-left pt-5 md:pt-0"
                 >
                   <p className="font-secondary md:text-[24px] text-[20px]">{item.title}</p>
-                  <p className="md:text-[20px] text-[16px]">{item.desc}</p>
+                  <p className="md:text-[20px] text-[16px] font-medium">{item.desc}</p>
                 </motion.div>
               ) : null}
             </div>

@@ -47,7 +47,7 @@ const HowItWorks: React.FC = () => {
       <HeroSection />
       <div>
         <div className="md:px-[5rem] px-2">
-          <p className="font-secondary md:text-[36px] text-[24px] text-center py-[5rem]">
+          <p className="font-secondary md:text-[36px] text-[24px] text-center pt-[5rem] pb-[2.5rem]">
             Understand your customers, competitors and market better.
           </p>
           <div>
@@ -58,7 +58,7 @@ const HowItWorks: React.FC = () => {
           <p className="font-secondary md:text-[36px] text-[24px] text-center text-white">
             Understand your customers, competitors and market better.
           </p>
-          <div className="flex justify-center mt-[3rem]">
+          <div className="flex justify-center pt-[3rem]">
             <div className="md:grid grid-cols-2 gap-12 space-y-5 md:space-y-0">
               {info.map((el, i) => (
                 <FeaturesCard key={i} title={el.title} text={el.text} img={el.img} id={i} />
