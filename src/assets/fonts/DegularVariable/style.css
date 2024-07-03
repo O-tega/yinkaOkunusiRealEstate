@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "DegularVariable";
+  src: url("DegularText-Regular.otf");
+  font-weight: 400;
+  font-style: regular;
+}
+@font-face {
+  font-family: "DegularVariable";
+  src: url("DegularText-Medium.otf");
+  font-weight: 500;
+  font-style: medium;
+}
+@font-face {
+  font-family: "DegularVariable";
+  src: url("DegularText-Semibold.otf");
+  font-weight: 600;
+  font-style: regular;
+}
+@font-face {
+  font-family: "DegularVariable";
+  src: url("DegularText-Bold.otf");
+  font-weight: 700;
+  font-style: regular;
+}
+@font-face {
+  font-family: "DegularVariable";
+  src: url("DegularText-Black.otf");
+  font-weight: 900;
+  font-style: regular;
+}

@@ -290,13 +290,13 @@ const Custom: React.FC = () => {
             </div>
           </div>
           <div
-            className={`border rounded-2xl h-[46rem] w-[30%] p-5 hidden md:inline ${
+            className={`border rounded-2xl h-[44.9rem] w-[30%] p-5 hidden md:inline ${
               selectCrm === null && selectResearch === null ? "h-[500px] overflow-y-auto" : "h-full overflow-y-auto"
             }`}
           >
             <p className="font-[600]">Estimate</p>
             {selectResearch !== null ? (
-              <div className="mt-5">
+              <div className="mt-5 bg-[#FAFAFA] p-5 rounded-md">
                 <div className="flex items-center justify-between">
                   <p className="font-[600] text-primary">Research hub</p>
                   <p
@@ -338,7 +338,7 @@ const Custom: React.FC = () => {
               <div></div>
             )}
             {selectCrm !== null ? (
-              <div className="mt-10">
+              <div className="mt-10 bg-[#FAFAFA] p-5 rounded-md">
                 <div className="flex items-center justify-between">
                   <p className="font-[600] text-primary">Engagement Hub</p>
                   <p className="text-gray-600 hover:text-primary cursor-pointer" onClick={() => setSelectCrm(null)}>
@@ -453,7 +453,7 @@ const Custom: React.FC = () => {
               <p className="font-[600]">Estimate</p>
               {selectResearch !== null ? (
                 <div className="mt-5">
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between bg-[#FAFAFA]">
                     <p className="font-[600] text-primary">Research hub</p>
                     <p
                       className="text-gray-600 hover:text-primary cursor-pointer"

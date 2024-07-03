@@ -1,10 +1,11 @@
 import { Option } from "./componentTypes";
 
 export type TQuotation = {
-  leastAge: string;
-  mostAge: string;
-  gender: string[];
+  researchType: string;
+  audienceType: string;
+  country: string;
+  price: number | null;
+  responses: number;
   lga: Option[];
   state: Option[];
-  categoryOfInterest: Option[];
 };

@@ -72,3 +72,11 @@ export interface MultiSelectInputProps {
   onBlur?: React.FocusEventHandler<HTMLSelectElement>;
   error?: string | undefined | false;
 }
+
+export interface ICheckboxProps {
+  checked?: boolean;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  name: string;
+  label?: string;
+  value?: boolean | string | undefined;
+}

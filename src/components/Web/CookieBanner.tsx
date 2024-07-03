@@ -5,7 +5,7 @@ import BlueButton from "@/components/Button/BlueButton";
 import { useCookies } from "react-cookie";
 import BottomModal from "./BottomModal";
 import ModalWithoutClose from "../ModalWithoutClose";
-import GreyButton from "../Button/GreyButton";
+import LightBlueButton from "../Button/LightBlueButton";
 
 type CookieType = "mooyi" | "strict" | "performance" | "targeting" | "functionality";
 
@@ -88,17 +88,17 @@ const CookieBanner = () => {
                 <div className="flex items-center space-x-5">
                   <div className="md:flex items-center justify-between w-full px-12">
                     <div className="md:w-[50%]">
-                      <p className="text-[14px] text-center md:text-left">
+                      <p className="text-[14px] font-medium text-center md:text-left">
                         By clicking “Accept all cookies”, you agree to the storing of cookies on your device to enhance
                         site navigation, analyse site usage, and assist in our marketing efforts.{" "}
                       </p>
                     </div>
                     <div className="md:flex items-center justify-center md:space-x-8 mt-5 md:mt-0 space-y-3 md:space-y-0">
                       <p
-                        className="text-primary underline md:text-right text-center mt-5 md:mt-0 cursor-pointer"
+                        className="text-primary underline md:text-right text-center mt-5 md:mt-0 cursor-pointer font-medium"
                         onClick={() => setPreference(!showPreference)}
                       >
-                        Cookie Preference.{" "}
+                        Cookie Preferences.{" "}
                       </p>
                       <div>
                         <BlueButton
@@ -109,9 +109,9 @@ const CookieBanner = () => {
                         />
                       </div>
                       <div>
-                        <GreyButton
+                        <LightBlueButton
                           text="Reject all cookies"
-                          css="w-full bg-blue-600"
+                          css="w-full"
                           onClick={() => setShowCookie(true)}
                           buttonId="cb_reject_all_cookies"
                         />
@@ -126,11 +126,7 @@ const CookieBanner = () => {
             {showPreference && (
               <ModalWithoutClose>
                 <div className="mt-5 md:w-[600px] w-full">
-                  <p className="text-[14px]">
-                    By clicking “Accept all cookies”, you agree to the storing of cookies on your device to enhance site
-                    navigation, analyse site usage, and assist in our marketing efforts.
-                  </p>
-                  <p className="text-[20px] font-secondary font-[500] mt-3">Manage preference</p>
+                  <p className="text-[20px] font-secondary font-[500]">Manage preference</p>
                   <div className="mt-3 space-y-5 border py-3">
                     {preference.map((el, i) => (
                       <div key={i} className={`px-3 pb-3 ${el.id === "functionality" ? "" : "border-b"}`}>

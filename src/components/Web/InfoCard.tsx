@@ -18,7 +18,7 @@ const InfoCard: React.FC<TInfo> = ({ img, title, text, link }) => {
       </div>
       <div>
         <p className="md:text-[20px] font-secondary">{title}</p>
-        <p className="md:text-[16px] md:w-[80%]">{text}</p>
+        <p className="md:text-[16px]  pt-2 font-medium">{text}</p>
       </div>
       <div className="text-primary underline">
         <Link to={link}>More</Link>
