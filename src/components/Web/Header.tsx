@@ -43,7 +43,7 @@ const Header = () => {
             </Link>
           </div>
           <div className="hidden md:block">
-            <ul className="flex items-center text-[14px] space-x-8">
+            <ul className="flex items-center space-x-4 lg:space-x-6 whitespace-nowrap">
               {links.map((items, i) => (
                 <li key={i} className="hover:text-primary">
                   <div>
@@ -77,7 +77,7 @@ const Header = () => {
           {showMenu ? null : <HiOutlineMenuAlt4 onClick={() => setShowMenu(!showMenu)} size={25} />}
         </div>
 
-        <div className="hidden sm:flex space-x-5  items-center  text-[14px] font-[500]">
+        <div className="hidden sm:flex space-x-4  items-center font-[500]">
           <a
             target="_blank"
             rel="noreferrer"
@@ -99,7 +99,7 @@ const Header = () => {
             Login
           </Link>
           <a href={`${ROUTES.LOGIN}/register`} className="cursor-pointer">
-            <BlueButton text="Sign up" css="w-[186px]" buttonId="header_signup" />
+            <BlueButton text="Sign up" css="w-[120px]" buttonId="header_signup" />
           </a>
         </div>
       </div>

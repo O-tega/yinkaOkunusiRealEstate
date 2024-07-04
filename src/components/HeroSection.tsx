@@ -166,7 +166,7 @@ const HeroSection: React.FC = () => {
             And hello to agile consumer insights.
           </p>
 
-          <a href={ROUTES.LOGIN} className="flex justify-center mt-5" target="_blank">
+          <a href={`${ROUTES.LOGIN}/register`} className="flex justify-center mt-5" target="_blank">
             <WhiteButton text={"Get started now"} css="text-black" buttonId="home_get_started_now_1" />
           </a>
         </div>
