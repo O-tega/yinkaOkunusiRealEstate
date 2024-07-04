@@ -52,6 +52,8 @@ const SignupModal: React.FC<TSignupModal> = ({ onClose, data }) => {
     // navigate("");
   };
 
+  const price = data !== null ? data?.price : 0;
+
   const { handleChange, values, handleBlur, handleSubmit, errors, touched } = useFormik({
     initialValues,
     validationSchema,
@@ -87,8 +89,8 @@ const SignupModal: React.FC<TSignupModal> = ({ onClose, data }) => {
   const { mutate: mutateTopUp } = useMutation({
     mutationFn: approveTopUp,
     onSuccess: () => {
-      closePaymentModal();
       Toast.success("subscription successful.");
+      closePaymentModal();
       handleNavigate();
     },
     onError: () => {
@@ -99,7 +101,7 @@ const SignupModal: React.FC<TSignupModal> = ({ onClose, data }) => {
   const { mutate } = useMutation({
     mutationFn: paymentService,
     onSuccess: (data) => {
-      configs.amount = 200;
+      configs.amount = price as number;
       initializePayment({
         callback: (response) => {
           const userData = {
