@@ -30,7 +30,7 @@ const audienceType = [
   { label: "Select...", value: "" },
   { label: "Consumer", value: "consumer" },
   { label: "Business", value: "business" },
-  { label: "Mobile agent", value: "mobileAgent" },
+  { label: "Mobile agent", value: "mobileAgents" },
   { label: "Consumer and business", value: "consumer and business" },
 ];
 
@@ -72,6 +72,26 @@ const Quotation: React.FC<TLoad> = ({ setLoading, setOpenSignup, setQuoteData })
   };
 
   const onSubmit = async (data: TQuotation) => {
+    // setLoading(true);
+    // setTimeout(() => {
+    //   setLoading(false);
+    //   setPrice(totalPrice);
+    //   setQuoteData({ ...data, price: totalPrice });
+    // }, 5000);
+    console.log(data);
+  };
+
+  const getQuotation = () => {
+    console.log("getQuote");
+    const data = {
+      audienceType: values.audienceType,
+      researchType: values.researchType,
+      country: values.country,
+      responses: values.responses,
+      state: values.state,
+      lga: values.lga,
+    };
+
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
@@ -80,13 +100,15 @@ const Quotation: React.FC<TLoad> = ({ setLoading, setOpenSignup, setQuoteData })
     }, 5000);
   };
 
-  const { handleChange, values, handleSubmit, setFieldValue } = useFormik({
+  const { handleChange, values, setFieldValue } = useFormik({
     initialValues,
     validationSchema,
     onSubmit,
     validateOnBlur: true,
     enableReinitialize: true,
   });
+
+  console.log(values);
 
   const researchPrice = values.researchType === "consumer" ? 2 : values.researchType === "business" ? 4 : 3;
 
@@ -191,12 +213,12 @@ const Quotation: React.FC<TLoad> = ({ setLoading, setOpenSignup, setQuoteData })
   return (
     <div className="bg-white md:w-[1058px] h-[40rem] overflow-y-auto md:overflow-visible md:h-full rounded-xl border drop-shadow-2xl relative">
       <div>
-        <form action="" onSubmit={handleSubmit} className="md:flex items-start relative">
+        <form action="" className="md:flex items-start relative">
           <div className="md:w-[60%] p-10 space-y-5">
             <div>
               <div className="flex items-center space-x-2">
                 <p className="font-[500] text-[16px] text-center md:text-left">Type of research</p>
-                <Tooltip text="The number of responses needed for this survey" />
+                <Tooltip text="Choose between a field interview or an online survey depending on your research needs." />
               </div>
               <div className="mt-2">
                 <SecondarySelectInput
@@ -235,7 +257,7 @@ const Quotation: React.FC<TLoad> = ({ setLoading, setOpenSignup, setQuoteData })
             <div>
               <div className="flex items-center space-x-2">
                 <p className="font-[500] text-[16px] text-center md:text-left">Type of audience</p>
-                <Tooltip text="The number of responses needed for this survey" />
+                <Tooltip text="Specify whether your audience is general consumers, business professionals, or mobile agents." />
               </div>
               <div className="mt-2">
                 <SecondarySelectInput
@@ -250,7 +272,7 @@ const Quotation: React.FC<TLoad> = ({ setLoading, setOpenSignup, setQuoteData })
             <div>
               <div className="flex items-center space-x-2">
                 <p className="font-[500] text-[24px] md:text-left">Geolocation Specifications</p>
-                <Tooltip text="The number of responses needed for this survey" />
+                <Tooltip text="Enter specific locations where you need the research to be conducted." />
               </div>
               <p className="text-[14px]">Specify geolocation details (e.g., country, state, LGA)</p>
               <div className="mt-2">
@@ -293,8 +315,8 @@ const Quotation: React.FC<TLoad> = ({ setLoading, setOpenSignup, setQuoteData })
                 <div className="w-full flex justify-center ">
                   <BlueButton
                     text="Get a quote"
-                    type="submit"
                     css="w-full"
+                    onClick={getQuotation}
                     buttonId="submit_quote"
                     disabled={emptyCheck}
                   />
