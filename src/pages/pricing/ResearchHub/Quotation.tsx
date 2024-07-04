@@ -218,7 +218,7 @@ const Quotation: React.FC<TLoad> = ({ setLoading, setOpenSignup, setQuoteData })
             <div>
               <div className="flex items-center space-x-2">
                 <p className="font-[500] text-[16px] text-center md:text-left">Type of research</p>
-                <Tooltip text="The number of responses needed for this survey" />
+                <Tooltip text="Choose between a field interview or an online survey depending on your research needs." />
               </div>
               <div className="mt-2">
                 <SecondarySelectInput
@@ -257,7 +257,7 @@ const Quotation: React.FC<TLoad> = ({ setLoading, setOpenSignup, setQuoteData })
             <div>
               <div className="flex items-center space-x-2">
                 <p className="font-[500] text-[16px] text-center md:text-left">Type of audience</p>
-                <Tooltip text="The number of responses needed for this survey" />
+                <Tooltip text="Specify whether your audience is general consumers, business professionals, or mobile agents." />
               </div>
               <div className="mt-2">
                 <SecondarySelectInput
@@ -272,7 +272,7 @@ const Quotation: React.FC<TLoad> = ({ setLoading, setOpenSignup, setQuoteData })
             <div>
               <div className="flex items-center space-x-2">
                 <p className="font-[500] text-[24px] md:text-left">Geolocation Specifications</p>
-                <Tooltip text="The number of responses needed for this survey" />
+                <Tooltip text="Enter specific locations where you need the research to be conducted." />
               </div>
               <p className="text-[14px]">Specify geolocation details (e.g., country, state, LGA)</p>
               <div className="mt-2">
