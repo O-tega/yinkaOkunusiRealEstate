@@ -124,7 +124,7 @@ const Footer = () => {
           <div className="space-x-3 flex items-center">
             {socialIcons.map((item, i) => (
               <span key={i} className="hover:text-primary">
-                <Link to={item.link}>
+                <Link to={item.link} target="_blank">
                   <item.icon size={20} />
                 </Link>
               </span>
@@ -142,7 +142,7 @@ const Footer = () => {
           <div className="space-x-3 flex items-center">
             {socialIcons.map((item, i) => (
               <span key={i} className="hover:text-primary">
-                <Link to={item.link} target="_blank" rel="noreferrer">
+                <Link to={item.link} target="_blank">
                   <item.icon size={20} />
                 </Link>
               </span>
