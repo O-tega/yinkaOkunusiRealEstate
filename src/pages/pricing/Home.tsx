@@ -122,7 +122,7 @@ const Home: React.FC = () => {
           <div className="flex items-center flex-col md:mt-[5rem]">
             <div className="md:w-[60%] ">
               <p className="text-primary text-center">PRICING</p>
-              <p className="font-secondary md:text-[40px] text-center text-[24px] md:leading-[3rem] tracking-tight pt-5 md:pt-[3rem]">
+              <p className="font-secondary md:text-[40px] text-center text-[24px] md:leading-[3rem] tracking-tight pt-5 md:pt-[2rem]">
                 Get fast and actionable insights from your target market or actual customers.
               </p>
             </div>

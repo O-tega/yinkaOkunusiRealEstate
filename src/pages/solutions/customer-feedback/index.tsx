@@ -76,7 +76,7 @@ const CustomerFeedback: React.FC = () => {
       </div>
       <div className="flex justify-center pb-16">
         <div className="md:w-[20%]">
-          <Link to={`${ROUTES.LOGIN}`}>
+          <Link to={`${ROUTES.LOGIN}/register`} target="_blank" rel="noreferrer">
             <PrimaryButton
               type="button"
               text="Get started for free"

@@ -167,7 +167,7 @@ const SignupModal: React.FC<TSignupModal> = ({ onClose, data }) => {
                   />
                 </div>
               </div>
-              <div className="flex items-start space-x-2 mt-5 mb-5">
+              <div className="flex items-start space-x-2 mt-5 ml-5 mb-5">
                 <div className="mt-1">
                   <CheckBox onChange={handleChange} name="agree" value={values.agree} />
                 </div>
