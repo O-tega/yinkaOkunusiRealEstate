@@ -57,7 +57,7 @@ const PlanCard = ({ title, subtitle, tag, info, amount, featureTitle, features, 
         <p className="md:text-[16px] text-[14px] font-medium">{info}</p>
         {title === "Pro Plan" ? (
           <div>
-            <p className="text-[38px] md:text-[40px] font-[600]"> Custom </p>
+            <p className="text-[38px] md:text-[40px] font-[600] mt-3"> Custom </p>
           </div>
         ) : (
           <div className="flex items-center space-x-3 mt-3">
@@ -97,7 +97,7 @@ const PlanCard = ({ title, subtitle, tag, info, amount, featureTitle, features, 
         </div>
         <HashLink smooth to="/pricing/engagement-hub/#explore">
           <div className="flex items-center space-x-3 text-primary underline text-[12px] mt-5">
-            <p>explore all features</p>{" "}
+            <p>Explore all features</p>{" "}
           </div>
         </HashLink>
       </div>
