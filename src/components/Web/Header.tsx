@@ -67,7 +67,7 @@ const Header = () => {
           <div
             className={`${
               dropDown ? "opacity-1 visible translate-y-0" : "opacity-0 invisible -translate-y-6"
-            } transition-all duration-300 ease-in-out absolute z-40 top-[4.4rem] left-[31rem] w-full max-w-[400px] h-[550px] bg-white border border-strokeColor rounded-b-2xl shadow-card overflow-hidden`}
+            } transition-all duration-300 ease-in-out absolute z-40 top-[4.4rem] left-[24rem] w-full max-w-[400px] h-[550px] bg-white border border-strokeColor rounded-b-2xl shadow-card overflow-hidden`}
           >
             <SolutionList onClick={() => toggleDropdown()} />
           </div>
