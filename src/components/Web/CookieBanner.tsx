@@ -125,7 +125,7 @@ const CookieBanner = () => {
           <div className="">
             {showPreference && (
               <ModalWithoutClose>
-                <div className="mt-5 md:w-[600px] w-full">
+                <div className="mt-5 md:w-[600px] p-5 w-full">
                   <p className="text-[20px] font-secondary font-[500]">Manage preference</p>
                   <div className="mt-3 space-y-5 border py-3">
                     {preference.map((el, i) => (

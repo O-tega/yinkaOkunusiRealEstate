@@ -65,8 +65,6 @@ const Quotation: React.FC<TLoad> = ({ setLoading, setOpenSignup, setQuoteData })
     audienceType: "",
     researchType: "",
     country: "",
-    price: price,
-    responses: responses,
     state: [] as Option[],
     lga: [] as Option[],
   };
@@ -87,7 +85,7 @@ const Quotation: React.FC<TLoad> = ({ setLoading, setOpenSignup, setQuoteData })
       audienceType: values.audienceType,
       researchType: values.researchType,
       country: values.country,
-      responses: values.responses,
+      responses: responses,
       state: values.state,
       lga: values.lga,
     };

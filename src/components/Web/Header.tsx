@@ -36,10 +36,10 @@ const Header = () => {
         className="w-[90%] h-[70px] mx-auto flex justify-between items-center 
       py-4 lg:py-0 z-50"
       >
-        <div className="items-center justify-between w-[50%] flex" ref={clickRef}>
+        <div className="items-center justify-between w-[55%] flex" ref={clickRef}>
           <div>
             <Link to="/">
-              <img src={Logo} alt="Logo" className="w-[130px]" />
+              <img src={Logo} alt="Logo" className="w-[150px]" />
             </Link>
           </div>
           <div className="hidden md:block">
