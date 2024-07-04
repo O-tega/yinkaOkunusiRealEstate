@@ -82,7 +82,7 @@ const Quotation: React.FC<TLoad> = ({ setLoading, setOpenSignup, setQuoteData })
   };
 
   const getQuotation = () => {
-    console.log("getQuote")
+    console.log("getQuote");
     const data = {
       audienceType: values.audienceType,
       researchType: values.researchType,
@@ -108,7 +108,7 @@ const Quotation: React.FC<TLoad> = ({ setLoading, setOpenSignup, setQuoteData })
     enableReinitialize: true,
   });
 
-  console.log(values)
+  console.log(values);
 
   const researchPrice = values.researchType === "consumer" ? 2 : values.researchType === "business" ? 4 : 3;
 
