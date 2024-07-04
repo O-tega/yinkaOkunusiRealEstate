@@ -9,7 +9,7 @@ import MobileDropNav from "../MobileDropNav";
 import { Link } from "react-router-dom";
 import { IoChevronBackOutline } from "react-icons/io5";
 
-const CRM: React.FC = () => {
+const EngagementHub: React.FC = () => {
   const [toggleValue, setToggleValue] = useState(false);
   const [values, setValues] = useState(0);
 
@@ -102,4 +102,4 @@ const CRM: React.FC = () => {
   );
 };
 
-export default CRM;
+export default EngagementHub;
