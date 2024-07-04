@@ -52,7 +52,7 @@ const SignupModal: React.FC<TSignupModal> = ({ onClose, data }) => {
     // navigate("");
   };
 
-  const price = data !== null ? data?.price : 0
+  const price = data !== null ? data?.price : 0;
 
   const { handleChange, values, handleBlur, handleSubmit, errors, touched } = useFormik({
     initialValues,
@@ -101,7 +101,7 @@ const SignupModal: React.FC<TSignupModal> = ({ onClose, data }) => {
   const { mutate } = useMutation({
     mutationFn: paymentService,
     onSuccess: (data) => {
-      configs.amount = price as number
+      configs.amount = price as number;
       initializePayment({
         callback: (response) => {
           const userData = {
