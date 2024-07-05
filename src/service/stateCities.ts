@@ -1,7 +1,7 @@
 import axios from "axios";
 import { handleApiError } from "@/utils/handleApiError";
 
-const url = "https://integration-server.mooyi.africa/api/v1/mooyi-integration";
+const url = "https://integration.usemooyi.com/api/v1/mooyi-integration";
 
 export const getState = async (country) => {
   try {
