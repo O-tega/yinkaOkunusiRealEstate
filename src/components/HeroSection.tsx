@@ -152,8 +152,6 @@ import { ROUTES } from "@/constants/externalUrls";
 //   );
 // };
 
-// export default HeroSection;
-
 const HeroSection: React.FC = () => {
   return (
     <div className="w-[100%] mx-auto md:h-[calc(100vh-70px)] h-[600px]">
