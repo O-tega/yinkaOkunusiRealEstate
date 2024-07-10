@@ -207,7 +207,7 @@ const Faq: React.FC = () => {
 
     setIndex(filteredData[0]?.id);
     window.location.hash = `#${filteredData[0]?.id}`;
-    setSearch("")
+    setSearch("");
   };
 
   return (

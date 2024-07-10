@@ -122,7 +122,7 @@ const SignupModal: React.FC<TSignupModal> = ({ onClose, data }) => {
     return touched[key] && errors[key];
   };
 
-  const disableButton = !values.password || !values.email
+  const disableButton = !values.password || !values.email;
 
   return (
     <ModalWithoutClose>
@@ -137,7 +137,9 @@ const SignupModal: React.FC<TSignupModal> = ({ onClose, data }) => {
             </div>
           </div>
           <div className="py-5">
-            <p className="font-secondary text-[32px] px-5 leading-tight">Just one step, please fill in your details to proceed.</p>
+            <p className="font-secondary text-[32px] px-5 leading-tight">
+              Just one step, please fill in your details to proceed.
+            </p>
           </div>
           <div className="bg-white">
             <form action="" onSubmit={handleSubmit} className="mt-2">

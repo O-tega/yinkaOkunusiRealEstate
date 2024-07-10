@@ -7,7 +7,7 @@ type TSearchProps = {
   setSearch: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const Search: React.FC<TSearchProps> = ({ handleSearch , search, setSearch}) => {
+const Search: React.FC<TSearchProps> = ({ handleSearch, search, setSearch }) => {
   // const [search, setSearch] = useState<string>("");
   const [filterData, setFilteredData] = useState<string[]>();
 

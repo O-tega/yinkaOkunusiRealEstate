@@ -34,7 +34,7 @@ const FaqHero: React.FC<HeroSectionProps> = ({ title, desc, desktopImg, handleSe
       </div>
       <div className="w-full md:flex justify-between md:px-[5rem] mt-[6rem] px-4 z-10 tracking-tight">
         <div className="flex flex-col items-center">
-            <p className="font-secondary md:text-[48px] text-center text-[32px] md:leading-[4rem] pt-5">{title}</p>
+          <p className="font-secondary md:text-[48px] text-center text-[32px] md:leading-[4rem] pt-5">{title}</p>
           <div className="md:w-[50%] relative">
             <p className=" md:text-[20px] pt-5 text-[16px] text-center">{desc}</p>
             <div className="absolute w-full">

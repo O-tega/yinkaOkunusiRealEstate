@@ -429,7 +429,7 @@ const LandingPage = () => {
       </div>
       <div className="mt-20  md:space-y-3 px-2 md:px-0">
         <p className=" text-center md:text-[40px] text-[28px] font-secondary md:px-[19rem] leading-10">
-        Check-in your guests and engage them with live event games and feedback surveys.
+          Check-in your guests and engage them with live event games and feedback surveys.
         </p>
         <p className="md:text-[20px] md:px-[18rem] text-center text-[14px]">
           Flutterwave used the platform to register merchants and shoppers at their trade fair, incentivising them to
