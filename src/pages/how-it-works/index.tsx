@@ -56,7 +56,7 @@ const HowItWorks: React.FC = () => {
         </div>
         <div className="bg-[#141254] mt-[5rem] py-[5rem] " id="ourPanel">
           <p className="font-secondary md:text-[36px] text-[24px] text-center text-white">
-            Understand your customers, competitors and market better.
+            Get quality responses from your ideal audience.
           </p>
           <div className="flex justify-center pt-[3rem]">
             <div className="md:grid grid-cols-2 gap-12 space-y-5 md:space-y-0">

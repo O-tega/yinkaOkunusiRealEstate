@@ -26,7 +26,7 @@ const cardData = [
   },
   {
     title: "Engagement Hub",
-    subtitle: "Drive success with our comprehensive CRM and messaging features.",
+    subtitle: "Drive your business success with our comprehensive customer engagement.",
     img: Group,
     link: "/pricing/engagement-hub",
   },
@@ -125,7 +125,7 @@ const Custom: React.FC = () => {
       package: [
         "1,000 online survey responses",
         "250 Brand tracking responses",
-        "200 field interviews responses (Voice and text)",
+        "200 field interviews responses (voice and text)",
       ],
     },
   ];
@@ -243,7 +243,7 @@ const Custom: React.FC = () => {
                       </div>
                     </div>
                     <hr />
-                    <p className="text-gray-500">Includes</p>
+                    <p className="text-gray-500">Includes:</p>
                     <ul className="list-disc pl-7 text-gray-500 space-y-1">
                       {el.package.map((el, i) => (
                         <li key={i} className="text-[14px]">
@@ -321,7 +321,7 @@ const Custom: React.FC = () => {
                         )}
                       </div>
                       <hr className="my-2" />
-                      <p className="text-gray-500">Includes</p>
+                      <p className="text-gray-500">Includes:</p>
                       <ul className="list-disc pl-7 text-gray-500 space-y-2">
                         {researchSelect !== null &&
                           researchSelect.package.map((el, i) => (
@@ -360,7 +360,7 @@ const Custom: React.FC = () => {
                         )}
                       </div>
                       <hr className="my-2" />
-                      <p className="text-gray-500">Includes</p>
+                      <p className="text-gray-500">Includes:</p>
                       <ul className="list-disc pl-7 text-gray-500 space-y-2">
                         {crmSelect !== null &&
                           crmSelect.features.map((el, i) => (

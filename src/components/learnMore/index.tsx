@@ -40,7 +40,7 @@ const LearnMore: React.FC = () => {
             <div className="">
               <img
                 src={item.chart2}
-                className="md:w-[300px] w-[200px] h-[120px] md:h-fit  absolute top-[14rem] md:right-[3rem] right-[5rem]"
+                className="md:w-[300px] w-[200px] h-[120px] md:h-fit  absolute top-[14rem] md:right-[5rem] right-[5rem]"
                 alt="icon"
               />
             </div>
