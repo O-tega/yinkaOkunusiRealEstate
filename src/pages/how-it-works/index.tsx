@@ -18,7 +18,7 @@ const HowItWorks: React.FC = () => {
     {
       img: <img src={multipleCustomer} alt="" className="object-cover w-[80%]" />,
       text: "We have a well-represented database of over 3 million Nigerians. You can reach the consumers you need within our diverse audience.",
-      title: "MooyiRewards members",
+      title: "Mooyi Rewards members",
     },
     {
       img: <img src={loneTarget} alt="" className="object-cover w-[60%]" />,
@@ -67,7 +67,7 @@ const HowItWorks: React.FC = () => {
           </div>
           <div className="flex justify-center pt-3 mt-[5rem]">
             <Link to={"https://www.mooyirewards.com"} target={"_blank"}>
-              <WhiteButton text={"Learn more about MooyiRewards"} css="text-black" buttonId="hiw_learn_mfc_2" />
+              <WhiteButton text={"Learn more about Mooyi Rewards"} css="text-black" buttonId="hiw_learn_mfc_2" />
             </Link>
           </div>
         </div>

@@ -69,7 +69,6 @@ const Footer = () => {
             <div className="flex justify-center pt-3">
               <Link
                 to={currentPath === "/pricing" ? "mailto:support@enterscale.com" : `${ROUTES.LOGIN}/register`}
-                target="_blank"
                 rel="noreferrer"
               >
                 <WhiteButton
@@ -124,7 +123,7 @@ const Footer = () => {
           <div className="space-x-3 flex items-center">
             {socialIcons.map((item, i) => (
               <span key={i} className="hover:text-primary">
-                <Link to={item.link} target="_blank">
+                <Link to={item.link}>
                   <item.icon size={20} />
                 </Link>
               </span>
@@ -142,7 +141,7 @@ const Footer = () => {
           <div className="space-x-3 flex items-center">
             {socialIcons.map((item, i) => (
               <span key={i} className="hover:text-primary">
-                <Link to={item.link} target="_blank">
+                <Link to={item.link}>
                   <item.icon size={20} />
                 </Link>
               </span>

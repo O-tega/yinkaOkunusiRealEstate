@@ -10,15 +10,15 @@ const data = [
   {
     title: "Our Panel",
     desc: "Gather insights from your target audience quickly with location, demographic, and interest filters.",
-    chart1: barchart,
-    chart2: surveychart,
+    chart1: audienceage,
+    chart2: audiencetype,
     link: "ourPanel",
   },
   {
     title: "Your Audience",
     desc: "Collect customer and employee feedback to enhance their experience with your brand.",
-    chart1: audienceage,
-    chart2: audiencetype,
+    chart1: barchart,
+    chart2: surveychart,
     link: "audience",
   },
 ];
@@ -40,7 +40,7 @@ const LearnMore: React.FC = () => {
             <div className="">
               <img
                 src={item.chart2}
-                className="md:w-[300px] w-[200px] h-[120px] md:h-fit  absolute top-[15rem] md:right-[11rem] right-[5rem]"
+                className="md:w-[300px] w-[200px] h-[120px] md:h-fit  absolute top-[14rem] md:right-[3rem] right-[5rem]"
                 alt="icon"
               />
             </div>
