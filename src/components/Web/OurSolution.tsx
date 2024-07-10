@@ -151,7 +151,7 @@ const OurSolution: React.FC = () => {
       </div>
 
       <div className="w-[200px] mx-auto">
-        <a href={`${ROUTES.LOGIN}/register`} target="_blank">
+        <a href={`${ROUTES.LOGIN}/register`}>
           <PrimaryButton
             type="button"
             text="Get started now"

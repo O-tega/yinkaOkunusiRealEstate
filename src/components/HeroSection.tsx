@@ -152,8 +152,6 @@ import { ROUTES } from "@/constants/externalUrls";
 //   );
 // };
 
-// export default HeroSection;
-
 const HeroSection: React.FC = () => {
   return (
     <div className="w-[100%] mx-auto md:h-[calc(100vh-70px)] h-[600px]">
@@ -162,11 +160,11 @@ const HeroSection: React.FC = () => {
           <h1 className=" md:text-[80px] text-[40px] mx-auto leading-[1.2em] text-white text-center">
             Say goodbye to guesswork.
           </h1>
-          <p className="font-primary md:text-[24px] mt-5 md:mt-0 text-[14px] text-white text-center">
+          <p className="font-primary md:text-[24px] pt-3 md:mt-0 text-[14px] text-white text-center">
             And hello to agile consumer insights.
           </p>
 
-          <a href={`${ROUTES.LOGIN}/register`} className="flex justify-center mt-5" target="_blank">
+          <a href={`${ROUTES.LOGIN}/register`} className="flex justify-center mt-5">
             <WhiteButton text={"Get started now"} css="text-black" buttonId="home_get_started_now_1" />
           </a>
         </div>
