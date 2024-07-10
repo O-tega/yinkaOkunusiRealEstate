@@ -1,11 +1,11 @@
 import React from "react";
 import { ASSETS } from "@/assets/images/Assets";
-import PrimaryButton from "@/components/Button/PrimaryButton";
+// import PrimaryButton from "@/components/Button/PrimaryButton";
 import HeroSection from "../components/HeroSection";
 import CardList from "../components/CardList";
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
-import { ROUTES } from "@/constants/externalUrls";
+// import { Link } from "react-router-dom";
+// import { ROUTES } from "@/constants/externalUrls";
 
 const NewProduct: React.FC = () => {
   const cardData = [
@@ -72,7 +72,7 @@ const NewProduct: React.FC = () => {
       <div>
         <CardList cardList={cardData} />
       </div>
-      <div className="flex justify-center pb-16">
+      {/* <div className="flex justify-center pb-16">
         <div className="md:w-[20%]">
           <Link to={`${ROUTES.LOGIN}/register`}>
             <PrimaryButton
@@ -84,7 +84,7 @@ const NewProduct: React.FC = () => {
             />
           </Link>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

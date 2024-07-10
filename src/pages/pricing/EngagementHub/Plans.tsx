@@ -157,7 +157,7 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
       responses: "1000",
       info: "Manage up to 200,000 contacts every month",
       amount: 2500,
-      featureTitle: "Everything in the Business plan plus, ",
+      featureTitle: "Key plan features",
       features: [
         "Access to 100,000 customer insight invites, with Customer profiles, Net Promoter Score (NPS) and Customer Satisfaction (CSAT) templates.",
         "Access to multi-messaging channels with 800,000 emails, 400,000 SMS and 10,000 call minutes.",

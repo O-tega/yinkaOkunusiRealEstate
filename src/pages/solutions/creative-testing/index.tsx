@@ -1,17 +1,17 @@
 import React from "react";
 import { ASSETS } from "@/assets/images/Assets";
-import PrimaryButton from "@/components/Button/PrimaryButton";
+// import PrimaryButton from "@/components/Button/PrimaryButton";
 import HeroSection from "../components/HeroSection";
 import CardList from "../components/CardList";
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
-import { ROUTES } from "@/constants/externalUrls";
+// import { Link } from "react-router-dom";
+// import { ROUTES } from "@/constants/externalUrls";
 
 const CreativeTesting: React.FC = () => {
   const cardData = [
     {
-      title: "Pilot new product ideas before launch.",
-      desc: "Validate the feasibility and appeal of your concept before launch. Mitigate risks and build products fashioned to perfection from day one.",
+      title: "Decide between the most impactful creative concepts.",
+      desc: "Refine your decision-making process to select the creative concept with the most potential for impactful results.",
       img: (
         <img
           src={ASSETS.MOOYI.SOLUTIONS.mooyiPivot}
@@ -24,8 +24,8 @@ const CreativeTesting: React.FC = () => {
       color: "bg-[#ECFEF5]",
     },
     {
-      title: "Navigate the market with data-backed insights.",
-      desc: "Chart the course for others by building what the market needs and setting a standard the competition struggles to meet.",
+      title: "Identify the game-changers that will drive purchase.",
+      desc: "Not all creative concepts sell. Discern those which are likely to influence customer behaviour towards purchase consideration significantly.",
       img: (
         <img
           src={ASSETS.MOOYI.SOLUTIONS.mooyiChessPiece}
@@ -38,8 +38,8 @@ const CreativeTesting: React.FC = () => {
       color: "bg-[#EBF1FF]",
     },
     {
-      title: "Prioritise the right features to build.",
-      desc: "Identify and focus on the features your potential customers value the most, ensuring they feel seen, heard, and catered to.",
+      title: "Run a quick dipstick to measure campaign uplift.",
+      desc: "Quantify the effectiveness of your campaign with pre- and post-launch analytics to gain valuable insights for future initiatives.",
       img: (
         <img
           src={ASSETS.MOOYI.SOLUTIONS.mooyianalysisBar}
@@ -72,7 +72,7 @@ const CreativeTesting: React.FC = () => {
       <div>
         <CardList cardList={cardData} />
       </div>
-      <div className="flex justify-center pb-16">
+      {/* <div className="flex justify-center pb-16">
         <div className="md:w-[20%]">
           <Link to={`${ROUTES.LOGIN}/register`}>
             <PrimaryButton
@@ -84,7 +84,7 @@ const CreativeTesting: React.FC = () => {
             />
           </Link>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

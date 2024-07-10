@@ -1,11 +1,11 @@
 import React from "react";
 import { ASSETS } from "@/assets/images/Assets";
-import PrimaryButton from "@/components/Button/PrimaryButton";
+// import PrimaryButton from "@/components/Button/PrimaryButton";
 import HeroSection from "../components/HeroSection";
 import CardList from "../components/CardList";
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
-import { ROUTES } from "@/constants/externalUrls";
+// import { Link } from "react-router-dom";
+// import { ROUTES } from "@/constants/externalUrls";
 
 const CustomerFeedback: React.FC = () => {
   // update
@@ -19,7 +19,7 @@ const CustomerFeedback: React.FC = () => {
           width={500}
           height={500}
           alt="logos"
-          className="w-[120px] md:w-[120px] pt-14"
+          className="w-[120px] md:w-[180px] pt-14"
         />
       ),
       color: "bg-[#ECFEF5]",
@@ -33,7 +33,7 @@ const CustomerFeedback: React.FC = () => {
           width={500}
           height={500}
           alt="logos"
-          className="w-[120px] md:w-[120px] pt-14"
+          className="w-[120px] md:w-[170px] pt-16"
         />
       ),
       color: "bg-[#EBF1FF]",
@@ -47,7 +47,7 @@ const CustomerFeedback: React.FC = () => {
           width={500}
           height={500}
           alt="logos"
-          className="w-[120px] md:w-[100px] pt-16"
+          className="w-[120px] md:w-[150px] pt-16"
         />
       ),
       color: "bg-[#FEFAE8]",
@@ -75,7 +75,7 @@ const CustomerFeedback: React.FC = () => {
       <div>
         <CardList cardList={cardData} />
       </div>
-      <div className="flex justify-center pb-16">
+      {/* <div className="flex justify-center pb-16">
         <div className="md:w-[20%]">
           <Link to={`${ROUTES.LOGIN}/register`}>
             <PrimaryButton
@@ -87,7 +87,7 @@ const CustomerFeedback: React.FC = () => {
             />
           </Link>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

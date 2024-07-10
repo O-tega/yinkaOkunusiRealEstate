@@ -86,7 +86,7 @@ const Footer = () => {
           <img src={Logo} alt="Logo" className="w-[185px]" />
           <p className="text-[16px] text-left ">
             With Mooyi, you can stop <br />
-            guessing and start growing.
+            guessing and start knowing.
           </p>
         </div>
         <div className="">

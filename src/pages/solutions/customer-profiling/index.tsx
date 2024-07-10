@@ -1,16 +1,16 @@
 import React from "react";
 import { ASSETS } from "@/assets/images/Assets";
-import PrimaryButton from "@/components/Button/PrimaryButton";
+// import PrimaryButton from "@/components/Button/PrimaryButton";
 import HeroSection from "../components/HeroSection";
 import CardList from "../components/CardList";
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
-import { ROUTES } from "@/constants/externalUrls";
+// import { Link } from "react-router-dom";
+// import { ROUTES } from "@/constants/externalUrls";
 const CustomerProfiling: React.FC = () => {
   const cardData = [
     {
-      title: "Blow the competition away.",
-      desc: "Take big players head-on with your profound knowledge of the customer and market landscape and winning strategies.",
+      title: "Uncover your ideal customer.",
+      desc: "Publish surveys for your existing, target and potential customers, and unravel their thoughts, behaviours, and purchasing triggers.",
       img: (
         <img
           src={ASSETS.MOOYI.SOLUTIONS.mooyiCustomerGlass}
@@ -23,8 +23,9 @@ const CustomerProfiling: React.FC = () => {
       color: "bg-[#EBF1FF]",
     },
     {
-      title: "Win in new markets.",
-      desc: "Develop effective strategies to dominate the market and expand your business in new and existing territories.",
+      title: "Identify patterns and group them.",
+      desc: "Use insights to group your future and present consumers so you can optimise your marketing or improve their experience.",
+
       img: (
         <img
           src={ASSETS.MOOYI.SOLUTIONS.mooyiclustermembers}
@@ -37,8 +38,9 @@ const CustomerProfiling: React.FC = () => {
       color: "bg-[#ECFEF5]",
     },
     {
-      title: "Reduce expansion risks.",
-      desc: "Understand consumer behaviour across markets to enhance marketing effectiveness in new regions and de-risk expansion ventures.",
+      title: "Learn the best ways to reach them.",
+      desc: "Learn the best ways, places and times to reach them and secure explicit consent to send them direct promotional offers.",
+
       img: (
         <img
           src={ASSETS.MOOYI.SOLUTIONS.mooyilocationMap}
@@ -71,7 +73,7 @@ const CustomerProfiling: React.FC = () => {
       <div>
         <CardList cardList={cardData} />
       </div>
-      <div className="flex justify-center pb-16">
+      {/* <div className="flex justify-center pb-16">
         <div className="md:w-[20%]">
           <Link to={`${ROUTES.LOGIN}/register`}>
             <PrimaryButton
@@ -83,7 +85,7 @@ const CustomerProfiling: React.FC = () => {
             />
           </Link>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

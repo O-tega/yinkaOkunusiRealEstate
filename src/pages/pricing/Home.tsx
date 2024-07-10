@@ -37,12 +37,12 @@ const Home: React.FC = () => {
   const faqData = [
     {
       id: 1,
-      title: "Is there a cost to using Mooyi™?",
+      title: "Is there a cost to using Mooyi?",
       content: [
         {
           subtitle: "",
           subContent:
-            "Different subscription plans are available on mooyi™, like the Starter, Business, and Pro plans, each offering different access levels and bundles. Explore additional flexibility with our add-on bundles to expand your audience reach.",
+            "Different subscription plans are available on mooyi, like the Starter, Business, and Pro plans, each offering different access levels and bundles. Explore additional flexibility with our add-on bundles to expand your audience reach.",
         },
       ],
     },
@@ -139,7 +139,7 @@ const Home: React.FC = () => {
           <p>Frequently asked questions</p>
         </div>
         <div className="md:flex items-start md:space-x-5 px-5 md:mt-16 my-5">
-          <div className="border rounded-2xl p-8 space-y-5 bg-[#FAFAFA] w-[40%] hidden md:block">
+          <div className="border rounded-2xl p-4 space-y-5 bg-[#FAFAFA] w-[40%] hidden md:block">
             {faqData.map((item, i) => (
               <p
                 key={i}

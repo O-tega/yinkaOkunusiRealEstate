@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Group from "@/assets/images/pricing/Group.png";
 import giftPricing from "@/assets/images/pricing/giftPricing.png";
-import { HiOutlinePlus, HiOutlineMinus } from "react-icons/hi";
+// import { HiOutlinePlus, HiOutlineMinus } from "react-icons/hi";
 import BlueButton from "@/components/Button/BlueButton";
 import checker from "@/assets/images/pricing/check.png";
 import Quotation from "./Quotation";
@@ -47,7 +47,7 @@ const PlanCard = ({
   title,
   subtitle,
   tag,
-  responses,
+  // responses,
   info,
   amount,
   featureTitle,
@@ -55,7 +55,7 @@ const PlanCard = ({
   conversionRate,
   toggle,
 }: Tplan) => {
-  const [newresponses, setNewResponses] = useState<number>(responses);
+  // const [newresponses, setNewResponses] = useState<number>(responses);
   return (
     <div className="border rounded-2xl w-[411px] h-[48rem] p-3 shadow-md">
       <div className="bg-blue-100 p-5 rounded-t-xl h-[7rem]">
@@ -71,7 +71,7 @@ const PlanCard = ({
       </div>
       <div className="mt-5 px-5">
         <p className="md:text-[16px] text-[14px] font-medium">{info}</p>
-        <div className="mt-3">
+        {/* <div className="mt-3">
           <p className="text-[13px]">Responses</p>
           <div className="flex items-center mt-1">
             <div
@@ -90,7 +90,7 @@ const PlanCard = ({
               <HiOutlinePlus />
             </div>
           </div>
-        </div>
+        </div> */}
         {title === "Pro Plan" ? (
           <div>
             <p className="text-[38px] md:text-[40px] font-[600] mt-3">Custom</p>
