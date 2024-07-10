@@ -18,7 +18,7 @@ const CustomerEngagement: React.FC = () => {
           width={500}
           height={500}
           alt="logos"
-          className="w-[150px] md:w-[200px] pt-16"
+          className="w-[150px] md:w-[270px] pt-16"
         />
       ),
       color: "bg-[#ECFEF5]",
@@ -32,7 +32,7 @@ const CustomerEngagement: React.FC = () => {
           width={500}
           height={500}
           alt="logos"
-          className="w-[150px] md:w-[180px] pt-10"
+          className="w-[150px] md:w-[270px] pt-10"
         />
       ),
       color: "bg-[#EBF1FF]",
@@ -46,7 +46,7 @@ const CustomerEngagement: React.FC = () => {
           width={500}
           height={500}
           alt="logos"
-          className="w-[150px] md:w-[180px] pt-10"
+          className="w-[150px] md:w-[270px] pt-10"
         />
       ),
       color: "bg-[#FEFAE8]",

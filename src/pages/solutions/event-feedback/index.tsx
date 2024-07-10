@@ -1,11 +1,11 @@
 import React from "react";
 import { ASSETS } from "@/assets/images/Assets";
-import PrimaryButton from "@/components/Button/PrimaryButton";
+// import PrimaryButton from "@/components/Button/PrimaryButton";
 import HeroSection from "../components/HeroSection";
 import CardList from "../components/CardList";
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
-import { ROUTES } from "@/constants/externalUrls";
+// import { Link } from "react-router-dom";
+// import { ROUTES } from "@/constants/externalUrls";
 const EventFeedback: React.FC = () => {
   const cardData = [
     {
@@ -24,14 +24,14 @@ const EventFeedback: React.FC = () => {
     },
     {
       title: "Engage attendees and collect feedback in minutes.",
-      desc: "Use mooyi™ Rewards to encourage attendee interaction. Swiftly collect their valuable insights and feedback to learn more about their experiences.",
+      desc: "Use mooyi Rewards to encourage attendee interaction. Swiftly collect their valuable insights and feedback to learn more about their experiences.",
       img: (
         <img
           src={ASSETS.MOOYI.SOLUTIONS.mooyifeedback}
           width={500}
           height={500}
           alt="logos"
-          className="w-[120px] md:w-[160px]"
+          className="w-[120px] md:w-[160px] pt-5"
         />
       ),
       color: "bg-[#ECFEF5]",
@@ -72,7 +72,7 @@ const EventFeedback: React.FC = () => {
       <div>
         <CardList cardList={cardData} />
       </div>
-      <div className="flex justify-center pb-16">
+      {/* <div className="flex justify-center pb-16">
         <div className="md:w-[20%]">
           <Link to={`${ROUTES.LOGIN}/register`}>
             <PrimaryButton
@@ -84,7 +84,7 @@ const EventFeedback: React.FC = () => {
             />
           </Link>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
