@@ -9,7 +9,7 @@ import { useMutation } from "@tanstack/react-query";
 import BlueButton from "@/components/Button/BlueButton";
 import { TQuotation } from "@/types/formTypes";
 import Logo from "@/assets/images/MooyiFBLogo.svg";
-import CheckBox from "@/components/Inputs/CheckBox";
+// import CheckBox from "@/components/Inputs/CheckBox";
 import { approveTopUp, paymentService } from "@/service/paymentService";
 import Toast from "@/config/toast";
 import { ROUTES } from "@/constants/externalUrls";
@@ -30,7 +30,7 @@ const SignupModal: React.FC<TSignupModal> = ({ onClose, data }) => {
   const initialValues = {
     email: "",
     password: "",
-    agree: false,
+    // agree: false,
   };
 
   const validationSchema = Yup.object({
@@ -122,12 +122,12 @@ const SignupModal: React.FC<TSignupModal> = ({ onClose, data }) => {
     return touched[key] && errors[key];
   };
 
-  const disableButton = !values.password || !values.email || !values.agree;
+  const disableButton = !values.password || !values.email;
 
   return (
     <ModalWithoutClose>
       <div className="w-[1042px] rounded-xl overflow-hidden flex items-start">
-        <div className="w-[60%] p-5">
+        <div className="w-[55%] p-5">
           <div className="w-full bg-white pr-5 py-3">
             <div className="flex items-start justify-between">
               <div className="flex items-center space-x-3">
@@ -137,7 +137,9 @@ const SignupModal: React.FC<TSignupModal> = ({ onClose, data }) => {
             </div>
           </div>
           <div className="py-5">
-            <p className="font-secondary text-[32px] px-5">Just one step, please fill in your details to proceed.</p>
+            <p className="font-secondary text-[32px] px-5 leading-tight">
+              Just one step, please fill in your details to proceed.
+            </p>
           </div>
           <div className="bg-white">
             <form action="" onSubmit={handleSubmit} className="mt-2">
@@ -168,9 +170,9 @@ const SignupModal: React.FC<TSignupModal> = ({ onClose, data }) => {
                 </div>
               </div>
               <div className="flex items-start space-x-2 mt-5 ml-5 mb-5">
-                <div className="mt-1">
+                {/* <div className="mt-1">
                   <CheckBox onChange={handleChange} name="agree" value={values.agree} />
-                </div>
+                </div> */}
                 <p className="text-[16px]">
                   By clicking the button, you are creating a Mooyi account and you agree to our{" "}
                   <a
@@ -206,7 +208,7 @@ const SignupModal: React.FC<TSignupModal> = ({ onClose, data }) => {
             </form>
           </div>
         </div>
-        <div className="w-[40%] h-[600px] bg-blue-50 p-5">
+        <div className="w-[45%] h-[600px] bg-blue-50 p-5">
           <div className="flex justify-end">
             <div
               className="w-[20px] h-[20px] rounded-full p-1 flex items-center justify-center bg-white cursor-pointer"
@@ -215,7 +217,7 @@ const SignupModal: React.FC<TSignupModal> = ({ onClose, data }) => {
               <IoCloseOutline />
             </div>
           </div>
-          <div className="hidden md:block p-5 bg-white mt-2">
+          <div className="hidden md:block mx-10 p-5 bg-white mt-2">
             <p className="font-[500] text-[16px] p-1 border bg-white">Estimate</p>
             <div className="bg-white border-x min-h-[60%] flex flex-col">
               <div className="p-5 space-y-5 h-[350px] overflow-y-auto">

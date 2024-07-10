@@ -194,126 +194,132 @@ const LandingPage = () => {
       <div className="bg-[#F9F9FE] py-[3rem]">
         <div className="mt-2 md:px-[4rem] px-2 flex flex-col items-center text-[20px]">
           <p className="font-secondary md:text-[40px] text-[28px] md:pb-[5rem] pb-[5rem] text-center">How it works</p>
-          <div className="md:flex items-center md:space-x-[10rem] px-2">
-            <div className="w-[400px] hidden md:block">
-              <p className="text-wrap font-medium">
-                Don’t worry about low participation. Our extensive database, simple user experience, and comprehensive
-                rewards system can help boost participation.
-              </p>
-            </div>
-            <motion.div variants={variant} initial="hidden" whileInView="visible">
-              <div className="flex justify-center md:flex-col">
-                <img
-                  src={ASSETS.GIFS.lessParticipationWorry}
-                  alt="Gif image"
-                  className="md:w-[415px] w-[380px] border-[1rem] border-[#EBF1FF]"
-                />
-              </div>
-            </motion.div>
-            <div className="md:w-[400px] px-2 pt-3 md:px-0 text-center md:text-left text-[14px] font-medium md:hidden">
-              <p className="text-wrap">
-                Don’t worry about low participation. Our extensive database, simple user experience, and comprehensive
-                rewards system can help boost participation.
-              </p>
-            </div>
-          </div>
-          <div className="my-5 px-2 md:px-0">
-            <img src={rlLine} width={500} height={500} alt="Gif image" className="md:w-[415px] w-[207px]" />
-          </div>
         </div>
-        <div className="md:px-[4rem] px-2 flex flex-col items-center text-[20px] font-medium">
-          <div className="md:flex items-center md:space-x-[10rem]">
-            <motion.div variants={variant} initial="hidden" whileInView="visible">
-              <div className="flex justify-center md:flex-none">
-                <img
-                  src={ASSETS.GIFS.SetScreeningQuestionsforParticipants}
-                  alt="Gif image"
-                  className="md:w-[415px] w-[380px]  border-[1rem] border-[#EBF1FF]"
-                />
+        <div className="flex justify-center">
+          <div className="">
+            <div className="flex flex-col items-center">
+              <div className="md:flex items-center md:space-x-[5rem] px-2">
+                <div className="w-[500px] hidden md:block">
+                  <p className="text-wrap font-medium md:text-[20px]">
+                    Don’t worry about low participation. Our extensive database, simple user experience, and
+                    comprehensive rewards system can help boost participation.
+                  </p>
+                </div>
+                <motion.div variants={variant} initial="hidden" whileInView="visible">
+                  <div className="flex justify-start md:flex-col">
+                    <img
+                      src={ASSETS.GIFS.lessParticipationWorry}
+                      alt="Gif image"
+                      className="md:w-[500px] w-[380px] border-[1rem] border-[#EBF1FF]"
+                    />
+                  </div>
+                </motion.div>
+                <div className="md:w-[400px] px-2 pt-3 md:px-0 text-center md:text-left text-[14px] font-medium md:hidden">
+                  <p className="text-wrap">
+                    Don’t worry about low participation. Our extensive database, simple user experience, and
+                    comprehensive rewards system can help boost participation.
+                  </p>
+                </div>
               </div>
-            </motion.div>
-            <div className="md:w-[400px] px-2 pt-3 md:pt-0 text-center text-[16px] md:px-0 md:text-left md:text-[20px]">
-              <p className="text-wrap ">
-                Set screening questions for participants so you only get responses from the audience you need.
-              </p>
-            </div>
-          </div>
-          <div className="my-5 px-2 md:px-0">
-            <img src={lrLine} width={500} height={500} alt="Gif image" className="md:w-[415px] w-[207px]" />
-          </div>
-        </div>
-        <div className="md:px-[4rem] px-2 md:flex flex-col items-center text-[20px] font-medium">
-          <div className="md:flex items-center md:space-x-[10rem]">
-            <div className="md:w-[480px] hidden md:block">
-              <p className="text-wrap">
-                Target distinct segments, such as business professionals, hoteliers, online merchants, grocery shoppers,
-                freelancers, and mobile money customers.
-              </p>
-            </div>
-            <motion.div variants={variant} initial="hidden" whileInView="visible">
-              <div>
-                <img
-                  src={ASSETS.GIFS.targetDistinctSegment}
-                  alt="Gif image"
-                  className="w-[415px]  border-[1rem] border-[#EBF1FF]"
-                />
+              <div className="my-5 px-2 md:px-0">
+                <img src={rlLine} alt="Gif image" className="md:w-[415px] h-[100px] w-[207px]" />
               </div>
-            </motion.div>
-            <div className="md:w-[480px] pt-3 text-[14px] text-center px-2 md:hidden">
-              <p className="text-wrap">
-                Target distinct segments, such as business professionals, hoteliers, online merchants, grocery shoppers,
-                freelancers, and mobile money customers.
-              </p>
             </div>
-          </div>
-          <div className="my-5 px-2 md:px-0 flex justify-center">
-            <img src={rlLine} width={500} height={500} alt="Gif image" className="md:w-[415px] w-[207px]" />
-          </div>
-        </div>
-        <div className="md:px-[4rem] px-2 flex flex-col items-center text-[20px] font-medium">
-          <div className="md:flex items-center md:space-x-[10rem]">
-            <motion.div variants={variant} initial="hidden" whileInView="visible">
-              <div className="flex justify-center md:flex-none">
-                <img
-                  src={ASSETS.GIFS.EnjoyAdditionalFeature}
-                  alt="Gif image"
-                  className="md:w-[415px] w-[380px]  border-[1rem] border-[#EBF1FF]"
-                />
+            <div className="md:px-[4rem] px-2 flex flex-col items-center text-[20px] font-medium">
+              <div className="md:flex items-center md:space-x-[5rem]">
+                <motion.div variants={variant} initial="hidden" whileInView="visible">
+                  <div className="flex justify-center md:flex-none">
+                    <img
+                      src={ASSETS.GIFS.SetScreeningQuestionsforParticipants}
+                      alt="Gif image"
+                      className="md:w-[500px] w-[380px]  border-[1rem] border-[#EBF1FF]"
+                    />
+                  </div>
+                </motion.div>
+                <div className="md:w-[400px] px-2 pt-3 md:pt-0 text-center text-[16px] md:px-0 md:text-left md:text-[20px]">
+                  <p className="text-wrap ">
+                    Set screening questions for participants so you only get responses from the audience you need.
+                  </p>
+                </div>
               </div>
-            </motion.div>
-            <div className="md:w-[480px] px-2 pt-3 md:pt-0 text-center text-[16px] md:px-0 md:text-left md:text-[20px] font-medium">
-              <p className="text-wrap">
-                Enjoy additional features like branching logic questions, retargeting survey respondents, and one-click
-                results filtering.
-              </p>
-            </div>
-          </div>
-          <div className="my-5 px-2 md:px-0">
-            <img src={lrLine} width={500} height={500} alt="Gif image" className="md:w-[415px] w-[207px]" />
-          </div>
-        </div>
-        <div className="md:px-[4rem] px-2 flex flex-col items-center text-[20px] font-medium">
-          <div className="md:flex items-center md:space-x-[10rem]">
-            <div className="w-[400px] hidden md:block">
-              <p className="text-wrap">
-                Follow up with interested survey participants. Convert their interest into loyalty with personalised
-                SMS, email and voice campaigns.
-              </p>
-            </div>
-            <motion.div variants={variant} initial="hidden" whileInView="visible">
-              <div>
-                <img
-                  src={ASSETS.GIFS.followUpIntrestedParticipant}
-                  alt="Gif image"
-                  className="w-[415px]  border-[1rem] border-[#EBF1FF]"
-                />
+              <div className="my-5 px-2 md:px-0">
+                <img src={lrLine} alt="Gif image" className="md:w-[415px] h-[100px] w-[207px]" />
               </div>
-            </motion.div>
-            <div className="w-[400px] text-[14px] text-center px-2 md:hidden">
-              <p className="text-wrap">
-                Follow up with interested survey participants. Convert their interest into loyalty with personalised
-                SMS, email and voice campaigns.
-              </p>
+            </div>
+            <div className="md:px-[4rem] px-2 md:flex flex-col items-center text-[20px] font-medium">
+              <div className="md:flex items-center md:space-x-[5rem]">
+                <div className="md:w-[480px] hidden md:block">
+                  <p className="text-wrap">
+                    Target distinct segments, such as business professionals, hoteliers, online merchants, grocery
+                    shoppers, freelancers, and mobile money customers.
+                  </p>
+                </div>
+                <motion.div variants={variant} initial="hidden" whileInView="visible">
+                  <div>
+                    <img
+                      src={ASSETS.GIFS.targetDistinctSegment}
+                      alt="Gif image"
+                      className="w-[500px]  border-[1rem] border-[#EBF1FF]"
+                    />
+                  </div>
+                </motion.div>
+                <div className="md:w-[480px] pt-3 text-[14px] text-center px-2 md:hidden">
+                  <p className="text-wrap">
+                    Target distinct segments, such as business professionals, hoteliers, online merchants, grocery
+                    shoppers, freelancers, and mobile money customers.
+                  </p>
+                </div>
+              </div>
+              <div className="my-5 px-2 md:px-0 flex justify-center">
+                <img src={rlLine} alt="Gif image" className="md:w-[415px] h-[100px] w-[207px]" />
+              </div>
+            </div>
+            <div className="md:px-[4rem] px-2 flex flex-col items-center text-[20px] font-medium">
+              <div className="md:flex items-center md:space-x-[5rem]">
+                <motion.div variants={variant} initial="hidden" whileInView="visible">
+                  <div className="flex justify-center md:flex-none">
+                    <img
+                      src={ASSETS.GIFS.EnjoyAdditionalFeature}
+                      alt="Gif image"
+                      className="md:w-[500px] w-[380px]  border-[1rem] border-[#EBF1FF]"
+                    />
+                  </div>
+                </motion.div>
+                <div className="md:w-[480px] px-2 pt-3 md:pt-0 text-center text-[16px] md:px-0 md:text-left md:text-[20px] font-medium">
+                  <p className="text-wrap">
+                    Enjoy additional features like branching logic questions, retargeting survey respondents, and
+                    one-click results filtering.
+                  </p>
+                </div>
+              </div>
+              <div className="my-5 px-2 md:px-0">
+                <img src={lrLine} alt="Gif image" className="md:w-[415px] h-[100px] w-[207px]" />
+              </div>
+            </div>
+            <div className="md:px-[4rem] px-2 flex flex-col items-center text-[20px] font-medium">
+              <div className="md:flex items-center md:space-x-[5rem]">
+                <div className="w-[400px] hidden md:block">
+                  <p className="text-wrap">
+                    Follow up with interested survey participants. Convert their interest into loyalty with personalised
+                    SMS, email and voice campaigns.
+                  </p>
+                </div>
+                <motion.div variants={variant} initial="hidden" whileInView="visible">
+                  <div>
+                    <img
+                      src={ASSETS.GIFS.followUpIntrestedParticipant}
+                      alt="Gif image"
+                      className="w-[500px]  border-[1rem] border-[#EBF1FF]"
+                    />
+                  </div>
+                </motion.div>
+                <div className="w-[400px] text-[14px] text-center px-2 md:hidden">
+                  <p className="text-wrap">
+                    Follow up with interested survey participants. Convert their interest into loyalty with personalised
+                    SMS, email and voice campaigns.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -422,10 +428,10 @@ const LandingPage = () => {
         </div>
       </div>
       <div className="mt-20  md:space-y-3 px-2 md:px-0">
-        <p className=" text-center md:text-[40px] text-[28px] font-secondary md:px-[25rem] leading-10">
-          Engage guests with live event games and feedback surveys.
+        <p className=" text-center md:text-[40px] text-[28px] font-secondary md:px-[19rem] leading-10">
+          Check-in your guests and engage them with live event games and feedback surveys.
         </p>
-        <p className="md:text-[20px] md:px-[20rem] text-center text-[14px] font-medium">
+        <p className="md:text-[20px] md:px-[18rem] text-center text-[14px]">
           Flutterwave used the platform to register merchants and shoppers at their trade fair, incentivising them to
           participate and share their feedback about their event experience.
         </p>
