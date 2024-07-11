@@ -13,8 +13,8 @@ const HeroSection: React.FC = () => {
             Say hello to faster, easier, and smarter growth.
           </h1>
           <p className=" text-[20px] pt-5 font-medium">
-            Learn how Mooyi can help you gather insights from quantitative and qualitative research and automate
-            mobile campaigns to help grow your business.
+            Learn how Mooyi can help you gather insights from quantitative and qualitative research and automate mobile
+            campaigns to help grow your business.
           </p>
           <div className="flex justify-center md:block">
             <div className="md:w-[30%] w-[50%] mt-5">

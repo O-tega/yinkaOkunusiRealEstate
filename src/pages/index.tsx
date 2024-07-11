@@ -238,7 +238,9 @@ const LandingPage = () => {
                 </motion.div>
                 <div className="md:w-[450px] px-2 pt-3 md:pt-0 text-center text-[16px] md:px-0 md:text-left md:text-[20px]">
                   <p className="text-wrap ">
-                    Enjoy advanced features like built-in templates, branching logic questions, respondent retargeting, and survey result filtering for a seamless experience.                  </p>
+                    Enjoy advanced features like built-in templates, branching logic questions, respondent retargeting,
+                    and survey result filtering for a seamless experience.{" "}
+                  </p>
                 </div>
               </div>
               <div className="my-5 px-2 md:px-0">
@@ -249,7 +251,8 @@ const LandingPage = () => {
               <div className="md:flex items-center md:space-x-[5rem]">
                 <div className="md:w-[480px] hidden md:block">
                   <p className="text-wrap">
-                    Reach distinct segments like business owners, hoteliers, online merchants, freelancers, and mobile money users to gain tailored insights and drive targeted growth.
+                    Reach distinct segments like business owners, hoteliers, online merchants, freelancers, and mobile
+                    money users to gain tailored insights and drive targeted growth.
                   </p>
                 </div>
                 <motion.div variants={variant} initial="hidden" whileInView="visible">
@@ -263,7 +266,8 @@ const LandingPage = () => {
                 </motion.div>
                 <div className="md:w-[480px] pt-3 text-[14px] text-center px-2 md:hidden">
                   <p className="text-wrap">
-                    Reach distinct segments like business owners, hoteliers, online merchants, freelancers, and mobile money users to gain tailored insights and drive targeted growth.
+                    Reach distinct segments like business owners, hoteliers, online merchants, freelancers, and mobile
+                    money users to gain tailored insights and drive targeted growth.
                   </p>
                 </div>
               </div>
@@ -284,7 +288,8 @@ const LandingPage = () => {
                 </motion.div>
                 <div className="md:w-[480px] px-2 pt-3 md:pt-0 text-center text-[16px] md:px-0 md:text-left md:text-[20px] font-medium">
                   <p className="text-wrap">
-                    Enjoy advanced features like built-in templates, branching logic questions, respondent retargeting, and survey result filtering for a seamless experience.
+                    Enjoy advanced features like built-in templates, branching logic questions, respondent retargeting,
+                    and survey result filtering for a seamless experience.
                   </p>
                 </div>
               </div>
@@ -296,7 +301,8 @@ const LandingPage = () => {
               <div className="md:flex items-center md:space-x-[5rem]">
                 <div className="w-[490px] hidden md:block">
                   <p className="text-wrap">
-                    Follow up with interested survey participants nurture their interest through personalised mobile campaigns, and build lasting customer relationships and engagement.
+                    Follow up with interested survey participants nurture their interest through personalised mobile
+                    campaigns, and build lasting customer relationships and engagement.
                   </p>
                 </div>
                 <motion.div variants={variant} initial="hidden" whileInView="visible">
@@ -310,7 +316,8 @@ const LandingPage = () => {
                 </motion.div>
                 <div className="w-[400px] text-[14px] text-center px-2 md:hidden">
                   <p className="text-wrap">
-                    Follow up with interested survey participants nurture their interest through personalised mobile campaigns, and build lasting customer relationships and engagement.
+                    Follow up with interested survey participants nurture their interest through personalised mobile
+                    campaigns, and build lasting customer relationships and engagement.
                   </p>
                 </div>
               </div>
