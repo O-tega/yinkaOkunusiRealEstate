@@ -238,8 +238,8 @@ const LandingPage = () => {
                 </motion.div>
                 <div className="md:w-[450px] px-2 pt-3 md:pt-0 text-center text-[16px] md:px-0 md:text-left md:text-[20px]">
                   <p className="text-wrap ">
-                    Add screening questions to your survey to filter out people who do not meet your additional criteria. This will enhance the quality and accuracy of your data.
-
+                    Add screening questions to your survey to filter out people who do not meet your additional
+                    criteria. This will enhance the quality and accuracy of your data.
                   </p>
                 </div>
               </div>
