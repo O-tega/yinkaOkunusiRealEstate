@@ -27,13 +27,13 @@ const HowItWorks: React.FC = () => {
     },
     {
       img: <img src={upwardGraph} alt="" className="object-cover w-[60%]" />,
-      text: "Go beyond survey responses with a call-to-action question and seamlessly convert engaged respondents into valuable leads for future contact.",
+      text: "Add a call-to-action question to easily engage interested respondents and nurture them from leads to loyal customers.",
       title: "Lead acquisition.",
     },
     {
       img: <img src={celebrationCard} alt="" className="object-cover w-[80%]" />,
       title: "Customer engagement.",
-      text: "Create multichannel campaigns to drive engagement, loyalty, and actions - clicks, opt-ins, page views, purchases, feedback, reviews, or shares.",
+      text: "Create direct response campaigns to drive engagement, build loyalty, and prompt valuable customer actions.",
     },
   ];
 
