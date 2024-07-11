@@ -55,9 +55,12 @@ const Header = () => {
                         </div>
                       </div>
                     ) : (
-                      <Link target={items.name !== "MooyiRewards" ? "" : "_blank"} rel="noreferrer" to={items.link}>
+                      <> {items.name !== "Mooyi Rewards" ?  <Link  rel="noreferrer" to={items.link}>
                         {items.name}
-                      </Link>
+                      </Link> :  <a target={"_blank"} rel="noreferrer" href={items.link}>
+                        {items.name}
+                      </a> } </>
+
                     )}
                   </div>
                 </li>
