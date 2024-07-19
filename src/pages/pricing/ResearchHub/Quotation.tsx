@@ -151,12 +151,7 @@ const Quotation: React.FC<TLoad> = ({ setLoading, setOpenSignup, setQuoteData })
   const cityValue = values?.lga?.map((el) => el.value);
 
   // const emptyCheck = stateValue.length === 0 || cityValue.length === 0;
-  const emptyCheck =
-    !values.audienceType ||
-    !values.country ||
-    !values.researchType ||
-    stateValue?.length === 0 ||
-    cityValue.length === 0;
+  const emptyCheck = !values.audienceType || !values.country || !values.researchType || stateValue?.length === 0;
 
   // const emptyStateCheck = stateValue.length !== 0 || cityValue.length !== 0;
   const emptyStateCheck =
@@ -283,7 +278,7 @@ const Quotation: React.FC<TLoad> = ({ setLoading, setOpenSignup, setQuoteData })
                 />
               </div>
             </div>
-            <div className="md:flex items-center md:space-x-5 space-y-5 md:space-y-0 w-full mt-5">
+            <div className="md:flex items-start md:space-x-5 space-y-5 md:space-y-0 w-full mt-5">
               <div className="w-full">
                 <p className="font-[500] text-[16px] mb-2">State</p>
                 <SelectMultiple
@@ -396,7 +391,7 @@ const Quotation: React.FC<TLoad> = ({ setLoading, setOpenSignup, setQuoteData })
                     {stateValue.length !== 0 && (
                       <div>
                         <p>State</p>
-                        <ul className="space-y-2">
+                        <ul className="flex gap-1 items-center flex-wrap">
                           {stateValue.map((el, i) => (
                             <li key={i} className="w-fit bg-[#FAFAFA] p-3 text-[14px] mt-2 rounded-md">
                               {el}
@@ -411,7 +406,7 @@ const Quotation: React.FC<TLoad> = ({ setLoading, setOpenSignup, setQuoteData })
                     {cityValue.length !== 0 && (
                       <div>
                         <p>Local Government Area(s)</p>
-                        <ul className="space-y-2">
+                        <ul className="flex gap-1 items-center flex-wrap">
                           {cityValue.map((el, i) => (
                             <li key={i} className="w-fit bg-[#FAFAFA] p-3 text-[14px] mt-2 rounded-md">
                               {el}
