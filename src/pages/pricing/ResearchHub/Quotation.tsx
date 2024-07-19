@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 // import PrimaryInput from "@/components/Inputs/PrimaryInput";
@@ -98,7 +98,7 @@ const Quotation: React.FC<TLoad> = ({ setLoading, setOpenSignup, setQuoteData })
     }, 5000);
   };
 
-  const { handleChange, values, setFieldValue } = useFormik({
+  const { handleChange, values, setFieldValue, resetForm } = useFormik({
     initialValues,
     validationSchema,
     onSubmit,
@@ -106,21 +106,22 @@ const Quotation: React.FC<TLoad> = ({ setLoading, setOpenSignup, setQuoteData })
     enableReinitialize: true,
   });
 
-  console.log(values);
+  const researchPrice = useMemo(() => {
+    return values.researchType === "consumer" ? 2 : values.researchType === "business" ? 4 : 3;
+  }, [values.researchType]);
 
-  const researchPrice = values.researchType === "consumer" ? 2 : values.researchType === "business" ? 4 : 3;
-
-  const totalPrice = responses * researchPrice;
+  const totalPrice = useMemo(() => {
+    return responses * researchPrice;
+  }, [responses, researchPrice]);
 
   const clearForm = () => {
-    Object.keys(values).forEach((key) => {
-      if (Array.isArray(values[key])) {
-        setFieldValue(key, []);
-      } else {
-        setFieldValue(key, "");
-      }
-    });
+    resetForm();
   };
+
+  useEffect(() => {
+    setFieldValue("state", []);
+    setFieldValue("lga", []);
+  }, [setFieldValue, values.country]);
 
   useEffect(() => {
     values?.state?.length > 1 && setFieldValue("lga", []);
