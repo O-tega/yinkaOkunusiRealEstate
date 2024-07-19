@@ -55,9 +55,9 @@ const SelectMultiple: React.FC<MultiSelectInputProps> = ({
       <div className="flex flex-wrap items-center gap-1 mt-1">
         {value?.map((option) => (
           <div key={option.value} className="flex items-center bg-gray-100 px-2 py-1 min-w-fit rounded-md text-[12px]">
-            <span>{option.label?.toString()?.slice(0,4)} ...</span>
+            <span>{option.label?.toString()?.slice(0, 4)} ...</span>
             <button onClick={() => handleRemove(option)} style={{ marginLeft: "10px" }}>
-            <IoClose />
+              <IoClose />
             </button>
           </div>
         ))}

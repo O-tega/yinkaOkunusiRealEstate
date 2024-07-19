@@ -14,7 +14,6 @@ import { approveTopUp, paymentService } from "@/service/paymentService";
 import Toast from "@/config/toast";
 import { ROUTES } from "@/constants/externalUrls";
 import { getRates } from "@/service/rates";
-import { handleApiError } from "@/utils/handleApiError";
 // import { queryClient } from "@/config/gateway";
 
 const publicKey =
@@ -110,7 +109,7 @@ const SignupModal: React.FC<TSignupModal> = ({ onClose, data }) => {
   const { mutate } = useMutation({
     mutationFn: paymentService,
     onSuccess: (data) => {
-      configs.amount = price as number * conversionRate
+      configs.amount = (price as number) * conversionRate;
       initializePayment({
         callback: (response) => {
           const userData = {
