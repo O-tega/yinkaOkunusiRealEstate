@@ -5,7 +5,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import SecondaryInput from "@/components/Inputs/SecondaryInput";
 import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import BlueButton from "@/components/Button/BlueButton";
 import { TQuotation } from "@/types/formTypes";
 import Logo from "@/assets/images/MooyiFBLogo.svg";
@@ -13,6 +13,7 @@ import Logo from "@/assets/images/MooyiFBLogo.svg";
 import { approveTopUp, paymentService } from "@/service/paymentService";
 import Toast from "@/config/toast";
 import { ROUTES } from "@/constants/externalUrls";
+import { getRates } from "@/service/rates";
 // import { queryClient } from "@/config/gateway";
 
 const publicKey =
@@ -32,6 +33,13 @@ const SignupModal: React.FC<TSignupModal> = ({ onClose, data }) => {
     password: "",
     // agree: false,
   };
+
+  const rates = useQuery({
+    queryKey: ["rates"],
+    queryFn: getRates,
+  });
+
+  const conversionRate = rates?.data?.data[0].currencyRates[7].userRate;
 
   const validationSchema = Yup.object({
     email: Yup.string().email("Enter a valid email address").required("This is a required field"),
@@ -101,7 +109,7 @@ const SignupModal: React.FC<TSignupModal> = ({ onClose, data }) => {
   const { mutate } = useMutation({
     mutationFn: paymentService,
     onSuccess: (data) => {
-      configs.amount = price as number;
+      configs.amount = (price as number) * conversionRate;
       initializePayment({
         callback: (response) => {
           const userData = {
@@ -113,8 +121,8 @@ const SignupModal: React.FC<TSignupModal> = ({ onClose, data }) => {
         onClose: () => {},
       });
     },
-    onError: () => {
-      Toast.error("Try again.");
+    onError: (error) => {
+      Toast.error(`${error} User already exist`);
     },
   });
 
