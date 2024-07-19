@@ -5,7 +5,7 @@ export const URLS = {
     env === "production"
       ? `${import.meta.env.VITE_REACT_APP_PUBLIC_FRONTEND_BASE_URL}`
       : env === "development"
-      ? `${import.meta.env.VITE_REACT_APP_PUBLIC_FRONTEND_BASE_URL}`
+      ? `${import.meta.env.VITE_REACT_APP_STAGING_SIGNUP_BASE_URL}`
       : "",
   MOOYI_WEB:
     env === "production"
