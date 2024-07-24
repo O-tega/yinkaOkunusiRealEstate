@@ -13,7 +13,7 @@ type HeroSectionProps = {
 
 const FaqHero: React.FC<HeroSectionProps> = ({ title, desc, desktopImg, handleSearch, search, setSearch }) => {
   return (
-    <div className="w-[100%] mx-auto md:h-[60vh] pb-10 md:pb-0 bg-[#EFF3FF] flex pt-16 md:pt-0 md:relative">
+    <div className="w-[100%] mx-auto md:h-[60vh] h-[50vh] pb-10 md:pb-0 bg-[#EFF3FF] flex pt-16 md:pt-0 md:relative">
       <div>
         <img
           src={desktopImg}
@@ -32,7 +32,7 @@ const FaqHero: React.FC<HeroSectionProps> = ({ title, desc, desktopImg, handleSe
           className="w-full object-cover h-[400px] absolute top-0 z-0  md:hidden"
         />
       </div>
-      <div className="w-full md:flex justify-between md:px-[5rem] mt-[6rem] px-4 z-10 tracking-tight">
+      <div className="w-full md:flex justify-between md:px-[5rem] md:mt-[6rem] px-4 z-10 tracking-tight">
         <div className="flex flex-col items-center">
           <p className="font-secondary md:text-[48px] text-center text-[32px] md:leading-[4rem] pt-5">{title}</p>
           <div className="md:w-[50%] relative">

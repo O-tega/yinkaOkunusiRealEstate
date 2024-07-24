@@ -4,6 +4,8 @@ import { GrFormCheckmark } from "react-icons/gr";
 import Group from "@/assets/images/pricing/Group.png";
 import giftPricing from "@/assets/images/pricing/giftPricing.png";
 import Card from "../Card";
+import { Link } from "react-router-dom";
+import { ROUTES } from "@/constants/externalUrls";
 
 type TPremiumPlan = {
   conversionRate: number;
@@ -51,7 +53,9 @@ const PayAsYouGo: React.FC<TPremiumPlan> = ({ conversionRate, toggleValue }) => 
 
           <p className="text-[37px] md:text-[40px] font-semibold py-3">Free</p>
 
-          <PrimaryButton text="Try for free" type="button" variant={"filled"} buttonId="rh_try_for_free_4" />
+          <Link to={`${ROUTES.LOGIN}/register`}>
+            <PrimaryButton text="Try for free" type="button" variant={"filled"} buttonId="rh_try_for_free_4" />
+          </Link>
 
           <p className="text-xs text-gray-600">
             {`Note that we charge ${
@@ -100,7 +104,9 @@ const PayAsYouGo: React.FC<TPremiumPlan> = ({ conversionRate, toggleValue }) => 
 
           <p className="text-[37px] md:text-[40px] font-semibold py-3">Free</p>
 
-          <PrimaryButton text="Try for free" type="button" variant={"filled"} buttonId="rh_try_for_free_4" />
+          <Link to={`${ROUTES.LOGIN}/register`}>
+            <PrimaryButton text="Try for free" type="button" variant={"filled"} buttonId="rh_try_for_free_4" />
+          </Link>
 
           <p className="text-xs text-gray-600">
             {`Note that we charge ${

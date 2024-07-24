@@ -61,6 +61,7 @@ const Custom: React.FC = () => {
       subtitle: "Ideal for SMEs",
       tag: "",
       responses: "200",
+      planId: "666b222326ecccaade42c891",
       info: "Manage up to 1,000 contacts every month",
       amount: 25,
       featureTitle: "Key plan features",
@@ -79,6 +80,7 @@ const Custom: React.FC = () => {
       subtitle: "Ideal for scale-ups and e-commerce",
       tag: "Popular",
       responses: "200",
+      planId: "666b221e26ecccaade42c88f",
       info: "Manage up to 20,000 contacts every month",
       amount: 250,
       featureTitle: "Key plan features",
@@ -98,6 +100,7 @@ const Custom: React.FC = () => {
       subtitle: "Ideal for consumer brands, retailers, agencies, and enterprises",
       tag: "",
       responses: "1000",
+      planId: "666b221926ecccaade42c88d",
       info: "Manage up to 200,000 contacts every month",
       amount: 2500,
       featureTitle: "Everything in the Business plan plus, ",
@@ -118,10 +121,11 @@ const Custom: React.FC = () => {
     return toggleValue ? `₦${((amount * conversionRate) as number).toLocaleString()}` : `$${amount.toLocaleString()}`;
   };
   const researchData = [
-    { plan: "Business Plan", cost: 500, package: ["200 online survey responses"] },
+    { plan: "Business Plan", cost: 500, planId: "666b21d326ecccaade42c889", package: ["200 online survey responses"] },
     {
       plan: "Pro Plan",
       cost: 5000,
+      planId: "666b21d726ecccaade42c88b",
       package: [
         "1,000 online survey responses",
         "250 Brand tracking responses",
@@ -133,14 +137,17 @@ const Custom: React.FC = () => {
   const crmData = [
     {
       plan: "Starter Plan",
+      planId: "666b222326ecccaade42c891",
       cost: 25,
     },
     {
       plan: "Business Plan",
+      planId: "666b221e26ecccaade42c88f",
       cost: 250,
     },
     {
       plan: "Pro Plan",
+      planId: "666b221926ecccaade42c88d",
       cost: 2500,
     },
   ];
@@ -153,6 +160,14 @@ const Custom: React.FC = () => {
   const crmAmount = crmSelect !== null ? crmSelect.amount : 0;
 
   const totalAmount = researchAmount + crmAmount;
+
+  const linkParams =
+    researchSelect?.planId === undefined
+      ? crmSelect?.planId
+      : crmSelect?.planId === undefined
+      ? researchSelect?.planId
+      : `${researchSelect?.planId}-${crmSelect?.planId}`;
+
   return (
     <div>
       <div className="w-[100%] mx-auto md:h-[260px] pb-10 md:pb-0 bg-[#EFF3FF] overflow-hidden pt-10 md:pt-0 relative">
@@ -401,7 +416,7 @@ const Custom: React.FC = () => {
                     to={
                       researchSelect?.plan === "Pro Plan" || crmSelect?.title === "Pro Plan"
                         ? "mailto:support@enterscale.com"
-                        : `${ROUTES.LOGIN}/register`
+                        : `${ROUTES.LOGIN}/register/id/${linkParams}`
                     }
                   >
                     <BlueButton
@@ -549,7 +564,7 @@ const Custom: React.FC = () => {
                       to={
                         researchSelect?.plan === "Pro Plan" || crmSelect?.title === "Pro Plan"
                           ? "mailto:support@enterscale.com"
-                          : `${ROUTES.LOGIN}/register`
+                          : `${ROUTES.LOGIN}/register/id/${linkParams}`
                       }
                     >
                       <BlueButton
