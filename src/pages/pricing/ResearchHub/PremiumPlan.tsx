@@ -57,7 +57,6 @@ const PlanCard = ({
   toggle,
   planId,
 }: Tplan) => {
-  // const [newresponses, setNewResponses] = useState<number>(responses);
   return (
     <div className="border rounded-2xl w-[411px] h-[48rem] p-3 shadow-md">
       <div className="bg-blue-100 p-5 rounded-t-xl h-[7rem]">

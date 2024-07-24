@@ -37,10 +37,21 @@ type Tplan = {
   features: string[];
   conversionRate: number;
   toggle: boolean;
-  planId?: string
+  planId?: string;
 };
 
-const PlanCard = ({ title, subtitle, tag, info, amount, featureTitle, features, conversionRate, toggle, planId }: Tplan) => {
+const PlanCard = ({
+  title,
+  subtitle,
+  tag,
+  info,
+  amount,
+  featureTitle,
+  features,
+  conversionRate,
+  toggle,
+  planId,
+}: Tplan) => {
   return (
     <div className="border rounded-2xl w-[411px] h-[55rem] p-3">
       <div className="bg-blue-100 p-5 rounded-t-xl h-[7rem]">
