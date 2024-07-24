@@ -41,6 +41,7 @@ type Tplan = {
   features: string[];
   conversionRate: number;
   toggle: boolean;
+  planId?: string;
 };
 
 const PlanCard = ({
@@ -54,8 +55,8 @@ const PlanCard = ({
   features,
   conversionRate,
   toggle,
+  planId,
 }: Tplan) => {
-  // const [newresponses, setNewResponses] = useState<number>(responses);
   return (
     <div className="border rounded-2xl w-[411px] h-[48rem] p-3 shadow-md">
       <div className="bg-blue-100 p-5 rounded-t-xl h-[7rem]">
@@ -104,7 +105,7 @@ const PlanCard = ({
           </div>
         )}
         <div className="mt-5">
-          <Link to={title === "Pro Plan" ? "mailto:support@enterscale.com" : `${ROUTES.LOGIN}/register`}>
+          <Link to={title === "Pro Plan" ? "mailto:support@enterscale.com" : `${ROUTES.LOGIN}/register/id/${planId}`}>
             <BlueButton
               text={title === "Pro Plan" ? "Contact us" : "Buy now"}
               type="button"
@@ -160,14 +161,13 @@ const PremiumPlan: React.FC<TPremiumPlan> = ({ conversionRate, toggleValue }) =>
     { name: "Pro plan", value: 1 },
   ];
 
-  console.log(quoteData);
-
   const subPlans = [
     {
       title: "Business Plan",
       subtitle: "Ideal for scale-ups and e-commerce",
       tag: "Popular",
       responses: 200,
+      planId: "666b21d326ecccaade42c889",
       info: "Send up to 200 online surveys every month",
       amount: 500,
       featureTitle: "Key plan features",
@@ -183,6 +183,7 @@ const PremiumPlan: React.FC<TPremiumPlan> = ({ conversionRate, toggleValue }) =>
       subtitle: "Ideal for consumer brands, retailers, agencies, and enterprises",
       tag: "",
       responses: 1000,
+      planId: "666b21d726ecccaade42c88b",
       info: "Send up to 1,000 online surveys every month",
       amount: 5000,
       featureTitle: "Everything in the Business plan plus, ",
@@ -217,6 +218,7 @@ const PremiumPlan: React.FC<TPremiumPlan> = ({ conversionRate, toggleValue }) =>
               subtitle={el.subtitle}
               tag={el.tag}
               info={el.info}
+              planId={el.planId}
               featureTitle={el.featureTitle}
               features={el.features}
               amount={el.amount}
@@ -236,6 +238,7 @@ const PremiumPlan: React.FC<TPremiumPlan> = ({ conversionRate, toggleValue }) =>
               info={subPlans[0].info}
               featureTitle={subPlans[0].featureTitle}
               features={subPlans[0].features}
+              planId={subPlans[0].planId}
               amount={subPlans[0].amount}
               responses={subPlans[0].responses}
               conversionRate={conversionRate}
@@ -247,6 +250,7 @@ const PremiumPlan: React.FC<TPremiumPlan> = ({ conversionRate, toggleValue }) =>
               subtitle={subPlans[1].subtitle}
               tag={subPlans[1].tag}
               info={subPlans[1].info}
+              planId={subPlans[1].planId}
               featureTitle={subPlans[1].featureTitle}
               features={subPlans[1].features}
               amount={subPlans[1].amount}

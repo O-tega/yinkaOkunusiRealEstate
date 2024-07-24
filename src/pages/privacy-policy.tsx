@@ -5,7 +5,7 @@ import faqBackground from "@/assets/images/mooyi/faqbackground.png";
 const PrivacyPolicy = () => {
   return (
     <div className="flex flex-col">
-      <div className="w-[100%] mx-auto md:h-[calc(100vh-70px)] pb-10 md:pb-0 bg-[#EFF3FF] flex md:items-center overflow-hidden pt-16 md:pt-0 md:relative">
+      <div className="w-[100%] mx-auto md:h-[40vh] h-[30vh] pb-10 md:pb-0 bg-[#EFF3FF] flex md:items-center overflow-hidden pt-16 md:pt-0 md:relative">
         <div>
           <img
             src={faqBackground}
