@@ -9,6 +9,9 @@ import { CookiesProvider } from "react-cookie";
 import ScrollToTop from "./components/common/ScrollToTop.tsx";
 import { Toaster } from "react-hot-toast";
 
+
+
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
