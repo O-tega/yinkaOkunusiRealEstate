@@ -47,7 +47,7 @@ const EngagementHub: React.FC = () => {
           />
         </div>
         <div className="w-full flex justify-center md:px-[5rem] px-4 z-10 tracking-tight relative">
-          <div className="absolute top-[5rem] left-[5rem] hidden md:block">
+          <div className="absolute top-[3rem] left-[5rem] hidden md:block">
             <Link to="/pricing">
               <div className="flex items-center space-x-3 text-primary underline">
                 <span>
@@ -66,8 +66,8 @@ const EngagementHub: React.FC = () => {
                 <MobileDropNav />
               </div>
               <div className="flex justify-center">
-                <p className="text-[16px] md:text-[20px] text-center md:w-[80%] px-3">
-                  Drive your business success with our comprehensive customer engagement.
+                <p className="text-[16px] md:text-[20px] text-center px-3 mt-3">
+                  Engage your customers with our robust bulk SMS, email, and robocall solution.
                 </p>
               </div>
               <div className="pt-5 flex w-full justify-center items-center space-x-3">
