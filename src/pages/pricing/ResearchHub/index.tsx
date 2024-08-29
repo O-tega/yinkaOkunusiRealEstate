@@ -57,7 +57,7 @@ const ResearchHub: React.FC = () => {
           />
         </div>
         <div className="w-full flex justify-center md:px-[5rem] px-4 z-10 tracking-tight relative">
-          <div className="absolute top-[5rem] left-[5rem] hidden md:block">
+          <div className="absolute top-[3rem] left-[5rem] hidden md:block">
             <Link to="/pricing">
               <div className="flex items-center space-x-3 text-primary underline">
                 <span>

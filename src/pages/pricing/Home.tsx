@@ -22,7 +22,7 @@ const Home: React.FC = () => {
     },
     {
       title: "Engagement Hub",
-      subtitle: "Drive your business success with our comprehensive customer engagement.",
+      subtitle: "Engage your customers with our robust bulk SMS, email, and robocall solution.",
       img: Group,
       link: "/pricing/engagement-hub",
     },
@@ -125,6 +125,7 @@ const Home: React.FC = () => {
               <p className="font-secondary md:text-[40px] text-center text-[24px] md:leading-[3rem] tracking-tight pt-5 md:pt-[2rem]">
                 Get fast and actionable insights from your target market or actual customers.
               </p>
+              <p className="text-[20px] mt-3 text-center ">Click on any of our solutions to explore what we offer:</p>
             </div>
             <div className="md:flex items-center space-x-7 md:mt-[5rem] mt-7">
               {cardData?.map((el, i) => (

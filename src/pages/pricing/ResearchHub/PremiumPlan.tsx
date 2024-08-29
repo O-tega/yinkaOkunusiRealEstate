@@ -18,7 +18,7 @@ import { TQuotation } from "@/types/formTypes";
 const cardData = [
   {
     title: "Engagement Hub",
-    subtitle: "Drive your business success with our comprehensive customer engagement.",
+    subtitle: "Engage your customers with our robust bulk SMS, email, and robocall solution.",
     img: Group,
     link: "/pricing/engagement-hub",
   },
@@ -191,6 +191,7 @@ const PremiumPlan: React.FC<TPremiumPlan> = ({ conversionRate, toggleValue }) =>
         "Access to 100 field interviews (voice/video responses)",
         "Access to 100 field interviews (text responses)",
         "250 brand tacking surveys, gather feedback from customers and track changes over time.",
+        "Gather insights (NPS, CSAT) from your customers and track changes over time",
       ],
     },
   ];
