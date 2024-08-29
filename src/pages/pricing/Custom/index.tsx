@@ -26,7 +26,7 @@ const cardData = [
   },
   {
     title: "Engagement Hub",
-    subtitle: "Drive your business success with our comprehensive customer engagement.",
+    subtitle: "Engage your customers with our robust bulk SMS, email, and robocall solution.",
     img: Group,
     link: "/pricing/engagement-hub",
   },

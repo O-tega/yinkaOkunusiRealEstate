@@ -13,9 +13,17 @@ type RawTableRow = {
 
 const tableData: RawTableRow[] = [
   { planDetails: "Online survey responses", businessPlan: "200 Responses", proPlan: "1,000 Responses" },
-  { planDetails: "Field interviews (voice/video responses)", businessPlan: "", proPlan: "1,000 Responses" },
-  { planDetails: "Field interviews (text response)", businessPlan: "", proPlan: "1,000 Responses" },
-  { planDetails: "Brand tracking survey", businessPlan: "", proPlan: "250 Responses" },
+  {
+    planDetails: "Field interviews (voice/video responses) plus interviewer observations",
+    businessPlan: "",
+    proPlan: "100 Responses",
+  },
+  {
+    planDetails: "Brand tracking responses - benchmark your brand against 3 competitors",
+    businessPlan: "",
+    proPlan: "250 Responses",
+  },
+  // { planDetails: "Brand tracking survey", businessPlan: "", proPlan: "250 Responses" },
   { planDetails: "Survey design, analytics", businessPlan: "same", proPlan: "same" },
   { planDetails: "Survey set up, analysis, and reporting.", businessPlan: "", proPlan: "same" },
   { planDetails: "Online review page", businessPlan: "same", proPlan: "same" },

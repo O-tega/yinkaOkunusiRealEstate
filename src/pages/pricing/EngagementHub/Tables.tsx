@@ -43,21 +43,21 @@ const tableData1: RawTableRow[] = [
 const tableData2: RawTableRow[] = [
   {
     planDetails: "SMS",
-    starterPlan: "4,000",
-    businessPlan: "40,000",
-    proPlan: "400,000",
+    starterPlan: "5,000",
+    businessPlan: "50,000",
+    proPlan: "500,000",
   },
   {
     planDetails: "Email",
-    starterPlan: "8,000",
-    businessPlan: "80,000",
-    proPlan: "800,000",
+    starterPlan: "10,000",
+    businessPlan: "100,000",
+    proPlan: "1,000,000",
   },
   {
     planDetails: "Voice (minutes)",
-    starterPlan: "100",
-    businessPlan: "1,000",
-    proPlan: "10,000",
+    starterPlan: "0",
+    businessPlan: "500",
+    proPlan: "5,000",
   },
   {
     planDetails: "Customer surveys",
