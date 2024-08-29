@@ -13,7 +13,7 @@ import mooyiPiechart from "@/assets/images/mooyi/mooyiPiechart.png";
 import mooyidocument from "@/assets/images/mooyi/mooyidocument.png";
 import customerEngagementIcon from "@/assets/images/oursolutions/customerEngagementIcon.png";
 import PrimaryButton from "../Button/PrimaryButton";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ROUTES } from "@/constants/externalUrls";
 
 const backdrop = {
@@ -74,7 +74,7 @@ type TMenu = {
 };
 
 const MobileNav: React.FC<TMenu> = ({ showMenu, setShowMenu }) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const links = [
     { name: "Home", link: "/" },
     { name: "How it works", link: "/how-it-works" },
@@ -206,19 +206,24 @@ const MobileNav: React.FC<TMenu> = ({ showMenu, setShowMenu }) => {
                 </ul>
               </div>
               <div className="mt-5 space-y-4">
-                <PrimaryButton
-                  text="Sign up"
-                  variant="filled"
-                  onClick={() => navigate(`${ROUTES.LOGIN}/register`)}
-                  buttonId="header_signup"
-                />
-                <PrimaryButton
-                  text="Log in"
-                  variant="transparent"
-                  css="bg-white text-primary drop-shadow"
-                  onClick={() => navigate(`${ROUTES.LOGIN}`)}
-                  buttonId="header_login"
-                />
+                <Link to={`${ROUTES.LOGIN}/register`} id="header_login">
+                  <PrimaryButton
+                    text="Sign up"
+                    variant="filled"
+                    // onClick={() => navigate(`${ROUTES.LOGIN}/register`)}
+                    buttonId="header_signup"
+                  />
+                </Link>
+
+                <a href={`${ROUTES.LOGIN}`} className="cursor-pointer">
+                  <PrimaryButton
+                    text="Log in"
+                    variant="transparent"
+                    css="bg-white text-primary drop-shadow"
+                    // onClick={() => navigate(`${ROUTES.LOGIN}`)}
+                    buttonId="header_login"
+                  />
+                </a>
               </div>
             </motion.div>
           </motion.div>

@@ -189,8 +189,7 @@ const PremiumPlan: React.FC<TPremiumPlan> = ({ conversionRate, toggleValue }) =>
       featureTitle: "Everything in the Business plan plus, ",
       features: [
         "Access to 100 field interviews (voice/video responses)",
-        "Access to 100 field interviews (text responses)",
-        "250 brand tacking surveys, gather feedback from customers and track changes over time.",
+        "250 brand tracking responses - benchmark your brand against 3 competitors",
         "Gather insights (NPS, CSAT) from your customers and track changes over time",
       ],
     },
