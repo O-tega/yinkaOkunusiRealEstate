@@ -16,6 +16,7 @@ import kiboWhite from "@/assets/images/logos/kiboColored.png";
 import flutterwaveWhite from "@/assets/images/logos/flutterCOlored.png";
 import wicrypt from "@/assets/images/logos/wicryptColored.png";
 import Mpower from "@/assets/images/logos/mPowerColored.png";
+import ndpr from "@/assets/images/logos/ndpr.png";
 
 import customerIcon from "@/assets/images/icons/customerIcon.png";
 import boxIcon from "@/assets/images/icons/boxIcon.png";
@@ -64,6 +65,10 @@ const LandingPage = () => {
     {
       name: "kiboWhite",
       logo: <img src={kiboWhite} alt="logos" className="w-[60px] md:w-[130px]" />,
+    },
+    {
+      name: "kiboWhite",
+      logo: <img src={ndpr} alt="logos" className="w-[60px] md:w-[120px]" />,
     },
   ];
 
