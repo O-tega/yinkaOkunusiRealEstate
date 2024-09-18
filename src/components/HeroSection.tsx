@@ -1,8 +1,6 @@
 import React, { useRef, useState } from "react";
-// import { ASSETS } from "@/assets/images/Assets";
 import WhiteButton from "./Button/WhiteButton";
 import { ROUTES } from "@/constants/externalUrls";
-// import sanpleVideo from "@/assets/Proteintrail - 31 October 2023 3-2.mp4";
 import { CiVolumeMute } from "react-icons/ci";
 
 // const HeroSection: React.FC = () => {
