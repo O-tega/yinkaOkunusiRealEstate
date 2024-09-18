@@ -203,20 +203,20 @@ const HeroSection: React.FC = () => {
               controls={false} // If you want to hide the default controls
               onClick={handleVideoClick} // Toggle pause/play on click
             ></video>
-            <div className="absolute top-0 flex h-[600px] z-10 pointer-events-auto items-center w-full justify-center">
-              {muted && (
-                <div
-                  onClick={handleUnmute}
-                  className="w-[70px] h-[70px] rounded-full flex items-center justify-center p-1 bg-primary text-white"
-                >
-                  <CiVolumeMute size={40} />
-                </div>
-                // <button className=" bg-white px-4 py-2 rounded" >
-                //   Unmute
-                // </button>
-              )}
-            </div>
+            {/* <div className="absolute top-0 flex h-[600px] z-10 pointer-events-auto items-center w-full justify-center"> */}
+            {muted && (
+              <div
+                onClick={handleUnmute}
+                className="w-[70px] h-[70px] absolute md:bottom-[40%] md:right-[50%] right-[40%] bottom-[35%] rounded-full flex items-center justify-center p-1 bg-primary text-white"
+              >
+                <CiVolumeMute size={40} />
+              </div>
+              // <button className=" bg-white px-4 py-2 rounded" >
+              //   Unmute
+              // </button>
+            )}
           </div>
+          {/* </div> */}
         </div>
       </div>
     </div>
