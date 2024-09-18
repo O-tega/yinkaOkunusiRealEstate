@@ -172,9 +172,9 @@ const HeroSection: React.FC = () => {
     }
   };
   return (
-    <div className="w-[100%] mx-auto md:h-[calc(100vh-20px)] h-[600px]">
-      <div className="w-full mx-auto h-full  bg-primary md:block">
-        <div className="pt-5">
+    <div className="w-[100%] mx-auto md:h-full h-[600px]">
+      <div className="w-full mx-auto h-full  bg-primary pb-5 md:block ">
+        <div className="pt-[5rem]">
           <h1 className=" md:text-[80px] text-[40px] mx-auto leading-[1.2em] text-white text-center">
             Say goodbye to guesswork.
           </h1>
@@ -187,7 +187,7 @@ const HeroSection: React.FC = () => {
           </a>
         </div>
         <div className="flex justify-center mt-10 md:mt-[3rem]">
-          <div className="w-[95%] md:min-h-[calc(100vh-300px)] h-[270px] border-[#959DF3] bg-white border-[0.8rem] rounded-[2rem] flex justify-start items-start overflow-hidden relative">
+          <div className="md:w-[65%] w-[95%]  md:min-h-[calc(100vh-200px)] h-[270px] border-[#959DF3] bg-white border-[0.8rem] rounded-[2rem] flex justify-start items-start overflow-hidden relative">
             {/* <img src={ASSETS.LandingPage.businessWoman} alt="" className="object-cover object-top h-full w-full" /> */}
             <video
               ref={videoRef}
@@ -205,7 +205,7 @@ const HeroSection: React.FC = () => {
             {muted && (
               <div
                 onClick={handleUnmute}
-                className="w-[70px] h-[70px] absolute md:bottom-[40%] md:right-[50%] right-[40%] bottom-[35%] rounded-full flex items-center justify-center p-1 bg-primary text-white"
+                className="w-[70px] h-[70px] cursor-pointer absolute md:bottom-[40%] md:right-[50%] right-[40%] bottom-[35%] rounded-full flex items-center justify-center p-1 bg-primary text-white"
               >
                 <CiVolumeMute size={40} />
               </div>
