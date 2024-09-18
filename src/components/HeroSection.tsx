@@ -187,7 +187,7 @@ const HeroSection: React.FC = () => {
           </a>
         </div>
         <div className="flex justify-center mt-10 md:mt-[3rem]">
-          <div className="md:w-[65%] w-[95%]  md:min-h-[calc(100vh-200px)] h-[270px] border-[#959DF3] bg-white border-[0.8rem] rounded-[2rem] flex justify-start items-start overflow-hidden relative">
+          <div className="md:w-[75%] w-[95%]  md:min-h-[calc(100vh-130px)] h-[270px] border-[#959DF3] bg-white border-[0.8rem] rounded-[2rem] flex justify-start items-start overflow-hidden relative">
             {/* <img src={ASSETS.LandingPage.businessWoman} alt="" className="object-cover object-top h-full w-full" /> */}
             <video
               ref={videoRef}
