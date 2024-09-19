@@ -173,7 +173,7 @@ const HeroSection: React.FC = () => {
   };
   return (
     <div className="w-[100%] mx-auto md:h-full h-[600px]">
-      <div className="w-full mx-auto h-full  bg-primary pb-5 md:block ">
+      <div className="w-full mx-auto h-full  bg-primary pb-[3rem] md:block ">
         <div className="pt-[5rem]">
           <h1 className=" md:text-[80px] text-[40px] mx-auto leading-[1.2em] text-white text-center">
             Say goodbye to guesswork.
