@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import FaqHero from "./faqHero";
 import faqBackground from "@/assets/images/mooyi/faqbackground.png";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
 
 const faqData = [
   {
@@ -191,8 +190,8 @@ const faqData = [
 ];
 
 const Faq: React.FC = () => {
-  const navigate = useNavigate();
   const [index, setIndex] = useState<number>(0);
+  const [search, setSearch] = useState<string>("");
   const handleSetIndex = (idx: number) => {
     setIndex(idx);
   };
@@ -207,7 +206,8 @@ const Faq: React.FC = () => {
     });
 
     setIndex(filteredData[0]?.id);
-    navigate(`#${filteredData[0]?.id}`);
+    window.location.hash = `#${filteredData[0]?.id}`;
+    setSearch("");
   };
 
   return (
@@ -217,8 +217,10 @@ const Faq: React.FC = () => {
         desc="Mooyi helps businesses gain actionable insights through surveys. Whether you want to understand customer behaviour, test new products, or analyse market trends, Mooyi has got you covered."
         desktopImg={faqBackground}
         handleSearch={handleSearch}
+        search={search}
+        setSearch={setSearch}
       />
-      <div className="md:flex items-start md:space-x-5 nd:p-[4rem] px-5 py-[7rem]">
+      <div className="md:flex items-start md:space-x-5 md:p-[4rem] px-5 py-[7rem]">
         <div className="border rounded-2xl p-8 space-y-5 w-[40%] hidden md:block">
           {faqData.map((item, i) => (
             <p

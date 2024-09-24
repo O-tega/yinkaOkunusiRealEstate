@@ -1,11 +1,11 @@
 import axios from "axios";
 import { handleApiError } from "@/utils/handleApiError";
 
-const url = "https://integration-server.mooyi.africa/api/v1/mooyi-integration";
+const url = "https://integration.usemooyi.com/api/v1/mooyi-integration";
 
-export const getState = async () => {
+export const getState = async (country) => {
   try {
-    const { data } = await axios.get(`${url}/country/states?country=Nigeria`, {
+    const { data } = await axios.get(`${url}/country/states?country=${country}`, {
       headers: {
         Accept: "application/json",
         "i-am-mooyi-dev": "c27eb735-6a16-423e-8ea6-af1c4e6ac1a5",

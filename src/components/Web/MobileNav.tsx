@@ -14,6 +14,7 @@ import mooyidocument from "@/assets/images/mooyi/mooyidocument.png";
 import customerEngagementIcon from "@/assets/images/oursolutions/customerEngagementIcon.png";
 import PrimaryButton from "../Button/PrimaryButton";
 import { Link, useNavigate } from "react-router-dom";
+import { ROUTES } from "@/constants/externalUrls";
 
 const backdrop = {
   visible: { opacity: 1 },
@@ -78,6 +79,7 @@ const MobileNav: React.FC<TMenu> = ({ showMenu, setShowMenu }) => {
     { name: "Home", link: "/" },
     { name: "How it works", link: "/how-it-works" },
     { name: "Solutions", link: "#" },
+    { name: "Mooyi Rewards", link: "https://www.mooyirewards.com/" },
     { name: "Pricing", link: "/pricing" },
     { name: "FAQs", link: "/faq" },
     { name: "Tutorials", link: "#" },
@@ -182,24 +184,40 @@ const MobileNav: React.FC<TMenu> = ({ showMenu, setShowMenu }) => {
                         ) : null}
                       </div>
                     ) : (
-                      <Link key={i} to={link.link}>
+                      <Link
+                        key={i}
+                        to={link.link}
+                        target={link.name !== "MooyiRewards" ? "" : "_blank"}
+                        rel="noreferrer"
+                      >
                         <div className="rounded-md mt-3 hover:bg-hoverBlue">{link.name}</div>
                       </Link>
                     ),
                   )}
+
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://blog.usemooyi.com"
+                    className="flex items-center space-x-5  hover:bg-hoverBlue cursor-pointer rounded-lg transition-all duration-300"
+                  >
+                    Blog
+                  </a>
                 </ul>
               </div>
               <div className="mt-5 space-y-4">
                 <PrimaryButton
                   text="Sign up"
                   variant="filled"
-                  onClick={() => navigate(`${process.env.NEXT_PUBLIC_SIGNUP_URL}`)}
+                  onClick={() => navigate(`${ROUTES.LOGIN}/register`)}
+                  buttonId="header_signup"
                 />
                 <PrimaryButton
                   text="Log in"
                   variant="transparent"
                   css="bg-white text-primary drop-shadow"
-                  onClick={() => navigate(`${process.env.NEXT_PUBLIC_FRONTEND_BASE_URL}`)}
+                  onClick={() => navigate(`${ROUTES.LOGIN}`)}
+                  buttonId="header_login"
                 />
               </div>
             </motion.div>

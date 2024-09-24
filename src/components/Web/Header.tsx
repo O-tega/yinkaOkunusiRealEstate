@@ -16,6 +16,7 @@ const Header = () => {
     { name: "Home", link: "/" },
     { name: "How it works", link: "/how-it-works" },
     { name: "Solutions", link: "#" },
+    { name: "Mooyi Rewards", link: "https://www.mooyirewards.com/" },
     { name: "Pricing", link: "/pricing" },
     { name: "FAQs", link: "/faq" },
   ];
@@ -35,14 +36,14 @@ const Header = () => {
         className="w-[90%] h-[70px] mx-auto flex justify-between items-center 
       py-4 lg:py-0 z-50"
       >
-        <div className="items-center justify-between w-[50%] flex" ref={clickRef}>
+        <div className="items-center justify-between w-[55%] flex" ref={clickRef}>
           <div>
             <Link to="/">
-              <img src={Logo} alt="Logo" className="w-[130px]" />
+              <img src={Logo} alt="Logo" className="w-[150px]" />
             </Link>
           </div>
           <div className="hidden md:block">
-            <ul className="flex items-center text-[14px] space-x-8">
+            <ul className="flex items-center space-x-4 lg:space-x-6 whitespace-nowrap">
               {links.map((items, i) => (
                 <li key={i} className="hover:text-primary">
                   <div>
@@ -54,7 +55,9 @@ const Header = () => {
                         </div>
                       </div>
                     ) : (
-                      <Link to={items.link}>{items.name}</Link>
+                      <Link target={items.name !== "MooyiRewards" ? "" : "_blank"} rel="noreferrer" to={items.link}>
+                        {items.name}
+                      </Link>
                     )}
                   </div>
                 </li>
@@ -64,7 +67,7 @@ const Header = () => {
           <div
             className={`${
               dropDown ? "opacity-1 visible translate-y-0" : "opacity-0 invisible -translate-y-6"
-            } transition-all duration-300 ease-in-out absolute z-40 top-14 left-[33rem] w-full max-w-[400px] h-[550px] bg-white border border-strokeColor rounded-b-2xl shadow-card overflow-hidden`}
+            } transition-all duration-300 ease-in-out absolute z-40 top-[4.4rem] left-[24rem] w-full max-w-[400px] h-[550px] bg-white border border-strokeColor rounded-b-2xl shadow-card overflow-hidden`}
           >
             <SolutionList onClick={() => toggleDropdown()} />
           </div>
@@ -74,7 +77,15 @@ const Header = () => {
           {showMenu ? null : <HiOutlineMenuAlt4 onClick={() => setShowMenu(!showMenu)} size={25} />}
         </div>
 
-        <div className="hidden sm:flex space-x-5  items-center  text-[14px] font-[500]">
+        <div className="hidden sm:flex space-x-4  items-center font-[500]">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://blog.usemooyi.com"
+            className="py-[16px]  rounded-[30px] hover:deepBlue"
+          >
+            Blog
+          </a>
           <a
             target="_blank"
             rel="noreferrer"
@@ -83,11 +94,12 @@ const Header = () => {
           >
             Tutorials
           </a>
-          <Link to={`${ROUTES.LOGIN}`} className="py-[16px] rounded-[30px] text-primary">
+
+          <Link to={`${ROUTES.LOGIN}`} className="py-[16px] rounded-[30px] text-primary" id="header_login">
             Login
           </Link>
-          <a href={ROUTES.LOGIN} className="cursor-pointer">
-            <BlueButton text="Sign up" css="w-[186px]" />
+          <a href={`${ROUTES.LOGIN}/register`} className="cursor-pointer">
+            <BlueButton text="Sign up" css="w-[120px]" buttonId="header_signup" />
           </a>
         </div>
       </div>

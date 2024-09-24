@@ -1,13 +1,14 @@
 import React from "react";
 import { ASSETS } from "@/assets/images/Assets";
-import PrimaryButton from "@/components/Button/PrimaryButton";
+// import PrimaryButton from "@/components/Button/PrimaryButton";
 import HeroSection from "../components/HeroSection";
 import CardList from "../components/CardList";
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
-import { ROUTES } from "@/constants/externalUrls";
+// import { Link } from "react-router-dom";
+// import { ROUTES } from "@/constants/externalUrls";
 
 const CustomerFeedback: React.FC = () => {
+  // update
   const cardData = [
     {
       title: "Start and manage customer experience programs.",
@@ -18,7 +19,7 @@ const CustomerFeedback: React.FC = () => {
           width={500}
           height={500}
           alt="logos"
-          className="w-[120px] md:w-[120px] pt-14"
+          className="w-[120px] md:w-[180px] pt-14"
         />
       ),
       color: "bg-[#ECFEF5]",
@@ -32,7 +33,7 @@ const CustomerFeedback: React.FC = () => {
           width={500}
           height={500}
           alt="logos"
-          className="w-[120px] md:w-[120px] pt-14"
+          className="w-[120px] md:w-[170px] pt-16"
         />
       ),
       color: "bg-[#EBF1FF]",
@@ -46,7 +47,7 @@ const CustomerFeedback: React.FC = () => {
           width={500}
           height={500}
           alt="logos"
-          className="w-[120px] md:w-[100px] pt-16"
+          className="w-[120px] md:w-[150px] pt-16"
         />
       ),
       color: "bg-[#FEFAE8]",
@@ -68,17 +69,25 @@ const CustomerFeedback: React.FC = () => {
             surveys, and more in hours to see how you stack up in your industry."
         img={ASSETS.MOOYI.SOLUTIONS.CustomerFeedbackDSK}
         desktopImg={ASSETS.MOOYI.SOLUTIONS.customerFeedbackImage}
+        watchTutorialId="cf_watch_tutorial_1"
+        getInTouchId="cf_get_in_touch_2"
       />
       <div>
         <CardList cardList={cardData} />
       </div>
-      <div className="flex justify-center pb-16">
+      {/* <div className="flex justify-center pb-16">
         <div className="md:w-[20%]">
-          <Link to={`${ROUTES.LOGIN}`}>
-            <PrimaryButton type="button" text="Get started for free" css="rounded-md w-[20%] px-5" variant="filled" />
+          <Link to={`${ROUTES.LOGIN}/register`}>
+            <PrimaryButton
+              type="button"
+              text="Get started for free"
+              css="rounded-md w-[20%] px-5"
+              variant="filled"
+              buttonId="cf_get_started_for_free_3"
+            />
           </Link>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

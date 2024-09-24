@@ -1,6 +1,6 @@
 @import url("./assets/fonts/GT-Flexa/style.css");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap") @import
-  url("./assets/fonts/Recoleta/stylesheet.css");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("./assets/fonts/DegularVariable/style.css");
 
 @tailwind base;
 @tailwind components;
@@ -16,6 +16,7 @@ h5 {
 *:not(input, textarea) {
   -webkit-touch-callout: none; /* iOS Safari */
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 .container {

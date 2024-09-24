@@ -3,10 +3,12 @@ import { CiSearch } from "react-icons/ci";
 
 type TSearchProps = {
   handleSearch: (text: string) => void;
+  search: string;
+  setSearch: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const Search: React.FC<TSearchProps> = ({ handleSearch }) => {
-  const [search, setSearch] = useState<string>("");
+const Search: React.FC<TSearchProps> = ({ handleSearch, search, setSearch }) => {
+  // const [search, setSearch] = useState<string>("");
   const [filterData, setFilteredData] = useState<string[]>();
 
   const searchSuggestions = useMemo(

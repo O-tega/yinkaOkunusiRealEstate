@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import onCall from "@/assets/images/mooyi/onCall.png";
+// import onCall from "@/assets/images/mooyi/onCall.png";
 import { BsDashLg } from "react-icons/bs";
 import { motion } from "framer-motion";
+import { ASSETS } from "@/assets/images/Assets";
 
 const carouselData = [
   {
@@ -50,12 +51,12 @@ const TextCarousel = () => {
   return (
     <div className="md:flex items-center justify-between w-full md:space-x-16 bg-[#F8FAFF] rounded-xl overflow-hidden">
       <div>
-        <img src={onCall} alt="on call image" className="w-full" />
+        <img src={ASSETS.howItWorks.support} alt="on call image" className="w-full" />
       </div>
       <div>
         {carouselData.map((item, i) => (
           <div key={i} className="transition-all duration-300 ease-in">
-            <div>
+            <div className="pr-10">
               {activeIndex === i ? (
                 <motion.div
                   variants={variant}
@@ -64,7 +65,7 @@ const TextCarousel = () => {
                   className="md:w-[500px] text-center md:text-left pt-5 md:pt-0"
                 >
                   <p className="font-secondary md:text-[24px] text-[20px]">{item.title}</p>
-                  <p className="md:text-[20px] text-[16px]">{item.desc}</p>
+                  <p className="md:text-[20px] text-[16px] font-medium">{item.desc}</p>
                 </motion.div>
               ) : null}
             </div>

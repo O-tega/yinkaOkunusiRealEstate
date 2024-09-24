@@ -1,18 +1,16 @@
-"use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import faqBackground from "@/assets/images/mooyi/faqbackground.png";
 import faqBgMobile from "@/assets/images/mooyi/faqBgMobile.png";
 import Group from "@/assets/images/pricing/Group.png";
 import giftPricing from "@/assets/images/pricing/giftPricing.png";
-import contactDoc from "@/assets/images/pricing/contactDoc.png";
-import CTAs from "@/assets/images/mooyi/CTAs.png";
-import uncoverInsight from "@/assets/images/mooyi/uncoverInsight.png";
+import quickAction from "@/assets/images/pricing/quickAction.png";
+import uncoverInsight from "@/assets/images/pricing/researchHub.png";
 import { Helmet } from "react-helmet";
-// import { ROUTES } from "@/constants/externalUrls";
-import { Link } from "react-router-dom";
-import WhiteButton from "@/components/Button/WhiteButton";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import Card from "./Card";
+import Modal from "@/components/Modal";
+import BlueButton from "@/components/Button/BlueButton";
+import { HashLink } from "react-router-hash-link";
 
 const Home: React.FC = () => {
   const cardData = [
@@ -23,43 +21,29 @@ const Home: React.FC = () => {
       link: "/pricing/research-hub",
     },
     {
-      title: "CRM Hub",
-      subtitle: "Drive success with our comprehensive CRM and messaging features.",
+      title: "Engagement Hub",
+      subtitle: "Engage your customers with our robust bulk SMS, email, and robocall solution.",
       img: Group,
-      link: "/pricing/customer-research-model",
+      link: "/pricing/engagement-hub",
     },
     {
       title: "Custom Plan",
       subtitle: "Create a customised plan that fits your business needs.",
       img: giftPricing,
-      link: "#",
+      link: "/pricing/custom",
     },
   ];
 
   const faqData = [
     {
       id: 1,
-      title: "Is there a cost to using Mooyi™?",
+      title: "Is there a cost to using Mooyi?",
       content: [
         {
           subtitle: "",
           subContent:
-            "Different subscription plans are available on mooyi™, like the Starter, Business, and Pro plans, each offering different access levels and bundles. Explore additional flexibility with our add-on bundles to expand your audience reach.",
+            "Different subscription plans are available on mooyi, like the Starter, Business, and Pro plans, each offering different access levels and bundles. Explore additional flexibility with our add-on bundles to expand your audience reach.",
         },
-        // {
-        //   subtitle: "Who can use Mooyi?",
-        //   subContent:
-        //     "Different subscription plans are available on mooyi™, like the Starter, Business, and Pro plans, each offering different access levels and bundles. Explore additional flexibility with our add-on bundles to expand your audience reach.",
-        // },
-        // {
-        //   subtitle: "How much does each response cost?",
-        //   subContent:
-        //     "Simply sign up for a free account, choose a subscription plan that fits your needs, and you're ready to start gathering insights.",
-        // },
-        // {
-        //   subtitle: "Is there a demo available?",
-        //   subContent: "You can request a demo to see how Mooyi works and how it can benefit your business.",
-        // },
       ],
     },
     {
@@ -67,23 +51,9 @@ const Home: React.FC = () => {
       title: "How much does each response cost?",
       content: [
         {
-          subtitle: "Is there a cost to using Mooyi?",
-          subContent:
-            "Different subscription plans are available on Mooyi, like the Pay as you Go, Starter, Business, and Pro plans, each offering different access levels and bundles. Explore additional flexibility with our add-on bundles to expand your audience reach.",
-        },
-        {
-          subtitle: "How much does each response cost?",
+          subtitle: "",
           subContent:
             "Our subscription plans include a cost per response starting at $2. You are credited with bonus responses on subscribing to a plan. However, you can buy survey bundles if needed.",
-        },
-        {
-          subtitle: "Can I purchase additional responses if needed?",
-          subContent: "Absolutely! You can top up your survey bundles at any time.",
-        },
-        {
-          subtitle: "Do unused responses roll over to the next period?",
-          subContent:
-            "No, unused responses do not carry over to the following subscription period. Nevertheless, there is a 7-day grace period during which you can still utilise these responses before the next payment.",
         },
       ],
     },
@@ -92,38 +62,8 @@ const Home: React.FC = () => {
       title: "Can I purchase additional responses if needed?",
       content: [
         {
-          subtitle: "How do I create a survey on Mooyi?",
-          subContent:
-            "Creating a survey is straightforward. Use our intuitive survey builder, select from pre-existing templates, or design your questions from scratch.",
-        },
-        {
-          subtitle: "What are screening questions?",
-          subContent:
-            "Screening questions allow you to filter participants based on specific criteria, ensuring you only gather insights from the most relevant audience.",
-        },
-        {
-          subtitle: "Can I choose whether to survey the Mooyi audience or my contacts?",
-          subContent:
-            "Yes. Depending on your research needs and objectives, you can survey our diverse audience or your contacts. It's all about allowing you to tailor your surveys for impact.",
-        },
-        {
-          subtitle: "What counts as a response?",
-          subContent:
-            "A response is counted when all the required survey questions are completed and submitted by one individual.",
-        },
-        {
-          subtitle: "Can I purchase additional responses if needed?",
+          subtitle: "",
           subContent: "Absolutely! You can top up your survey bundles at any time.",
-        },
-        {
-          subtitle: "What kind of support does Mooyi offer?",
-          subContent:
-            "All paid subscription plans come with dedicated support from our in-house research, strategy, and analytics consultant team.",
-        },
-        {
-          subtitle: "Can I get expert advice on survey design?",
-          subContent:
-            "Absolutely! Our team is here to assist you with survey design, question types, and audience targeting to ensure meaningful data collection.",
         },
       ],
     },
@@ -132,28 +72,25 @@ const Home: React.FC = () => {
       title: "Do unused responses roll over to the next period?",
       content: [
         {
-          subtitle: "How do I add contacts on Mooyi?",
+          subtitle: "",
           subContent:
-            "You can add contacts by uploading a CSV file, entering their details manually, or integrating an API. The aim is to build a database of likely survey participants or feedback providers.",
-        },
-        {
-          subtitle: "How many contacts can I add on Mooyi?",
-          subContent:
-            "The number varies based on your subscription plan. Choose the plan that aligns with your needs to manage your contacts effectively.",
-        },
-        {
-          subtitle: "What are contact tags?",
-          subContent:
-            "Contact tags allow for easy organisation and targeting of specific segments within your contacts.",
+            "No, unused responses do not carry over to the following subscription period. Nevertheless, there is a 7-day grace period during which you can still utilise these responses before the next payment.",
         },
       ],
     },
   ];
 
-  const [index, setIndex] = useState<number>(0);
+  const [index, setIndex] = useState<number>(1);
+  const [openModal, setOpenModal] = useState(false);
   const handleSetIndex = (idx: number) => {
     setIndex(idx);
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      setOpenModal(true);
+    }, 2000);
+  }, []);
 
   const handleToggle = (id: number) => {
     setIndex(index === id ? 0 : id);
@@ -185,11 +122,12 @@ const Home: React.FC = () => {
           <div className="flex items-center flex-col md:mt-[5rem]">
             <div className="md:w-[60%] ">
               <p className="text-primary text-center">PRICING</p>
-              <p className="font-secondary md:text-[40px] text-center text-[24px] md:leading-[3rem] tracking-tight pt-5">
+              <p className="font-secondary md:text-[40px] text-center text-[24px] md:leading-[3rem] tracking-tight pt-5 md:pt-[2rem]">
                 Get fast and actionable insights from your target market or actual customers.
               </p>
+              <p className="text-[20px] mt-3 text-center ">Click on any of our solutions to explore what we offer:</p>
             </div>
-            <div className="md:flex items-center space-x-7 mt-7">
+            <div className="md:flex items-center space-x-7 md:mt-[5rem] mt-7">
               {cardData?.map((el, i) => (
                 <Card title={el.title} subtitle={el.subtitle} img={el.img} link={el.link} key={i} />
               ))}
@@ -197,40 +135,12 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="bg-white md:p-[5rem] px-5 py-[5rem] ">
-        <div className=" w-full flex justify-center mt-4 md:mt-0">
-          <div className="text-white md:w-full px-2 rounded-3xl overflow-hidden relative  md:h-[350px] h-[200px] w-full">
-            <div className="absolute left-0 top-[-1rem] md:top-[1rem] w-[100%]">
-              <img src={CTAs} alt="footer background" className="w-full h-[300px] md:h-[350px]" />
-            </div>
-            <div>
-              <div className="absolute md:top-0 top-[-2rem] w-full pt-9 left-0 md:pt-12">
-                <div className="flex justify-center w-full p-2 md:px-0">
-                  <div className="md:flex items-center justify-between md:w-[65%] text-center md:text-left">
-                    <div>
-                      <p className="font-secondary md:text-[40px] text-[24px] md:pr-[10rem]">
-                        Need a solution that fits your business needs?
-                      </p>
-                      <p className="md:text-[20px] text-[14px] mx-10 md:mx-0">
-                        Let’s create a personalised plan tailored just for you.
-                      </p>
-                      <div className="pt-3 flex justify-center md:block">
-                        <Link to={"mailto:support@enterscale.com"}>
-                          <WhiteButton text={"Contact us"} css="text-black" />
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="hidden md:flex">
-                      <img src={contactDoc} alt="" className="w-[128px] h-[242px]" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div className="bg-white md:px-[5rem] md:py-[2rem] px-5  ">
+        <div className="font-secondary pt-[1rem] md:text-[40px] text-[24px] text-center">
+          <p>Frequently asked questions</p>
         </div>
-        <div className="md:flex items-start md:space-x-5 nd:p-[4rem] px-5 py-[7rem]">
-          <div className="border rounded-2xl p-8 space-y-5 w-[40%] hidden md:block">
+        <div className="md:flex items-start md:space-x-5 px-5 md:mt-16 my-5">
+          <div className="border rounded-2xl p-4 space-y-5 bg-[#FAFAFA] w-[40%] hidden md:block">
             {faqData.map((item, i) => (
               <p
                 key={i}
@@ -256,7 +166,7 @@ const Home: React.FC = () => {
                   onClick={() => handleToggle(id)}
                 >
                   <div className={`flex justify-between items-center ${index === id && "text-primary"}`}>
-                    <p className="text-[20px] font-[500]">{title}</p>
+                    <p className="md:text-[20px] text-[16px] font-[500]">{title}</p>
                     {index === id ? (
                       <p>
                         <IoIosArrowUp />
@@ -272,7 +182,7 @@ const Home: React.FC = () => {
                       {content.map((item, j) => (
                         <div key={j} className="space-y-1">
                           <p className="font-medium text-[18px]">{item.subtitle}</p>
-                          <p className="text-[15px]">{item.subContent}</p>
+                          <p className="md:text-[15px] text-[12px]">{item.subContent}</p>
                         </div>
                       ))}
                     </div>
@@ -283,6 +193,31 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
+      {openModal && (
+        <Modal title="" onClose={() => setOpenModal(false)}>
+          <div className="md:w-[1024px] w-full  flex justify-center">
+            <div className="flex flex-col md:flex-row items-center justify-between md:py-[2rem] md:px-[5rem]">
+              <div className="md:w-[55%]">
+                <p className="font-secondary md:text-[36px] text-[24px]  text-center md:text-left leading-tight">
+                  Create a survey in minutes, get results in hours.
+                </p>
+                <p className="md:text-[18px] text-[14px] mt-3 md:mt-5  text-center md:text-left ">
+                  Get started with our intuitive survey builder, professionally crafted survey templates and audience
+                  panel for your convenience.
+                </p>
+                <div className="mt-5 md:block flex justify-center">
+                  <HashLink smooth to="/pricing/research-hub/#quotation">
+                    <BlueButton text="Start now" buttonId="modal_start_now" />
+                  </HashLink>
+                </div>
+              </div>
+              <div className="md:w-[354px] w-[222px] mt-7 md:mt-0 ">
+                <img src={quickAction} alt="" />
+              </div>
+            </div>
+          </div>
+        </Modal>
+      )}
     </div>
   );
 };

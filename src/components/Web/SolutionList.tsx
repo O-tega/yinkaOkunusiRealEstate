@@ -67,7 +67,7 @@ const SolutionList: React.FC<TSolutionListProps> = ({ onClick }) => {
   return (
     <div className=" p-5 h-full overflow-hidden relative" onMouseLeave={onClick}>
       <p className="font-bold">By Use case</p>
-      <div className="flex flex-col justify-between h-[80%] pt-5">
+      <div className="flex flex-col justify-between h-[80%] pt-2">
         {solutionData.map((item, i) => (
           <Link to={item.link} key={i} onClick={onClick}>
             <div className="flex items-center space-x-2 text-[14px] hover:bg-hoverBlue cursor-pointer p-3 rounded-lg transition-all duration-300">

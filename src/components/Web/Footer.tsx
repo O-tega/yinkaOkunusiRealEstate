@@ -42,46 +42,51 @@ const Footer = () => {
   const location = useLocation();
   const currentPath = location.pathname;
 
-  console.log(currentPath);
+  // console.log(currentPath);
 
-  const paths = ["/pricing"];
+  const paths = ["/pricing", "/pricing/research-hub", "/pricing/custom", "/pricing/engagement-hub"];
 
   return (
     <div className=" md:p-[4rem] p-2 bg-[#F1F1FC] z-10 md:mx-auto w-full font-light sm:text-right text-center">
-      {paths.includes(currentPath) ? null : (
-        <div className="rounded-1xl w-full flex justify-center mt-4 md:mt-0">
-          <div className="text-white text-center md:w-full px-2 rounded-2xl py-6 overflow-hidden relative md:h-[252px] h-[180px] w-full">
-            <div className="absolute left-0 top-[-1rem] w-[100%]">
-              <img src={CTAs} alt="footer background" className="w-full h-[250px] md:h-[300px]" />
-            </div>
-            <div className=" absolute top-0 w-full pt-9 left-0 md:pt-12">
-              {currentPath === "/pricing" ? (
-                <p className="font-secondary md:text-[40px] text-[24px]">Not sure on how to start?</p>
-              ) : (
-                <p className="md:text-[24px] text-[15px] ">Stop guessing. Start knowing.</p>
-              )}
-              {currentPath === "/pricing" ? (
-                <p className="md:text-[24px] text-[15px]">
-                  Reach out to us today for a tailored plan designed specifically for your business needs
-                </p>
-              ) : (
-                <p className="font-secondary md:text-[40px] text-[24px]">Get started with Mooyi today</p>
-              )}
-              <div className="flex justify-center pt-3">
-                <Link to={currentPath === "/pricing" ? "mailto:support@enterscale.com" : `${ROUTES.LOGIN}`}>
-                  <WhiteButton text={currentPath === "/pricing" ? "Contact us" : "Get started"} css="text-black" />
-                </Link>
-              </div>
+      <div className="rounded-1xl w-full flex justify-center mt-4 md:mt-0">
+        <div className="text-white text-center md:w-full px-2 rounded-2xl py-6 overflow-hidden relative md:h-[252px] h-[200px] w-full">
+          <div className="absolute left-0 top-[-1rem] w-[100%]">
+            <img src={CTAs} alt="footer background" className="w-full h-[250px] md:h-[350px]" />
+          </div>
+          <div className=" absolute top-0 w-full pt-9 left-0 md:pt-12">
+            {paths.includes(currentPath) ? (
+              <p className="font-secondary md:text-[40px] text-[24px]">
+                Need a solution that fits your business needs?
+              </p>
+            ) : (
+              <p className="md:text-[24px] text-[15px] ">Stop guessing. Start knowing.</p>
+            )}
+            {paths.includes(currentPath) ? (
+              <p className="md:text-[24px] text-[15px]">Let’s create a personalised plan tailored just for you.</p>
+            ) : (
+              <p className="font-secondary md:text-[40px] text-[24px]">Get started with Mooyi today</p>
+            )}
+            <div className="flex justify-center pt-3">
+              <Link
+                to={currentPath === "/pricing" ? "mailto:support@enterscale.com" : `${ROUTES.LOGIN}/register`}
+                rel="noreferrer"
+              >
+                <WhiteButton
+                  text={currentPath === "/pricing" ? "Contact us" : "Get started"}
+                  css="text-black"
+                  buttonId="footer_get_started"
+                />
+              </Link>
             </div>
           </div>
         </div>
-      )}
+      </div>
       <div className="flex  items-start md:justify-between justify-center space-x-5 md:space-x-0 pt-10">
         <div className="flex-col space-y-3 hidden md:block">
           <img src={Logo} alt="Logo" className="w-[185px]" />
           <p className="text-[16px] text-left ">
             With Mooyi, you can stop <br />
-            guessing and start growing.
+            guessing and start knowing.
           </p>
         </div>
         <div className="">
