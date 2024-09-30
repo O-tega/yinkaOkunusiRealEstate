@@ -1,9 +1,9 @@
 import HeroSection from "@/components/HeroSection";
 import { useRef } from "react";
 import { ASSETS } from "@/assets/images/Assets";
-import lrLine from "@/assets/images/mooyi/lrLine.png";
-import rlLine from "@/assets/images/mooyi/rlLine.png";
-import { motion } from "framer-motion";
+// import lrLine from "@/assets/images/mooyi/lrLine.png";
+// import rlLine from "@/assets/images/mooyi/rlLine.png";
+// import { motion } from "framer-motion";
 import SingleCarousel from "@/components/SingleCarousel";
 import PrimaryButton from "@/components/Button/PrimaryButton";
 import { Link } from "react-router-dom";
@@ -12,39 +12,75 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 import enterscaleWhite from "@/assets/images/logos/enterscaleColored.png";
-import kiboWhite from "@/assets/images/logos/kiboColored.png";
+// import kiboWhite from "@/assets/images/logos/kiboColored.png";
 import flutterwaveWhite from "@/assets/images/logos/flutterCOlored.png";
 import wicrypt from "@/assets/images/logos/wicryptColored.png";
 import Mpower from "@/assets/images/logos/mPowerColored.png";
-import ndpr from "@/assets/images/logos/ndpr.png";
+// import ndpr from "@/assets/images/logos/ndpr.png";
+import sendAppLogo from "@/assets/images/logos/sendAppLogo.png";
 
-import customerIcon from "@/assets/images/icons/customerIcon.png";
-import boxIcon from "@/assets/images/icons/boxIcon.png";
-import graphIcon from "@/assets/images/icons/graphIcon.png";
-import statisticsIcon from "@/assets/images/icons/statisticsIcon.png";
-import InfoCard from "@/components/Web/InfoCard";
+// import customerIcon from "@/assets/images/icons/customerIcon.png";
+// import boxIcon from "@/assets/images/icons/boxIcon.png";
+// import graphIcon from "@/assets/images/icons/graphIcon.png";
+// import statisticsIcon from "@/assets/images/icons/statisticsIcon.png";
+// import InfoCard from "@/components/Web/InfoCard";
 
 import feedbackCard from "@/assets/images/landing/feedbackCard.png";
-import clanederCard from "@/assets/images/landing/clanederCard.png";
+// import clanederCard from "@/assets/images/landing/clanederCard.png";
 import fieldResearchCard from "@/assets/images/landing/fieldResearchCard.png";
 import graphCard from "@/assets/images/landing/graphCard.png";
 import insightCard from "@/assets/images/landing/insightCard.png";
-import onboardCard from "@/assets/images/landing/onboardCard.png";
+// import onboardCard from "@/assets/images/landing/onboardCard.png";
 import surveyCreated from "@/assets/images/landing/surveyCreated.png";
 import CarouselCard from "@/components/Web/CarouselCArd";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 import { ROUTES } from "@/constants/externalUrls";
+import InfoText from "@/components/Web/InfoText";
 
 const LandingPage = () => {
-  const variant = {
-    visible: { scale: 1 },
-    hidden: { scale: 0 },
-  };
+  // const variant = {
+  //   visible: { scale: 1 },
+  //   hidden: { scale: 0 },
+  // };
 
+  // const logos = [
+  //   {
+  //     name: "flutter wave",
+  //     logo: <img src={flutterwaveWhite} alt="logos" className="w-[120px] md:w-[250px]" />,
+  //   },
+  //   {
+  //     name: "M-power",
+  //     logo: (
+  //       <div>
+  //         <img src={Mpower} alt="logos" className="w-[80px] md:w-[180px]" />
+  //       </div>
+  //     ),
+  //   },
+  //   {
+  //     name: "Enterscale",
+  //     logo: <img src={enterscaleWhite} alt="logos" className="w-[80px] md:w-[180px]" />,
+  //   },
+  //   {
+  //     name: "wicrypt",
+  //     logo: <img src={wicrypt} alt="logos" className="w-[60px] md:w-[130px]" />,
+  //   },
+  //   {
+  //     name: "kiboWhite",
+  //     logo: <img src={kiboWhite} alt="logos" className="w-[60px] md:w-[130px]" />,
+  //   },
+  //   {
+  //     name: "kiboWhite",
+  //     logo: <img src={ndpr} alt="logos" className="w-[60px] md:w-[120px]" />,
+  //   },
+  // ];
   const logos = [
     {
       name: "flutter wave",
       logo: <img src={flutterwaveWhite} alt="logos" className="w-[120px] md:w-[250px]" />,
+    },
+    {
+      name: "sendApp",
+      logo: <img src={sendAppLogo} alt="logos" className="w-[60px] md:w-[120px]" />,
     },
     {
       name: "M-power",
@@ -62,78 +98,85 @@ const LandingPage = () => {
       name: "wicrypt",
       logo: <img src={wicrypt} alt="logos" className="w-[60px] md:w-[130px]" />,
     },
-    {
-      name: "kiboWhite",
-      logo: <img src={kiboWhite} alt="logos" className="w-[60px] md:w-[130px]" />,
-    },
-    {
-      name: "kiboWhite",
-      logo: <img src={ndpr} alt="logos" className="w-[60px] md:w-[120px]" />,
-    },
   ];
 
   const infoCard = [
     {
-      title: "Feedback from real humans.",
-      text: "Get insights from our panel or your customers, partners, and employees. Our respondents have various reasons for participating.",
-      link: "/how-it-works",
-      img: customerIcon,
+      title: "One platform, endless possibilities.",
+      subTitle: "Manage research and acquisition from one place.",
+      text: " Create surveys that reach millions of your target audience with simple opt-in forms, recruit new leads, and gain insights.",
     },
     {
-      title: "Incentives for participation.",
-      text: "Gift participants rewards such as airtime, data, cash, or gift vouchers and spend less time on follow-up and more time taking action.",
-      link: "/how-it-works",
-      img: boxIcon,
+      title: "Track and grow your brand effortlessly.",
+      subTitle: "Monitor brand awareness, perception, and loyalty in real-time.",
+      text: "Understand how your brand is perceived, spot opportunities, and stay ahead of the competition.",
     },
     {
-      title: "Data you can count on.",
-      text: "There are no fake answers. We’ve built multiple levels of quality control into Mooyi, blending human and AI checks for consistently reliable results.",
+      title: "Field surveys for on-the-ground insights.",
+      subTitle: "Conduct field surveys to capture on the ground insights",
+      text: "Mooyi makes it easy to gather actionable feedback from your audience wherever they are.",
       link: "/how-it-works",
-      img: statisticsIcon,
+    },
+  ];
+
+  const infoCard2 = [
+    {
+      title: "Insights that drive action.",
+      subTitle: "Stop guessing. Start knowing.",
+      text: "Mooyi delivers real-time data and insights to help you understand what your customers, partners, or employees truly want.",
     },
     {
-      title: "Research expertise on tap.",
-      text: "Upskill yourself in our Learning Hub or hire our in-house team of research and insights experts for more complex projects.",
-      link: "/how-it-works",
-      img: graphIcon,
+      title: "Enrich your customer data.",
+      subTitle: "Enhance your customer understanding and targeting",
+      text: "With NDPR compliance and advanced encryption, you can trust your information is secure and handled carefully.",
+    },
+    {
+      title: "Connect with mobile customers.",
+      subTitle: "Engage your customers on the go.",
+      text: "Send personalised texts, emails, voice messages, and surveys and offer rewards such as airtime, data, cash, or gift vouchers.",
     },
   ];
 
   const carolInfo = [
     {
-      img: surveyCreated,
-      title: "Create any type of survey in minutes.",
-      text: "Find the right audience for any research campaign in days, not weeks — from our panel.",
-    },
-    {
-      img: graphCard,
-      title: "Monitor your brand and competitors.",
-      text: "Track key brand metrics to help you understand your reputation, fame and positioning.",
-    },
-    {
-      img: fieldResearchCard,
-      title: "Launch field research from your desk.",
-      text: "Get footage and highlights from people in the streets, malls, markets, and other public spaces.",
-    },
-    {
-      img: onboardCard,
-      title: "Onboard new customers from surveys.",
-      text: "Invite participants from our audience to join your contact book and nurture them over time.",
+      img: ASSETS.LandingPage.launchMobile,
+      title: "Launch Mobile Campaigns",
+      text: "Create campaigns to drive actions, such as clicks, opt-ins, page views, and purchases.",
     },
     {
       img: insightCard,
-      title: "Gain valuable customer insights.",
-      text: "Learn more about your customers to develop personas and deliver personalised experiences.",
+      title: "Gain Valuable Customer Insights",
+      text: "Learn about your customers to build personas and personalised experiences.",
+    },
+    {
+      img: graphCard,
+      title: "Benchmark Your Brand and Competitors",
+      text: "Track key brand metrics to understand your reputation and relative positioning.",
+    },
+    {
+      img: ASSETS.LandingPage.createLoyalty,
+      title: "Create Loyalty Campaigns",
+      text: "Create campaigns to drive loyalty, such as feedback, reviews, shares, and referrals.",
     },
     {
       img: feedbackCard,
-      title: "Curate user experiences and feedback",
-      text: "Build trust and grow credibility with customer ratings and reviews you can repurpose.",
+      title: "Curate User Reviews and Feedback",
+      text: "Request customer reviews and ratings that can be used for remarketing.",
     },
     {
-      img: clanederCard,
-      title: "Reinvent your events",
-      text: "Transform your events with technology. Get answers to repeat memorable experiences for all.",
+      img: surveyCreated,
+      title: "Create any Type of Survey in Minutes",
+      text: "Find the right audience for any research campaign in days, not weeks.",
+    },
+    {
+      img: fieldResearchCard,
+      title: "Launch Field Research from Your Desk",
+      text: "Get opinions from people in the streets, malls, markets, or events.",
+    },
+    {
+      img: ASSETS.LandingPage.growYourAudience,
+      title: "Grow Your Audience",
+      text: "Add opt-in forms to your surveys and website to quickly and ethically expand your customer mailing list.",
     },
   ];
 
@@ -183,10 +226,7 @@ const LandingPage = () => {
         <div className="text-center py-[3em] flex justify-center">
           <div>
             <div className="flex justify-center">
-              <p className="md:text-[20px] md:w-[60%] font-medium">
-                The best teams use Mooyi to gain deep insights into their market, enhance their value proposition and
-                accelerate their growth.
-              </p>
+              <p className="md:text-[20px] md:w-[60%] font-medium">High-performing African brands trust us.</p>
             </div>
             <div className="flex items-center justify-center flex-wrap space-x-7 space-y-2 mt-3 px-1">
               {logos.map((item, i) => (
@@ -196,7 +236,72 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#F9F9FE] py-[3rem]">
+      <div className={`w-full bg-ctaBg h-[293px] relative `}>
+        {/* <div className="absolute top-0 left-0">
+          <img src={ASSETS.LandingPage.ctaBackground} alt="" />
+        </div> */}
+        <div className="md:flex items-center justify-center h-full">
+          <div className="flex flex-col items-center pt-5">
+            <h1 className=" w-full text-center  text-white md:text-[40px] text-[20px] font-[400]">
+              You Don’t Need More Tools. <br /> You Need More Understanding.
+            </h1>
+            <p className="text-center text-[20px] font-[500] text-white">
+              An all-in-one platform to grow your brand—effortlessly.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="py-[6rem] bg-[#F9F9FE]">
+        <div className="md:flex items-start space-x-3 justify-between ml-7">
+          <div className=" md:ml-[3rem] px-5 md:px-0 space-y-[3rem] md:space-y-[2rem]">
+            {infoCard.map((el, i) => (
+              <InfoText key={i} title={el.title} text={el.text} subTitle={el.subTitle} />
+            ))}
+          </div>
+          <div className="flex justify-end mt-[3rem] md:mt-0">
+            <div className="md:w-[650px] w-[412px] pl-5 md:pl-0 relative">
+              <img src={ASSETS.LandingPage.femaleAnalyst} alt="" />
+              <div className="absolute top-5 left-[2rem] drop-shadow-lg w-[200px] bg-white p-2 rounded-md ">
+                <img src={ASSETS.LandingPage.analysisChart} alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="py-[6rem] bg-white">
+        <div className="md:flex items-start space-x-3 justify-between ">
+          <div className="flex justify-end mt-[3rem] md:mt-0 relative">
+            <div className="md:w-[650px] w-[412px] pl-5 md:pl-0">
+              <img src={ASSETS.LandingPage.manOnPhone} alt="" />
+              <div className="absolute bottom-[-4rem] right-[-10rem] w-[400px]">
+                <img src={ASSETS.LandingPage.chart} alt="" />
+              </div>
+              <div className="absolute top-0 left-0 w-[300px]">
+                <img src={ASSETS.LandingPage.mooyiRewardQuestion} alt="" />
+              </div>
+            </div>
+          </div>
+          <div className=" md:pl-[5rem] px-5 md:px-0 space-y-[3rem] md:space-y-[2rem]">
+            {infoCard2.map((el, i) => (
+              <InfoText key={i} title={el.title} text={el.text} subTitle={el.subTitle} />
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="w-full bg-ctaBg h-[370px] relative">
+        <div className="md:flex items-center justify-between h-full">
+          <div className="">
+            <img src={ASSETS.LandingPage.surevyPreview} alt="" className="md:w-[600px] w-[403px] bottom-0 absolute" />
+          </div>
+          <div className="md:w-[50%] flex items-center pt-5">
+            <h1 className="w-full text-center md:text-left text-white md:text-[32px] text-[20px] font-[400]">
+              Mooyi leverages a community of millions who consent to share their opinions, reviews, and feedback on
+              subjects that interest them.
+            </h1>
+          </div>
+        </div>
+      </div>
+      {/* <div className="bg-[#F9F9FE] py-[3rem]">
         <div className="mt-2 md:px-[4rem] px-2 flex flex-col items-center text-[20px]">
           <p className="font-secondary md:text-[40px] text-[28px] md:pb-[5rem] pb-[5rem] text-center">How it works</p>
         </div>
@@ -341,34 +446,7 @@ const LandingPage = () => {
             </Link>
           </div>
         </div>
-      </div>
-      <div className="w-full bg-[#141254] h-[370px] relative">
-        <div className="md:flex items-center justify-between h-full">
-          <div className="">
-            <img src={ASSETS.LandingPage.surevyPreview} alt="" className="md:w-[653px] w-[403px] bottom-0 absolute" />
-          </div>
-          <div className="md:w-[50%] flex items-center pt-5">
-            <h1 className="md:w-[82%] w-full text-center md:text-left text-white md:text-[32px] text-[20px] font-medium">
-              Mooyi uses a network of 3m people to gather authentic insights, feedback, and reviews that help attract
-              new customers and improve your offerings.
-            </h1>
-          </div>
-        </div>
-      </div>
-      <div className="py-[6rem] bg-[#F9F9FE]">
-        <div className="md:flex items-start space-x-3 justify-between ml-7">
-          <div className="md:grid grid-cols-2 gap-4 gap-y-[3rem] md:ml-[3rem] px-5 md:px-0 space-y-[3rem] md:space-y-0">
-            {infoCard.map((el, i) => (
-              <InfoCard key={i} title={el.title} text={el.text} link={el.link} img={el.img} />
-            ))}
-          </div>
-          <div className="flex justify-end mt-[3rem] md:mt-0">
-            <div className="md:w-[580px] w-[412px] pl-5 md:pl-0">
-              <img src={ASSETS.LandingPage.appHome} alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
+      </div> */}
       <div className="md:px-[7rem] py-[5rem] md:py-[5rem]">
         <div className="md:flex items-center justify-between">
           <p className="md:text-[40px] text-[24px] font-secondary pb-10 text-center md:text-left">
@@ -399,7 +477,7 @@ const LandingPage = () => {
             <Link to={`${ROUTES.LOGIN}/register`}>
               <PrimaryButton
                 type="button"
-                text="Get started now"
+                text="Book a demo"
                 css="rounded-md"
                 variant="filled"
                 buttonId="home_get_started_now_3"
@@ -408,11 +486,11 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <div className="w-full bg-[#141254] md:h-[408px] h-[273px] relative">
+      <div className="w-full bg-ctaBg md:h-[408px] h-[273px] relative">
         <div className="md:flex justify-between h-full">
           <div className="md:w-[50%] flex items-center md:pt-5 pt-[3rem] pl-3">
-            <h1 className="md:w-[90%]  md:pl-[7rem] w-[70%] md:text-left text-white md:text-[40px] text-[20px]">
-              Outpace your competitors with real-time access to market insights.
+            <h1 className="md:w-full  md:pl-[7rem] w-[70%] md:text-left text-white md:text-[40px] text-[20px]">
+              Understand your customers, competitors and market like never before.
             </h1>
           </div>
           <div className="hidden md:block">
@@ -440,7 +518,7 @@ const LandingPage = () => {
           Flutterwave used the platform to register merchants and shoppers at their trade fair, incentivising them to
           participate and share their feedback about their event experience.
         </p>
-        <div className="md:px-[4rem] pt-10 pb-[4rem]">
+        <div className=" pt-10 pb-[4rem]">
           <SingleCarousel />
         </div>
         <div className="flex justify-center pb-16">

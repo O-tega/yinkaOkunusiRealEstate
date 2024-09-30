@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import WhiteButton from "./Button/WhiteButton";
 import { ROUTES } from "@/constants/externalUrls";
 import { CiVolumeMute } from "react-icons/ci";
+import BlueWhiteButton from "./Button/BlueWhiteButton";
 
 // const HeroSection: React.FC = () => {
 //   const variant = {
@@ -176,15 +177,27 @@ const HeroSection: React.FC = () => {
       <div className="w-full mx-auto h-full  bg-primary pb-[3rem] md:block ">
         <div className="pt-[5rem]">
           <h1 className=" md:text-[80px] text-[40px] mx-auto leading-[1.2em] text-white text-center">
-            Say goodbye to guesswork.
+            You deserve the upper hand.
           </h1>
           <p className="font-primary md:text-[24px] pt-3 md:mt-0 text-[14px] text-white text-center">
-            And hello to agile consumer insights.
+            See what your audience cares about. Build campaigns that matter. Drive engagement that lasts.
           </p>
-
-          <a href={`${ROUTES.LOGIN}/register`} className="flex justify-center mt-5">
-            <WhiteButton text={"Get started now"} css="text-black" buttonId="home_get_started_now_1" />
-          </a>
+          <p className="font-[600] md:text-[24px] pt-3 md:mt-0 text-[14px] text-white text-center">
+            All from one ethical, data-driven platform.
+          </p>
+          <div className="flex items-center space-x-7 justify-center">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.youtube.com/channel/UC-KbRjjhExwbHkOurEtdNFQ"
+              className="flex justify-center mt-5"
+            >
+              <WhiteButton text={"Book a demo"} css="text-black" buttonId="book_a_demo_1" />
+            </a>
+            <a href={`${ROUTES.LOGIN}/register`} className="flex justify-center mt-5">
+              <BlueWhiteButton text={"See pricing"} css="text-black" buttonId="see_pricing1" />
+            </a>
+          </div>
         </div>
         <div className="flex justify-center mt-10 md:mt-[3rem]">
           <div className="md:w-[75%] w-[95%]  md:min-h-[calc(100vh-130px)] h-[270px] border-[#959DF3] bg-white border-[0.8rem] rounded-[2rem] flex justify-start items-start overflow-hidden relative">
