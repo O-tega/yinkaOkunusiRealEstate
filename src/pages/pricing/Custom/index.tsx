@@ -46,7 +46,14 @@ const Custom: React.FC = () => {
     queryFn: getRates,
   });
 
-  const conversionRate = rates?.data?.data[0].currencyRates[7].userRate;
+  const conversion = rates?.data?.data[0].currencyRates;
+
+  const getUserRateByCode = (codeName) => {
+    const currency = conversion?.find((rate) => rate.code === codeName);
+    return currency ? currency.userRate : null;
+  };
+
+  const conversionRate = getUserRateByCode("USD-NGN");
 
   const handleSelectResearch = (id: number) => {
     setSelectResearch(selectResearch === id ? null : id);

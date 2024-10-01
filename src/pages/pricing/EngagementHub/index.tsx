@@ -5,9 +5,9 @@ import Plans from "./Plans";
 import { useQuery } from "@tanstack/react-query";
 import { getRates } from "@/service/rates";
 import ToggleButton from "@/components/Button/ToogleButton";
-import MobileDropNav from "../MobileDropNav";
 import { Link } from "react-router-dom";
 import { IoChevronBackOutline } from "react-icons/io5";
+import MobileDropNav from "../MobileDropNav";
 
 const EngagementHub: React.FC = () => {
   const [toggleValue, setToggleValue] = useState(false);
@@ -22,7 +22,16 @@ const EngagementHub: React.FC = () => {
     setToggleValue(!toggleValue);
   };
 
-  const conversionRate = rates?.data?.data[0].currencyRates[7].userRate;
+  const conversion = rates?.data?.data[0].currencyRates;
+
+  const getUserRateByCode = (codeName) => {
+    const currency = conversion?.find((rate) => rate.code === codeName);
+    return currency ? currency.userRate : null;
+  };
+
+  const conversionRate = getUserRateByCode("USD-NGN");
+
+  console.log(conversionRate);
 
   const tabs = [
     { name: "Starter plan", value: 0 },
