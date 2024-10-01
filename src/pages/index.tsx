@@ -347,9 +347,10 @@ const LandingPage = () => {
                     />
                   </div>
                 </motion.div>
-                <div className="md:w-[400px] px-2 pt-3 md:pt-0 text-center text-[16px] md:px-0 md:text-left md:text-[20px]">
+                <div className="md:w-[450px] px-2 pt-3 md:pt-0 text-center text-[16px] md:px-0 md:text-left md:text-[20px]">
                   <p className="text-wrap ">
-                    Set screening questions for participants so you only get responses from the audience you need.
+                    Add screening questions to your survey to filter out people who do not meet your additional
+                    criteria. This will enhance the quality and accuracy of your data.
                   </p>
                 </div>
               </div>
@@ -361,8 +362,8 @@ const LandingPage = () => {
               <div className="md:flex items-center md:space-x-[5rem]">
                 <div className="md:w-[480px] hidden md:block">
                   <p className="text-wrap">
-                    Target distinct segments, such as business professionals, hoteliers, online merchants, grocery
-                    shoppers, freelancers, and mobile money customers.
+                    Reach distinct segments like business owners, hoteliers, online merchants, freelancers, and mobile
+                    money users to gain tailored insights and drive targeted growth.
                   </p>
                 </div>
                 <motion.div variants={variant} initial="hidden" whileInView="visible">
@@ -376,8 +377,8 @@ const LandingPage = () => {
                 </motion.div>
                 <div className="md:w-[480px] pt-3 text-[14px] text-center px-2 md:hidden">
                   <p className="text-wrap">
-                    Target distinct segments, such as business professionals, hoteliers, online merchants, grocery
-                    shoppers, freelancers, and mobile money customers.
+                    Reach distinct segments like business owners, hoteliers, online merchants, freelancers, and mobile
+                    money users to gain tailored insights and drive targeted growth.
                   </p>
                 </div>
               </div>
@@ -398,8 +399,8 @@ const LandingPage = () => {
                 </motion.div>
                 <div className="md:w-[480px] px-2 pt-3 md:pt-0 text-center text-[16px] md:px-0 md:text-left md:text-[20px] font-medium">
                   <p className="text-wrap">
-                    Enjoy additional features like branching logic questions, retargeting survey respondents, and
-                    one-click results filtering.
+                    Enjoy advanced features like built-in templates, branching logic questions, respondent retargeting,
+                    and survey result filtering for a seamless experience.
                   </p>
                 </div>
               </div>
@@ -409,10 +410,10 @@ const LandingPage = () => {
             </div>
             <div className="md:px-[4rem] px-2 flex flex-col items-center text-[20px] font-medium">
               <div className="md:flex items-center md:space-x-[5rem]">
-                <div className="w-[400px] hidden md:block">
+                <div className="w-[490px] hidden md:block">
                   <p className="text-wrap">
-                    Follow up with interested survey participants. Convert their interest into loyalty with personalised
-                    SMS, email and voice campaigns.
+                    Follow up with interested survey participants nurture their interest through personalised mobile
+                    campaigns, and build lasting customer relationships and engagement.
                   </p>
                 </div>
                 <motion.div variants={variant} initial="hidden" whileInView="visible">
@@ -426,8 +427,8 @@ const LandingPage = () => {
                 </motion.div>
                 <div className="w-[400px] text-[14px] text-center px-2 md:hidden">
                   <p className="text-wrap">
-                    Follow up with interested survey participants. Convert their interest into loyalty with personalised
-                    SMS, email and voice campaigns.
+                    Follow up with interested survey participants nurture their interest through personalised mobile
+                    campaigns, and build lasting customer relationships and engagement.
                   </p>
                 </div>
               </div>

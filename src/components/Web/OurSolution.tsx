@@ -32,15 +32,15 @@ const data = [
       />
     ),
   },
-  {
-    id: 3,
-    // cardtext: "Mobile engagement",
-    // title: "Manage and reach your customers' all-in-one platform.",
-    desc: "Get support for free. Participants typically complete a survey in less than 10 minutes without speeding through.",
-    icon: (
-      <img src={ASSETS.GIFS.freeSupport} alt="logos" className="w-full md:w-[387px] border-[1rem] border-[#EBF1FF]" />
-    ),
-  },
+  // {
+  //   id: 3,
+  //   // cardtext: "Mobile engagement",
+  //   // title: "Manage and reach your customers' all-in-one platform.",
+  //   desc: "Participants typically complete a survey in less than 10 minutes without speeding through.",
+  //   icon: (
+  //     <img src={ASSETS.GIFS.freeSupport} alt="logos" className="w-full md:w-[387px] border-[1rem] border-[#EBF1FF]" />
+  //   ),
+  // },
   // {
   //   id: 4,
   //   cardtext: "Embedded rewards",
