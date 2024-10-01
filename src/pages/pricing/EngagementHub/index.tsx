@@ -199,7 +199,7 @@ const EngagementHub: React.FC = () => {
           Free users get 100 free emails on completing their profiles. Additional credits are available for purchase as
           stated
         </p>
-        <div className="md:grid grid-cols-2 px-5 gap-y-2 pt-10">
+        <div className="md:grid grid-cols-2 px-5 gap-4 pt-10">
           {priceCardInfo.map((el, i) => (
             <CardList
               key={i}
@@ -237,8 +237,8 @@ const EngagementHub: React.FC = () => {
                 <img src={el.img} alt="" className="w-[472px] " />
               </div>
               <div className="md:w-[60%] mt-5 md:mt-0">
-                <p className="md:text-[24px] text-[18px] text-center font-[600]">{el.title}</p>
-                <p className="md:text-[20px] text-[16px] text-center">{el.descr}</p>
+                <p className="md:text-[24px] text-[18px] md:text-left text-center font-[600]">{el.title}</p>
+                <p className="md:text-[20px] text-[16px] md:text-left text-center">{el.descr}</p>
               </div>
             </div>
           ))}
