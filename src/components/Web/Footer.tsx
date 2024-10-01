@@ -9,9 +9,10 @@ import { ROUTES } from "@/constants/externalUrls";
 
 const Footer = () => {
   const companyLinks = [
-    { name: "How it works", link: "/how-it-works" },
+    { name: "Why Mooyi", link: "/why-mooyi" },
     { name: "Pricing", link: "/pricing" },
     { name: "FAQs", link: "/faq" },
+    { name: "Blog", link: "https://blog.usemooyi.com" },
   ];
 
   const LegalLinks = [
@@ -20,17 +21,17 @@ const Footer = () => {
     { name: "Terms of use", link: "/terms-of-use" },
   ];
 
-  const useCaseLinks = [
-    { name: "Brand Tracking", link: "/solutions/brand-tracking" },
-    { name: "Customer Feedback", link: "/solutions/customer-feedback" },
-    { name: "Customer Profiling", link: "/solutions/customer-profiling" },
-    { name: "Market Analysis", link: "/solutions/market-analysis" },
-    { name: "New Product Development", link: "/solutions/product-development" },
-    { name: "Lead Acquisition", link: "/solutions/lead-acquisition" },
-    { name: "Customer Engagement", link: "/solutions/customer-engagement" },
-    { name: "Event Feedback", link: "/solutions/event-feedback" },
-    { name: "Creative Testing", link: "/solutions/creative-testing" },
-  ];
+  // const useCaseLinks = [
+  //   { name: "Brand Tracking", link: "/solutions/brand-tracking" },
+  //   { name: "Customer Feedback", link: "/solutions/customer-feedback" },
+  //   { name: "Customer Profiling", link: "/solutions/customer-profiling" },
+  //   { name: "Market Analysis", link: "/solutions/market-analysis" },
+  //   { name: "New Product Development", link: "/solutions/product-development" },
+  //   { name: "Lead Acquisition", link: "/solutions/lead-acquisition" },
+  //   { name: "Customer Engagement", link: "/solutions/customer-engagement" },
+  //   { name: "Event Feedback", link: "/solutions/event-feedback" },
+  //   { name: "Creative Testing", link: "/solutions/creative-testing" },
+  // ];
 
   const socialIcons = [
     { icon: FaFacebook, link: "https://www.facebook.com/mooyi.africa?mibextid=LQQJ4d" },
@@ -99,7 +100,7 @@ const Footer = () => {
             ))}
           </ul>
         </div>
-        <div className="flex flex-col">
+        {/* <div className="flex flex-col">
           <p className="md:text-[18px] text-[16px] font-[500] text-left">Use case</p>
           <ul className="space-y-3 text-left pt-4">
             {useCaseLinks.map((item, i) => (
@@ -108,7 +109,7 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
         <div className="hidden md:block">
           <p className="text-[18px] font-[500] text-left">Legal</p>
           <ul className="space-y-3 text-left pt-4">

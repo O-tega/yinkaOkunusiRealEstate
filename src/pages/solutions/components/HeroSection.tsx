@@ -8,7 +8,7 @@ type HeroSectionProps = {
   desc: string;
   img: string;
   desktopImg: string;
-  watchTutorialId: string;
+  watchTutorialId?: string;
   getInTouchId: string;
 };
 
@@ -18,7 +18,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   desc,
   img,
   desktopImg,
-  watchTutorialId,
+  // watchTutorialId,
   getInTouchId,
 }) => {
   return (
@@ -40,7 +40,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           </h1>
           <p className=" md:text-[20px] md:pr-[7rem] pt-5 text-[16px] font-medium text-center md:text-left">{desc}</p>
           <div className="flex items-center space-x-5 pt-10 justify-center md:justify-start">
-            <div>
+            {/* <div>
               <Link
                 to="https://www.youtube.com/channel/UC-KbRjjhExwbHkOurEtdNFQ"
                 target="_blank"
@@ -51,16 +51,16 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                   text="Watch tutorial"
                   css="bg-black text-white px-5 rounded-sm"
                   variant="transparent"
-                  buttonId={watchTutorialId}
+                  buttonId={watchTutorialId ?? "watch_tutorial"}
                 />
               </Link>
-            </div>
+            </div> */}
             <div>
               <Link to="mailto:you@yourdomain.com" target="_blank" rel="noopener noreferrer">
                 <PrimaryButton
                   type="button"
-                  text="Get in touch"
-                  css="px-5 rounded-sm"
+                  text="Book a demo"
+                  css="px-5 rounded-md"
                   variant="filled"
                   buttonId={getInTouchId}
                 />
