@@ -77,8 +77,8 @@ const MobileNav: React.FC<TMenu> = ({ showMenu, setShowMenu }) => {
   // const navigate = useNavigate();
   const links = [
     { name: "Home", link: "/" },
-    { name: "How it works", link: "/how-it-works" },
-    { name: "Solutions", link: "#" },
+    { name: "Why Mooyi", link: "/why-mooyi" },
+    // { name: "Solutions", link: "#" },
     { name: "Mooyi Rewards", link: "https://www.mooyirewards.com/" },
     { name: "Pricing", link: "/pricing" },
     { name: "FAQs", link: "/faq" },
