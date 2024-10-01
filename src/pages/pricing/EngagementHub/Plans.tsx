@@ -180,9 +180,9 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
       buttonText: "See all features",
       features: [
         "5 user limit.",
-        "50,000 contact profiles.",
-        "Monthly sends of 100,000 SMS or emails.",
-        "Access full survey tools, voice messaging  and Lead generation.",
+        "25,000 contact profiles.",
+        "Monthly sends of 50,000 SMS or emails.",
+        "Access full survey tools, voice messaging  and lead generation.",
       ],
     },
     {
@@ -197,8 +197,8 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
       buttonText: "See all features",
       features: [
         "Unlimited users.",
-        "100,000 contact profiles.",
-        "Monthly sends of 200,000 SMS or emails.",
+        "50,000 contact profiles.",
+        "Monthly sends of 100,000 SMS or emails.",
         "Access to brand tracking, field surveys and advanced analytics.",
       ],
     },
@@ -207,7 +207,7 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
   return (
     <div>
       <div className="bg-[#F9F9FEDB] md:px-[5rem] md:pt-[2rem] pb-[5rem] px-5 py-[1rem]" id="plans">
-        <div className="justify-center border-gray-600 border items-start h-fit mt-10 hidden md:flex">
+        <div className="justify-center border rounded-[20px] overflow-hidden items-start h-fit mt-10 hidden md:flex">
           {subPlans.map((el, i) => (
             <PlanCard
               title={el.title}

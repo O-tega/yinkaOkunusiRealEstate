@@ -282,7 +282,7 @@ const LandingPage = () => {
               </div>
             </div>
           </div>
-          <div className=" md:pl-[5rem] px-5 md:px-0 space-y-[3rem] md:space-y-[2rem]">
+          <div className=" md:pl-[10rem] px-5 md:px-0 space-y-[3rem] md:space-y-[2rem]">
             {infoCard2.map((el, i) => (
               <InfoText key={i} title={el.title} text={el.text} subTitle={el.subTitle} />
             ))}
@@ -490,7 +490,7 @@ const LandingPage = () => {
       </div>
       <div className="hidden md:block px-[3rem] bg-[#F5F7FE99] pb-[4rem]">
         <div className="py-[2rem]">
-          <p className="text-[40px] font-[500] text-center">Choose the perfect plan for your business</p>
+          <p className="text-[40px] font-[500] text-center">Choose The Perfect Plan For Your Business</p>
         </div>
         <div className="flex w-full items-center">
           <LandingPrice />
@@ -537,7 +537,7 @@ const LandingPage = () => {
       </div>
       <div className="mt-20  md:space-y-3 px-2 md:px-0">
         <div className="flex justify-center">
-          <p className="bg-blue-100 px-5 py-2 w-fit text-blue-800 text-[18px] font-500 rounded-md">Case study</p>
+          <p className="bg-blue-100 px-5 py-2 w-fit text-blue-800 text-[18px] font-[600] rounded-md">CASE STUDY</p>
         </div>
         <p className=" text-center md:text-[40px] text-[28px] font-secondary md:px-[19rem] leading-10 pt-5">
           Check-in your guests and engage them with live event games and feedback surveys.
