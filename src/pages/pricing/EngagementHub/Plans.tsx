@@ -81,10 +81,11 @@ const PlanCard = ({
           </div>
         )}
         <div className="mt-2">
-          <Link to={title === "Pro Plan" ? "mailto:support@enterscale.com" : `${ROUTES.LOGIN}/register/id/${planId}`}>
+          <Link to={title !== "Free" ? "mailto:support@enterscale.com" : `${ROUTES.LOGIN}/register/id/${planId}`}>
             <BlueButton
-              text={title === "Pro Plan" ? "Contact us" : "Buy now"}
+              text={title !== "Free" ? "Contact us" : "Buy now"}
               type="button"
+              // disabled={title !== "Free" && true}
               css="w-full"
               buttonId={
                 title === "Pro Plan" ? "eh_contact_us_3" : title === "Business Plan" ? "eh_buy_now_2" : "eh_buy_now_1"
@@ -174,14 +175,14 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
       // responses: "200",
       planId: "666b222326ecccaade42c891",
       info: "Get more advanced tools for larger audiences and deeper insights. ",
-      amount: 499.99,
+      amount: 249.99,
       featureTitle: "Key plan features",
       buttonText: "See all features",
       features: [
         "5 user limit.",
-        "50,000 contact profiles.",
-        "Monthly sends of 100,000 SMS or emails.",
-        "Access full survey tools, voice messaging  and Lead generation.",
+        "25,000 contact profiles.",
+        "Monthly sends of 50,000 SMS or emails.",
+        "Access full survey tools, voice messaging  and lead generation.",
       ],
     },
     {
@@ -191,13 +192,13 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
       // responses: "200",
       planId: "666b222326ecccaade42c891",
       info: "Unlock unlimited users and advanced features to drive growth.",
-      amount: 999.99,
+      amount: 499.99,
       featureTitle: "Key plan features",
       buttonText: "See all features",
       features: [
         "Unlimited users.",
-        "100,000 contact profiles.",
-        "Monthly sends of 200,000 SMS or emails.",
+        "50,000 contact profiles.",
+        "Monthly sends of 100,000 SMS or emails.",
         "Access to brand tracking, field surveys and advanced analytics.",
       ],
     },
@@ -206,7 +207,7 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
   return (
     <div>
       <div className="bg-[#F9F9FEDB] md:px-[5rem] md:pt-[2rem] pb-[5rem] px-5 py-[1rem]" id="plans">
-        <div className="justify-center border-gray-600 border items-start h-fit mt-10 hidden md:flex">
+        <div className="justify-center border rounded-[20px] overflow-hidden items-start h-fit mt-10 hidden md:flex">
           {subPlans.map((el, i) => (
             <PlanCard
               title={el.title}

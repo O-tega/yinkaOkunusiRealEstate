@@ -70,7 +70,7 @@ const EngagementHub: React.FC = () => {
   const priceCardInfo = [
     {
       icon: emailIco,
-      action: "sends",
+      action: "Sends",
       description: "Emails and SMS units are prices at",
       bill: `${toggleValue ? `₦${0.5 * conversionRate}` : "$0.5"} per 100 sends.`,
       bgcolor: "bg-[#FFFBEB]",
@@ -88,7 +88,7 @@ const EngagementHub: React.FC = () => {
       icon: callIcon2,
       action: "Rewards",
       description: "Reward your survey participants from",
-      bill: `${toggleValue ? `₦${10 * conversionRate}` : "$10"} for 10,000 MC..`,
+      bill: `${toggleValue ? `₦${10 * conversionRate}` : "$10"} for 10,000 MC.`,
       bgcolor: "bg-[#F0FDF4]",
       borderColor: "border-[#16A34A]",
     },
@@ -96,7 +96,7 @@ const EngagementHub: React.FC = () => {
       icon: callIcon2,
       action: "Collaboration tools",
       description: "Unlimited workspaces for teams",
-      bill: `are priced at ${toggleValue ? `₦${0.5 * conversionRate}` : "$0.5"}`,
+      bill: `are priced at ${toggleValue ? `₦${0.5 * conversionRate}.` : "$0.5."}`,
       bgcolor: "bg-[#FFFBEB]",
       borderColor: "border-[#D97706]",
     },
