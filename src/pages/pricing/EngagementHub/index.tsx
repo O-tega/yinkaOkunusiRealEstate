@@ -18,7 +18,6 @@ import permission from "@/assets/images/landing/permission.png";
 import CardList from "../PriceCards";
 import AdditionalPriceTag from "../AdditionalPricsCard";
 
-
 const EngagementHub: React.FC = () => {
   const [toggleValue, setToggleValue] = useState(false);
   const [values, setValues] = useState(0);
