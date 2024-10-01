@@ -12,7 +12,7 @@ type TcardListProps = {
 const CardList: React.FC<TcardListProps> = ({ icon, description, action, priceTag, bgcolor, borderColor }) => {
   return (
     <div
-      className={`${bgcolor} ${borderColor} border md:h-[250px] h-full p-5 space-y-2 w-full opacity-80 hover:opacity-100 transition-all duration-300 rounded-lg flex flex-col justify-center`}
+      className={`${bgcolor} ${borderColor} border md:h-[250px] mt-5 md:mt-0 h-full p-5 space-y-2 w-full opacity-80 hover:opacity-100 transition-all duration-300 rounded-lg flex flex-col justify-center`}
     >
       <div className="w-[50px] h-[50ox]">
         <img src={icon} alt="" />

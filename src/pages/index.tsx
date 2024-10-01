@@ -10,6 +10,12 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import icon1 from "@/assets/images/icons/icon1.png";
+import icon2 from "@/assets/images/icons/icon2.png";
+import icon3 from "@/assets/images/icons/icon3.png";
+import icon4 from "@/assets/images/icons/icon4.png";
+import icon5 from "@/assets/images/icons/icon5.png";
+import icon6 from "@/assets/images/icons/icon6.png";
 
 import enterscaleWhite from "@/assets/images/logos/enterscaleColored.png";
 // import kiboWhite from "@/assets/images/logos/kiboColored.png";
@@ -106,17 +112,20 @@ const LandingPage = () => {
       title: "One platform, endless possibilities.",
       subTitle: "Manage research and acquisition from one place.",
       text: " Create surveys that reach millions of your target audience with simple opt-in forms, recruit new leads, and gain insights.",
+      icon: icon1,
     },
     {
       title: "Track and grow your brand effortlessly.",
       subTitle: "Monitor brand awareness, perception, and loyalty in real-time.",
       text: "Understand how your brand is perceived, spot opportunities, and stay ahead of the competition.",
+      icon: icon2,
     },
     {
       title: "Field surveys for on-the-ground insights.",
       subTitle: "Conduct field surveys to capture on the ground insights",
       text: "Mooyi makes it easy to gather actionable feedback from your audience wherever they are.",
       link: "/how-it-works",
+      icon: icon3,
     },
   ];
 
@@ -125,16 +134,19 @@ const LandingPage = () => {
       title: "Insights that drive action.",
       subTitle: "Stop guessing. Start knowing.",
       text: "Mooyi delivers real-time data and insights to help you understand what your customers, partners, or employees truly want.",
+      icon: icon4,
     },
     {
       title: "Enrich your customer data.",
       subTitle: "Enhance your customer understanding and targeting",
       text: "With NDPR compliance and advanced encryption, you can trust your information is secure and handled carefully.",
+      icon: icon5,
     },
     {
       title: "Connect with mobile customers.",
       subTitle: "Engage your customers on the go.",
       text: "Send personalised texts, emails, voice messages, and surveys and offer rewards such as airtime, data, cash, or gift vouchers.",
+      icon: icon6,
     },
   ];
 
@@ -237,12 +249,12 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <div className={`w-full bg-ctaBg md:h-[293px] relative `}>
+      <div className={`w-full bg-ctaBg md:h-[293px] h-[170px] relative `}>
         {/* <div className="absolute top-0 left-0">
           <img src={ASSETS.LandingPage.ctaBackground} alt="" />
         </div> */}
-        <div className="md:flex items-center justify-center h-full">
-          <div className="flex flex-col items-center pt-5">
+        <div className="md:flex items-center justify-center h-full ">
+          <div className="flex flex-col items-center pt-5 px-5 md:px-0">
             <h1 className=" w-full text-center  text-white md:text-[40px] text-[20px] font-[400]">
               You Don’t Need More Tools. <br /> You Need More Understanding.
             </h1>
@@ -254,9 +266,9 @@ const LandingPage = () => {
       </div>
       <div className="md:py-[6rem] py-5 bg-[#F9F9FE]">
         <div className="md:flex items-start space-x-3 justify-between md:ml-7">
-          <div className=" md:ml-[3rem] px-5 md:px-0 space-y-[3rem] md:space-y-[2rem]">
+          <div className=" md:ml-[3rem] md:px-0 space-y-[3rem] md:space-y-[2rem]">
             {infoCard.map((el, i) => (
-              <InfoText key={i} title={el.title} text={el.text} subTitle={el.subTitle} />
+              <InfoText key={i} title={el.title} text={el.text} subTitle={el.subTitle} icon={el.icon} />
             ))}
           </div>
           <div className="flex justify-end mt-[3rem] md:mt-0">
@@ -284,7 +296,7 @@ const LandingPage = () => {
           </div>
           <div className=" md:pl-[10rem] px-5 md:px-0 space-y-[3rem] md:space-y-[2rem]">
             {infoCard2.map((el, i) => (
-              <InfoText key={i} title={el.title} text={el.text} subTitle={el.subTitle} />
+              <InfoText key={i} title={el.title} text={el.text} subTitle={el.subTitle} icon={el.icon} />
             ))}
           </div>
         </div>

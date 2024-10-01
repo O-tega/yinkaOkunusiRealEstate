@@ -122,7 +122,7 @@ const EngagementHub: React.FC = () => {
   ];
   return (
     <div>
-      <div className="w-[100%] mx-auto md:h-[350px] md:pb-0 bg-[#EFF3FF] overflow-hidden pt-16 md:pt-0 relative">
+      <div className="w-[100%] mx-auto md:h-[350px] h-[250px] md:pb-0 bg-[#EFF3FF] overflow-hidden pt-16 md:pt-0 relative">
         <div>
           <img
             src={faqBackground}
@@ -194,12 +194,12 @@ const EngagementHub: React.FC = () => {
       <div>
         <Plans conversionRate={conversionRate} values={values} toggleValue={toggleValue} />
       </div>
-      <div className="px-[10rem] py-[5rem]">
-        <p className="text-[40px] font-[500] text-center">
+      <div className="md:px-[10rem] md:py-[5rem] py-5">
+        <p className="md:text-[40px] text-[24px] font-[500] text-center">
           Free users get 100 free emails on completing their profiles. Additional credits are available for purchase as
           stated
         </p>
-        <div className="grid grid-cols-2 gap-8 pt-10">
+        <div className="md:grid grid-cols-2 px-5 gap-y-2 pt-10">
           {priceCardInfo.map((el, i) => (
             <CardList
               key={i}
@@ -213,30 +213,32 @@ const EngagementHub: React.FC = () => {
           ))}
         </div>
       </div>
-      <div className=" mx-[10rem] bg-blue-800 rounded-[8px] p-5 flex flex-col justify-center">
-        <p className="text-[40px] font-[500] text-white">Additional pricing information for research projects.</p>
-        <div className="flex items-center space-x-4 pt-5">
+      <div className=" md:mx-[10rem] bg-blue-800 rounded-[8px] p-5 flex flex-col justify-center">
+        <p className="md:text-[40px] font-[500] text-white text-center text-[32px] md:text-left">
+          Additional pricing information for research projects.
+        </p>
+        <div className="md:flex items-center md:space-x-4 space-y-5 md:space-y-0 pt-5">
           {AdditionalPrice.map((el, i) => (
             <AdditionalPriceTag key={i} type={el.type} amount={el.amount} />
           ))}
         </div>
       </div>
-      <div className="bg-[#F5F8FF] p-[5rem] mt-[5rem]">
+      <div className="bg-[#F5F8FF] md:p-[5rem] mt-[5rem]">
         <p className="text-center text-[40px] font-[500]">Upgrade for Seamless Teamwork</p>
         <div className="flex justify-center">
-          <p className="text-center text-[20px] w-[40%]">
+          <p className="text-center text-[20px] md:w-[40%]">
             Boost productivity with enhanced collaboration features—available with our premium plans.
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center space-y-7 mt-14">
+        <div className="md:flex flex-col items-center justify-center space-y-7 mt-14 md:px-0 px-5">
           {seamlessData.map((el, i) => (
-            <div key={i} className="grid grid-cols-2 items-center space-x-10 ">
-              <div className="flex w-full justify-end">
+            <div key={i} className="md:grid grid-cols-2 items-center md:space-x-10 ">
+              <div className="md:flex w-full justify-end">
                 <img src={el.img} alt="" className="w-[472px] " />
               </div>
-              <div className="w-[60%]">
-                <p className="text-[24px] font-[600]">{el.title}</p>
-                <p className="text-[20px]">{el.descr}</p>
+              <div className="md:w-[60%] mt-5 md:mt-0">
+                <p className="md:text-[24px] text-[18px] text-center font-[600]">{el.title}</p>
+                <p className="md:text-[20px] text-[16px] text-center">{el.descr}</p>
               </div>
             </div>
           ))}
