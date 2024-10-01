@@ -14,11 +14,12 @@ const Header = () => {
 
   const links = [
     { name: "Home", link: "/" },
-    { name: "How it works", link: "/how-it-works" },
-    { name: "Solutions", link: "#" },
+    { name: "Why Mooyi", link: "/why-mooyi" },
+    // { name: "Solutions", link: "#" },
     { name: "Mooyi Rewards", link: "https://www.mooyirewards.com/" },
     { name: "Pricing", link: "/pricing" },
     { name: "FAQs", link: "/faq" },
+    { name: "Blog", link: "https://blog.usemooyi.com" },
   ];
 
   const [dropDown, setDropdown] = useState(false);
@@ -78,22 +79,22 @@ const Header = () => {
         </div>
 
         <div className="hidden sm:flex space-x-4  items-center font-[500]">
-          <a
+          {/* <a
             target="_blank"
             rel="noreferrer"
             href="https://blog.usemooyi.com"
             className="py-[16px]  rounded-[30px] hover:deepBlue"
           >
             Blog
-          </a>
-          <a
+          </a> */}
+          {/* <a
             target="_blank"
             rel="noreferrer"
             href="https://www.youtube.com/channel/UC-KbRjjhExwbHkOurEtdNFQ"
             className="py-[16px]  rounded-[30px] hover:deepBlue"
           >
             Tutorials
-          </a>
+          </a> */}
 
           <Link to={`${ROUTES.LOGIN}`} className="py-[16px] rounded-[30px] text-primary" id="header_login">
             Login

@@ -34,8 +34,9 @@ import insightCard from "@/assets/images/landing/insightCard.png";
 import surveyCreated from "@/assets/images/landing/surveyCreated.png";
 import CarouselCard from "@/components/Web/CarouselCArd";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
-import { ROUTES } from "@/constants/externalUrls";
+// import { ROUTES } from "@/constants/externalUrls";
 import InfoText from "@/components/Web/InfoText";
+import LandingPrice from "@/components/LandingPrice";
 
 const LandingPage = () => {
   // const variant = {
@@ -236,7 +237,7 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <div className={`w-full bg-ctaBg h-[293px] relative `}>
+      <div className={`w-full bg-ctaBg md:h-[293px] relative `}>
         {/* <div className="absolute top-0 left-0">
           <img src={ASSETS.LandingPage.ctaBackground} alt="" />
         </div> */}
@@ -251,17 +252,17 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <div className="py-[6rem] bg-[#F9F9FE]">
-        <div className="md:flex items-start space-x-3 justify-between ml-7">
+      <div className="md:py-[6rem] py-5 bg-[#F9F9FE]">
+        <div className="md:flex items-start space-x-3 justify-between md:ml-7">
           <div className=" md:ml-[3rem] px-5 md:px-0 space-y-[3rem] md:space-y-[2rem]">
             {infoCard.map((el, i) => (
               <InfoText key={i} title={el.title} text={el.text} subTitle={el.subTitle} />
             ))}
           </div>
           <div className="flex justify-end mt-[3rem] md:mt-0">
-            <div className="md:w-[650px] w-[412px] pl-5 md:pl-0 relative">
+            <div className="md:w-[650px] w-[400px]  relative">
               <img src={ASSETS.LandingPage.femaleAnalyst} alt="" />
-              <div className="absolute top-5 left-[2rem] drop-shadow-lg w-[200px] bg-white p-2 rounded-md ">
+              <div className="absolute top-5 left-[2rem] drop-shadow-lg md:w-[200px] w-[100px] bg-white p-2 rounded-md ">
                 <img src={ASSETS.LandingPage.analysisChart} alt="" />
               </div>
             </div>
@@ -270,13 +271,13 @@ const LandingPage = () => {
       </div>
       <div className="py-[6rem] bg-white">
         <div className="md:flex items-start space-x-3 justify-between ">
-          <div className="flex justify-end mt-[3rem] md:mt-0 relative">
-            <div className="md:w-[650px] w-[412px] pl-5 md:pl-0">
+          <div className="md:flex justify-end mt-[3rem] md:mt-0 relative">
+            <div className="md:w-[650px] w-[400px] md:pl-0 px-3 md:px-0">
               <img src={ASSETS.LandingPage.manOnPhone} alt="" />
-              <div className="absolute bottom-[-4rem] right-[-10rem] w-[400px]">
+              <div className="absolute md:bottom-[-4rem] bottom-[2rem] right-4 md:right-[-10rem] md:w-[400px] w-[100px]">
                 <img src={ASSETS.LandingPage.chart} alt="" />
               </div>
-              <div className="absolute top-0 left-0 w-[300px]">
+              <div className="absolute top-0 left-0 md:w-[300px] w-[100px]">
                 <img src={ASSETS.LandingPage.mooyiRewardQuestion} alt="" />
               </div>
             </div>
@@ -474,7 +475,7 @@ const LandingPage = () => {
         </div>
         <div className="flex justify-center mt-16">
           <div className="md:w-[15%] w-[50%]">
-            <Link to={`${ROUTES.LOGIN}/register`}>
+            <Link to={`mailto:support@enterscale.com`}>
               <PrimaryButton
                 type="button"
                 text="Book a demo"
@@ -486,6 +487,13 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
+      <div className="hidden md:block px-[3rem] bg-[#F5F7FE99] pb-[4rem]">
+        <div className="py-[2rem]">
+          <p className="text-[40px] font-[500] text-center">Choose the perfect plan for your business</p>
+        </div>
+        <LandingPrice />
+      </div>
+
       <div className="w-full bg-ctaBg md:h-[408px] h-[273px] relative">
         <div className="md:flex justify-between h-full">
           <div className="md:w-[50%] flex items-center md:pt-5 pt-[3rem] pl-3">
@@ -510,8 +518,25 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
+      <div className="w-full bg-[#F5F7FE99] md:h-[370px] py-10 md:py-0">
+        <div className="flex flex-col md:flex-row items-center justify-center  md:justify-between md:px-[5rem] px-5 h-full">
+          <div className="md:w-[347px] w-[200px] flex md:h-[272px]">
+            <img src={ASSETS.LandingPage.ndprLogo} alt="" className="" />
+          </div>
+          <div className="md:w-[55%] flex flex-col justify-center">
+            <p className="md:text-[40px] text-[24px] font-[500]">Your Data is Protected and Secure</p>
+            <h1 className="w-full md:text-left text-center text-[20px] font-[400]">
+              Mooyi is built to comply with all applicable data protection regulations, and industry best practices,
+              ensuring that all information remains private, secure, and only used with your consent.
+            </h1>
+          </div>
+        </div>
+      </div>
       <div className="mt-20  md:space-y-3 px-2 md:px-0">
-        <p className=" text-center md:text-[40px] text-[28px] font-secondary md:px-[19rem] leading-10">
+        <div className="flex justify-center">
+          <p className="bg-blue-100 px-5 py-2 w-fit text-blue-800 text-[18px] font-500 rounded-md">Case study</p>
+        </div>
+        <p className=" text-center md:text-[40px] text-[28px] font-secondary md:px-[19rem] leading-10 pt-5">
           Check-in your guests and engage them with live event games and feedback surveys.
         </p>
         <p className="md:text-[20px] md:px-[18rem] text-center text-[14px]">

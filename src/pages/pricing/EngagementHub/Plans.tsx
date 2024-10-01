@@ -1,36 +1,37 @@
 import React from "react";
-import uncoverInsight from "@/assets/images/pricing/researchHub.png";
-import giftPricing from "@/assets/images/pricing/giftPricing.png";
-import customerHeadphone from "@/assets/images/pricing/customerHeadphone.png";
+// import uncoverInsight from "@/assets/images/pricing/researchHub.png";
+// import giftPricing from "@/assets/images/pricing/giftPricing.png";
+// import customerHeadphone from "@/assets/images/pricing/customerHeadphone.png";
 import checker from "@/assets/images/pricing/check.png";
-import customGroups from "@/assets/images/pricing/customGroups.png";
-import Card from "../Card";
+// import customGroups from "@/assets/images/pricing/customGroups.png";
+// import Card from "../Card";
 import Tables from "./Tables";
 import BlueButton from "@/components/Button/BlueButton";
 import { Link } from "react-router-dom";
 import { ROUTES } from "@/constants/externalUrls";
 import { HashLink } from "react-router-hash-link";
+import { TiStarFullOutline } from "react-icons/ti";
 
-const cardData = [
-  {
-    title: "Research Hub",
-    subtitle: "Streamline your research with our all-in-one platform.",
-    img: uncoverInsight,
-    link: "/pricing/research-hub",
-  },
-  {
-    title: "Custom Plan",
-    subtitle: "Create a customised plan that fits your business needs.",
-    img: giftPricing,
-    link: "/pricing/custom",
-  },
-];
+// const cardData = [
+//   {
+//     title: "Research Hub",
+//     subtitle: "Streamline your research with our all-in-one platform.",
+//     img: uncoverInsight,
+//     link: "/pricing/research-hub",
+//   },
+//   {
+//     title: "Custom Plan",
+//     subtitle: "Create a customised plan that fits your business needs.",
+//     img: giftPricing,
+//     link: "/pricing/custom",
+//   },
+// ];
 
 type Tplan = {
   title: string;
   subtitle: string;
-  tag?: string;
-  responses: string;
+  tag?: string | React.ReactNode;
+  responses?: string;
   info: string;
   amount: number;
   featureTitle: string;
@@ -53,33 +54,33 @@ const PlanCard = ({
   planId,
 }: Tplan) => {
   return (
-    <div className="border rounded-2xl w-[411px] h-[55rem] p-3">
+    <div className="border min-w-[300px] h-[36rem] p-3">
       <div className="bg-blue-100 p-5 rounded-t-xl h-[7rem]">
         <div className="flex justify-between">
           <p className="text-[20px] font-[600] text-primary">{title}</p>
           {tag !== "" || undefined ? (
-            <div className="bg-white p-2 w-fit rounded flex items-center justify-center">
+            <div className="w-fit rounded flex items-center justify-center">
               <p className="text-primary  text-[12px] font-[600]">{tag}</p>
             </div>
           ) : null}
         </div>
         <p className="text-grey-600 md:text-[15px] text-[13px] font-medium">{subtitle}</p>
       </div>
-      <div className="mt-5 px-5">
-        <p className="md:text-[16px] text-[14px] font-medium">{info}</p>
+      <div className="mt-2 px-5">
+        <p className="md:text-[13px] text-[12px] font-medium">{info}</p>
         {title === "Pro Plan" ? (
           <div>
             <p className="text-[38px] md:text-[40px] font-[600] mt-3"> Custom </p>
           </div>
         ) : (
-          <div className="flex items-center space-x-3 mt-3">
-            <p className="text-[38px] md:text-[40px] font-[600]">
+          <div className="flex items-center space-x-3 mt-2">
+            <p className={`text-[38px] ${toggle ? "md:text-[30px]" : "md:text-[40px]"}  font-[600]`}>
               {toggle ? `₦${((amount * conversionRate) as number).toLocaleString()}` : `$${amount.toLocaleString()}`}
             </p>
             <p className="font-[600] text-gray-500 ">Per month</p>
           </div>
         )}
-        <div className="mt-5">
+        <div className="mt-2">
           <Link to={title === "Pro Plan" ? "mailto:support@enterscale.com" : `${ROUTES.LOGIN}/register/id/${planId}`}>
             <BlueButton
               text={title === "Pro Plan" ? "Contact us" : "Buy now"}
@@ -102,7 +103,7 @@ const PlanCard = ({
                   <div className="mt-1 w-[20px] h-[20px]">
                     <img src={checker} alt="" />
                   </div>
-                  <p className="text-[15px] w-[90%] font-medium">{el}</p>
+                  <p className="text-[13px] w-[90%] font-medium">{el}</p>
                 </div>
               ))
             : null}
@@ -126,70 +127,86 @@ type TPlans = {
 const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
   const subPlans = [
     {
-      title: "Starter Plan",
-      subtitle: "Ideal for SMEs",
+      title: "Free",
+      subtitle: "Perfect for freelancers",
       tag: "",
-      responses: "200",
+      // responses: "200",
       planId: "666b222326ecccaade42c891",
-      info: "Manage up to 1,000 contacts every month",
-      amount: 30,
+      info: "Get started with basic tools to manage your contacts and engage your audience. ",
+      amount: 0,
       featureTitle: "Key plan features",
+      buttonText: "Sign Up Free",
       features: [
-        "Access to 1,000 customer survey invites, with Customer profiles, Net Promoter Score (NPS) and Customer Satisfaction (CSAT) templates.",
-        "Access to multi-messaging channels with 5,000 emails, 10,000 SMS.",
-        "Access to online survey builder and audience panel..",
-        "Real-time access to survey results with dynamic charts.",
-        "Showcase customer reviews, feedback, and easily address concerns online.",
-        "Generate QR code for easy review collection.",
-        "Single user access",
+        "1 user limit.",
+        "100 contact profiles.",
+        "Monthly sends of 100 SMS or emails.",
+        "Create basic surveys, track leads and Pay-as-you-go beyond the limit.",
       ],
     },
     {
-      title: "Business Plan",
-      subtitle: "Ideal for scale-ups and e-commerce",
-      tag: "Popular",
-      responses: "200",
-      planId: "666b221e26ecccaade42c88f",
-      info: "Manage up to 20,000 contacts every month",
-      amount: 300,
-      featureTitle: "Key plan features",
-      features: [
-        "Access to 10,000 customer insight invites, with Customer profiles, Net Promoter Score (NPS) and Customer Satisfaction (CSAT) templates.",
-        "Access to multi-messaging channels with 50,000 emails, 100,000 SMS and 500 call minutes.",
-        "Access to online survey builder and audience panel.",
-        "Real-time access to survey results with dynamic charts.",
-        "Showcase customer reviews, feedback, and easily address concerns online.",
-        "Generate QR code for easy review collection.",
-        "Team collaboration (up to 3 workspaces and 5 members each).",
-        "Access to campaign and research support.",
-      ],
-    },
-    {
-      title: "Pro Plan",
-      subtitle: "Ideal for consumer brands, retailers, agencies, and enterprises",
+      title: "SME",
+      subtitle: "Great for small businesses",
       tag: "",
-      responses: "1000",
-      planId: "666b221926ecccaade42c88d",
-      info: "Manage up to 200,000 contacts every month",
-      amount: 3000,
+      // responses: "200",
+      planId: "666b222326ecccaade42c891",
+      info: "Manage and grow your audience with advanced messaging and lead tracking.",
+      amount: 29.99,
       featureTitle: "Key plan features",
+      buttonText: "See all features",
       features: [
-        "Access to 100,000 customer insight invites, with Customer profiles, Net Promoter Score (NPS) and Customer Satisfaction (CSAT) templates.",
-        "Access to multi-messaging channels with 500,000 emails, 1,000,000 SMS and 5,000 call minutes.",
-        "Access to online survey builder and audience panel.",
-        "Real-time access to survey results with dynamic charts.",
-        "Showcase customer reviews, feedback, and easily address concerns online.",
-        "Generate QR code for easy review collection.",
-        "Unlimited workspaces and team members.",
-        "Access to campaign and research support.",
+        "2 user limit.",
+        "1,000 contact profiles.",
+        "Monthly sends of 10,000 SMS or emails.",
+        "Access advanced audience segmentation, lead management and survey creation.",
+      ],
+    },
+    {
+      title: "Business",
+      subtitle: "Ideal for growing e-commerce",
+      tag: (
+        <div className="bg-[#6B7FFF] px-2 py-1 text-white rounded-md flex items-center space-x-1">
+          <p>
+            <TiStarFullOutline />
+          </p>
+          <p>Most Popular</p>
+        </div>
+      ),
+      // responses: "200",
+      planId: "666b222326ecccaade42c891",
+      info: "Get more advanced tools for larger audiences and deeper insights. ",
+      amount: 499.99,
+      featureTitle: "Key plan features",
+      buttonText: "See all features",
+      features: [
+        "5 user limit.",
+        "50,000 contact profiles.",
+        "Monthly sends of 100,000 SMS or emails.",
+        "Access full survey tools, voice messaging  and Lead generation.",
+      ],
+    },
+    {
+      title: "Pro",
+      subtitle: "Best for startups and teams",
+      tag: "",
+      // responses: "200",
+      planId: "666b222326ecccaade42c891",
+      info: "Unlock unlimited users and advanced features to drive growth.",
+      amount: 999.99,
+      featureTitle: "Key plan features",
+      buttonText: "See all features",
+      features: [
+        "Unlimited users.",
+        "100,000 contact profiles.",
+        "Monthly sends of 200,000 SMS or emails.",
+        "Access to brand tracking, field surveys and advanced analytics.",
       ],
     },
   ];
 
   return (
     <div>
-      <div className="bg-white md:px-[5rem] md:py-[2rem] px-5 py-[1rem]" id="plans">
-        <div className="justify-center space-x-10 items-start h-fit mt-10 hidden md:flex">
+      <div className="bg-[#F9F9FEDB] md:px-[5rem] md:pt-[2rem] pb-[5rem] px-5 py-[1rem]" id="plans">
+        <div className="justify-center border-gray-600 border items-start h-fit mt-10 hidden md:flex">
           {subPlans.map((el, i) => (
             <PlanCard
               title={el.title}
@@ -200,7 +217,6 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
               featureTitle={el.featureTitle}
               features={el.features}
               amount={el.amount}
-              responses={el.responses}
               conversionRate={conversionRate}
               toggle={toggleValue}
               key={i}
@@ -217,7 +233,6 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
               featureTitle={subPlans[0].featureTitle}
               features={subPlans[0].features}
               amount={subPlans[0].amount}
-              responses={subPlans[0].responses}
               planId={subPlans[0].planId}
               conversionRate={conversionRate}
               toggle={toggleValue}
@@ -232,11 +247,10 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
               features={subPlans[1].features}
               amount={subPlans[1].amount}
               planId={subPlans[1].planId}
-              responses={subPlans[1].responses}
               conversionRate={conversionRate}
               toggle={toggleValue}
             />
-          ) : (
+          ) : values === 2 ? (
             <PlanCard
               title={subPlans[2].title}
               subtitle={subPlans[2].subtitle}
@@ -246,14 +260,26 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
               planId={subPlans[2].planId}
               features={subPlans[2].features}
               amount={subPlans[2].amount}
-              responses={subPlans[2].responses}
+              conversionRate={conversionRate}
+              toggle={toggleValue}
+            />
+          ) : (
+            <PlanCard
+              title={subPlans[3].title}
+              subtitle={subPlans[3].subtitle}
+              tag={subPlans[3].tag}
+              info={subPlans[3].info}
+              featureTitle={subPlans[3].featureTitle}
+              planId={subPlans[3].planId}
+              features={subPlans[3].features}
+              amount={subPlans[3].amount}
               conversionRate={conversionRate}
               toggle={toggleValue}
             />
           )}
         </div>
       </div>
-      <div className="bg-[#F0F5FF] flex items-center md:justify-between justify-center px-[5rem] py-[4rem] md:py-[7rem]">
+      {/* <div className="bg-[#F0F5FF] flex items-center md:justify-between justify-center px-[5rem] py-[4rem] md:py-[7rem]">
         <div className="md:flex items-center md:px-[5rem]">
           <div className="">
             <p className="font-secondary md:text-[40px] text-[24px] md:w-[80%] text-center md:text-left leading-tight">
@@ -273,8 +299,8 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
             <img src={customGroups} alt="" />
           </div>
         </div>
-      </div>
-      <div className="mt-[5rem] bg-white">
+      </div> */}
+      <div className="mt-[2rem] bg-white">
         <p className="font-secondary md:text-[40px] text-[24px] text-center" id="explore">
           Explore all our features
         </p>
@@ -289,7 +315,7 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
           </div>
         </div>
       </div>
-      <div className=" flex items-center justify-center md:px-[5rem] px-[2rem] py-[7rem]">
+      {/* <div className=" flex items-center justify-center md:px-[5rem] px-[2rem] py-[7rem]">
         <div className="flex items-center md:justify-between flex-col md:flex-row justify-center md:w-[80%]">
           <div className="md:w-[354px] w-[222px] mt-7 md:mt-0 hidden md:block">
             <img src={customerHeadphone} alt="" />
@@ -312,8 +338,8 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
             <img src={customerHeadphone} alt="" />
           </div>
         </div>
-      </div>
-      <div className="md:flex justify-center hidden py-[8rem] ">
+      </div> */}
+      {/* <div className="md:flex justify-center hidden py-[8rem] ">
         <div className="bg-[#F8FAFF] w-[90%] flex items-center justify-between md:px-[5rem] rounded-2xl p-5 py-[5rem]">
           <div>
             <p className="font-secondary md:text-[36px] text-[24px] leading-tight">
@@ -327,7 +353,7 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
