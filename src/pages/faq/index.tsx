@@ -11,7 +11,7 @@ const faqData = [
       {
         subtitle: "Who can use Mooyi?",
         subContent:
-          "Businesses of all sizes and stages can benefit from Mooyi. Whether you're a startup, SME, or a large enterprise, if you're looking to make data-driven decisions, Mooyi is for you.",
+          "Businesses of all sizes and stages can benefit from Mooyi™. Whether you're a startup, SME, or a large enterprise, if you're looking to make data-driven decisions, Mooyi™ is for you.",
       },
       {
         subtitle: "How do I get started with Mooyi?",
@@ -20,7 +20,7 @@ const faqData = [
       },
       {
         subtitle: "Is there a demo available?",
-        subContent: "You can request a demo to see how Mooyi works and how it can benefit your business.",
+        subContent: "You can request a demo to see how Mooyi™ works and how it can benefit your business",
       },
     ],
   },
@@ -31,21 +31,26 @@ const faqData = [
       {
         subtitle: "Is there a cost to using Mooyi?",
         subContent:
-          "Different subscription plans are available on Mooyi, like the Pay as you Go, Starter, Business, and Pro plans, each offering different access levels and bundles. Explore additional flexibility with our add-on bundles to expand your audience reach.",
+          "Different subscription plans are available on Mooyi™, like Starter, Business, and Pro plans, with varying access levels to various features. You will need to purchase credits in the app to run campaigns.",
       },
       {
-        subtitle: "How much does each response cost?",
+        subtitle: "What are Mooyi™ credits?",
         subContent:
-          "Our subscription plans include a cost per response starting at $2. You are credited with bonus responses on subscribing to a plan. However, you can buy survey bundles if needed.",
+          "Mooyi credits are flexible currency lodged in your wallet on the Mooyi platform. They allow you to engage with your audience and capture their attention online and offline.",
       },
       {
-        subtitle: "Can I purchase additional responses if needed?",
-        subContent: "Absolutely! You can top up your survey bundles at any time.",
-      },
-      {
-        subtitle: "Do unused responses roll over to the next period?",
+        subtitle: "What do I do if I exhaust the credits in my wallet?",
         subContent:
-          "No, unused responses do not carry over to the following subscription period. Nevertheless, there is a 7-day grace period during which you can still utilise these responses before the next payment.",
+          "You can easily top up your Mooyi credits when your balance has been exhausted. Simply navigate to the billing section and follow the instructions to add credits, ensuring uninterrupted engagement with your audience.",
+      },
+      {
+        subtitle: "How much does a survey response cost?",
+        subContent: "The response cost varies, generally from $2 to $5. You can buy units whenever you need them.",
+      },
+      {
+        subtitle: "Do unused units roll over to the next period?",
+        subContent:
+          "No, unused units do not roll over to the next subscription period. Nevertheless, there is a 7-day grace period during which you can still utilise these responses before the next payment.",
       },
     ],
   },
@@ -54,7 +59,7 @@ const faqData = [
     title: "Survey Creation and Support",
     content: [
       {
-        subtitle: "How do I create a survey on Mooyi?",
+        subtitle: "How do I create a survey on Mooyi™?",
         subContent:
           "Creating a survey is straightforward. Use our intuitive survey builder, select from pre-existing templates, or design your questions from scratch.",
       },
@@ -62,6 +67,11 @@ const faqData = [
         subtitle: "What are screening questions?",
         subContent:
           "Screening questions allow you to filter participants based on specific criteria, ensuring you only gather insights from the most relevant audience.",
+      },
+      {
+        subtitle: "What are branching questions?",
+        subContent:
+          "Branching questions allow you to guide customers through tailored question paths based on their answers.",
       },
       {
         subtitle: "Can I choose whether to survey the Mooyi audience or my contacts?",
@@ -74,11 +84,7 @@ const faqData = [
           "A response is counted when all the required survey questions are completed and submitted by one individual.",
       },
       {
-        subtitle: "Can I purchase additional responses if needed?",
-        subContent: "Absolutely! You can top up your survey bundles at any time.",
-      },
-      {
-        subtitle: "What kind of support does Mooyi offer?",
+        subtitle: "What kind of support does Mooyi™ offer?",
         subContent:
           "All paid subscription plans come with dedicated support from our in-house research, strategy, and analytics consultant team.",
       },
@@ -101,11 +107,11 @@ const faqData = [
       {
         subtitle: "How many contacts can I add on Mooyi?",
         subContent:
-          "The number varies based on your subscription plan. Choose the plan that aligns with your needs to manage your contacts effectively.",
+          "The number varies depending on your subscription plan. Choose the plan that best suits your needs for managing your contacts effectively.",
       },
       {
         subtitle: "What are contact tags?",
-        subContent: "Contact tags allow for easy organisation and targeting of specific segments within your contacts.",
+        subContent: "Contact tags allow for easy organisation and targeting specific segments within your contacts.",
       },
     ],
   },
@@ -116,12 +122,12 @@ const faqData = [
       {
         subtitle: "Who makes up the Mooyi audience?",
         subContent:
-          "Our audience is a diverse mix of individuals from various demographics, ensuring a comprehensive view of your research needs.",
+          "Our audience consists of individuals from various demographics, ensuring a comprehensive view of your research needs.",
       },
       {
         subtitle: "Where does Mooyi source its audience from?",
         subContent:
-          "We collaborate with trusted partners to tap into large audience panels and employ stringent validation processes to source our audience, ensuring authenticity and reliability.",
+          "We collaborate with trusted partners to tap into large audience panels and employ stringent validation processes to source our audience, ensuring authenticity and reliability",
       },
       {
         subtitle: "Can I select my audience based on specific criteria?",
@@ -136,7 +142,7 @@ const faqData = [
       {
         subtitle: "What steps are taken to prevent data bias or skewing?",
         subContent:
-          "We are committed to eliminating bias in our data collection and analysis processes. We employ various techniques, including random sampling and statistical adjustments, to ensure unbiased insights.",
+          "We are committed to eliminating bias in our data collection and analysis processes. To ensure unbiased insights, we employ various techniques, including random sampling and statistical adjustments.",
       },
       {
         subtitle: "Is the data compliant with privacy regulations and standards?",
@@ -152,7 +158,7 @@ const faqData = [
       {
         subtitle: "Can I integrate Mooyi with other tools or platforms we use?",
         subContent:
-          "Yes. Mooyi offers API integrations to connect seamlessly with other tools and platforms, enhancing your data collection and analysis capabilities.",
+          "Yes. Mooyi offers API integrations to connect seamlessly with other tools and platforms, enhancing data collection and analysis capabilities.",
       },
       {
         subtitle: "Is there an option for white labelling or custom branding of the surveys?",
@@ -178,7 +184,7 @@ const faqData = [
       {
         subtitle: "What support do you offer?",
         subContent:
-          "All paid subscription plans enjoy dedicated support from enterscale, our in-house team of research, strategy, and analytics consultants that help you enhance and action your findings.",
+          "All paid subscription plans enjoy dedicated support from Scalelab, our in-house team of product experts who help you enhance and act on your findings.",
       },
       {
         subtitle: "Can you help me get started?",

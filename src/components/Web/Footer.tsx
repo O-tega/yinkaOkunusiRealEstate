@@ -136,7 +136,7 @@ const Footer = () => {
       <hr className="sm:flex my-[1em]" />
       <div className="flex items-center justify-between md:block">
         <p className="font-[500] md:text-[16px] text-[12px] text-left md:text-center">
-          © 2024 mooyi™. All right reserved.
+          © 2024 Mooyi™. All right reserved.
         </p>
         <div className="md:hidden">
           <div className="space-x-3 flex items-center">
