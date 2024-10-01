@@ -50,7 +50,7 @@ const plan = [
     // responses: "200",
     planId: "666b222326ecccaade42c891",
     info: "Get more advanced tools for larger audiences and deeper insights. ",
-    amount: 499.99,
+    amount: 249.99,
     featureTitle: "Key plan features",
     buttonText: "See all features",
     features: [
@@ -67,7 +67,7 @@ const plan = [
     // responses: "200",
     planId: "666b222326ecccaade42c891",
     info: "Unlock unlimited users and advanced features to drive growth.",
-    amount: 999.99,
+    amount: 499.99,
     featureTitle: "Key plan features",
     buttonText: "See all features",
     features: [

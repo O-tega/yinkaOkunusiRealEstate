@@ -492,7 +492,9 @@ const LandingPage = () => {
         <div className="py-[2rem]">
           <p className="text-[40px] font-[500] text-center">Choose the perfect plan for your business</p>
         </div>
-        <LandingPrice />
+        <div className="flex w-full items-center">
+          <LandingPrice />
+        </div>
       </div>
 
       <div className="w-full bg-ctaBg md:h-[408px] h-[273px] relative">

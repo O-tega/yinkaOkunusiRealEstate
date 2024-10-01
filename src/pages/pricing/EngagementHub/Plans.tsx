@@ -81,10 +81,11 @@ const PlanCard = ({
           </div>
         )}
         <div className="mt-2">
-          <Link to={title === "Pro Plan" ? "mailto:support@enterscale.com" : `${ROUTES.LOGIN}/register/id/${planId}`}>
+          <Link to={title !== "Free" ? "mailto:support@enterscale.com" : `${ROUTES.LOGIN}/register/id/${planId}`}>
             <BlueButton
-              text={title === "Pro Plan" ? "Contact us" : "Buy now"}
+              text={title !== "Free" ? "Contact us" : "Buy now"}
               type="button"
+              // disabled={title !== "Free" && true}
               css="w-full"
               buttonId={
                 title === "Pro Plan" ? "eh_contact_us_3" : title === "Business Plan" ? "eh_buy_now_2" : "eh_buy_now_1"
@@ -174,7 +175,7 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
       // responses: "200",
       planId: "666b222326ecccaade42c891",
       info: "Get more advanced tools for larger audiences and deeper insights. ",
-      amount: 499.99,
+      amount: 249.99,
       featureTitle: "Key plan features",
       buttonText: "See all features",
       features: [
@@ -191,7 +192,7 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
       // responses: "200",
       planId: "666b222326ecccaade42c891",
       info: "Unlock unlimited users and advanced features to drive growth.",
-      amount: 999.99,
+      amount: 499.99,
       featureTitle: "Key plan features",
       buttonText: "See all features",
       features: [
