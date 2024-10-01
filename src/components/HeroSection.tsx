@@ -184,7 +184,7 @@ const HeroSection: React.FC = () => {
           <h1 className=" md:text-[80px] text-[40px] mx-auto leading-[1.2em] text-white text-center">
             You deserve the upper hand.
           </h1>
-          <p className="font-primary md:text-[24px] pt-3 md:mt-0 text-[14px] text-white text-center">
+          <p className="font-primary md:text-[24px] pt-3 md:mt-0 text-[14px] text-white text-center px-5 md:px-0">
             See what your audience cares about. Build campaigns that matter. Drive engagement that lasts.
           </p>
           <p className="font-[600] md:text-[24px] pt-3 md:mt-0 text-[14px] text-white text-center">
