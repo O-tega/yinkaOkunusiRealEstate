@@ -43,6 +43,8 @@ export const ASSETS = {
       "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/Follow%20up%20with%20interested%20survey%20participants.%20.gif",
     lessParticipationWorry:
       "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/Don%E2%80%99t%20worry%20about%20low%20participation..gif",
+    robustInsight:
+      "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/Roboust%20Insights.gif",
   },
   OURSOLUTION: {
     customerEngagementIcon: "",
@@ -156,8 +158,26 @@ export const ASSETS = {
       "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/surveyGraphCmbined.png",
     surveyGraph: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/surveyGraph.png",
     surveyPiechart: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/surveyPiechart.png",
+    launchMobile: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/lauchMobile.png",
+    createLoyalty: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/CreateLoyalty.png",
+    growYourAudience:
+      "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/growYourAudience.png",
+    ctaBackground: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/CTAsBackground.png",
+    femaleAnalyst: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/femaleAnalyst.png",
+    manOnPhone: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/manOnPhone.png",
+    chart: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/chart.png",
+    mooyiRewardQuestion:
+      "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/mooyiRewardsQuestion.png",
+    analysisChart: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/analysisChart.png",
+    ndprLogo: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/ndprLogo.png",
   },
   howItWorks: {
     support: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/support.png",
+    whyMooyi: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/whyMooyi.png",
+    barsImg: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/barsImg.png",
+    feedBackImg: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/feedbackImg.png",
+    easyFollowUp: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/easyFollowUp.png",
+    smilingGuy: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/smilingGuy.png",
+    hero: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/image.png",
   },
 };

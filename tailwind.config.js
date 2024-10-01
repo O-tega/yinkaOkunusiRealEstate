@@ -55,6 +55,7 @@ export default {
         secondary: "0px 4px 15px rgba(0, 0, 0, 0.1), 0px 10px 64px rgba(17, 17, 17, 0.08)",
       },
       backgroundImage: {
+        ctaBg: "url('https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/CTAsBackground.png')",
         footerHero: "url('/footerHero.png')",
         authHero: "url('/respnseBgLg.png')",
         rectHero: "url('/rect.png')",

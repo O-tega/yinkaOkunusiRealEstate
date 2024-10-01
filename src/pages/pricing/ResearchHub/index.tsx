@@ -28,7 +28,14 @@ const ResearchHub: React.FC = () => {
     setToggleValue(!toggleValue);
   };
 
-  const conversionRate = rates?.data?.data[0].currencyRates[7].userRate;
+  const conversion = rates?.data?.data[0].currencyRates;
+
+  const getUserRateByCode = (codeName) => {
+    const currency = conversion?.find((rate) => rate.code === codeName);
+    return currency ? currency.userRate : null;
+  };
+
+  const conversionRate = getUserRateByCode("USD-NGN");
 
   const displayTabs = () => {
     switch (values) {

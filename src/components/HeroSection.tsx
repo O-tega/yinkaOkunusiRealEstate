@@ -1,7 +1,13 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import WhiteButton from "./Button/WhiteButton";
-import { ROUTES } from "@/constants/externalUrls";
-import { CiVolumeMute } from "react-icons/ci";
+// import { ROUTES } from "@/constants/externalUrls";
+// import { CiVolumeMute } from "react-icons/ci";
+import BlueWhiteButton from "./Button/BlueWhiteButton";
+import { ASSETS } from "@/assets/images/Assets";
+import chart101 from "@/assets/images/landing/chart101.png";
+import chart102 from "@/assets/images/landing/chat102.png";
+import chart103 from "@/assets/images/landing/chat103.png";
+import chart104 from "@/assets/images/landing/chat104.png";
 
 // const HeroSection: React.FC = () => {
 //   const variant = {
@@ -153,43 +159,67 @@ import { CiVolumeMute } from "react-icons/ci";
 // };
 
 const HeroSection: React.FC = () => {
-  const [muted, setMuted] = useState(true);
-  const [isPlaying, setIsPlaying] = useState(true);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
+  // const [muted, setMuted] = useState(true);
+  // const [isPlaying, setIsPlaying] = useState(true);
+  // const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  const handleUnmute = () => {
-    setMuted(false);
-  };
+  // const handleUnmute = () => {
+  //   setMuted(false);
+  // };
 
-  const handleVideoClick = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying); // Toggle play/pause state
-    }
-  };
+  // const handleVideoClick = () => {
+  //   if (videoRef.current) {
+  //     if (isPlaying) {
+  //       videoRef.current.pause();
+  //     } else {
+  //       videoRef.current.play();
+  //     }
+  //     setIsPlaying(!isPlaying); // Toggle play/pause state
+  //   }
+  // };
   return (
     <div className="w-[100%] mx-auto md:h-full h-[600px]">
       <div className="w-full mx-auto h-full  bg-primary pb-[3rem] md:block ">
         <div className="pt-[5rem]">
           <h1 className=" md:text-[80px] text-[40px] mx-auto leading-[1.2em] text-white text-center">
-            Say goodbye to guesswork.
+            You deserve the upper hand.
           </h1>
           <p className="font-primary md:text-[24px] pt-3 md:mt-0 text-[14px] text-white text-center">
-            And hello to agile consumer insights.
+            See what your audience cares about. Build campaigns that matter. Drive engagement that lasts.
           </p>
-
-          <a href={`${ROUTES.LOGIN}/register`} className="flex justify-center mt-5">
-            <WhiteButton text={"Get started now"} css="text-black" buttonId="home_get_started_now_1" />
-          </a>
+          <p className="font-[600] md:text-[24px] pt-3 md:mt-0 text-[14px] text-white text-center">
+            All from one ethical, data-driven platform.
+          </p>
+          <div className="flex items-center space-x-7 justify-center">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="mailto:support@enterscale.com"
+              className="flex justify-center mt-5"
+            >
+              <WhiteButton text={"Book a demo"} css="text-black" buttonId="book_a_demo_1" />
+            </a>
+            <a href={`/pricing`} className="flex justify-center mt-5">
+              <BlueWhiteButton text={"See pricing"} css="text-black" buttonId="see_pricing1" />
+            </a>
+          </div>
         </div>
-        <div className="flex justify-center mt-10 md:mt-[3rem]">
-          <div className="md:w-[75%] w-[95%]  md:min-h-[calc(100vh-130px)] h-[270px] border-[#959DF3] bg-white border-[0.8rem] rounded-[2rem] flex justify-start items-start overflow-hidden relative">
-            {/* <img src={ASSETS.LandingPage.businessWoman} alt="" className="object-cover object-top h-full w-full" /> */}
-            <video
+        <div className="flex justify-center mt-10 md:mt-[3rem] relative">
+          <div className="md:w-[75%] w-[95%]  md:min-h-[calc(100vh-130px)] h-[270px] border-[#959DF3] bg-white border-[0.8rem] rounded-[2rem] flex justify-start items-start overflow-hidden ">
+            <img src={ASSETS.howItWorks.hero} alt="" className="object-cover object-top h-full w-full" />
+            <div className="absolute bottom-0 right-[2rem] md:w-[500px] hidden md:block">
+              <img src={chart101} alt="" className="object-cover object-top h-full w-full" />
+            </div>
+            <div className="absolute top-0 right-[2rem] md:w-[500px] hidden md:block">
+              <img src={chart104} alt="" className="object-cover object-top h-full w-full" />
+            </div>
+            <div className="absolute bottom-0 left-[2rem] md:w-[500px] hidden md:block">
+              <img src={chart102} alt="" className="object-cover object-top h-full w-full" />
+            </div>
+            <div className="absolute top-0 left-[20rem] md:w-[500px] hidden md:block">
+              <img src={chart103} alt="" className="object-cover object-top h-full w-full" />
+            </div>
+            {/* <video
               ref={videoRef}
               src="https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Video/M4B11%20(1).mp4"
               className="w-[380px] md:w-full h-[250px] md:h-full object-cover"
@@ -200,8 +230,8 @@ const HeroSection: React.FC = () => {
               playsInline
               controls={false} // If you want to hide the default controls
               onClick={handleVideoClick} // Toggle pause/play on click
-            ></video>
-            {/* <div className="absolute top-0 flex h-[600px] z-10 pointer-events-auto items-center w-full justify-center"> */}
+            ></video> */}
+            {/* <div className="absolute top-0 flex h-[600px] z-10 pointer-events-auto items-center w-full justify-center">
             {muted && (
               <div
                 onClick={handleUnmute}
@@ -212,7 +242,7 @@ const HeroSection: React.FC = () => {
               // <button className=" bg-white px-4 py-2 rounded" >
               //   Unmute
               // </button>
-            )}
+            )} */}
           </div>
           {/* </div> */}
         </div>
