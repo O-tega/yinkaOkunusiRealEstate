@@ -83,7 +83,7 @@ const PlanCard = ({
         <div className="mt-2">
           <Link to={title !== "Free" ? "mailto:support@enterscale.com" : `${ROUTES.LOGIN}/register/id/${planId}`}>
             <BlueButton
-              text={title !== "Free" ? "Contact us" : "Buy now"}
+              text={title !== "Free" ? "Contact us" : "Sign Up Free"}
               type="button"
               // disabled={title !== "Free" && true}
               css="w-full"

@@ -273,7 +273,7 @@ const WhyMooyi: React.FC = () => {
                   <motion.div variants={variant} initial="hidden" whileInView="visible">
                     <div className="flex justify-center md:flex-none">
                       <img
-                        src={ASSETS.GIFS.EnjoyAdditionalFeature}
+                        src={ASSETS.GIFS.robustInsight}
                         alt="Gif image"
                         className="md:w-[500px] w-[380px]  border-[1rem] border-[#EBF1FF]"
                       />
