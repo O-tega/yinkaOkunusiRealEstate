@@ -5,10 +5,11 @@ import Plans from "./Plans";
 import { useQuery } from "@tanstack/react-query";
 import { getRates } from "@/service/rates";
 import ToggleButton from "@/components/Button/ToogleButton";
+import sendImg from "@/assets/images/icons/sendImg.png";
+import MoneyImg from "@/assets/images/icons/MoneyImg.png";
+import colabImg from "@/assets/images/icons/colabImg.png";
+import responsesImg from "@/assets/images/icons/responsesImg.png";
 
-import callIcon2 from "@/assets/images/icons/callIcon2.png";
-import surveyIco from "@/assets/images/icons/surveyIcon2.png";
-import emailIco from "@/assets/images/icons/EmailIcon2.png";
 import sharedProjects from "@/assets/images/landing/sharedProjects.png";
 import collaborativeOic from "@/assets/images/landing/collaborativeOic.png";
 import permission from "@/assets/images/landing/permission.png";
@@ -69,7 +70,7 @@ const EngagementHub: React.FC = () => {
 
   const priceCardInfo = [
     {
-      icon: emailIco,
+      icon: sendImg,
       action: "Sends",
       description: "Emails and SMS units are prices at",
       bill: `${toggleValue ? `₦${0.5 * conversionRate}` : "$0.5"} per 100 sends.`,
@@ -77,7 +78,7 @@ const EngagementHub: React.FC = () => {
       borderColor: "border-[#D97706]",
     },
     {
-      icon: surveyIco,
+      icon: responsesImg,
       action: "Responses",
       description: "Survey responses are priced at",
       bill: `${toggleValue ? `₦${2 * conversionRate}` : "$2"} per 100 sends.`,
@@ -85,7 +86,7 @@ const EngagementHub: React.FC = () => {
       borderColor: "border-[#2D28FF]",
     },
     {
-      icon: callIcon2,
+      icon: MoneyImg,
       action: "Rewards",
       description: "Reward your survey participants from",
       bill: `${toggleValue ? `₦${10 * conversionRate}` : "$10"} for 10,000 MC.`,
@@ -93,7 +94,7 @@ const EngagementHub: React.FC = () => {
       borderColor: "border-[#16A34A]",
     },
     {
-      icon: callIcon2,
+      icon: colabImg,
       action: "Collaboration tools",
       description: "Unlimited workspaces for teams",
       bill: `are priced at ${toggleValue ? `₦${0.5 * conversionRate}.` : "$0.5."}`,
