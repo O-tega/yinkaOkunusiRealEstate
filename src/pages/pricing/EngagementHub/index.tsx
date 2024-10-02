@@ -13,9 +13,6 @@ import responsesImg from "@/assets/images/icons/responsesImg.png";
 import sharedProjects from "@/assets/images/landing/sharedProjects.png";
 import collaborativeOic from "@/assets/images/landing/collaborativeOic.png";
 import permission from "@/assets/images/landing/permission.png";
-// import { Link } from "react-router-dom";
-// import { IoChevronBackOutline } from "react-icons/io5";
-// import MobileDropNav from "../MobileDropNav";
 import CardList from "../PriceCards";
 import AdditionalPriceTag from "../AdditionalPricsCard";
 
