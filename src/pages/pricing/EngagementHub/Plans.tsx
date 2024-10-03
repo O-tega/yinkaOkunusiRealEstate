@@ -54,7 +54,7 @@ const PlanCard = ({
   planId,
 }: Tplan) => {
   return (
-    <div className="border min-w-[300px] h-[36rem] p-3">
+    <div className="border md:min-w-[300px] w-full h-[36rem] p-3">
       <div className="bg-blue-100 p-5 rounded-t-xl h-[7rem]">
         <div className="flex justify-between">
           <p className="text-[20px] font-[600] text-primary">{title}</p>

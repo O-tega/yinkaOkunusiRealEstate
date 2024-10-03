@@ -14,6 +14,7 @@ const CookieBanner = () => {
   const [showCookie, setShowCookie] = useState(false);
   const [showPreference, setPreference] = useState(false);
   const [active, setActive] = useState<CookieType[]>([]);
+  const [onClose, setOnClose] = useState(false);
   const [cookies, setCookie] = useCookies(["mooyi", "strict", "performance", "targeting", "functionality"]);
 
   // console.log(active);
@@ -30,11 +31,12 @@ const CookieBanner = () => {
       functionalityCookie !== undefined ||
       targettingCookie !== undefined ||
       performanceCookie !== undefined ||
-      strictCookie !== undefined
+      strictCookie !== undefined ||
+      onClose === true
     ) {
       setShowCookie(true);
     }
-  }, [functionalityCookie, performanceCookie, targettingCookie, universalCookie, strictCookie]);
+  }, [functionalityCookie, performanceCookie, targettingCookie, universalCookie, strictCookie, onClose]);
 
   const handleChange = (id: CookieType) => {
     setActive((prevList) => {
@@ -101,7 +103,7 @@ const CookieBanner = () => {
                         </span>
                       </p>
                     </div>
-                    <div onClick={() => setShowCookie(false)}>
+                    <div onClick={() => setOnClose(true)}>
                       <FaTimes className="w-[10px] cursor-pointer " />
                     </div>
                     {/* <div className="md:flex items-center justify-center md:space-x-8 mt-5 md:mt-0 space-y-3 md:space-y-0">

@@ -7,6 +7,7 @@ import sendImg from "@/assets/images/icons/sendImg.png";
 import MoneyImg from "@/assets/images/icons/MoneyImg.png";
 import colabImg from "@/assets/images/icons/colabImg.png";
 import responsesImg from "@/assets/images/icons/responsesImg.png";
+import { Helmet } from "react-helmet";
 
 import sharedProjects from "@/assets/images/landing/sharedProjects.png";
 import collaborativeOic from "@/assets/images/landing/collaborativeOic.png";
@@ -120,6 +121,11 @@ const EngagementHub: React.FC = () => {
   ];
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Mooyi™ | Start Gaining Insights Today</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Helmet>
       <div className="w-[100%] mx-auto md:h-[350px] h-[250px] md:pb-0 bg-[#EFF3FF] overflow-hidden pt-16 md:pt-0 relative">
         <div>
           <img
