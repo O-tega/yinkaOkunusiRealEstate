@@ -34,7 +34,7 @@ const HeroSection: React.FC = () => {
   const isInView = useInView(ref); // Trigger only once when in view
 
   return (
-    <div ref={ref} className="w-[100%] mx-auto md:h-[120vh] h-[600px] relative">
+    <div ref={ref} className="w-[100%] mx-auto md:h-[1000px] h-[600px] relative">
       <div className="w-full mx-auto h-full bg-primary pb-[3rem] md:block overflow-hidden ">
         <div className="pt-[5rem]">
           <h1 className="md:text-[80px] text-[40px] mx-auto leading-[1.2em] text-white text-center">
@@ -63,7 +63,7 @@ const HeroSection: React.FC = () => {
 
         {/* Image animations with 1-second staggered delay */}
         <div className="flex justify-center mt-10 md:mt-[3rem] ">
-          <div className="md:w-[75%] w-[80%] md:min-h-[calc(100vh-130px)] h-[270px] border-[#959DF3] bg-white md:border-[0.8rem] border-[4px] rounded-[12px] md:rounded-[2rem] flex justify-start items-start overflow-hidden">
+          <div className="md:w-[75%] w-[80%] md:h-[700px] h-[270px] border-[#959DF3] bg-white md:border-[0.8rem] border-[4px] rounded-[12px] md:rounded-[2rem] flex justify-start items-start overflow-hidden">
             <img
               src={ASSETS.howItWorks.hero}
               alt=""
@@ -78,7 +78,7 @@ const HeroSection: React.FC = () => {
             {isInView && (
               <>
                 <motion.div
-                  className="absolute  md:bottom-4 bottom-4 md:right-[1rem] right-0 md:w-[450px] w-[150px]"
+                  className="absolute  md:bottom-4 bottom-4 md:right-[1rem] right-0 md:w-[30%] w-[150px]"
                   initial="hidden"
                   animate="visible"
                   custom={0}
@@ -88,7 +88,7 @@ const HeroSection: React.FC = () => {
                 </motion.div>
 
                 <motion.div
-                  className="absolute md:bottom-[40%]  md:right-[4rem] right-[1rem] md:w-[400px] w-[100px]"
+                  className="absolute md:bottom-[40%]  md:right-[4rem] right-[1rem] md:w-[20%] w-[100px]"
                   initial="hidden"
                   animate="visible"
                   custom={1}
@@ -98,7 +98,7 @@ const HeroSection: React.FC = () => {
                 </motion.div>
 
                 <motion.div
-                  className="absolute  bottom-4 md:bottom-0 md:left-[2rem] left-0  md:w-[500px] w-[150px]"
+                  className="absolute  bottom-4 md:bottom-0 md:left-[2rem] left-0  md:w-[30%] w-[150px]"
                   initial="hidden"
                   animate="visible"
                   custom={2}
@@ -108,7 +108,7 @@ const HeroSection: React.FC = () => {
                 </motion.div>
 
                 <motion.div
-                  className="absolute md:bottom-[35%] bottom-[23%] md:left-[20%] left-[2rem] md:w-[500px] w-[150px]"
+                  className="absolute md:bottom-[35%] bottom-[23%] md:left-[20%] left-[2rem] md:w-[30%] w-[150px]"
                   initial="hidden"
                   custom={4}
                   animate="visible"
