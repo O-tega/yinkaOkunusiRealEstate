@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import faqBackground from "@/assets/images/mooyi/faqbackground.png";
 import faqBgMobile from "@/assets/images/mooyi/faqBgMobile.png";
 import Plans from "./Plans";
-import { useQuery } from "@tanstack/react-query";
-import { getRates } from "@/service/rates";
 import ToggleButton from "@/components/Button/ToogleButton";
 import sendImg from "@/assets/images/icons/sendImg.png";
 import MoneyImg from "@/assets/images/icons/MoneyImg.png";
@@ -15,30 +13,32 @@ import collaborativeOic from "@/assets/images/landing/collaborativeOic.png";
 import permission from "@/assets/images/landing/permission.png";
 import CardList from "../PriceCards";
 import AdditionalPriceTag from "../AdditionalPricsCard";
+import useCurrency from "@/hooks/useCUrrencyHooks";
 
 const EngagementHub: React.FC = () => {
   const [toggleValue, setToggleValue] = useState(false);
   const [values, setValues] = useState(0);
+  const { conversionRate } = useCurrency();
 
-  const rates = useQuery({
-    queryKey: ["rates"],
-    queryFn: getRates,
-  });
+  // const rates = useQuery({
+  //   queryKey: ["rates"],
+  //   queryFn: getRates,
+  // });
 
   const handleToggleChange = () => {
     setToggleValue(!toggleValue);
   };
 
-  const conversion = rates?.data?.data[0].currencyRates;
+  // const conversion = rates?.data?.data[0].currencyRates;
 
-  const getUserRateByCode = (codeName) => {
-    const currency = conversion?.find((rate) => rate.code === codeName);
-    return currency ? currency.userRate : null;
-  };
+  // const getUserRateByCode = (codeName) => {
+  //   const currency = conversion?.find((rate) => rate.code === codeName);
+  //   return currency ? currency.userRate : null;
+  // };
 
-  const conversionRate = getUserRateByCode("USD-NGN");
+  // const conversionRate = getUserRateByCode("USD-NGN");
 
-  console.log(conversionRate);
+  // console.log(conversionRate);
 
   const tabs = [
     { name: "Free", value: 0 },
@@ -78,7 +78,7 @@ const EngagementHub: React.FC = () => {
       icon: responsesImg,
       action: "Responses",
       description: "Survey responses are priced at",
-      bill: `${toggleValue ? `₦${2 * conversionRate}` : "$2"} per 100 sends.`,
+      bill: `${toggleValue ? `₦${2 * conversionRate}` : "$2"} per 100 response.`,
       bgcolor: "bg-[#EBF1FF]",
       borderColor: "border-[#2D28FF]",
     },

@@ -5,7 +5,8 @@ import BlueButton from "@/components/Button/BlueButton";
 import { useCookies } from "react-cookie";
 import BottomModal from "./BottomModal";
 import ModalWithoutClose from "../ModalWithoutClose";
-import LightBlueButton from "../Button/LightBlueButton";
+// import LightBlueButton from "../Button/LightBlueButton";
+import { FaTimes } from "react-icons/fa";
 
 type CookieType = "mooyi" | "strict" | "performance" | "targeting" | "functionality";
 
@@ -84,16 +85,26 @@ const CookieBanner = () => {
         <div>
           {!showPreference && (
             <BottomModal>
-              <div className={`w-full md:h-[40px] h-[250px] no-scrollbar overflow-y-auto}`}>
+              <div className={`w-full md:h-[40px] h-[50px] no-scrollbar overflow-y-auto}`}>
                 <div className="flex items-center space-x-5">
-                  <div className="md:flex items-center justify-between w-full px-12">
-                    <div className="md:w-[50%]">
-                      <p className="text-[14px] font-medium text-center md:text-left">
-                        By clicking “Accept all cookies”, you agree to the storing of cookies on your device to enhance
-                        site navigation, analyse site usage, and assist in our marketing efforts.{" "}
+                  <div className="flex md:items-center items-start justify-between w-full md:px-12 px-2">
+                    <div className="md:w-[90%] w-[85%]">
+                      <p className="md:text-[14px] text-[12px] font-medium text-left">
+                        Our website uses cookies to improve your online experience. Cookies are placed on your computer
+                        when you launch this website. You can change your cookie settings through your internet browser
+                        settings. See our{" "}
+                        <span
+                          className="text-blue-800 underline cursor-pointer"
+                          onClick={() => setPreference(!showPreference)}
+                        >
+                          Cookie Policy.
+                        </span>
                       </p>
                     </div>
-                    <div className="md:flex items-center justify-center md:space-x-8 mt-5 md:mt-0 space-y-3 md:space-y-0">
+                    <div onClick={() => setShowCookie(false)}>
+                      <FaTimes className="w-[10px] cursor-pointer " />
+                    </div>
+                    {/* <div className="md:flex items-center justify-center md:space-x-8 mt-5 md:mt-0 space-y-3 md:space-y-0">
                       <p
                         className="text-primary underline md:text-right text-center mt-5 md:mt-0 cursor-pointer font-medium"
                         onClick={() => setPreference(!showPreference)}
@@ -116,7 +127,7 @@ const CookieBanner = () => {
                           buttonId="cb_reject_all_cookies"
                         />
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

@@ -82,7 +82,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex  items-start md:justify-between justify-center space-x-5 md:space-x-0 pt-10">
+      <div className="flex  items-start justify-between space-x-5 px-10 md:px-0 md:space-x-0 pt-10">
         <div className="flex-col space-y-3 hidden md:block">
           <img src={Logo} alt="Logo" className="w-[185px]" />
           <p className="text-[16px] text-left ">
@@ -91,10 +91,10 @@ const Footer = () => {
           </p>
         </div>
         <div className="">
-          <p className="md:text-[18px] text-[16px] font-[500] text-left">Company</p>
+          <p className="text-[18px] font-[500] text-left">Company</p>
           <ul className="space-y-3 text-left pt-4">
             {companyLinks.map((item, i) => (
-              <li key={i} className="hover:text-primary text-[14px] md:text-[16px]">
+              <li key={i} className="hover:text-primary ">
                 <Link to={item.link}>{item.name}</Link>
               </li>
             ))}
@@ -110,7 +110,7 @@ const Footer = () => {
             ))}
           </ul>
         </div> */}
-        <div className="hidden md:block">
+        <div className="">
           <p className="text-[18px] font-[500] text-left">Legal</p>
           <ul className="space-y-3 text-left pt-4">
             {LegalLinks.map((item, i) => (

@@ -79,23 +79,93 @@ const plan = [
   },
 ];
 
-const LandingPrice: React.FC = () => {
+const LandingPrice = ({
+  conversionRate,
+  values,
+  toggleValue,
+}: {
+  values: number;
+  toggleValue: boolean;
+  conversionRate: number;
+}) => {
   return (
-    <div className="flex items-center space-x-5">
-      {plan.map((el, i) => (
-        <PlanCard
-          key={i}
-          title={el.title}
-          subtitle={el.subtitle}
-          info={el.info}
-          amount={el.amount}
-          featureTitle={el.featureTitle}
-          features={el.features}
-          buttonText={el.buttonText}
-          tag={el.tag}
-        />
-      ))}
-    </div>
+    <>
+      <div className="md:flex items-center space-x-5 hidden">
+        {plan.map((el, i) => (
+          <PlanCard
+            key={i}
+            title={el.title}
+            subtitle={el.subtitle}
+            info={el.info}
+            amount={el.amount}
+            featureTitle={el.featureTitle}
+            features={el.features}
+            conversionRate={conversionRate}
+            toggle={toggleValue}
+            buttonText={el.buttonText}
+            tag={el.tag}
+          />
+        ))}
+      </div>
+      <div className="justify-center items-start mt-10 h-fit flex md:hidden">
+        {values === 0 ? (
+          <PlanCard
+            title={plan[0].title}
+            subtitle={plan[0].subtitle}
+            tag={plan[0].tag}
+            info={plan[0].info}
+            featureTitle={plan[0].featureTitle}
+            features={plan[0].features}
+            conversionRate={conversionRate}
+            amount={plan[0].amount}
+            planId={plan[0].planId}
+            buttonText={plan[0].buttonText}
+            toggle={toggleValue}
+          />
+        ) : values === 1 ? (
+          <PlanCard
+            title={plan[1].title}
+            subtitle={plan[1].subtitle}
+            tag={plan[1].tag}
+            info={plan[1].info}
+            featureTitle={plan[1].featureTitle}
+            features={plan[1].features}
+            conversionRate={conversionRate}
+            amount={plan[1].amount}
+            buttonText={plan[1].buttonText}
+            toggle={toggleValue}
+          />
+        ) : values === 2 ? (
+          <PlanCard
+            title={plan[2].title}
+            subtitle={plan[2].subtitle}
+            tag={plan[2].tag}
+            info={plan[2].info}
+            featureTitle={plan[2].featureTitle}
+            conversionRate={conversionRate}
+            planId={plan[2].planId}
+            features={plan[2].features}
+            amount={plan[2].amount}
+            buttonText={plan[2].buttonText}
+            toggle={toggleValue}
+          />
+        ) : (
+          <PlanCard
+            title={plan[3].title}
+            subtitle={plan[3].subtitle}
+            tag={plan[3].tag}
+            info={plan[3].info}
+            featureTitle={plan[3].featureTitle}
+            planId={plan[3].planId}
+            features={plan[3].features}
+            buttonText={plan[3].buttonText}
+            conversionRate={conversionRate}
+            amount={plan[3].amount}
+            toggle={toggleValue}
+          />
+        )}
+      </div>
+    </>
   );
 };
 
