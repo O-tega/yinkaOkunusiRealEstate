@@ -2,7 +2,7 @@ import React from "react";
 import { ASSETS } from "@/assets/images/Assets";
 import HeroSection from "../components/HeroSection";
 import { Helmet } from "react-helmet";
-import surveyCreated from "@/assets/images/landing/surveyCreated.png";
+// import surveyCreated from "@/assets/images/landing/surveyCreated.png";
 import brokenPie from "@/assets/images/icons/brokenPie.png";
 import bullEye from "@/assets/images/icons/bullEye.png";
 import Event from "@/assets/images/icons/Event.png";
@@ -20,7 +20,7 @@ const WhyMooyi: React.FC = () => {
 
   const carolInfo = [
     {
-      img: surveyCreated,
+      img: ASSETS.howItWorks.surveyCreatedNew,
       title: "Build Your Survey.",
       text: "Get started with our user-friendly survey builder and templates. Access our panel or upload your contacts for quick, valuable insights.",
     },
@@ -82,32 +82,32 @@ const WhyMooyi: React.FC = () => {
         type="WHY MOOYI"
         title="You don’t need more data. You need better insights."
         desc="Understand your market, connect with your audience, and grow your business from one robust platform trusted by Africa’s top brands."
-        img={ASSETS.howItWorks.whyMooyi}
+        img={ASSETS.LandingPage.whyMooyiMobile}
         desktopImg={ASSETS.howItWorks.whyMooyi}
         // watchTutorialId="bt_watch_tutorial_1"
         getInTouchId="Book a demo"
       />
-      <div className="md:px-[5rem] px-5 my-[5rem]">
+      <div className="md:px-[5rem] px-5 md:my-[5rem] py-[2rem]">
         <div>
-          <p className="text-[40px] text-center font-[600]">How it Works</p>
+          <p className="md:text-[40px] text-[24px] text-center font-[600]">How it Works</p>
           <div className="flex justify-center">
-            <p className="text-[20px] text-center md:w-[40%] w-full">
+            <p className="md:text-[20px] text-[16px] text-center md:w-[40%] w-full">
               Mooyi brings the right voices to your table so you can make decisions and take actions rooted in real,
               relevant insights.
             </p>
           </div>
         </div>
-        <div className="flex justify-center mt-[3rem]">
-          <div className="flex flex-wrap gap-[4rem] justify-center">
+        <div className="flex justify-center md:mt-[3rem] mt-10">
+          <div className="flex flex-wrap gap-[2rem] justify-center ">
             {carolInfo.map((item, i) => (
-              <div key={i} className="w-[46%] flex justify-center">
+              <div key={i} className="md:w-[46%] flex justify-center">
                 <div className="flex flex-col items-center">
-                  <div className="w-[400px] h-full flex items-center justify-center">
+                  <div className="md:w-[500px] h-full flex items-center justify-center">
                     <img src={item.img} alt="" className="object-cover" />
                   </div>
                   <div className="space-y-1 flex flex-col items-center pt-5">
                     <p className="md:text-[20px] font-secondary text-center">{item.title}</p>
-                    <p className="md:text-[16px] w-[70%] font-medium text-center">{item.text}</p>
+                    <p className="md:text-[16px] md:w-[70%] font-medium text-center">{item.text}</p>
                   </div>
                 </div>
               </div>
@@ -115,11 +115,13 @@ const WhyMooyi: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="md:px-[5rem] px-5 py-[5rem] bg-[#F5F7FE]">
+      <div className="md:px-[5rem] px-5 md:py-[5rem] py-10 bg-[#F5F7FE]">
         <div>
-          <p className="md:text-[40px] text-[32px] text-center font-[600]">Target Your Ideal Audience Effortlessly.</p>
+          <p className="md:text-[40px] text-[24px] text-center font-[600] leading-tight md:leading-none">
+            Target Your Ideal Audience Effortlessly.
+          </p>
           <div className="flex justify-center">
-            <p className="text-[20px] text-center md:w-[40%]">
+            <p className="md:text-[20px] text-[16px] text-center md:pt-5 pt-0 md:w-[40%]">
               Mooyi automates the hard work of data collection, analysis, and reporting—so you can focus on scaling, not
               spreadsheets.
             </p>
@@ -128,8 +130,10 @@ const WhyMooyi: React.FC = () => {
         <div className="md:flex justify-center w-full mt-[3rem] border rounded-[2rem] p-5 bg-white ">
           <div className="flex flex-col items-center">
             <div className="md:w-[70%]">
-              <p className="text-[24px] font-[500] text-center md:text-left">Our Audience</p>
-              <p className="text-[18px] font-[500] text-center md:text-left ">
+              <p className="md:text-[24px] text-[17px] md:font-[500] font-[600] text-center md:text-left">
+                Our Audience
+              </p>
+              <p className="md:text-[18px] text-[16px] font-[500] text-center md:text-left">
                 Gather insights from your target audience quickly with location, demographic, and interest filters.
               </p>
             </div>
@@ -140,7 +144,7 @@ const WhyMooyi: React.FC = () => {
                     <img src={el.icon} alt="" />
                   </div>
                   <div>
-                    <p>{el.text}</p>
+                    <p className="text-[11px] md:text-[16px]">{el.text}</p>
                   </div>
                 </div>
               ))}
@@ -190,8 +194,10 @@ const WhyMooyi: React.FC = () => {
           </div>
           <div className="md:hidden flex-col items-center flex">
             <div className="md:w-[70%]">
-              <p className="text-[24px] font-[500] text-center md:text-left">Your Audience</p>
-              <p className="text-[18px] font-[500] text-center md:text-left">
+              <p className="md:text-[24px] text-[17px] md:font-[500] font-[600] text-center md:text-left">
+                Your Audience
+              </p>
+              <p className="md:text-[18px] text-[16px] font-[500] text-center md:text-left">
                 Collect feedback from your customers, partners or employees to enhance their experience.
               </p>
             </div>
@@ -202,7 +208,7 @@ const WhyMooyi: React.FC = () => {
                     <img src={el.icon} alt="" />
                   </div>
                   <div>
-                    <p>{el.text}</p>
+                    <p className="text-[11px] md:text-[16px]">{el.text}</p>
                   </div>
                 </div>
               ))}
@@ -211,9 +217,9 @@ const WhyMooyi: React.FC = () => {
         </div>
       </div>
       <div className="bg-white py-[3rem]">
-        <div className="mt-2 md:px-[4rem] px-2 flex flex-col items-center text-[20px]">
+        {/* <div className="mt-2 md:px-[4rem] px-2 flex flex-col items-center text-[20px]">
           <p className="font-secondary md:text-[40px] text-[28px] md:pb-[5rem] pb-[5rem] text-center">How it works</p>
-        </div>
+        </div> */}
         <div className="flex justify-center">
           <div className="">
             <div className="flex flex-col items-center space-y-[4rem]">
@@ -308,8 +314,8 @@ const WhyMooyi: React.FC = () => {
           </div>
         </div> */}
       </div>
-      <div className="md:px-[5rem] px-5 py-[5rem] bg-[#F5F7FE]">
-        <p className="md:text-[40px] text-[32px] text-center font-[600] pb-[3rem]">
+      <div className="md:px-[5rem] px-5 md:py-[5rem] py-10 leading-tight md:leading-none bg-[#F5F7FE]">
+        <p className="md:text-[40px] text-[24px] text-center font-[600] pb-[3rem]">
           Step into the future with the knowledge to win
         </p>
         <TextCarousel />

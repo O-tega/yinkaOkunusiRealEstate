@@ -1,4 +1,3 @@
-"use client";
 import React, { useEffect, useState } from "react";
 import flutterwave1 from "@/assets/images/futterwave/flutterwave1.png";
 import flutterwave3 from "@/assets/images/futterwave/flutterwave3.png";

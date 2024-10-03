@@ -34,16 +34,16 @@ const HeroSection: React.FC = () => {
   const isInView = useInView(ref); // Trigger only once when in view
 
   return (
-    <div ref={ref} className="w-[100%] mx-auto md:h-full h-[600px]">
-      <div className="w-full mx-auto h-full bg-primary pb-[3rem] md:block ">
+    <div ref={ref} className="w-[100%] mx-auto md:h-[1000px] 2xl:h-[950px] h-[600px]">
+      <div className="w-full mx-auto h-full bg-primary pb-[3rem] md:block overflow-hidden ">
         <div className="pt-[5rem]">
           <h1 className="md:text-[80px] text-[40px] mx-auto leading-[1.2em] text-white text-center">
             You deserve the upper hand.
           </h1>
-          <p className="font-primary md:text-[24px] pt-3 md:mt-0 text-[14px] text-white text-center px-5 md:px-0">
+          <p className="font-primary md:text-[24px] pt-3 md:mt-0 text-[14px] text-white text-center px-10 md:px-0">
             See what your audience cares about. Build campaigns that matter. Drive engagement that lasts.
           </p>
-          <p className="font-[600] md:text-[24px] pt-3 md:mt-0 text-[14px] text-white text-center">
+          <p className="font-[600] md:text-[24px]  text-[14px] text-white text-center">
             All from one ethical, data-driven platform.
           </p>
           <div className="flex items-center space-x-7 justify-center">
@@ -63,13 +63,22 @@ const HeroSection: React.FC = () => {
 
         {/* Image animations with 1-second staggered delay */}
         <div className="flex justify-center mt-10 md:mt-[3rem] relative">
-          <div className="md:w-[75%] w-[95%] md:min-h-[calc(100vh-130px)] h-[270px] border-[#959DF3] bg-white border-[0.8rem] rounded-[2rem] flex justify-start items-start overflow-hidden">
-            <img src={ASSETS.howItWorks.hero} alt="" className="object-cover object-top h-full w-full" />
+          <div className="md:w-[75%] w-[80%] md:min-h-[calc(100vh-130px)] h-[270px] border-[#959DF3] bg-white md:border-[0.8rem] border-[4px] rounded-[12px] md:rounded-[2rem] flex justify-start items-start overflow-hidden">
+            <img
+              src={ASSETS.howItWorks.hero}
+              alt=""
+              className="md:object-cover hidden md:block  object-right h-full w-full"
+            />
+            <img
+              src={ASSETS.LandingPage.HeroIconMobile}
+              alt=""
+              className="md:object-cover md:hidden  md:object-right h-full w-full"
+            />
             {/* Animated images */}
             {isInView && (
               <>
                 <motion.div
-                  className="absolute bottom-0 right-[1rem] md:w-[450px] hidden md:block"
+                  className="absolute md:bottom-[10rem] 2xl:bottom-4 bottom-10 md:right-[1rem] right-[-2rem] md:w-[450px] w-[200px]"
                   initial="hidden"
                   animate="visible"
                   custom={0}
@@ -79,7 +88,7 @@ const HeroSection: React.FC = () => {
                 </motion.div>
 
                 <motion.div
-                  className="absolute top-0 right-[2rem] md:w-[400px] hidden md:block"
+                  className="absolute md:top-0 top-2 md:right-[2rem] right-0 md:w-[400px] w-[100px]"
                   initial="hidden"
                   animate="visible"
                   custom={1}
@@ -89,7 +98,7 @@ const HeroSection: React.FC = () => {
                 </motion.div>
 
                 <motion.div
-                  className="absolute bottom-0 left-[2rem] md:w-[500px] hidden md:block"
+                  className="absolute md:bottom-[10rem] bottom-10 2xl:bottom-0 md:left-[2rem] left-0  md:w-[500px] w-[150px]"
                   initial="hidden"
                   animate="visible"
                   custom={2}
@@ -99,7 +108,7 @@ const HeroSection: React.FC = () => {
                 </motion.div>
 
                 <motion.div
-                  className="absolute top-0 left-[20rem] md:w-[500px] hidden md:block"
+                  className="absolute top-4 md:left-[20rem] left-[2rem] md:w-[500px] w-[150px]"
                   initial="hidden"
                   custom={4}
                   animate="visible"
