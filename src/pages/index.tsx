@@ -14,6 +14,7 @@ import icon3 from "@/assets/images/icons/fieldResearch.png";
 import icon4 from "@/assets/images/icons/icon4.png";
 import icon5 from "@/assets/images/icons/icon5.png";
 import icon6 from "@/assets/images/icons/im.png";
+import headset from "@/assets/images/icons/headset.png";
 
 import enterscaleWhite from "@/assets/images/logos/enterscaleColored.png";
 // import kiboWhite from "@/assets/images/logos/kiboColored.png";
@@ -139,7 +140,7 @@ const LandingPage = () => {
       title: "Customer Experience Management",
       subTitle: "Conduct field surveys to capture on the ground insights",
       text: "Mooyi provides real-time data and actionable insights, including NPS and CSAT, to help you better understand your customers, partners, or employees.",
-      icon: icon3,
+      icon: headset,
     },
   ];
 
