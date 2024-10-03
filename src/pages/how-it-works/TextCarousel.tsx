@@ -62,10 +62,10 @@ const TextCarousel = () => {
                   variants={variant}
                   initial="hidden"
                   whileInView="visible"
-                  className="md:w-[500px] text-center md:text-left pt-5 md:pt-0"
+                  className="md:w-[500px] text-center md:text-left space-y-5 pt-5 md:pt-0"
                 >
                   <p className="font-secondary md:text-[24px] text-[20px]">{item.title}</p>
-                  <p className="md:text-[20px] text-[16px] font-medium">{item.desc}</p>
+                  <p className="md:text-[20px] text-[16px] leading-normal">{item.desc}</p>
                 </motion.div>
               ) : null}
             </div>

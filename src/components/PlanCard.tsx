@@ -14,7 +14,7 @@ type Tplan = {
   featureTitle: string;
   features: string[];
   conversionRate?: number;
-  toggle?: boolean;
+  toggle: boolean;
   planId?: string;
   buttonText: string;
 };
@@ -32,6 +32,7 @@ const PlanCard = ({
   // planId,
   buttonText,
 }: Tplan) => {
+  console.log(conversionRate);
   return (
     <div className="border rounded-2xl w-[350px] h-[32rem] p-3 drop-shadow-md bg-white">
       <div className="bg-blue-100 p-5 rounded-t-xl h-[7rem]">
@@ -57,7 +58,7 @@ const PlanCard = ({
               {conversionRate !== undefined
                 ? toggle
                   ? `₦${((amount * conversionRate) as number).toLocaleString()}`
-                  : null
+                  : `$${amount.toLocaleString()}`
                 : `$${amount.toLocaleString()}`}
             </p>
             {amount === 0 ? null : <p className="font-[600] text-gray-500 ">Per month</p>}

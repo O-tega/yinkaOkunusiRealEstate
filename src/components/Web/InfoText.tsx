@@ -3,11 +3,11 @@ import React from "react";
 type TInfo = {
   title: string;
   text: string;
-  subTitle: string;
+  // subTitle: string;
   icon: string;
 };
 
-const InfoText: React.FC<TInfo> = ({ title, text, subTitle, icon }) => {
+const InfoText: React.FC<TInfo> = ({ title, text, icon }) => {
   return (
     <div className="space-y-3 text-center md:text-left">
       <div className="flex justify-center md:block"></div>
@@ -16,8 +16,8 @@ const InfoText: React.FC<TInfo> = ({ title, text, subTitle, icon }) => {
           <img src={icon} alt="" />
         </div>
         <p className="md:text-[24px] text-[18px] font-[600] text-blue-800">{title}</p>
-        <p className="md:text-[18px] text-[16px]  font-secondary">{subTitle}</p>
-        <p className="md:text-[18px] w-[80%] text-[16px]   pt-2 font-medium">{text}</p>
+        {/* <p className="md:text-[18px] text-[16px]  font-secondary">{subTitle}</p> */}
+        <p className="md:text-[18px] w-[80%] text-[12px]   pt-2 font-medium">{text}</p>
       </div>
     </div>
   );
