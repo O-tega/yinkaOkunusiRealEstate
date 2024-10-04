@@ -182,7 +182,7 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
         "5 user limit.",
         "25,000 contact profiles.",
         "Monthly sends of 50,000 SMS or emails.",
-        "Access full survey tools, voice messaging  and lead generation.",
+        "Access full survey tools, voice messaging  lead generation and advanced analytics (Report filtering).",
       ],
     },
     {
@@ -199,7 +199,7 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
         "Unlimited users.",
         "50,000 contact profiles.",
         "Monthly sends of 100,000 SMS or emails.",
-        "Access to brand tracking, field surveys and advanced analytics.",
+        "Access to brand tracking, field surveys and workspaces.",
       ],
     },
   ];

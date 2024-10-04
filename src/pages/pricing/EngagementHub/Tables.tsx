@@ -33,7 +33,7 @@ const tableData1: RawTableRow[] = [
 const tableData2: RawTableRow[] = [
   {
     planDetails: "Engage your customers through SMS and email messaging.",
-    free: "",
+    free: "same",
     sme: "same",
     business: "same",
     pro: "same",

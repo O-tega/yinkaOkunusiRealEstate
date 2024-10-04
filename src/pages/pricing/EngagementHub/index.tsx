@@ -6,9 +6,9 @@ import ToggleButton from "@/components/Button/ToogleButton";
 import sendImg from "@/assets/images/icons/sendImg.png";
 import MoneyImg from "@/assets/images/icons/MoneyImg.png";
 import colabImg from "@/assets/images/icons/colabImg.png";
-import responsesImg from "@/assets/images/icons/responsesImg.png";
 import { Helmet } from "react-helmet";
 
+import responsesImg from "@/assets/images/icons/responsesImg.png";
 import sharedProjects from "@/assets/images/landing/sharedProjects.png";
 import collaborativeOic from "@/assets/images/landing/collaborativeOic.png";
 import permission from "@/assets/images/landing/permission.png";
@@ -114,10 +114,10 @@ const EngagementHub: React.FC = () => {
       type: "Field Interviews",
       amount: `${toggleValue ? `₦${10 * conversionRate}` : "$10"} `,
     },
-    {
-      type: "Brand tracking",
-      amount: `${toggleValue ? `₦${0.5 * conversionRate}` : "$1000"}`,
-    },
+    // {
+    //   type: "Brand tracking",
+    //   amount: `${toggleValue ? `₦${0.5 * conversionRate}` : "$1000"}`,
+    // },
   ];
   return (
     <div>
