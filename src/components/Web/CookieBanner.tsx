@@ -14,6 +14,7 @@ const CookieBanner = () => {
   const [showCookie, setShowCookie] = useState(false);
   const [showPreference, setPreference] = useState(false);
   const [active, setActive] = useState<CookieType[]>([]);
+  const [onClose, setOnClose] = useState(false);
   const [cookies, setCookie] = useCookies(["mooyi", "strict", "performance", "targeting", "functionality"]);
 
   // console.log(active);
@@ -30,11 +31,12 @@ const CookieBanner = () => {
       functionalityCookie !== undefined ||
       targettingCookie !== undefined ||
       performanceCookie !== undefined ||
-      strictCookie !== undefined
+      strictCookie !== undefined ||
+      onClose === true
     ) {
       setShowCookie(true);
     }
-  }, [functionalityCookie, performanceCookie, targettingCookie, universalCookie, strictCookie]);
+  }, [functionalityCookie, performanceCookie, targettingCookie, universalCookie, strictCookie, onClose]);
 
   const handleChange = (id: CookieType) => {
     setActive((prevList) => {
@@ -87,9 +89,12 @@ const CookieBanner = () => {
             <BottomModal>
               <div className={`w-full md:h-[40px] h-[50px] no-scrollbar overflow-y-auto}`}>
                 <div className="flex items-center space-x-5">
-                  <div className="flex md:items-center items-start justify-between w-full md:px-12 px-2">
-                    <div className="md:w-[90%] w-[85%]">
-                      <p className="md:text-[14px] text-[12px] font-medium text-left">
+                  <div className="md:flex md:items-center items-start justify-between w-full md:px-12 ">
+                    <div className="md:hidden flex justify-end" onClick={() => setOnClose(true)}>
+                      <FaTimes className="w-[10px] cursor-pointer " />
+                    </div>
+                    <div className="md:w-[90%] w-full">
+                      <p className="md:text-[14px] text-[11px] text-center md:font-medium md:text-left">
                         Our website uses cookies to improve your online experience. Cookies are placed on your computer
                         when you launch this website. You can change your cookie settings through your internet browser
                         settings. See our{" "}
@@ -101,7 +106,7 @@ const CookieBanner = () => {
                         </span>
                       </p>
                     </div>
-                    <div onClick={() => setShowCookie(false)}>
+                    <div className="hidden md:block" onClick={() => setOnClose(true)}>
                       <FaTimes className="w-[10px] cursor-pointer " />
                     </div>
                     {/* <div className="md:flex items-center justify-center md:space-x-8 mt-5 md:mt-0 space-y-3 md:space-y-0">

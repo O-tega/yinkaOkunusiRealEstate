@@ -75,7 +75,7 @@ const WhyMooyi: React.FC = () => {
     <div>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>mooyi™ | Unravel Your Brand Insights.</title>
+        <title>Mooyi™ | Effortlessly Gather Insights & Master Growth</title>
         <link rel="icon" href="/favicon.ico" />
       </Helmet>
       <HeroSection
@@ -121,7 +121,7 @@ const WhyMooyi: React.FC = () => {
             Target Your Ideal Audience Effortlessly.
           </p>
           <div className="flex justify-center">
-            <p className="md:text-[20px] text-[16px] text-center md:pt-5 pt-0 md:w-[40%]">
+            <p className="md:text-[20px] text-[16px] text-center md:pt-5 pt-0 md:w-[50%]">
               Mooyi automates the hard work of data collection, analysis, and reporting—so you can focus on scaling, not
               spreadsheets.
             </p>
@@ -144,7 +144,7 @@ const WhyMooyi: React.FC = () => {
                     <img src={el.icon} alt="" />
                   </div>
                   <div>
-                    <p className="text-[11px] md:text-[16px]">{el.text}</p>
+                    <p className="text-[11px] md:text-[14px]">{el.text}</p>
                   </div>
                 </div>
               ))}
@@ -164,7 +164,7 @@ const WhyMooyi: React.FC = () => {
                     <img src={el.icon} alt="" />
                   </div>
                   <div>
-                    <p>{el.text}</p>
+                    <p className="text-[11px] md:text-[14px]">{el.text}</p>
                   </div>
                 </div>
               ))}
@@ -186,7 +186,7 @@ const WhyMooyi: React.FC = () => {
                     <img src={el.icon} alt="" />
                   </div>
                   <div>
-                    <p>{el.text}</p>
+                    <p className="text-[11px] md:text-[14px]">{el.text}</p>
                   </div>
                 </div>
               ))}

@@ -34,7 +34,7 @@ const PlanCard = ({
 }: Tplan) => {
   console.log(conversionRate);
   return (
-    <div className="border rounded-2xl w-[350px] h-[32rem] p-3 drop-shadow-md bg-white">
+    <div className="border rounded-2xl w-full h-[32rem] p-3 drop-shadow-md bg-white">
       <div className="bg-blue-100 p-5 rounded-t-xl h-[7rem]">
         <div className="flex justify-between">
           <p className="text-[20px] font-[600] text-primary">{title}</p>

@@ -246,7 +246,7 @@ const LandingPage = () => {
     <div className="">
       <Helmet>
         <meta charSet="utf-8" />
-        <title>mooyi for Business | Growth made easy.</title>
+        <title>Mooyi | Grow Your Business with Our All-in-One Platform</title>
         <link rel="icon" href="/favicon.ico" />
       </Helmet>
       <HeroSection />

@@ -87,7 +87,7 @@ const MobileCarousel: React.FC = () => {
           <motion.div
             key={i}
             initial={{ opacity: 0, x: "-10%" }}
-            className="min-w-[555px] md:min-w-[555px] overflow-hidden "
+            className="min-w-[600px] md:min-w-[555px] overflow-hidden "
             style={{
               opacity: isAnimating && i === 0 ? 0 : 1, // Hide the first image during animation
             }}
