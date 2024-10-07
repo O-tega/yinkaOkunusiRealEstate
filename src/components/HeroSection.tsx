@@ -7,17 +7,11 @@ import { ASSETS } from "@/assets/images/Assets";
 import chart102 from "@/assets/images/landing/chat102.png";
 import chart103 from "@/assets/images/landing/chat103.png";
 import Follow from "@/assets/images/landing/Follow-ups.png";
-import newChart from "@/assets/images/landing/newChart.png";
+import newChart from "@/assets/images/landing/chartclean.svg";
 // import chart104 from "@/assets/images/landing/InsightsImg.png";
 
 const HeroSection: React.FC = () => {
-  // Define the fade-in and directional variants
   const fadeInVariants = {
-    // hidden: {
-    //   opacity: 0,
-    //   x: direction === "right" ? 100 : direction === "left" ? -100 : 0,
-    //   y: direction === "top" ? -100 : direction === "bottom" ? 100 : 0,
-    // },
     hidden: { opacity: 0 },
     visible: (i: number) => ({
       opacity: 1,
@@ -42,12 +36,14 @@ const HeroSection: React.FC = () => {
           <h1 className="md:text-[80px] text-[40px] mx-auto leading-[1.2em] text-white text-center">
             You deserve the upper hand.
           </h1>
-          <p className="font-primary md:text-[24px] pt-3 md:mt-0 text-[14px] text-white text-center px-10 md:px-0">
-            See what your audience cares about. Build campaigns that matter. Drive engagement that lasts.
-          </p>
-          <p className="font-[600] md:text-[24px]  text-[14px] text-white text-center">
+          <div className="flex  justify-center">
+            <p className="font-primary md:text-[28px] md:mt-0 text-[14px] text-white text-center md:w-[60%] px-10 md:px-0">
+              Get insights to create impactful campaigns and foster engagement that drives growth.
+            </p>
+          </div>
+          {/* <p className="font-[600] md:text-[24px]  text-[14px] text-white text-center">
             All from one ethical, data-driven platform.
-          </p>
+          </p> */}
           <div className="flex items-center space-x-7 justify-center">
             <a
               target="_blank"

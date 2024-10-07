@@ -70,7 +70,7 @@ const EngagementHub: React.FC = () => {
     {
       icon: sendImg,
       action: "Sends",
-      description: "Emails and SMS units are prices at",
+      description: "Emails and SMS units are priced at",
       bill: `${toggleValue ? `₦${0.5 * conversionRate}` : "$0.5"} per 100 sends.`,
       bgcolor: "bg-[#FFFBEB]",
       borderColor: "border-[#D97706]",
@@ -78,7 +78,7 @@ const EngagementHub: React.FC = () => {
     {
       icon: responsesImg,
       action: "Responses",
-      description: "Survey responses are priced at",
+      description: "Survey responses starts at",
       bill: `${toggleValue ? `₦${2 * conversionRate}` : "$2"} per response.`,
       bgcolor: "bg-[#EBF1FF]",
       borderColor: "border-[#2D28FF]",
