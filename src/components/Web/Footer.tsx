@@ -6,6 +6,7 @@ import CTAs from "@/assets/images/mooyi/CTAs.png";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { ROUTES } from "@/constants/externalUrls";
+import { ASSETS } from "@/assets/images/Assets";
 
 const Footer = () => {
   const companyLinks = [
@@ -82,19 +83,38 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex  items-start justify-between space-x-5 px-10 md:px-0 md:space-x-0 pt-10">
-        <div className="flex-col space-y-3 hidden md:block">
-          <img src={Logo} alt="Logo" className="w-[185px]" />
-          <p className="text-[16px] text-left ">
-            With Mooyi, you can stop <br />
-            guessing and start knowing.
+      <div className="flex items-start md:justify-between justify-center space-x-2 px-5 md:px-0 md:space-x-0 pt-10">
+        <div className="space-y-1 w-[50%] md:w-fit">
+          <img src={Logo} alt="Logo" className="md:w-[185px] w-[100px]" />
+          <p className="md:text-[14px] text-[12px] font-[600] text-left pt-2 ">Your Data is Protected and Secure</p>
+          <p className="md:text-[14px] text-[12px] text-left md:w-[35%] w-[90%] ">
+            Mooyi is built to comply with all applicable data protection regulations.
           </p>
+          <div className="md:w-[165px] w-[100px] flex ">
+            <img src={ASSETS.LandingPage.ndprLogo} alt="" className="" />
+          </div>
         </div>
+        {/* <div className="w-full bg-[#F5F7FE99] md:h-[370px] py-10 md:py-0">
+        <div className="flex flex-col md:flex-row items-center justify-center  md:justify-between md:px-[5rem] px-5 h-full">
+          <div className="md:w-[347px] w-[200px] flex md:h-[272px]">
+            <img src={ASSETS.LandingPage.ndprLogo} alt="" className="" />
+          </div>
+          <div className="md:w-[55%] flex flex-col justify-center">
+            <p className="md:text-[40px] text-[24px] font-[500] text-center md:text-left">
+              Your Data is Protected and Secure
+            </p>
+            <h1 className="w-full md:text-left text-center md:text-[20px] text-[12px] font-[400]">
+              Mooyi is built to comply with all applicable data protection regulations, and industry best practices,
+              ensuring that all information remains private, secure, and only used with your consent.
+            </h1>
+          </div>
+        </div>
+      </div> */}
         <div className="">
-          <p className="text-[18px] font-[500] text-left">Company</p>
+          <p className="md:text-[18px] text-[14px] font-[600] text-left">Company</p>
           <ul className="space-y-3 text-left pt-4">
             {companyLinks.map((item, i) => (
-              <li key={i} className="hover:text-primary ">
+              <li key={i} className="hover:text-primary text-[12px] md:text-[16px] ">
                 <Link to={item.link}>{item.name}</Link>
               </li>
             ))}
@@ -111,10 +131,10 @@ const Footer = () => {
           </ul>
         </div> */}
         <div className="">
-          <p className="text-[18px] font-[500] text-left">Legal</p>
+          <p className="md:text-[18px] text-[14px] font-[600] text-left">Legal</p>
           <ul className="space-y-3 text-left pt-4">
             {LegalLinks.map((item, i) => (
-              <li key={i} className="hover:text-primary">
+              <li key={i} className="hover:text-primary text-[12px] md:text-[16px] ">
                 <Link to={item.link}>{item.name}</Link>
               </li>
             ))}

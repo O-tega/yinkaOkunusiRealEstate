@@ -81,18 +81,18 @@ const MobileCarousel: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex px-2 items-center md:space-x-5 overflow-hidden overflow-x-auto no-scrollbar">
+    <div className="flex items-center md:space-x-5 overflow-hidden overflow-x-auto no-scrollbar">
       <AnimatePresence initial={false}>
         {images.map((item, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, x: "-10%" }}
-            className="min-w-[600px] md:min-w-[555px] overflow-hidden "
+            className="min-w-[400px] overflow-hidden "
             style={{
               opacity: isAnimating && i === 0 ? 0 : 1, // Hide the first image during animation
             }}
             animate={{
-              translateX: isAnimating ? "-555px" : 0,
+              translateX: isAnimating ? "-400px" : 0,
               opacity: 1,
               x: 0,
             }}

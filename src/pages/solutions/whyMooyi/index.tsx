@@ -127,7 +127,7 @@ const WhyMooyi: React.FC = () => {
             </p>
           </div>
         </div>
-        <div className="md:flex justify-center w-full mt-[3rem] border rounded-[2rem] p-5 bg-white ">
+        <div className="md:flex justify-center w-full mt-[3rem] border rounded-[2rem] pb-8 p-5 bg-white ">
           <div className="flex flex-col items-center">
             <div className="md:w-[70%]">
               <p className="md:text-[24px] text-[17px] md:font-[500] font-[600] text-center md:text-left">
