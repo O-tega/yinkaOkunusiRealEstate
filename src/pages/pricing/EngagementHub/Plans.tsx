@@ -54,7 +54,7 @@ const PlanCard = ({
   planId,
 }: Tplan) => {
   return (
-    <div className="border md:min-w-[300px] w-full h-[36rem] p-3">
+    <div className="border md:min-w-[300px] w-full h-[37rem] p-3">
       <div className="bg-blue-100 p-5 rounded-t-xl h-[7rem]">
         <div className="flex justify-between">
           <p className="text-[20px] font-[600] text-primary">{title}</p>
@@ -81,9 +81,9 @@ const PlanCard = ({
           </div>
         )}
         <div className="mt-2">
-          <Link to={title !== "Free" ? "mailto:support@enterscale.com" : `${ROUTES.LOGIN}/register/id/${planId}`}>
+          <Link to={`${ROUTES.LOGIN}/register/id/${planId}`}>
             <BlueButton
-              text={title !== "Free" ? "Contact us" : "Sign Up Free"}
+              text={title !== "Free" ? "Buy now" : "Sign Up Free"}
               type="button"
               // disabled={title !== "Free" && true}
               css="w-full"
@@ -96,7 +96,7 @@ const PlanCard = ({
         <div className="my-5">
           <hr />
         </div>
-        <div>
+        <div className="h-[200px]">
           <p className="font-secondary">{featureTitle}</p>
           {features !== undefined
             ? features.map((el: string, i: number) => (
@@ -139,7 +139,7 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
       buttonText: "Sign Up Free",
       features: [
         "1 user limit.",
-        "100 contact profiles.",
+        "< 100 contact profiles.",
         "Monthly sends of 100 SMS or emails.",
         "Create basic surveys, track leads and Pay-as-you-go beyond the limit.",
       ],
@@ -156,7 +156,7 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
       buttonText: "See all features",
       features: [
         "2 user limit.",
-        "1,000 contact profiles.",
+        "< 1,000 contact profiles.",
         "Monthly sends of 10,000 SMS or emails.",
         "Access advanced audience segmentation, lead management and survey creation.",
       ],
@@ -180,7 +180,7 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
       buttonText: "See all features",
       features: [
         "5 user limit.",
-        "25,000 contact profiles.",
+        "< 25,000 contact profiles.",
         "Monthly sends of 50,000 SMS or emails.",
         "Access full survey tools, voice messaging  lead generation and advanced analytics (Report filtering).",
       ],
@@ -197,7 +197,7 @@ const Plans: React.FC<TPlans> = ({ conversionRate, values, toggleValue }) => {
       buttonText: "See all features",
       features: [
         "Unlimited users.",
-        "50,000 contact profiles.",
+        "< 100,000 contact profiles.",
         "Monthly sends of 100,000 SMS or emails.",
         "Access to brand tracking, field surveys and workspaces.",
       ],

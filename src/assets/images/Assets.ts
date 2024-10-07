@@ -171,6 +171,7 @@ export const ASSETS = {
     ndprLogo: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/ndprLogo.png",
     HeroIconMobile: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/HeroImageMobile.png",
     whyMooyiMobile: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/whyMooyiMobile.png",
+    mobileAudience: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/Mobile%20content.png",
   },
   howItWorks: {
     support: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/support.png",
@@ -182,5 +183,13 @@ export const ASSETS = {
     hero: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/image.png",
     surveyCreatedNew:
       "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/surveyCreatedNew.png",
+  },
+  shuffleImg: {
+    preview1: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/preview1.png",
+    preview2: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/preview2.png",
+    preview3: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/preview3.png",
+    preview4: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/preview4.png",
+    preview5: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/preview5.png",
+    preview6: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/preview6.png",
   },
 };

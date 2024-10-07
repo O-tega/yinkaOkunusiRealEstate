@@ -1,6 +1,7 @@
 import HeroSection from "@/components/HeroSection";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ASSETS } from "@/assets/images/Assets";
+import { motion } from "framer-motion";
 
 import SingleCarousel from "@/components/SingleCarousel";
 import PrimaryButton from "@/components/Button/PrimaryButton";
@@ -10,11 +11,11 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 // import icon1 from "@/assets/images/icons/icon1.png";
 // import icon2 from "@/assets/images/icons/icon2.png";
-import icon3 from "@/assets/images/icons/fieldResearch.png";
-import icon4 from "@/assets/images/icons/icon4.png";
-import icon5 from "@/assets/images/icons/icon5.png";
-import icon6 from "@/assets/images/icons/im.png";
-import headset from "@/assets/images/icons/headset.png";
+// import icon3 from "@/assets/images/icons/fieldResearch.png";
+// import icon4 from "@/assets/images/icons/icon4.png";
+// import icon5 from "@/assets/images/icons/icon5.png";
+// import icon6 from "@/assets/images/icons/im.png";
+// import headset from "@/assets/images/icons/headset.png";
 
 import enterscaleWhite from "@/assets/images/logos/enterscaleColored.png";
 // import kiboWhite from "@/assets/images/logos/kiboColored.png";
@@ -40,12 +41,21 @@ import MobileCarousel from "@/components/MobileCarosel";
 
 const LandingPage = () => {
   const [value, setValues] = useState(0);
+  const [count, setCount] = useState(0);
   const [toggleValue, setToggleValue] = useState(false);
   const { conversionRate } = useCurrency();
   // const variant = {
   //   visible: { scale: 1 },
   //   hidden: { scale: 0 },
   // };
+
+  useEffect(() => {
+    const interval = setTimeout(() => {
+      setCount((prevCount) => (prevCount === 2 ? 0 : prevCount + 1));
+    }, 2000); // 1 second delay
+
+    return () => clearTimeout(interval); // Cleanup the timeout on unmount
+  }, [count]); // Re-run the effect when `count` changes
 
   // const logos = [
   //   {
@@ -118,10 +128,11 @@ const LandingPage = () => {
 
   const infoCard = [
     {
+      id: 0,
       title: "Lead Generation Surveys",
       subTitle: "Manage research and acquisition from one place.",
-      text: "Create surveys that target millions of people and use simple opt-in forms to recruit new leads, nurture them, and gain insights.",
-      icon: icon5,
+      text: "Manage research and customer acquisition from one place. Create surveys that reach millions of your target audience and convert them with simple opt-in forms. Send SMS and email campaigns to your new leads.",
+      icon: ASSETS.shuffleImg.preview1,
     },
     // {
     //   title: "Brand Tracking",
@@ -130,38 +141,45 @@ const LandingPage = () => {
     //   icon: icon2,
     // },
     {
+      id: 1,
       title: "Field Research",
       subTitle: "Conduct field surveys to capture on the ground insights",
-      text: "Gather real insights from stores, events, and real-world interactions. Mooyi makes it easy to collect feedback from your audience, no matter their location.",
+      text: "Go beyond digital. Conduct field surveys to capture authentic insights from stores, events, and real-world interactions. Mooyi makes it easy to gather actionable feedback from your audience wherever they are.",
       link: "/how-it-works",
-      icon: icon3,
+      icon: ASSETS.shuffleImg.preview2,
     },
     {
+      id: 2,
       title: "Customer Experience Management",
       subTitle: "Conduct field surveys to capture on the ground insights",
-      text: "Mooyi provides real-time data and actionable insights, including NPS and CSAT, to help you better understand your customers, partners, or employees.",
-      icon: headset,
+      text: "Stop guessing. Start knowing. Mooyi delivers real-time data and actionable insights, such as NPS and CSAT, to help you understand what your customers, partners, or employees truly want.",
+      icon: ASSETS.shuffleImg.preview3,
     },
   ];
+  const infoImg = [ASSETS.shuffleImg.preview1, ASSETS.shuffleImg.preview2, ASSETS.shuffleImg.preview3];
+  const infoImg2 = [ASSETS.shuffleImg.preview4, ASSETS.shuffleImg.preview5, ASSETS.shuffleImg.preview6];
 
   const infoCard2 = [
     {
+      id: 0,
       title: "Customer Data Management.",
       subTitle: "Stop guessing. Start knowing.",
-      text: "Build customer understanding and segment your audience effectively with NDPR-compliant, securely encrypted data handling.",
-      icon: icon4,
+      text: "Enhance your customer understanding and dynamically segment your audience. With NDPR compliance and advanced encryption, you can trust your information is secure and handled carefully.",
+      icon: ASSETS.shuffleImg.preview4,
     },
     {
+      id: 1,
       title: "Mobile Marketing",
       subTitle: "Enhance your customer understanding and targeting",
-      text: "Engage your customers on the go with personalised bulk SMS, emails, voice messages, and surveys.",
-      icon: icon5,
+      text: "Engage your customers on the go with personalised texts, emails, and voice messages. Track reach, impressions, and conversions in real time, for valuable insights to refine your campaigns.",
+      icon: ASSETS.shuffleImg.preview5,
     },
     {
+      id: 2,
       title: "Incentives Management",
       subTitle: "Engage your customers on the go.",
-      text: "Offer rewards like airtime, data, cash, or gift vouchers to save time on follow-up and admin, and focus more on taking action.",
-      icon: icon6,
+      text: "Offer easily redeemable rewards such as airtime, data, or cash through Mooyi Rewards, or provide discounts and gift vouchers from your store or business. Spend less time on follow-up and more time taking action.",
+      icon: ASSETS.shuffleImg.preview6,
     },
   ];
 
@@ -280,214 +298,65 @@ const LandingPage = () => {
         </div>
       </div>
       <div className="md:py-[6rem] py-5 bg-[#F9F9FE]">
-        <div className="md:flex items-center space-x-3 justify-between md:ml-7">
-          <div className="md:hidden flex justify-center mt-[3rem] md:mt-0  ">
-            <div className="md:w-[650px] w-[320px]  relative">
-              <img src={ASSETS.LandingPage.femaleAnalyst} alt="" />
-              <div className="absolute top-[-2rem] left-[-1rem] drop-shadow-lg md:w-[200px] w-[100px] bg-white border p-2 rounded-md ">
-                <img src={ASSETS.LandingPage.analysisChart} alt="" />
-              </div>
-            </div>
-          </div>
-          <div className=" md:ml-[3rem] md:px-0 space-y-[3rem] md:space-y-[2rem]">
+        <div className="md:flex justify-center space-x-10">
+          {/* Text Section */}
+          <div className="md:w-[37%] space-y-[3rem] md:space-y-2">
             {infoCard.map((el, i) => (
-              <InfoText key={i} title={el.title} text={el.text} icon={el.icon} />
+              <InfoText key={i} title={el.title} text={el.text} icon={el.icon} count={count} id={el.id} />
             ))}
           </div>
-          <div className="md:flex justify-end mt-[3rem] md:mt-0 hidden ">
-            <div className="md:w-[650px] w-[400px]  relative">
-              <img src={ASSETS.LandingPage.femaleAnalyst} alt="" />
-              <div className="absolute top-[-2rem] left-[-5rem] drop-shadow-lg md:w-[200px] w-[100px] bg-white p-2 rounded-md border ">
-                <img src={ASSETS.LandingPage.analysisChart} alt="" />
-              </div>
-            </div>
+
+          {/* Image Section */}
+          <div className="md:flex justify-center hidden md:w-[650px] w-[400px] relative">
+            {infoImg.map((el, i) => (
+              <motion.div
+                key={i}
+                className="absolute top-0 w-full h-auto" // Layer images on top of each other
+                initial={{ opacity: 0 }} // Start with hidden
+                animate={{ opacity: count === i ? 1 : 0 }} // Show current image, hide others
+                transition={{ duration: 0.8, ease: "easeInOut" }} // Smooth transition
+              >
+                <img src={el} alt={`image-${i}`} className="w-full object-cover" />
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
       <div className="md:py-[6rem] py-5 bg-white">
-        <div className="md:flex items-center space-x-3 justify-between ">
-          <div className="flex justify-center md:justify-end mt-[3rem] md:mt-0 relative">
-            <div className="md:w-[650px] w-[350px] md:pl-0 px-3 md:px-0">
-              <img
-                src={ASSETS.LandingPage.manOnPhone}
-                className="overflow-hidden md:overflow-auto rounded-[16px] md:rounded-none"
-                alt=""
-              />
-              <div className="absolute md:bottom-[-4rem] bottom-[-3rem] right-0 md:right-[-10rem] md:w-[400px] w-[150px]">
-                <img src={ASSETS.LandingPage.chart} alt="" />
-              </div>
-              <div className="absolute top-0 md:left-0 left-[2rem] md:w-[300px] w-[150px]">
-                <img src={ASSETS.LandingPage.mooyiRewardQuestion} alt="" />
-              </div>
-            </div>
+        <div className="flex  justify-center md:space-x-16">
+          <div className="md:flex justify-center hidden md:w-[650px] w-[400px] relative">
+            {infoImg2.map((el, i) => (
+              <motion.div
+                key={i}
+                className="absolute top-0 w-full h-auto" // Layer images on top of each other
+                initial={{ opacity: 0 }} // Start with hidden
+                animate={{ opacity: count === i ? 1 : 0 }} // Show current image, hide others
+                transition={{ duration: 0.8, ease: "easeInOut" }} // Smooth transition
+              >
+                <img src={el} alt={`image-${i}`} className="w-full object-cover" />
+              </motion.div>
+            ))}
           </div>
-          <div className=" md:pl-[10rem] px-5 md:px-0 space-y-[3rem] md:space-y-[2rem]">
+          <div className=" px-5 md:px-0 space-y-2 md:w-[37%]">
             {infoCard2.map((el, i) => (
-              <InfoText key={i} title={el.title} text={el.text} icon={el.icon} />
+              <InfoText key={i} title={el.title} text={el.text} icon={el.icon} count={count} id={el.id} />
             ))}
           </div>
         </div>
       </div>
-      <div className="w-full bg-ctaBg h-[370px] relative">
-        <div className="md:flex items-center justify-between h-full">
-          <div className="">
-            <img src={ASSETS.LandingPage.surevyPreview} alt="" className="md:w-[600px] w-[403px] bottom-0 absolute" />
-          </div>
-          <div className="md:w-[50%] flex items-center pt-5">
-            <h1 className="w-full text-center md:text-left text-white md:text-[32px] text-[20px] font-[400]">
-              Mooyi leverages a community of millions who consent to share their opinions, reviews, and feedback on
-              subjects that interest them.
+      <div className="w-full bg-blue-100 md:h-[370px] h-full md:px-[5rem] px-5 ">
+        <div className="md:flex items-center justify-between h-full ">
+          <div className="md:w-[50%] w-full  flex items-center pt-5">
+            <h1 className="w-full text-center md:text-left md:text-[32px] text-[18px] font-[400]">
+              Mooyi leverages a community of millions who share their opinions, reviews, and feedback on subjects that
+              interest them.
             </h1>
+          </div>
+          <div className="">
+            <img src={ASSETS.LandingPage.mobileAudience} alt="" className=" w-[403px] md:w-[500px]" />
           </div>
         </div>
       </div>
-      {/* <div className="bg-[#F9F9FE] py-[3rem]">
-        <div className="mt-2 md:px-[4rem] px-2 flex flex-col items-center text-[20px]">
-          <p className="font-secondary md:text-[40px] text-[28px] md:pb-[5rem] pb-[5rem] text-center">How it works</p>
-        </div>
-        <div className="flex justify-center">
-          <div className="">
-            <div className="flex flex-col items-center">
-              <div className="md:flex items-center md:space-x-[5rem] px-2">
-                <div className="w-[500px] hidden md:block">
-                  <p className="text-wrap font-medium md:text-[20px]">
-                    Don’t worry about low participation. Our extensive database, simple user experience, and
-                    comprehensive rewards system can help boost participation.
-                  </p>
-                </div>
-                <motion.div variants={variant} initial="hidden" whileInView="visible">
-                  <div className="flex justify-start md:flex-col">
-                    <img
-                      src={ASSETS.GIFS.lessParticipationWorry}
-                      alt="Gif image"
-                      className="md:w-[500px] w-[380px] border-[1rem] border-[#EBF1FF]"
-                    />
-                  </div>
-                </motion.div>
-                <div className="md:w-[400px] px-2 pt-3 md:px-0 text-center md:text-left text-[14px] font-medium md:hidden">
-                  <p className="text-wrap">
-                    Don’t worry about low participation. Our extensive database, simple user experience, and
-                    comprehensive rewards system can help boost participation.
-                  </p>
-                </div>
-              </div>
-              <div className="my-5 px-2 md:px-0">
-                <img src={rlLine} alt="Gif image" className="md:w-[415px] h-[100px] w-[207px]" />
-              </div>
-            </div>
-            <div className="md:px-[4rem] px-2 flex flex-col items-center text-[20px] font-medium">
-              <div className="md:flex items-center md:space-x-[5rem]">
-                <motion.div variants={variant} initial="hidden" whileInView="visible">
-                  <div className="flex justify-center md:flex-none">
-                    <img
-                      src={ASSETS.GIFS.SetScreeningQuestionsforParticipants}
-                      alt="Gif image"
-                      className="md:w-[500px] w-[380px]  border-[1rem] border-[#EBF1FF]"
-                    />
-                  </div>
-                </motion.div>
-                <div className="md:w-[450px] px-2 pt-3 md:pt-0 text-center text-[16px] md:px-0 md:text-left md:text-[20px]">
-                  <p className="text-wrap ">
-                    Add screening questions to your survey to filter out people who do not meet your additional
-                    criteria. This will enhance the quality and accuracy of your data.
-                  </p>
-                </div>
-              </div>
-              <div className="my-5 px-2 md:px-0">
-                <img src={lrLine} alt="Gif image" className="md:w-[415px] h-[100px] w-[207px]" />
-              </div>
-            </div>
-            <div className="md:px-[4rem] px-2 md:flex flex-col items-center text-[20px] font-medium">
-              <div className="md:flex items-center md:space-x-[5rem]">
-                <div className="md:w-[480px] hidden md:block">
-                  <p className="text-wrap">
-                    Reach distinct segments like business owners, hoteliers, online merchants, freelancers, and mobile
-                    money users to gain tailored insights and drive targeted growth.
-                  </p>
-                </div>
-                <motion.div variants={variant} initial="hidden" whileInView="visible">
-                  <div>
-                    <img
-                      src={ASSETS.GIFS.targetDistinctSegment}
-                      alt="Gif image"
-                      className="w-[500px]  border-[1rem] border-[#EBF1FF]"
-                    />
-                  </div>
-                </motion.div>
-                <div className="md:w-[480px] pt-3 text-[14px] text-center px-2 md:hidden">
-                  <p className="text-wrap">
-                    Reach distinct segments like business owners, hoteliers, online merchants, freelancers, and mobile
-                    money users to gain tailored insights and drive targeted growth.
-                  </p>
-                </div>
-              </div>
-              <div className="my-5 px-2 md:px-0 flex justify-center">
-                <img src={rlLine} alt="Gif image" className="md:w-[415px] h-[100px] w-[207px]" />
-              </div>
-            </div>
-            <div className="md:px-[4rem] px-2 flex flex-col items-center text-[20px] font-medium">
-              <div className="md:flex items-center md:space-x-[5rem]">
-                <motion.div variants={variant} initial="hidden" whileInView="visible">
-                  <div className="flex justify-center md:flex-none">
-                    <img
-                      src={ASSETS.GIFS.EnjoyAdditionalFeature}
-                      alt="Gif image"
-                      className="md:w-[500px] w-[380px]  border-[1rem] border-[#EBF1FF]"
-                    />
-                  </div>
-                </motion.div>
-                <div className="md:w-[480px] px-2 pt-3 md:pt-0 text-center text-[16px] md:px-0 md:text-left md:text-[20px] font-medium">
-                  <p className="text-wrap">
-                    Enjoy advanced features like built-in templates, branching logic questions, respondent retargeting,
-                    and survey result filtering for a seamless experience.
-                  </p>
-                </div>
-              </div>
-              <div className="my-5 px-2 md:px-0">
-                <img src={lrLine} alt="Gif image" className="md:w-[415px] h-[100px] w-[207px]" />
-              </div>
-            </div>
-            <div className="md:px-[4rem] px-2 flex flex-col items-center text-[20px] font-medium">
-              <div className="md:flex items-center md:space-x-[5rem]">
-                <div className="w-[490px] hidden md:block">
-                  <p className="text-wrap">
-                    Follow up with interested survey participants nurture their interest through personalised mobile
-                    campaigns, and build lasting customer relationships and engagement.
-                  </p>
-                </div>
-                <motion.div variants={variant} initial="hidden" whileInView="visible">
-                  <div>
-                    <img
-                      src={ASSETS.GIFS.followUpIntrestedParticipant}
-                      alt="Gif image"
-                      className="w-[500px]  border-[1rem] border-[#EBF1FF]"
-                    />
-                  </div>
-                </motion.div>
-                <div className="w-[400px] text-[14px] text-center px-2 md:hidden">
-                  <p className="text-wrap">
-                    Follow up with interested survey participants nurture their interest through personalised mobile
-                    campaigns, and build lasting customer relationships and engagement.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="flex justify-center mt-16">
-          <div className="md:w-[15%] w-[50%]">
-            <Link to="mailto:support@enterscale.com">
-              <PrimaryButton
-                type="button"
-                text="Request Demo"
-                css="rounded-md"
-                variant="filled"
-                buttonId="home_request_demo_2"
-              />
-            </Link>
-          </div>
-        </div>
-      </div> */}
       <div className="md:px-[7rem] py-[5rem] md:py-[5rem]">
         <div className="md:flex items-center justify-between">
           <p className="md:text-[40px] text-[24px] font-secondary pb-10 text-center md:text-left">
@@ -508,7 +377,7 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-        <div className="mt-2 ml-[1rem] md:ml-0 hidden md:block">
+        <div className="mt-2  hidden md:block">
           <Carousel responsive={responsive} arrows={false} ref={carouselRef}>
             {carolInfo?.map((item, i) => <CarouselCard key={i} title={item.title} text={item.text} img={item.img} />)}
           </Carousel>
@@ -584,22 +453,7 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <div className="w-full bg-[#F5F7FE99] md:h-[370px] py-10 md:py-0">
-        <div className="flex flex-col md:flex-row items-center justify-center  md:justify-between md:px-[5rem] px-5 h-full">
-          <div className="md:w-[347px] w-[200px] flex md:h-[272px]">
-            <img src={ASSETS.LandingPage.ndprLogo} alt="" className="" />
-          </div>
-          <div className="md:w-[55%] flex flex-col justify-center">
-            <p className="md:text-[40px] text-[24px] font-[500] text-center md:text-left">
-              Your Data is Protected and Secure
-            </p>
-            <h1 className="w-full md:text-left text-center md:text-[20px] text-[12px] font-[400]">
-              Mooyi is built to comply with all applicable data protection regulations, and industry best practices,
-              ensuring that all information remains private, secure, and only used with your consent.
-            </h1>
-          </div>
-        </div>
-      </div>
+
       <div className="mt-20  md:space-y-3 px-2 md:px-0">
         <div className="flex justify-center">
           <p className="bg-blue-100 px-5 py-2 w-fit text-blue-800 text-[18px] font-[600] rounded-md">CASE STUDY</p>

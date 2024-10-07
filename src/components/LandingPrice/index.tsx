@@ -14,7 +14,7 @@ const plan = [
     buttonText: "Sign Up Free",
     features: [
       "1 user limit.",
-      "100 contact profiles.",
+      "< 100 contact profiles.",
       "Monthly sends of 100 SMS or emails.",
       "Create basic surveys, track leads and Pay-as-you-go beyond the limit.",
     ],
@@ -31,7 +31,7 @@ const plan = [
     buttonText: "See all features",
     features: [
       "2 user limit.",
-      "1,000 contact profiles.",
+      "< 1,000 contact profiles.",
       "Monthly sends of 10,000 SMS or emails.",
       "Access advanced audience segmentation, lead management and survey creation.",
     ],
@@ -55,7 +55,7 @@ const plan = [
     buttonText: "See all features",
     features: [
       "5 user limit.",
-      "25,000 contact profiles.",
+      "< 25,000 contact profiles.",
       "Monthly sends of 50,000 SMS or emails.",
       "Access full survey tools, voice messaging  lead generation and advanced analytics (Report filtering).",
     ],
@@ -72,7 +72,7 @@ const plan = [
     buttonText: "See all features",
     features: [
       "Unlimited users.",
-      "50,000 contact profiles.",
+      "< 100,000 contact profiles.",
       "Monthly sends of 100,000 SMS or emails.",
       "Access to brand tracking, field surveys and workspaces.",
     ],
