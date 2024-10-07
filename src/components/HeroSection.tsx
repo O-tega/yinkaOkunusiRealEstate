@@ -3,10 +3,12 @@ import { motion, useInView } from "framer-motion";
 import WhiteButton from "./Button/WhiteButton";
 import BlueWhiteButton from "./Button/BlueWhiteButton";
 import { ASSETS } from "@/assets/images/Assets";
-import chart101 from "@/assets/images/landing/chart101.png";
+// import chart101 from "@/assets/images/landing/chart101.png";
 import chart102 from "@/assets/images/landing/chat102.png";
 import chart103 from "@/assets/images/landing/chat103.png";
-import chart104 from "@/assets/images/landing/InsightsImg.png";
+import Follow from "@/assets/images/landing/Follow-ups.png";
+import newChart from "@/assets/images/landing/newChart.png";
+// import chart104 from "@/assets/images/landing/InsightsImg.png";
 
 const HeroSection: React.FC = () => {
   // Define the fade-in and directional variants
@@ -77,7 +79,7 @@ const HeroSection: React.FC = () => {
             {/* Animated images */}
             {isInView && (
               <>
-                <motion.div
+                {/* <motion.div
                   className="absolute  md:bottom-4 bottom-4 md:right-[1rem] right-0 md:w-[30%] w-[150px]"
                   initial="hidden"
                   animate="visible"
@@ -85,16 +87,16 @@ const HeroSection: React.FC = () => {
                   variants={fadeInVariants} // Fade in from the right
                 >
                   <img src={chart101} alt="" className="object-cover object-top h-full w-full" />
-                </motion.div>
+                </motion.div> */}
 
                 <motion.div
-                  className="absolute md:bottom-[40%]  md:right-[4rem] right-[1rem] md:w-[20%] w-[100px]"
+                  className="absolute md:bottom-[30%]  md:left-[20%] left-[3rem] md:w-[30%] w-[130px]"
                   initial="hidden"
                   animate="visible"
-                  custom={1}
+                  custom={3}
                   variants={fadeInVariants} // Fade in from the top
                 >
-                  <img src={chart104} alt="" className="object-cover object-top h-full w-full" />
+                  <img src={newChart} alt="" className="object-cover object-top h-full w-full " />
                 </motion.div>
 
                 <motion.div
@@ -108,13 +110,22 @@ const HeroSection: React.FC = () => {
                 </motion.div>
 
                 <motion.div
-                  className="absolute md:bottom-[35%] bottom-[23%] md:left-[20%] left-[2rem] md:w-[30%] w-[150px]"
+                  className="absolute md:bottom-[10%] bottom-0 md:right-[2%] right-0 md:w-[35%] w-[150px]"
                   initial="hidden"
-                  custom={4}
+                  custom={1}
                   animate="visible"
                   variants={fadeInVariants} // Fade in from the bottom
                 >
                   <img src={chart103} alt="" className="object-cover object-top h-full w-full" />
+                </motion.div>
+                <motion.div
+                  className="absolute md:bottom-[15%] bottom-1 md:right-[20%] right-[3rem] md:w-[20%] w-[100px]"
+                  initial="hidden"
+                  custom={1}
+                  animate="visible"
+                  variants={fadeInVariants} // Fade in from the bottom
+                >
+                  <img src={Follow} alt="" className="object-cover object-top h-full w-full" />
                 </motion.div>
               </>
             )}
