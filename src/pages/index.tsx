@@ -57,37 +57,6 @@ const LandingPage = () => {
     return () => clearTimeout(interval); // Cleanup the timeout on unmount
   }, [count]); // Re-run the effect when `count` changes
 
-  // const logos = [
-  //   {
-  //     name: "flutter wave",
-  //     logo: <img src={flutterwaveWhite} alt="logos" className="w-[120px] md:w-[250px]" />,
-  //   },
-  //   {
-  //     name: "M-power",
-  //     logo: (
-  //       <div>
-  //         <img src={Mpower} alt="logos" className="w-[80px] md:w-[180px]" />
-  //       </div>
-  //     ),
-  //   },
-  //   {
-  //     name: "Enterscale",
-  //     logo: <img src={enterscaleWhite} alt="logos" className="w-[80px] md:w-[180px]" />,
-  //   },
-  //   {
-  //     name: "wicrypt",
-  //     logo: <img src={wicrypt} alt="logos" className="w-[60px] md:w-[130px]" />,
-  //   },
-  //   {
-  //     name: "kiboWhite",
-  //     logo: <img src={kiboWhite} alt="logos" className="w-[60px] md:w-[130px]" />,
-  //   },
-  //   {
-  //     name: "kiboWhite",
-  //     logo: <img src={ndpr} alt="logos" className="w-[60px] md:w-[120px]" />,
-  //   },
-  // ];
-
   const handleToggleChange = () => {
     setToggleValue(!toggleValue);
   };
@@ -461,14 +430,14 @@ const LandingPage = () => {
         <p className=" text-center md:text-[40px] text-[28px] font-secondary md:px-[19rem] leading-10 pt-5">
           Check-in your guests and engage them with live event games and feedback surveys.
         </p>
+        <div className=" pt-10 pb-5 md:pb-[2rem]">
+          <SingleCarousel />
+        </div>
         <p className="md:text-[20px] md:px-[18rem] text-center text-[14px]">
           Flutterwave used the platform to register merchants and shoppers at their trade fair, incentivising them to
           participate and share their feedback about their event experience.
         </p>
-        <div className=" pt-10 pb-[4rem]">
-          <SingleCarousel />
-        </div>
-        <div className="flex justify-center pb-16">
+        <div className="flex justify-center mt-5 md:mt-0 pb-16">
           <div className="md:w-[15%]">
             <Link to="mailto:support@enterscale.com">
               <PrimaryButton

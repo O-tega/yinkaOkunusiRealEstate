@@ -57,7 +57,7 @@ const plan = [
       "5 user limit.",
       "< 25,000 contact profiles.",
       "Monthly sends of 50,000 SMS or emails.",
-      "Access full survey tools, voice messaging  lead generation and advanced analytics 1.e. Report filtering.",
+      "Access full survey tools, voice messaging  lead generation and advanced analytics i.e. Report filtering.",
     ],
   },
   {
