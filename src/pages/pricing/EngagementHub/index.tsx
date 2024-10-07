@@ -79,7 +79,7 @@ const EngagementHub: React.FC = () => {
       icon: responsesImg,
       action: "Responses",
       description: "Survey responses are priced at",
-      bill: `${toggleValue ? `₦${2 * conversionRate}` : "$2"} per 100 response.`,
+      bill: `${toggleValue ? `₦${2 * conversionRate}` : "$2"} per response.`,
       bgcolor: "bg-[#EBF1FF]",
       borderColor: "border-[#2D28FF]",
     },
