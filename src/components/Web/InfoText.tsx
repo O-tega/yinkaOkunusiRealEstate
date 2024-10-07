@@ -14,7 +14,7 @@ const InfoText: React.FC<TInfo> = ({ title, text, icon, count, id }) => {
     <>
       <motion.div
         className={`space-y-3 p-2 rounded-lg hidden md:block text-center md:text-left ${
-          count === id ? "bg-blue-100" : "bg-white"
+          count === id ? "bg-blue-100" : ""
         }`}
         animate={{
           scale: count === id ? 1.05 : 1,
@@ -29,7 +29,7 @@ const InfoText: React.FC<TInfo> = ({ title, text, icon, count, id }) => {
           <p className={`md:text-[24px] text-[18px] font-[600] ${count === id ? "text-blue-800" : "text-black"}`}>
             {title}
           </p>
-          <p className="md:text-[18px] w-[80%] text-[12px] pt-2 font-medium">{text}</p>
+          <p className="md:text-[18px] w-[90%] text-[12px] pt-2 font-medium">{text}</p>
         </div>
       </motion.div>
       <div className={`space-y-3 p-2 rounded-lg md:hidden text-center md:text-left `}>

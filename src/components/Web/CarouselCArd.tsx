@@ -17,7 +17,7 @@ const CarouselCard: React.FC<TCarolInfo> = ({ img, title, text }) => {
       <div className="space-y-1 text-center md:text-left">
         <p className="md:text-[17px] font-secondary">{title}</p>
         <div className="flex justify-center md:justify-start">
-          <p className="md:text-[16px] md:w-[90%] w-[70%] font-medium">{text}</p>
+          <p className="md:text-[16px] text-[14px] md:w-[90%] font-medium">{text}</p>
         </div>
       </div>
     </div>
