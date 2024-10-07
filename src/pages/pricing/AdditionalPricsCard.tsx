@@ -17,7 +17,7 @@ const AdditionalPriceTag: React.FC<TcardListProps> = ({ type, amount }) => {
           {type}
         </p>
         <div className="flex items-end w-full text-[40px] font-[600] mt-10">{amount}</div>
-        <p className={`md:text-[18px] text-[16px] transition-all duration-300 font-medium`}>credits per response</p>
+        <p className={`md:text-[18px] text-[16px] transition-all duration-300 font-medium`}>per response</p>
       </div>
     </div>
   );
