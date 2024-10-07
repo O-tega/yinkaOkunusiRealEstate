@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import FaqHero from "./faqHero";
 import faqBackground from "@/assets/images/mooyi/faqbackground.png";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { Helmet } from "react-helmet";
 
 const faqData = [
   {
@@ -218,6 +219,11 @@ const Faq: React.FC = () => {
 
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Mooyi™| Everything You Need to Know – Fast, Simple Answers.</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Helmet>
       <FaqHero
         title="Frequently Asked Questions "
         desc="Mooyi helps businesses gain actionable insights through surveys. Whether you want to understand customer behaviour, test new products, or analyse market trends, Mooyi has got you covered."
