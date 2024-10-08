@@ -261,7 +261,7 @@ const LandingPage = () => {
               You Don’t Need More Tools. <br /> You Need More Understanding.
             </h1>
             <p className="text-center text-[20px] font-[500] text-white">
-              An all-in-one platform to grow your brand—effortlessly.
+              An all-in-one platform to grow your brand—ethically.
             </p>
           </div>
         </div>

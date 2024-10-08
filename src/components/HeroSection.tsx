@@ -6,7 +6,7 @@ import { ASSETS } from "@/assets/images/Assets";
 // import chart101 from "@/assets/images/landing/chart101.png";
 import chart102 from "@/assets/images/landing/chat102.png";
 import chart103 from "@/assets/images/landing/chat103.png";
-import Follow from "@/assets/images/landing/Follow-ups.png";
+import Follow from "@/assets/images/landing/followUp.png";
 import newChart from "@/assets/images/landing/chartclean.svg";
 // import chart104 from "@/assets/images/landing/InsightsImg.png";
 
