@@ -95,7 +95,7 @@ const EngagementHub: React.FC = () => {
       icon: colabImg,
       action: "Collaboration tools",
       description: "Unlimited workspaces for teams",
-      bill: `are priced at ${toggleValue ? `₦${0.5 * conversionRate}.` : "$0.5."}`,
+      bill: `are priced at ${toggleValue ? `₦${0.5 * conversionRate}.` : "$10."}`,
       bgcolor: "bg-[#FFFBEB]",
       borderColor: "border-[#D97706]",
     },

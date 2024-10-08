@@ -45,14 +45,12 @@ const Footer = () => {
           </div>
           <div className=" absolute top-0 w-full pt-9 left-0 md:pt-12">
             {paths.includes(currentPath) ? (
-              <p className="font-secondary md:text-[40px] text-[24px]">
-                Need a solution that fits your business needs?
-              </p>
+              <p className="font-secondary md:text-[40px] text-[24px]">Can’t find a plan that meets your needs?</p>
             ) : (
               <p className="md:text-[24px] text-[15px] ">Stop guessing. Start knowing.</p>
             )}
             {paths.includes(currentPath) ? (
-              <p className="md:text-[24px] text-[15px]">Let’s create a personalised plan tailored just for you.</p>
+              <p className="md:text-[24px] text-[15px]">Let’s create a custom package tailored just for you.</p>
             ) : (
               <p className="font-secondary md:text-[40px] text-[24px]">Get started with Mooyi today</p>
             )}
