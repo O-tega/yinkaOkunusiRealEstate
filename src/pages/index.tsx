@@ -271,9 +271,9 @@ const LandingPage = () => {
         </div>
       </div>
       <div className="md:py-[6rem] py-5 bg-[#F9F9FE]">
-        <div className="md:flex justify-center space-x-10">
+        <div className="md:flex justify-center space-x-[5rem]">
           {/* Text Section */}
-          <div className="md:w-[37%] space-y-[3rem] md:space-y-2">
+          <div className="md:w-[35%] space-y-[3rem] md:space-y-2">
             {infoCard.map((el, i) => (
               <div
                 onClick={() => handleHover(el.id)}
