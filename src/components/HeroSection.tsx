@@ -4,10 +4,10 @@ import WhiteButton from "./Button/WhiteButton";
 import BlueWhiteButton from "./Button/BlueWhiteButton";
 import { ASSETS } from "@/assets/images/Assets";
 // import chart101 from "@/assets/images/landing/chart101.png";
-import chart102 from "@/assets/images/landing/chat102.png";
-import chart103 from "@/assets/images/landing/chat103.png";
-import Follow from "@/assets/images/landing/followUp.png";
-import newChart from "@/assets/images/landing/chartclean.svg";
+// import chart102 from "@/assets/images/landing/chat102.png";
+// import chart103 from "@/assets/images/landing/chat103.png";
+// import Follow from "@/assets/images/landing/followUp.png";
+// import newChart from "@/assets/images/landing/chartclean.svg";
 // import chart104 from "@/assets/images/landing/InsightsImg.png";
 
 const HeroSection: React.FC = () => {
@@ -18,8 +18,8 @@ const HeroSection: React.FC = () => {
       x: 0,
       y: 0,
       transition: {
-        delay: i * 1, // Delay based on index
-        duration: 1, // Animation duration
+        delay: i * 0.5, // Delay based on index
+        duration: 0.5, // Animation duration
         ease: "easeInOut",
       },
     }),
@@ -86,42 +86,46 @@ const HeroSection: React.FC = () => {
                 </motion.div> */}
 
                 <motion.div
-                  className="absolute md:bottom-[30%]  md:left-[20%] left-[3rem] md:w-[30%] w-[130px]"
+                  className="absolute md:bottom-[33%]  md:left-[20%] left-[3rem] md:w-[25%] w-[130px]"
                   initial="hidden"
                   animate="visible"
                   custom={3}
                   variants={fadeInVariants} // Fade in from the top
                 >
-                  <img src={newChart} alt="" className="object-cover object-top h-full w-full " />
+                  <img src={ASSETS.GIFS.resultChart} alt="" className="object-cover object-top h-full w-full " />
                 </motion.div>
 
                 <motion.div
-                  className="absolute  bottom-4 md:bottom-0 md:left-[2rem] left-0  md:w-[30%] w-[150px]"
+                  className="absolute  bottom-4 md:bottom-4 md:left-[2rem] left-0  md:w-[22%] w-[150px]"
                   initial="hidden"
                   animate="visible"
                   custom={2}
                   variants={fadeInVariants} // Fade in from the left
                 >
-                  <img src={chart102} alt="" className="object-cover object-top h-full w-full" />
+                  <img
+                    src={ASSETS.GIFS.surveyTemplateQuestion}
+                    alt=""
+                    className="object-cover object-top h-full w-full"
+                  />
                 </motion.div>
 
                 <motion.div
-                  className="absolute md:bottom-[10%] bottom-0 md:right-[2%] right-0 md:w-[35%] w-[150px]"
+                  className="absolute md:bottom-[20%] bottom-0 md:right-[7%] right-0 md:w-[22%] w-[150px]"
                   initial="hidden"
                   custom={1}
                   animate="visible"
                   variants={fadeInVariants} // Fade in from the bottom
                 >
-                  <img src={chart103} alt="" className="object-cover object-top h-full w-full" />
+                  <img src={ASSETS.GIFS.barChart} alt="" className="object-cover object-top h-full w-full" />
                 </motion.div>
                 <motion.div
-                  className="absolute md:bottom-[15%] bottom-1 md:right-[20%] right-[3rem] md:w-[20%] w-[100px]"
+                  className="absolute md:bottom-[18%] bottom-1 md:right-[15%] right-[3rem] md:w-[15%] w-[100px]"
                   initial="hidden"
                   custom={1}
                   animate="visible"
                   variants={fadeInVariants} // Fade in from the bottom
                 >
-                  <img src={Follow} alt="" className="object-cover object-top h-full w-full" />
+                  <img src={ASSETS.GIFS.followUp} alt="" className="object-cover object-top h-full w-full" />
                 </motion.div>
               </>
             )}

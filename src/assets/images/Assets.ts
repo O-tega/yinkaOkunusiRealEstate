@@ -45,6 +45,11 @@ export const ASSETS = {
       "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/Don%E2%80%99t%20worry%20about%20low%20participation..gif",
     robustInsight:
       "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Mooyi/Roboust%20Insights.gif",
+    resultChart: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/Result_charts.gif",
+    barChart: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/Bar_chart.gif",
+    surveyTemplateQuestion:
+      "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/Survey_Template_questions_Variant9.gif",
+    followUp: "https://mooyi-prod-storage.fra1.digitaloceanspaces.com/Mooyi_FB_Assets/Gifs/Follow_up.gif",
   },
   OURSOLUTION: {
     customerEngagementIcon: "",

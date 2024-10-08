@@ -34,7 +34,7 @@ const PlanCard = ({
 }: Tplan) => {
   console.log(conversionRate);
   return (
-    <div className="border rounded-2xl w-full h-[33rem] p-3 drop-shadow-md bg-white">
+    <div className="border rounded-2xl w-[320px] h-[33rem] p-3 drop-shadow-md bg-white">
       <div className="bg-blue-100 p-5 rounded-t-xl h-[7rem]">
         <div className="flex justify-between">
           <p className="text-[20px] font-[600] text-primary">{title}</p>
@@ -54,14 +54,22 @@ const PlanCard = ({
           </div>
         ) : (
           <div className="flex items-center space-x-3 mt-2">
-            <p className="text-[38px] md:text-[40px] font-[600]">
+            <p className={`${toggle ? "text-[28px] md:text-[32px]" : "text-[38px] md:text-[40px]"}  font-[600]`}>
               {conversionRate !== undefined
                 ? toggle
                   ? `₦${((amount * conversionRate) as number).toLocaleString()}`
                   : `$${amount.toLocaleString()}`
                 : `$${amount.toLocaleString()}`}
             </p>
-            {amount === 0 ? null : <p className="font-[600] text-gray-500 ">Per month</p>}
+            {amount === 0 ? null : (
+              <p
+                className={`${
+                  toggle ? "font-[600] text-gray-500 text-[12px]" : "font-[600] text-gray-500"
+                }font-[600] text-gray-500 `}
+              >
+                Per month
+              </p>
+            )}
           </div>
         )}
         <div className="mt-2">
