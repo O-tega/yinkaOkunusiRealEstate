@@ -24,8 +24,8 @@ const Footer = () => {
 
   const socialIcons = [
     { icon: FaFacebook, link: "https://www.facebook.com/mooyi.africa?mibextid=LQQJ4d" },
-    { icon: FaSquareXTwitter, link: "https://x.com/mooyiafrica?s=21&t=z3mhh3-Ie8KzpOqK2ePxzA" },
-    { icon: FaInstagram, link: "https://www.instagram.com/mooyi.africa?igsh=MThmZXRuZ242NXhoOA==" },
+    { icon: FaSquareXTwitter, link: "https://x.com/usemooyi?t=Q77kVLfiK3qzSHT3nQLDFQ&s=09" },
+    { icon: FaInstagram, link: "https://x.com/instagram.com/usemooyi" },
     { icon: FaLinkedin, link: "https://www.linkedin.com/company/mooyi-africa/" },
   ];
 
