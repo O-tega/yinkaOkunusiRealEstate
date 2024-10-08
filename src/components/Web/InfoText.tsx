@@ -13,7 +13,7 @@ const InfoText: React.FC<TInfo> = ({ title, text, icon, count, id }) => {
   return (
     <>
       <motion.div
-        className={`space-y-3 p-2 rounded-lg hidden md:block text-center md:text-left ${
+        className={`space-y-3 px-5 py-2 rounded-lg hidden md:block text-center md:text-left ${
           count === id ? "bg-blue-100" : ""
         }`}
         animate={{

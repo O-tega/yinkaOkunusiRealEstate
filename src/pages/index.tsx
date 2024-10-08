@@ -52,13 +52,17 @@ const LandingPage = () => {
   useEffect(() => {
     const interval = setTimeout(() => {
       setCount((prevCount) => (prevCount === 2 ? 0 : prevCount + 1));
-    }, 2000); // 1 second delay
+    }, 1500); // 1 second delay
 
     return () => clearTimeout(interval); // Cleanup the timeout on unmount
   }, [count]); // Re-run the effect when `count` changes
 
   const handleToggleChange = () => {
     setToggleValue(!toggleValue);
+  };
+
+  const handleHover = (id: number) => {
+    setCount(count !== id ? id : count);
   };
 
   const logos = [
@@ -271,7 +275,14 @@ const LandingPage = () => {
           {/* Text Section */}
           <div className="md:w-[37%] space-y-[3rem] md:space-y-2">
             {infoCard.map((el, i) => (
-              <InfoText key={i} title={el.title} text={el.text} icon={el.icon} count={count} id={el.id} />
+              <div
+                onClick={() => handleHover(el.id)}
+                onMouseEnter={() => handleHover(el.id)}
+                onMouseLeave={() => handleHover(count)}
+                className="cursor-pointer"
+              >
+                <InfoText key={i} title={el.title} text={el.text} icon={el.icon} count={count} id={el.id} />
+              </div>
             ))}
           </div>
 
@@ -308,7 +319,13 @@ const LandingPage = () => {
           </div>
           <div className=" px-5 md:px-0 space-y-2 md:w-[37%]">
             {infoCard2.map((el, i) => (
-              <InfoText key={i} title={el.title} text={el.text} icon={el.icon} count={count} id={el.id} />
+              <div
+                onMouseEnter={() => handleHover(el.id)}
+                onMouseLeave={() => handleHover(count)}
+                className="cursor-pointer"
+              >
+                <InfoText key={i} title={el.title} text={el.text} icon={el.icon} count={count} id={el.id} />
+              </div>
             ))}
           </div>
         </div>
