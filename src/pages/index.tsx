@@ -52,7 +52,7 @@ const LandingPage = () => {
   useEffect(() => {
     const interval = setTimeout(() => {
       setCount((prevCount) => (prevCount === 2 ? 0 : prevCount + 1));
-    }, 1500); // 1 second delay
+    }, 2500); // 1 second delay
 
     return () => clearTimeout(interval); // Cleanup the timeout on unmount
   }, [count]); // Re-run the effect when `count` changes
