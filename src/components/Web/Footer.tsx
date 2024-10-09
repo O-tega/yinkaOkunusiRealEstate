@@ -73,8 +73,8 @@ const Footer = () => {
       <div className="flex items-start md:justify-between justify-center space-x-2 px-5 md:px-0 md:space-x-0 pt-10">
         <div className="space-y-1 w-[50%] md:w-fit">
           <img src={Logo} alt="Logo" className="md:w-[185px] w-[100px]" />
-          <p className="md:text-[14px] text-[12px] font-[600] text-left pt-2 ">Your Data is Protected and Secure</p>
-          <p className="md:text-[14px] text-[12px] text-left md:w-[60%] w-[90%] ">
+          <p className="text-[14px]  font-[600] text-left pt-2 ">Your Data is Protected and Secure</p>
+          <p className="text-[14px]  text-left md:w-[60%] w-[90%] ">
             Mooyi is built to comply with all applicable data protection regulations.
           </p>
           <div className="md:w-[165px] w-[100px] flex ">
@@ -86,7 +86,7 @@ const Footer = () => {
           <p className="md:text-[18px] text-[14px] font-[600] text-left">Company</p>
           <ul className="space-y-3 text-left pt-4">
             {companyLinks.map((item, i) => (
-              <li key={i} className="hover:text-primary text-[12px] md:text-[16px] ">
+              <li key={i} className="hover:text-primary text-[14px] md:text-[16px] ">
                 <Link to={item.link}>{item.name}</Link>
               </li>
             ))}
@@ -97,7 +97,7 @@ const Footer = () => {
           <p className="md:text-[18px] text-[14px] font-[600] text-left">Legal</p>
           <ul className="space-y-3 text-left pt-4">
             {LegalLinks.map((item, i) => (
-              <li key={i} className="hover:text-primary text-[12px] md:text-[16px] ">
+              <li key={i} className="hover:text-primary text-[14px] md:text-[16px] ">
                 <Link to={item.link}>{item.name}</Link>
               </li>
             ))}

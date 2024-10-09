@@ -182,7 +182,7 @@ const Home: React.FC = () => {
                       {content.map((item, j) => (
                         <div key={j} className="space-y-1">
                           <p className="font-medium text-[18px]">{item.subtitle}</p>
-                          <p className="md:text-[15px] text-[12px]">{item.subContent}</p>
+                          <p className="md:text-[15px] text-[14px]">{item.subContent}</p>
                         </div>
                       ))}
                     </div>

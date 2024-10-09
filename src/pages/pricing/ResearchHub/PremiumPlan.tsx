@@ -72,26 +72,7 @@ const PlanCard = ({
       </div>
       <div className="mt-5 px-5">
         <p className="md:text-[16px] text-[14px] font-medium">{info}</p>
-        {/* <div className="mt-3">
-          <p className="text-[13px]">Responses</p>
-          <div className="flex items-center mt-1">
-            <div
-              className={`border rounded-l-md h-[30px] border-r-0  p-2 flex items-center justify-center cursor-pointer  ${
-                newresponses < 300 ? "text-gray-400 cursor-not-allowed" : "cursor-pointer"
-              }`}
-              onClick={() => setNewResponses(newresponses > 200 ? newresponses - 100 : newresponses)}
-            >
-              <HiOutlineMinus />
-            </div>
-            <div className="border p-2 flex items-center justify-center h-[30px] text-[12px]">{newresponses}</div>
-            <div
-              className="border rounded-r-md border-l-0 h-[30px]  p-2 flex items-center justify-center cursor-pointer"
-              onClick={() => setNewResponses(newresponses + 100)}
-            >
-              <HiOutlinePlus />
-            </div>
-          </div>
-        </div> */}
+
         {title === "Pro Plan" ? (
           <div>
             <p className="text-[38px] md:text-[40px] font-[600] mt-3">Custom</p>
