@@ -33,11 +33,11 @@ const HeroSection: React.FC = () => {
     <div ref={ref} className="w-[100%] mx-auto md:h-[1000px] h-[600px] relative">
       <div className="w-full mx-auto h-full bg-primary pb-[3rem] md:block overflow-hidden ">
         <div className="pt-[5rem]">
-          <h1 className="md:text-[80px] text-[40px] mx-auto leading-[1.2em] text-white text-center">
+          <h1 className="md:text-[80px] text-[40px] mx-auto leading-[1.2em] text-white text-center md:w-auto w-[80%]">
             You deserve the upper hand.
           </h1>
           <div className="flex  justify-center">
-            <p className="font-primary md:text-[28px] md:mt-0 mt-4 text-[14px] text-white text-center md:w-[60%] px-10 md:px-0">
+            <p className="font-primary md:text-[28px] md:mt-0 mt-4 text-[16px] text-white text-center md:w-[60%] px-10 md:px-0">
               Get insights to create impactful campaigns and foster engagement that drives growth.
             </p>
           </div>
