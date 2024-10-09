@@ -84,7 +84,7 @@
 //         />
 //       </div>
 
-//       <p className="text-[12px] text-red-500">{error}</p>
+// 
 //     </div>
 //   );
 // };

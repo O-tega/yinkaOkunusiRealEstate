@@ -67,7 +67,7 @@ const PlanCard = ({
         <p className="text-grey-600 md:text-[15px] text-[13px] font-medium">{subtitle}</p>
       </div>
       <div className="mt-2 px-5">
-        <p className="md:text-[13px] text-[12px] font-medium">{info}</p>
+        <p className="text-[14px]  font-medium">{info}</p>
         {title === "Pro Plan" ? (
           <div>
             <p className="text-[38px] md:text-[40px] font-[600] mt-3"> Custom </p>

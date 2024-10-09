@@ -19,7 +19,7 @@ bg-center py-[4em] bg-cover bg-no-repeat
             type="button"
           /> */}
         </a>
-        <p className="text-[12px] font-light mt-2">Terms and conditions apply.</p>
+        <p className="text-[14px] font-light mt-2">Terms and conditions apply.</p>
       </div>
     </div>
   );

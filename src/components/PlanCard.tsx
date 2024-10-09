@@ -40,7 +40,7 @@ const PlanCard = ({
           <p className="text-[20px] font-[600] text-primary">{title}</p>
           {tag !== "" || undefined ? (
             <div className="w-fit rounded flex items-center justify-center">
-              <p className="text-primary  text-[12px]">{tag}</p>
+              <p className="text-primary  text-[14px]">{tag}</p>
             </div>
           ) : null}
         </div>
@@ -64,7 +64,7 @@ const PlanCard = ({
             {amount === 0 ? null : (
               <p
                 className={`${
-                  toggle ? "font-[600] text-gray-500 text-[12px]" : "font-[600] text-gray-500"
+                  toggle ? "font-[600] text-gray-500 text-[14px]" : "font-[600] text-gray-500"
                 }font-[600] text-gray-500 `}
               >
                 Per month
@@ -95,7 +95,7 @@ const PlanCard = ({
                   <div className="mt-1 w-[20px] h-[20px]">
                     <img src={checker} alt="" />
                   </div>
-                  <p className="text-[12px] w-[90%] font-medium">{el}</p>
+                  <p className="text-[14px] w-[90%] font-medium">{el}</p>
                 </div>
               ))
             : null}

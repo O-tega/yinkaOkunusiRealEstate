@@ -29,7 +29,7 @@ const InfoText: React.FC<TInfo> = ({ title, text, icon, count, id }) => {
           <p className={`md:text-[24px] text-[18px] font-[600] ${count === id ? "text-blue-800" : "text-black"}`}>
             {title}
           </p>
-          <p className="md:text-[18px] w-full text-[12px] pt-2 font-medium">{text}</p>
+          <p className="md:text-[18px] w-full text-[14px] pt-2 font-medium">{text}</p>
         </div>
       </motion.div>
       <div className={`space-y-3 p-2 rounded-lg md:hidden text-center md:text-left `}>
@@ -39,7 +39,7 @@ const InfoText: React.FC<TInfo> = ({ title, text, icon, count, id }) => {
             <img src={icon} alt="" />
           </div>
           <p className={`md:text-[24px] text-[18px] font-[600] mt-5`}>{title}</p>
-          <p className="md:text-[18px] w-[80%] text-[12px] pt-2 font-medium">{text}</p>
+          <p className="md:text-[18px] w-[80%] text-[14px] pt-2 font-medium">{text}</p>
         </div>
       </div>
     </>

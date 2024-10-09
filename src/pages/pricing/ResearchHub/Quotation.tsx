@@ -239,7 +239,7 @@ const Quotation: React.FC<TLoad> = ({ setLoading, setOpenSignup, setQuoteData })
                 >
                   <HiOutlineMinus />
                 </div>
-                <div className="border p-2 flex items-center justify-center h-[30px] text-[12px]">{responses}</div>
+                <div className="border p-2 flex items-center justify-center h-[30px] text-[14px]">{responses}</div>
                 <div
                   className="border rounded-r-md border-l-0 h-[30px]  p-2 flex items-center justify-center cursor-pointer"
                   onClick={() => setResponses(responses + 100)}
@@ -330,7 +330,7 @@ const Quotation: React.FC<TLoad> = ({ setLoading, setOpenSignup, setQuoteData })
             </div>
             <div>
               <p
-                className="text-primary underline text-[12px] cursor-pointer mt-5 md:hidden"
+                className="text-primary underline text-[14px] cursor-pointer mt-5 md:hidden"
                 onClick={() => setOpenModal(!openModal)}
               >
                 Preview selection
