@@ -37,7 +37,7 @@ const HeroSection: React.FC = () => {
             You deserve the upper hand.
           </h1>
           <div className="flex  justify-center">
-            <p className="font-primary md:text-[28px] md:mt-0 text-[14px] text-white text-center md:w-[60%] px-10 md:px-0">
+            <p className="font-primary md:text-[28px] md:mt-0 mt-4 text-[14px] text-white text-center md:w-[60%] px-10 md:px-0">
               Get insights to create impactful campaigns and foster engagement that drives growth.
             </p>
           </div>
