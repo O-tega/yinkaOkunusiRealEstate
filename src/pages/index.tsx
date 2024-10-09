@@ -451,8 +451,8 @@ const LandingPage = () => {
           <SingleCarousel />
         </div>
         <p className="md:text-[20px] md:px-[18rem] text-center text-[14px]">
-          Flutterwave used the platform to register merchants and shoppers at their trade fair, incentivising them to
-          participate and share their feedback about their event experience.
+          Flutterwave used Mooyi to register merchants and shoppers at their trade fair, offering rewards to
+          participants who shared feedback about their event experience.
         </p>
         <div className="flex justify-center mt-5 md:mt-0 pb-16">
           <div className="md:w-[15%]">
