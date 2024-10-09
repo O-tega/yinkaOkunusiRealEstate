@@ -4,7 +4,6 @@ import { TSelectInput } from "@/types/componentTypes";
 const SelectInput: React.FC<TSelectInput> = ({ options, name, value, onChange, css, disabled, defaultValue }) => {
   return (
     <div className="text-primary flex flex-col w-[100%]">
-
       <select
         name={name}
         disabled={disabled || false}
