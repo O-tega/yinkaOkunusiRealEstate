@@ -27,7 +27,7 @@ const PrimaryButton = ({
     <button
       id={buttonId}
       className={`flex h-[45px] w-full items-center justify-center rounded-lg font-bold border disabled:bg-primary-300 active:text-blue-200 px-6 " ${
-        variant === "filled" && "border-none bg-primary text-white hover:bg-blue-600"
+        variant === "filled" && "border-none bg-blue-400 text-white hover:bg-blue-500"
       } ${variant === "transparent" && " border-none text-black"} ${
         variant === "outlined" && "border border-white text-black"
       } ${

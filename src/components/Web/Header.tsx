@@ -1,25 +1,22 @@
 import { useState } from "react";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
-import Logo from "@/assets/images/MooyiFBLogo.svg";
+import Logo from "@/assets/images/favicon.png";
 import MobileNav from "./MobileNav";
-import BlueButton from "../Button/BlueButton";
 import { BiChevronDown } from "react-icons/bi";
 import { useOutsideClick } from "@/hooks";
-import SolutionList from "./SolutionList";
 import { Link } from "react-router-dom";
-import { ROUTES } from "@/constants/externalUrls";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   const links = [
     { name: "Home", link: "/" },
-    { name: "Why Mooyi", link: "/why-mooyi" },
-    // { name: "Solutions", link: "#" },
-    { name: "Mooyi Rewards", link: "https://www.mooyirewards.com/" },
-    { name: "Pricing", link: "/pricing" },
-    { name: "FAQs", link: "/faq" },
+    { name: "About us", link: "/about-us" },
+    { name: "Our services", link: "/our-service" },
+    { name: "To let", link: "/properties" },
+    { name: "For sale", link: "/properties" },
     { name: "Blog", link: "https://blog.usemooyi.com" },
+    { name: "Contact us", link: "https://blog.usemooyi.com" },
   ];
 
   const [dropDown, setDropdown] = useState(false);
@@ -38,11 +35,21 @@ const Header = () => {
       py-4 lg:py-0 z-50"
       >
         <div className="items-center justify-between w-[55%] flex" ref={clickRef}>
-          <div>
+          <div className="flex items-center">
             <Link to="/">
-              <img src={Logo} alt="Logo" className="w-[150px]" />
+              <img src={Logo} alt="Logo" className="w-[50px]" />
             </Link>
+            <p className="text-[12px]">
+              Yinka Okunusi <br /> And Associates
+            </p>
           </div>
+        </div>
+
+        <div className="flex sm:hidden ">
+          {showMenu ? null : <HiOutlineMenuAlt4 onClick={() => setShowMenu(!showMenu)} size={25} />}
+        </div>
+
+        <div className="hidden sm:flex space-x-4  items-center font-[500]">
           <div className="hidden md:block">
             <ul className="flex items-center space-x-4 lg:space-x-6 whitespace-nowrap">
               {links.map((items, i) => (
@@ -74,43 +81,12 @@ const Header = () => {
               ))}
             </ul>
           </div>
-          <div
-            className={`${
-              dropDown ? "opacity-1 visible translate-y-0" : "opacity-0 invisible -translate-y-6"
-            } transition-all duration-300 ease-in-out absolute z-40 top-[4.4rem] left-[24rem] w-full max-w-[400px] h-[550px] bg-white border border-strokeColor rounded-b-2xl shadow-card overflow-hidden`}
-          >
-            <SolutionList onClick={() => toggleDropdown()} />
-          </div>
-        </div>
-
-        <div className="flex sm:hidden ">
-          {showMenu ? null : <HiOutlineMenuAlt4 onClick={() => setShowMenu(!showMenu)} size={25} />}
-        </div>
-
-        <div className="hidden sm:flex space-x-4  items-center font-[500]">
-          {/* <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://blog.usemooyi.com"
-            className="py-[16px]  rounded-[30px] hover:deepBlue"
-          >
-            Blog
-          </a> */}
-          {/* <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://www.youtube.com/channel/UC-KbRjjhExwbHkOurEtdNFQ"
-            className="py-[16px]  rounded-[30px] hover:deepBlue"
-          >
-            Tutorials
-          </a> */}
-
-          <Link to={`${ROUTES.LOGIN}`} className="py-[16px] rounded-[30px] text-primary" id="header_login">
+          {/* <Link to={`${ROUTES.LOGIN}`} className="py-[16px] rounded-[30px] text-primary" id="header_login">
             Login
           </Link>
           <a href={`${ROUTES.LOGIN}/register`} className="cursor-pointer">
             <BlueButton text="Sign up" css="w-[120px]" buttonId="header_signup" />
-          </a>
+          </a> */}
         </div>
       </div>
       <MobileNav showMenu={showMenu} setShowMenu={setShowMenu} />

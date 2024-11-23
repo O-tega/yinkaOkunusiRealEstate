@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import BrandTracking from "./brand-tracking";
-import CreativeTesting from "./creative-testing";
 import CustomerEngagement from "./customer-engagement";
 import CustomerFeedback from "./customer-feedback";
 import CustomerProfiling from "./customer-profiling";
@@ -13,7 +12,6 @@ function Solutions() {
   return (
     <Routes>
       <Route path="/brand-tracking" element={<BrandTracking />} />
-      <Route path="/creative-testing" element={<CreativeTesting />} />
       <Route path="/customer-engagement" element={<CustomerEngagement />} />
       <Route path="/customer-feedback" element={<CustomerFeedback />} />
       <Route path="/customer-profiling" element={<CustomerProfiling />} />

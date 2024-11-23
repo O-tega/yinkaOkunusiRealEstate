@@ -7,9 +7,11 @@ import Faq from "./pages/faq";
 import PrivacyPolicy from "./pages/privacy-policy";
 import TermsOfUse from "./pages/terms-of-use";
 import CookieNotice from "./pages/cookie-policy";
-// import Pricing from "./pages/pricing";
 import EngagementHub from "./pages/pricing/EngagementHub";
-import WhyMooyi from "./pages/solutions/whyMooyi";
+import Ourservice from "./pages/solutions/Ourservice";
+import PropertyDetails from "./pages/propertyDetails";
+import AboutUs from "./pages/AboutUs";
+import Properties from "./pages/properties";
 
 function App() {
   return (
@@ -23,7 +25,10 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-use" element={<TermsOfUse />} />
         <Route path="/cookie-policy" element={<CookieNotice />} />
-        <Route path="/why-mooyi" element={<WhyMooyi />} />
+        <Route path="/our-service" element={<Ourservice />} />
+        <Route path="/property-detail/:id" element={<PropertyDetails />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/properties" element={<Properties />} />
       </Route>
     </Routes>
   );

@@ -10,7 +10,7 @@ export type TPrimaryInput = {
   css?: string;
   placeholder: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  onBlur: React.FocusEventHandler<HTMLInputElement>;
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
   error?: string | undefined | false | string[];
   value: string | number | undefined;
   name: string;
@@ -35,7 +35,7 @@ export type TOption = {
 };
 
 export type TSecondarySelectInput = {
-  text: string;
+  text?: string;
   onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
   value: string | number | undefined;
   name: string;
@@ -50,8 +50,8 @@ export type TSelectInput = {
   name: string;
   disabled?: boolean;
   options: TOption[];
-  css: string;
-  defaultValue: string | number | undefined;
+  css?: string;
+  defaultValue?: string | number | undefined;
 };
 
 export interface Option {

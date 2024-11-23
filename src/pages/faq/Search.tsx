@@ -2,9 +2,9 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { CiSearch } from "react-icons/ci";
 
 type TSearchProps = {
-  handleSearch: (text: string) => void;
-  search: string;
-  setSearch: React.Dispatch<React.SetStateAction<string>>;
+  handleSearch?: (text: string) => void | undefined;
+  search?: string;
+  setSearch?: React.Dispatch<React.SetStateAction<string>> | undefined;
 };
 
 const Search: React.FC<TSearchProps> = ({ handleSearch, search, setSearch }) => {
@@ -34,11 +34,11 @@ const Search: React.FC<TSearchProps> = ({ handleSearch, search, setSearch }) => 
   );
 
   useEffect(() => {
-    handleFilter(search);
+    handleFilter(search === undefined ? "" : search);
   }, [handleFilter, search]);
 
   const handleClick = (text: string) => {
-    handleSearch(text);
+    handleSearch === undefined ? null : handleSearch(text);
   };
 
   return (
@@ -51,8 +51,8 @@ const Search: React.FC<TSearchProps> = ({ handleSearch, search, setSearch }) => 
           <input
             type="text"
             className="w-full text-black bg-white focus:outline-none placeholder:text-slate-400"
-            placeholder="Search FAQs"
-            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Search locations"
+            onChange={(e) => (setSearch === undefined ? null : setSearch(e.target.value))}
           />
         </div>
       </div>
