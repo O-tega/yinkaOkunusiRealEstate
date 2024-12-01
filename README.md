@@ -86,4 +86,4 @@ The important folders are located in the `src` directory. These include:
 
 ## Contact
 
-For any questions or concerns, please reach out to `israel@enterscale.com`.
+For any questions or concerns, please reach out to `tega.myview@gmail.com`.
