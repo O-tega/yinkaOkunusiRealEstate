@@ -10,7 +10,7 @@ type TCarolInfo = {
   amount?: string;
   currency?: string;
   id?: number;
-  data: TProperty;
+  data?: TProperty;
 };
 
 const CarouselCard: React.FC<TCarolInfo> = ({ img, title, text, category, amount, currency, id, data }) => {
