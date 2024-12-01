@@ -41,7 +41,7 @@ const FaqHero: React.FC<HeroSectionProps> = ({ title, desc, desktopImg, search }
             <p className=" md:text-[20px] pt-2 text-[16px] text-white text-center">{desc}</p>
             {search === undefined ? null : (
               <div className="absolute w-full mt-10">
-                <Search/>
+                <Search />
               </div>
             )}
           </div>
