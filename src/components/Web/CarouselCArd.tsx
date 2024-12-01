@@ -17,14 +17,14 @@ const CarouselCard: React.FC<TCarolInfo> = ({ img, title, text, category, amount
   const navigate = useNavigate();
   return (
     <div
-      className="space-y-3 mt-2 mx-5 overflow-hidden rounded-md border hover:border-blue-100 relative h-[300px] cursor-pointer"
+      className=" mt-2 mx-5 overflow-hidden bg-white rounded-md border hover:border-[2px] hover:border-blue-400 relative h-[330px] cursor-pointer transition-all delay-75"
       onClick={() =>
         navigate(id !== undefined ? `/property-detail/${id}` : "", { state: id !== undefined ? data : "" })
       }
     >
       <div className="flex items-center justify-center">
         <div className="   ">
-          <img src={img} alt="" className="object-cover md:w-[600px] w-[400px] h-[200px]" />
+          <img src={img} alt={title} className="object-cover md:w-[600px] w-[400px] h-[200px]" />
         </div>
       </div>
       <div>
@@ -38,12 +38,12 @@ const CarouselCard: React.FC<TCarolInfo> = ({ img, title, text, category, amount
         {amount !== undefined && (
           <div className="bg-white absolute top-[10rem] right-1 py-1 rounded-md px-3">
             <p>
-              {amount} <span className="text-[11px]">{currency}</span>
+              {Number(amount ?? "").toLocaleString()} <span className="text-[11px]">{currency}</span>
             </p>
           </div>
         )}
       </div>
-      <div className="space-y-1 text-center md:text-left px-5 pb-2">
+      <div className="space-y-1 text-center md:text-left px-5 bg-blue-100 py-3 h-[150px] pb-7 overflow-y-auto no-scrollbar">
         <p className="md:text-[17px] font-secondary">{title}</p>
         <div className="flex justify-center md:justify-start">
           <p className="md:text-[16px] text-[14px]  font-medium">{text}</p>

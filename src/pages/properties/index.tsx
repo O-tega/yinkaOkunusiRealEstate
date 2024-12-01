@@ -4,63 +4,35 @@ import faqBackground from "@/assets/images/landing/337fd9292d.jpg";
 import ToLet from "./ToLet";
 import ForSale from "./ForSale";
 import AllProperties from "./AllProperties";
-import PrimaryInput from "@/components/Inputs/PrimaryInput";
-import SecondarySelectInput from "@/components/Inputs/SecondarySelectInput";
-import PrimaryButton from "@/components/Button/PrimaryButton";
+import SideCard from "@/components/Web/SideCard";
+import { useQuery } from "@tanstack/react-query";
+import { getProperties } from "@/service/propertyServices";
 
 const Properties = () => {
+  const { data } = useQuery({ queryKey: ["allproperties"], queryFn: getProperties });
   const [tabValue, setTabvalue] = useState(0);
-  const [location, setLocation] = useState("");
-  const [type, setType] = useState("");
-  const [propertyType, setPropertyType] = useState("");
   const tab = [
     { name: "All", value: 0 },
     { name: "For sale", value: 1 },
     { name: "To let", value: 2 },
   ];
 
-  const options = [
-    {
-      label: "To let",
-      value: "to let",
-    },
-    {
-      label: "Lease",
-      value: "lease",
-    },
-    {
-      label: "For sale",
-      value: "for sale",
-    },
-  ];
+  console.log(data);
 
-  const propertyOption = [
-    {
-      label: "please set a property option",
-      value: "",
-    },
-  ];
+  const filterData = (category: string) => {
+    return data?.filter((el) => el.l_category === category);
+  };
 
   const display = () => {
     switch (tabValue) {
       case 0:
-        return <AllProperties />;
+        return <AllProperties data={data} />;
       case 1:
-        return <ForSale />;
+        return <ForSale data={filterData("Sales")} />;
       case 2:
-        return <ToLet />;
+        return <ToLet data={filterData("To Let")} />;
       default:
     }
-  };
-
-  const handleSubmit = () => {
-    const payload = {
-      location,
-      purchaseType: type,
-      propertyType,
-    };
-
-    console.log(payload);
   };
 
   return (
@@ -88,40 +60,8 @@ const Properties = () => {
           <div className="w-[60%] h-screen overflow-y-auto">
             <div>{display()}</div>
           </div>
-          <div className="w-[20%] px-2">
-            <div className="border rounded-[8px] p-2">
-              <p className="text-[18px] font-[600] mb-2">Properties search</p>
-              <div>
-                <PrimaryInput
-                  type="text"
-                  placeholder="Type your location"
-                  value={location}
-                  name="location"
-                  onChange={(e) => setLocation(e.target.value)}
-                />
-              </div>
-              <div>
-                <SecondarySelectInput
-                  options={options}
-                  onChange={(e) => setType(e.target.value)}
-                  value={type}
-                  name="purchaseType"
-                />
-              </div>
-              <div>
-                <SecondarySelectInput
-                  options={propertyOption}
-                  onChange={(e) => {
-                    () => setPropertyType(e.target.value);
-                  }}
-                  value={propertyType}
-                  name="propertyType"
-                />
-              </div>
-              <div>
-                <PrimaryButton text="Search" variant="filled" onClick={handleSubmit} buttonId="search_id" />
-              </div>
-            </div>
+          <div className="w-[20%]">
+            <SideCard />
           </div>
         </div>
       </div>

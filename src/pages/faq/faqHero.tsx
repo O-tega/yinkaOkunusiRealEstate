@@ -11,7 +11,7 @@ type HeroSectionProps = {
   setSearch?: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const FaqHero: React.FC<HeroSectionProps> = ({ title, desc, desktopImg, handleSearch, search, setSearch }) => {
+const FaqHero: React.FC<HeroSectionProps> = ({ title, desc, desktopImg, search }) => {
   return (
     <div className="w-[100%] mx-auto md:h-[60vh] h-[50vh] pb-10 md:pb-0 bg-black flex pt-16 md:pt-0 md:relative">
       <div>
@@ -40,8 +40,8 @@ const FaqHero: React.FC<HeroSectionProps> = ({ title, desc, desktopImg, handleSe
           <div className="md:w-full relative">
             <p className=" md:text-[20px] pt-2 text-[16px] text-white text-center">{desc}</p>
             {search === undefined ? null : (
-              <div className="absolute w-full">
-                <Search handleSearch={handleSearch} search={search} setSearch={setSearch} />
+              <div className="absolute w-full mt-10">
+                <Search/>
               </div>
             )}
           </div>

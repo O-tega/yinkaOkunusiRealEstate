@@ -1,5 +1,7 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
-import { CiSearch } from "react-icons/ci";
+import PrimaryButton from "@/components/Button/PrimaryButton";
+import PrimaryInput from "@/components/Inputs/PrimaryInput";
+import SecondarySelectInput from "@/components/Inputs/SecondarySelectInput";
+import React, { useState } from "react";
 
 type TSearchProps = {
   handleSearch?: (text: string) => void | undefined;
@@ -7,65 +9,137 @@ type TSearchProps = {
   setSearch?: React.Dispatch<React.SetStateAction<string>> | undefined;
 };
 
-const Search: React.FC<TSearchProps> = ({ handleSearch, search, setSearch }) => {
-  // const [search, setSearch] = useState<string>("");
-  const [filterData, setFilteredData] = useState<string[]>();
+const Search: React.FC<TSearchProps> = () => {
+  const [location, setLocation] = useState("");
+  const [type, setType] = useState("");
+  const [propertyType, setPropertyType] = useState("");
 
-  const searchSuggestions = useMemo(
-    () => [
-      "Who can use Mooyi?",
-      "How much does each response cost?",
-      "How do I create a survey on Mooyi?",
-      "What are screening questions?",
-    ],
-    [],
-  );
-
-  const handleFilter = useCallback(
-    (searchTerm: string) => {
-      const filteredData = searchSuggestions.filter((item) => {
-        const content = item.toLowerCase();
-        return searchTerm && content.includes(searchTerm.toLowerCase());
-      });
-
-      setFilteredData(filteredData);
+  const options = [
+    {
+      label: "To let",
+      value: "to let",
     },
-    [searchSuggestions],
-  );
+    {
+      label: "Lease",
+      value: "lease",
+    },
+    {
+      label: "For sale",
+      value: "for sale",
+    },
+  ];
 
-  useEffect(() => {
-    handleFilter(search === undefined ? "" : search);
-  }, [handleFilter, search]);
+  const propertyOption = [
+    {
+      label: "Select property option",
+      value: "",
+    },
+    {
+      label: "Flat",
+      value: "flat",
+    },
+    {
+      label: "Duplex",
+      value: "duple",
+    },
+    {
+      label: "Bungalow",
+      value: "bungalow",
+    },
+    {
+      label: "Mini-flat",
+      value: "mini-flat",
+    },
+    {
+      label: "Warehouse",
+      value: "warehouse",
+    },
+    {
+      label: "Office",
+      value: "Office",
+    },
+    {
+      label: "Mansion",
+      value: "Mansion",
+    },
+    {
+      label: "Shop",
+      value: "Shop",
+    },
+    {
+      label: "Land",
+      value: "Land",
+    },
+    {
+      label: "Terrace",
+      value: "Terrace",
+    },
+    {
+      label: "Fully Detached House",
+      value: "Fully Detached House",
+    },
+    {
+      label: "Semi Detached House",
+      value: "Semi Detached House",
+    },
+    {
+      label: "Tenement",
+      value: "Tenement",
+    },
+    {
+      label: "Storey Building",
+      value: "Storey Building",
+    },
+    {
+      label: "Hotel",
+      value: "Hotel",
+    },
+    {
+      label: "Office Complex",
+      value: "Office Complex",
+    },
+  ];
 
-  const handleClick = (text: string) => {
-    handleSearch === undefined ? null : handleSearch(text);
+  const handleSubmit = () => {
+    const payload = {
+      location,
+      purchaseType: type,
+      propertyType,
+    };
+
+    console.log(payload);
   };
 
   return (
-    <div className="w-full rounded-xl mt-10 p-5 bg-white">
-      <div className="flex items-center space-x-2">
-        <div>
-          <CiSearch size={20} />
-        </div>
-        <div className="w-full">
-          <input
-            type="text"
-            className="w-full text-black bg-white focus:outline-none placeholder:text-slate-400"
-            placeholder="Search locations"
-            onChange={(e) => (setSearch === undefined ? null : setSearch(e.target.value))}
-          />
-        </div>
+    <div className="border rounded-[8px] p-2 flex items-center space-x-2 w-full bg-white">
+      <div className="w-full">
+        <PrimaryInput
+          type="text"
+          placeholder="Type your location"
+          value={location}
+          name="location"
+          onChange={(e) => setLocation(e.target.value)}
+        />
       </div>
-      {search !== "" ? (
-        <div className="bg-white rounded-b-lg w-full space-y-5 pt-5">
-          {filterData?.map((items, i) => (
-            <p key={i} onClick={() => handleClick(items)} className="cursor-pointer active:bg-slate-100">
-              {items}
-            </p>
-          ))}
-          {search !== "" && filterData?.length === 0 ? <p className="text-center">No result found</p> : null}
-        </div>
-      ) : null}
+      <div className="w-full">
+        <SecondarySelectInput
+          options={options}
+          onChange={(e) => setType(e.target.value)}
+          value={type}
+          name="purchaseType"
+        />
+      </div>
+      <div className="w-full">
+        <SecondarySelectInput
+          options={propertyOption}
+          onChange={(e) => setPropertyType(e.target.value)}
+          value={propertyType}
+          name="propertyType"
+        />
+      </div>
+      <div className="w-full">
+        <PrimaryButton text="Search" variant="filled" onClick={handleSubmit} buttonId="search_id" />
+      </div>
     </div>
   );
 };

@@ -38,24 +38,20 @@ import CarouselCard from "@/components/Web/CarouselCArd";
 import MobileCarousel from "@/components/MobileCarosel";
 import FaqHero from "./faq/faqHero";
 import { HouseData } from "@/data/houseData";
-import { propertyData } from "@/data/propertyData";
 import Marquee from "react-fast-marquee";
 import TeamCard from "@/components/TeamCard";
 import { useQuery } from "@tanstack/react-query";
-import { getLatestProperties, getProperties, getServices } from "@/service/propertyServices";
-import ScaleLoader from "react-spinners/ScaleLoader";
+import { getLatestProperties, getServices } from "@/service/propertyServices";
 import Loader from "@/components/Loader/Loader";
 
 const LandingPage = () => {
   const [count, setCount] = useState(0);
   const [hover, setHover] = useState<number | null>(null);
-  const { data } = useQuery({ queryKey: ["allproperties"], queryFn: getProperties });
   const { data: services, isPending: loadingService } = useQuery({ queryKey: ["services"], queryFn: getServices });
   const { data: recentPropertiesList, isPending: loadingLatest } = useQuery({
-    queryKey: ["services"],
+    queryKey: ["recentProperties"],
     queryFn: getLatestProperties,
   });
-  console.log({ data, services });
 
   const handleHover = (id: number | null) => {
     setHover(hover === id ? null : id);
@@ -69,7 +65,7 @@ const LandingPage = () => {
 
   const homeLoading = loadingService || loadingLatest;
 
-  console.log(homeLoading);
+  console.log(recentPropertiesList);
 
   // const OurserviceCard = [
   //   {
@@ -194,7 +190,7 @@ const LandingPage = () => {
                 id={item.l_id}
                 title={item.l_type}
                 text={item.l_title}
-                img={item.l_img1}
+                img={`http://www.yinkaokunusiandassociates.com/images/properties/${item.l_img1}`}
                 category={item.l_category}
                 amount={item.l_amount}
                 currency={item.l_currency}
@@ -208,7 +204,7 @@ const LandingPage = () => {
 
         <div className="flex justify-center mt-16">
           <div className="md:w-[15%] w-[50%]">
-            <Link to={`#`}>
+            <Link to={`/properties`}>
               <PrimaryButton
                 type="button"
                 text="See more"
@@ -222,7 +218,7 @@ const LandingPage = () => {
       </div>
       <div className="w-full bg-blue-100 md:h-[370px] h-full md:px-[5rem] px-5 ">
         <div className="md:flex items-center justify-between h-full overflow-hidden">
-          <div className="md:w-[50%] w-full  flex items-center pt-5">
+          <div className="md:w-[50%] w-full  flex flex-col pt-5">
             <p className="w-full text-center md:text-left md:text-[32px]  leading-tight text-[18px] font-[600]">
               YINKA OKUNUSI AND ASSOCIATES{" "}
               <span className="text-[24px] font-[400]">
@@ -230,6 +226,17 @@ const LandingPage = () => {
                 comprehensive and professional real estate consultancy in the building industry.
               </span>
             </p>
+            <div className="md:w-[20%] w-[50%] mt-5">
+              <Link to={`/about-us`}>
+                <PrimaryButton
+                  type="button"
+                  text="Read more"
+                  css="rounded-md animate-bounce"
+                  variant="filled"
+                  buttonId="home_get_started_now_3"
+                />
+              </Link>
+            </div>
           </div>
           <div className="mt-16">
             <img src={realEstate} alt="" className=" w-[403px] md:w-[600px]" />

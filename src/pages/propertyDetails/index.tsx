@@ -3,6 +3,7 @@ import faqBackground from "@/assets/images/landing/337fd9292d.jpg";
 import { useLocation } from "react-router-dom";
 import FaqHero from "../faq/faqHero";
 import { FaCheck } from "react-icons/fa";
+import SideCard from "@/components/Web/SideCard";
 
 const PropertyDetails: React.FC = () => {
   const location = useLocation();
@@ -16,12 +17,16 @@ const PropertyDetails: React.FC = () => {
       <div className="w-full h-[300px] overflow-hidden">
         <FaqHero title={data.l_type} desc="Property details" desktopImg={faqBackground} />
       </div>
-      <div>
-        <div className="flex flex-col items-cols items-center mt-5">
-          <div className="w-[70%] h-[500px] overflow-hidden">
-            <img src={data.l_img1} alt="" className="object-cover w-full h-full" />
+      <div className="flex items-start w-full px-[2rem] mt-5 space-x-5">
+        <div className="flex flex-col items-cols items-center w-[80%]">
+          <div className="w-full h-[500px] overflow-hidden">
+            <img
+              src={`http://www.yinkaokunusiandassociates.com/images/properties/${data.l_img1}`}
+              alt=""
+              className="object-cover w-full h-full"
+            />
           </div>
-          <div className="w-[70%] flex items-start pt-[1rem]">
+          <div className="w-full flex items-start pt-[1rem] space-x-5">
             <div className="w-[70%]">
               <div>
                 <p className="font-[600] text-[32px]">{data.l_description}</p>
@@ -64,6 +69,9 @@ const PropertyDetails: React.FC = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="w-[20%]">
+          <SideCard />
         </div>
       </div>
     </div>

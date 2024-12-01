@@ -27,5 +27,3 @@ export const getLatestProperties = async () => {
     throw handleApiError(error);
   }
 };
-
-
