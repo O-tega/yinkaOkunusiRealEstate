@@ -21,7 +21,7 @@ const PropertyDetails: React.FC = () => {
         <div className="flex flex-col items-cols items-center w-[80%]">
           <div className="w-full h-[500px] overflow-hidden">
             <img
-              src={`http://www.yinkaokunusiandassociates.com/images/properties/${data.l_img1}`}
+              src={`https://yinka-web-cpbgdjcdhrd5bhfr.westeurope-01.azurewebsites.net/images/properties/${data.l_img1}`}
               alt=""
               className="object-cover w-full h-full"
             />

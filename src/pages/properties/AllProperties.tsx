@@ -15,7 +15,7 @@ const AllProperties = ({ data }: { data: TProperty[] }) => {
               id={item.l_id}
               title={item.l_type}
               text={item.l_title}
-              img={`http://www.yinkaokunusiandassociates.com/images/properties/${item.l_img1}`}
+              img={`https://yinka-web-cpbgdjcdhrd5bhfr.westeurope-01.azurewebsites.net/images/properties/${item.l_img1}`}
               category={item.l_category}
               amount={item.l_amount}
               currency={item.l_currency}

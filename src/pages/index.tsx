@@ -190,7 +190,7 @@ const LandingPage = () => {
                 id={item.l_id}
                 title={item.l_type}
                 text={item.l_title}
-                img={`http://www.yinkaokunusiandassociates.com/images/properties/${item.l_img1}`}
+                img={`https://yinka-web-cpbgdjcdhrd5bhfr.westeurope-01.azurewebsites.net/images/properties/${item.l_img1}`}
                 category={item.l_category}
                 amount={item.l_amount}
                 currency={item.l_currency}
@@ -257,7 +257,7 @@ const LandingPage = () => {
             >
               <div className="w-full px-5 h-[200px] overflow-hidden">
                 <motion.img
-                  src={`http://www.yinkaokunusiandassociates.com/images/service/${el?.imagePath}`}
+                  src={`https://yinka-web-cpbgdjcdhrd5bhfr.westeurope-01.azurewebsites.net/images/service/${el?.imagePath}`}
                   alt="service-img"
                   className="object-cover"
                   initial={{ opacity: 1 }} // Initial opacity
