@@ -23,7 +23,6 @@ const plan = [
     title: "SME",
     subtitle: "Great for small businesses",
     tag: "",
-    // responses: "200",
     planId: "666b222326ecccaade42c891",
     info: "Manage and grow your audience with advanced messaging and lead tracking.",
     amount: 29.99,
