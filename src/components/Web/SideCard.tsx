@@ -137,7 +137,7 @@ const SideCard = () => {
             <div className="w-full h-full bg-gray-300 animate-pulse" />
           ) : (
             <img
-              src={`http://www.yinkaokunusiandassociates.com/images/properties/${img}`}
+              src={`https://yinka-okunusi-real-estate.vercel.app/images/properties/${img}`}
               alt=""
               className="w-[50px] h-[50px] object-cover"
             />
